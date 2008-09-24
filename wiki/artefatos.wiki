@@ -1,0 +1,23 @@
+= Seções =
+
+
+Seguem abaixo os links para os vários artefatos gerados no decorrer do projeto:
+
+ * [http://code.google.com/p/pyfinancial/wiki/artefatos/docVisao Documento de Visão]
+ * [http://code.google.com/p/pyfinancial/wiki/artefatos/userStories User Stories]
+ * [http://code.google.com/p/pyfinancial/wiki/artefatos/projetoArquitetural Projeto Arquitetural]
+ * [http://code.google.com/p/pyfinancial/wiki/artefatos/planoReleases Plano de Releases]
+ * [http://code.google.com/p/pyfinancial/wiki/artefatos/matrizDeCompetencias  Matriz de Competências]
+ * [http://code.google.com/p/pyfinancial/wiki/artefatos/modeloTarefa Modelo de Tarefas]
+ * [http://code.google.com/p/pyfinancial/wiki/artefatos/interface Protótipo de Interface]
+ * [http://code.google.com/p/pyfinancial/wiki/artefatos/perfilUsuarios Perfil do Usuário]   
+ * [http://code.google.com/p/pyfinancial/wiki/artefatos/objUsabilidade Objetivos de Usabilidade]   
+ * [http://code.google.com/p/pyfinancial/wiki/artefatos/modeloLogico Modelo Lógico]
+ * [http://code.google.com/p/pyfinancial/wiki/artefatos/planoIteracoes Plano de Iterações]
+ * [http://pyfinancial.googlecode.com/files/BigChartEverton2.xls Big-Chart]
+ * [http://code.google.com/p/pyfinancial/wiki/tabelaDeRiscos Tabela de Riscos]
+ * [http://code.google.com/p/pyfinancial/wiki/glossario Glossário]
+
+
+
+[http://code.google.com/p/pyfinancial/wiki/index página inicial]
