@@ -1,0 +1,63 @@
+=  Horários de Trabalho  =
+
+
+== Horários Comuns ==
+
+Terça Feira, 16:00 - 18:00
+Quarta Feira,  16:00 - 18:00
+
+
+
+
+= Reuniões =
+
+Reunião com Cliente:               Quinta, 14:00 - 16:00
+Reunião de Acompanhamento:         Terça, 10:00 - 12:00
+
+
+= Definição de papéis =
+
+Durante todo o desenvolvimento do projeto os papéis estarão distribuídos da seguinte forma:
+
+|| *Nome* || *E-mail* || *Papéis* ||
+|| Hyggo Almeida || [mailto:hyggo.almeida@gmail.com hyggo.almeida@gmail.com] || Cliente  ||
+|| Hyggo Almeida || [mailto:hyggo.almeida@gmail.com hyggo.almeida@gmail.com] || Usuário  ||
+|| Felipe Leal Coutinho || [mailto:felipelcoutinho@gmail.com felipelcoutinho@gmail.com] || Desenvolvedor - Testador - Gerente  ||
+|| David Candeia || [mailto:davidcandeia@hotmail.com davidcandeia@hotmail.com] || Desenvolvedor - Testador - Gerente ||
+|| Everton Leandro || [mailto:evertongaldino@gmail.com evertongaldino@gmail.com] || Desenvolvedor - Testador - Gerente ||
+
+
+
+
+O conjunto de papéis assumidos a cada Release segue descrito abaixo:
+
+
+
+= Etapa de Planejamento e Release 1 =
+
+|| *Nome* || *Papel* ||
+|| David Candeia || Desenvolvedor - Testador - Gerente||
+|| Felipe Leal Coutinho || Desenvolvedor - Testador||
+|| Everton Leandro || Desenvolvedor - Testador||
+
+
+= Release 2 =
+
+|| *Nome* || *Papel* ||
+|| Felipe Leal Coutinho || Desenvolvedor - Testador - Gerente||
+|| David Candeia || Desenvolvedor - Testador||
+|| Everton Leandro || Desenvolvedor - Testador||
+
+
+= Release 3 =
+
+|| *Nome* || *Papel* ||
+|| Everton Leandro || Desenvolvedor - Testador - Gerente||
+|| Felipe Leal Coutinho || Desenvolvedor - Testador||
+|| David Candeia || Desenvolvedor - Testador||
+
+
+
+
+
+[http://code.google.com/p/pyfinancial/wiki/index página inicial]
