@@ -1,0 +1,12 @@
+= Reuniões = 
+
+
+=== Reunião 1 - 13/11/2007 (Reunião com Cliente)===
+
+Essa primeira reunião teve como intuito um primeiro contato com o cliente de modo a que pudéssemos começar a nos familiarizar com o projeto em questão. Aqui nos foi apresentado a atual situação de alguns operadores de ligas espalhados pelo mundo, mostrando-nos, assim, a necessidade do sistema que estaremos desenvolvendo ao decorrer da disciplina. Discutimos, ainda, a respeito do que seriam ligas de sinuca, bem como alguns conceitos básicos como handicap, standings, operador de liga etc. De modo a iniciarmos um melhor conhecimento da situação nos foi apresentado o grupo do Google onde nosso cliente vem tendo discussões com operadores de outras localidades a respeito de como deveria ser o sistema.
+
+Além do apresentado acima, tivemos uma rápida discussão a respeito do que poderia ser usado no desenvolvimento do sistema. Alguns contatos nos foram fornecidos pelo nosso cliente para que pudéssemos discutir e avaliar um pouco mais o uso de determinadas tecnologias como, por exemplo, Servlets e XML.
+
+
+
+[http://code.google.com/p/pyfinancial/wiki/index página inicial]
