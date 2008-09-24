@@ -4,6 +4,7 @@
 == Horários Comuns ==
 
 Terça Feira, 16:00 - 18:00
+
 Quarta Feira,  16:00 - 18:00
 
 
@@ -12,6 +13,7 @@ Quarta Feira,  16:00 - 18:00
 = Reuniões =
 
 Reunião com Cliente:               Quinta, 14:00 - 16:00
+
 Reunião de Acompanhamento:         Terça, 10:00 - 12:00
 
 
