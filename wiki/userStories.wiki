@@ -12,7 +12,7 @@
 
 == US02 ==
 
-|| Implementar o setor de entrada de dados, setor de limpeza e o setor de operações básicas da HP-12c (interface, lógica, instalador) ||
+|| Implementar o setor de entrada de dados, setor de limpeza, o setor de operações básicas da HP-12c e CHS (interface, lógica, instalador) ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
 || *Estimativa Inicial:*  ||
 
@@ -36,6 +36,18 @@
 
 == US06 ==
 
-|| Implementar funções financeiras: 12x, 12%, CFo, CFj, Hj. ||
+|| Implementar funções financeiras: 12x, 12%, CFo, CFj, Nj. ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
+|| *Estimativa Inicial:*  ||
+
+== US07 ==
+
+|| Implementar setor de potência, raiz e porcentagem ||
+|| TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
+|| *Estimativa Inicial:*  ||
+
+== US08 ==
+
+|| Implementar setor de armazenamento de dados e a persistência ||
+|| TA 1 - Garantir integridade dos dados salvos ||
 || *Estimativa Inicial:*  ||
