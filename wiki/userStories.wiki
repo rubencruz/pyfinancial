@@ -51,3 +51,5 @@
 || Implementar setor de armazenamento de dados e a persistência ||
 || TA 1 - Garantir integridade dos dados salvos ||
 || *Estimativa Inicial:*  ||
+
+[http://code.google.com/p/pyfinancial/wiki/artefatos artefatos]
