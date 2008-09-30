@@ -1,0 +1,17 @@
+#User Stories
+
+= User Stories =
+
+
+== US01 ==
+
+|| Estudo e configuração do ambiente de trabalho. O ambiente de trabalho será: sistema operacional Ubuntu, IDE Eclipse, linguagem Python, plugin PyDev, frameworks PyUnit e PyEasyAccept para testes, framework QT para interface gráfica, bind de Qt para Python, Scratchbox e Qt Designer. Estudar como fazer um pacote de instalação para Debian (.deb). ||
+|| TA1.1 - Cada integrante será responsável por estudar uma das novas tecnologias e como resultado apresentará um seminário para os demais membros da equipe. ||
+|| TA1.2 - Cada integrante da equipe deverá implementar uma calculadora de funções básicas (soma, subtração, multiplicação, divisão) completa (em python, interface em Qt, instalador .deb, tratamento de erros) para validar o estudo. ||
+|| *Estimativa Inicial:*  ||
+
+== US02 ==
+
+||  ||
+|| Testes de aceitação aqui ||
+|| *Estimativa Inicial:*  ||
