@@ -21,6 +21,7 @@
 == Links Úteis ==
 
 || *Fórmulas HP-12c* || http://h10025.www1.hp.com/ewfrf/wc/useCategory?lc=pt&cc=br&dlc=pt&product=81575# ||
+|| *HP-12c para iPhone* || http://mac.softpedia.com/get/iPhone-Applications/Tools-Utilities/HP-12C-iPhone.shtml ||
 
 
 [http://code.google.com/p/pyfinancial/wiki/index página inicial]
