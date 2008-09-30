@@ -5,13 +5,19 @@
 
 == US01 ==
 
-|| Estudo e configuração do ambiente de trabalho. O ambiente de trabalho será: sistema operacional Ubuntu, IDE Eclipse, linguagem Python, plugin PyDev, frameworks PyUnit e PyEasyAccept para testes, framework QT para interface gráfica, bind de Qt para Python, Scratchbox e Qt Designer. Estudar como fazer um pacote de instalação para Debian (.deb). ||
+|| Estudo e configuração do ambiente de trabalho. O ambiente de trabalho será: sistema operacional Ubuntu, IDE Eclipse, linguagem Python, plugin PyDev, frameworks PyUnit e PyEasyAccept para testes, framework QT para interface gráfica, bind de Qt para Python, Scratchbox e Qt Designer. Estudar como fazer um pacote de instalação para Debian (.deb). Configurar o N800. ||
 || TA1.1 - Cada integrante será responsável por estudar uma das novas tecnologias e como resultado apresentará um seminário para os demais membros da equipe. ||
-|| TA1.2 - Cada integrante da equipe deverá implementar uma calculadora de funções básicas (soma, subtração, multiplicação, divisão) completa (em python, interface em Qt, instalador .deb, tratamento de erros) para validar o estudo. ||
+|| TA1.2 - Cada integrante da equipe deverá implementar uma calculadora de funções básicas (soma, subtração, multiplicação, divisão) completa (em python, interface em Qt, instalador .deb, tratamento de erros) para validar o estudo. Essa calculadora deve rodar no N800. ||
 || *Estimativa Inicial:*  ||
 
 == US02 ==
 
-||  ||
-|| Testes de aceitação aqui ||
+|| Implementar o setor de entrada de dados, setor de limpeza e o setor de operações básicas da HP-12c (interface, lógica, instalador) ||
+|| TA1.1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
+|| *Estimativa Inicial:*  ||
+
+== US03 ==
+
+|| Implementar o setor de entrada de dados e o setor de operações básicas da HP-12c (interface, lógica, instalador) ||
+|| TA1.1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
 || *Estimativa Inicial:*  ||
