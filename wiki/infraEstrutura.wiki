@@ -24,5 +24,7 @@
 || *HP-12c para iPhone* || http://mac.softpedia.com/get/iPhone-Applications/Tools-Utilities/HP-12C-iPhone.shtml ||
 || *Blog de quem está mexendo com Qt no embedded* || http://flaviofabricio.blogspot.com/ ||
 || *Projeto Qt para Maemo* || http://qt4.garage.maemo.org/ ||
+|| *Projeto PyQt para Maemo* || http://pyqt.garage.maemo.org/ ||
+
 
 [http://code.google.com/p/pyfinancial/wiki/index página inicial]
