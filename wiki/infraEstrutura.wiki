@@ -27,4 +27,5 @@
 || *Projeto PyQt para Maemo* || http://pyqt.garage.maemo.org/ ||
 
 
+
 [http://code.google.com/p/pyfinancial/wiki/index página inicial]
