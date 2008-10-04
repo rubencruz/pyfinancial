@@ -23,7 +23,7 @@
 || *Estimativa Inicial:*  ||
 
 == US 04 ==
-|| Implementar o setor de operações matemáticas básicas da HP-12c e CHS  ||
+|| Implementar o setor de operações matemáticas básicas da HP-12c e CHS: +, -, ×, ÷, 1/x, sq. root, LN x, ex, yx, n!, x2  ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
 || *Estimativa Inicial:*  ||
 
