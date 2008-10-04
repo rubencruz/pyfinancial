@@ -65,6 +65,12 @@
 
 == US11 ==
 
+|| Implementar operações com datas ||
+|| TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
+|| *Estimativa Inicial:*  ||
+
+== US12 ==
+
 || Implementar setor de armazenamento de dados e a persistência ||
 || TA 1 - Garantir integridade dos dados salvos ||
 || *Estimativa Inicial:*  ||
