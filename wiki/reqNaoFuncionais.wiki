@@ -4,8 +4,10 @@
 
 === Interface ===
 
-Para a calculadora a ser desenvolvida na segunda etapa do projeto, deseja-se que sua interface seja similar a da calculadora HP12-C  que estamos usando como base(http://upload.wikimedia.org/wikipedia/commons/9/94/Hp12c.jpg). Deseja-se não necessariamente que a interface seja uma cópia da calculadora em questão, mas que a disposição de botões e o agrupamento de funções nos mesmos siga nosso modelo.
+Para a calculadora a ser desenvolvida na segunda etapa do projeto, deseja-se que sua interface seja similar a da calculadora HP12-C que estamos usando como base. Deseja-se não necessariamente que a interface seja uma cópia da calculadora em questão, mas que a disposição de botões e o agrupamento de funções nos mesmos siga nosso modelo.
 A entrada de dados será realizada através do toque na tela nas regiões referentes a cada botão em questão.
+
+http://upload.wikimedia.org/wikipedia/commons/9/94/Hp12c.jpg
 
 === Facilidade de uso necessária ===
 
