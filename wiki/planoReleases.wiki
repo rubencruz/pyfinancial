@@ -3,7 +3,7 @@
 = Plano de Releases =
 
 
-|| Release 01 - (24/11/08) || Gerente - David Candeia ||
+|| Release 01 - (24/11/08) || Gerente - Felipe Coutinho ||
 || Iteração	|| User Story	|| 
 || Iteração 01	|| US01, US02	|| 
 || Iteração 02	|| US01, US02	|| 
