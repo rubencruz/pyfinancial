@@ -14,7 +14,8 @@ Veja descrição da US [userStories aqui]
 || Atividade || Descrição || Responsável || Estimativa de Tempo (h) || Tempo Real (h) ||
 || A1.1 || bla || blz || 12 || 12 ||
 
-=== US0 ===
+
+=== US02 ===
 
 Veja descrição da US [userStories aqui] 
 
