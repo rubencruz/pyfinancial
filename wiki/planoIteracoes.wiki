@@ -25,4 +25,4 @@ Veja descrição da US [userStories aqui]
 
 
 
-[http://code.google.com/p/pyfinancial/wiki/artefatos página de artefatos]
+[artefatos página de artefatos]
