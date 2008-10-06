@@ -27,6 +27,7 @@ Durante todo o desenvolvimento do projeto os papéis estarão distribuídos da s
 || Felipe Leal Coutinho || [mailto:felipelcoutinho@gmail.com felipelcoutinho@gmail.com] || Desenvolvedor - Testador - Gerente  ||
 || David Candeia || [mailto:davidcandeia@hotmail.com davidcandeia@hotmail.com] || Desenvolvedor - Testador - Gerente ||
 || Everton Leandro || [mailto:evertongaldino@gmail.com evertongaldino@gmail.com] || Desenvolvedor - Testador - Gerente ||
+|| Diego Dantas de Freitas || [mailto:diegodfreitas@gmail.com diegodfreitas@gmail.com] || Desenvolvedor - Testador - Gerente ||
 
 
 
@@ -38,27 +39,19 @@ O conjunto de papéis assumidos a cada Release segue descrito abaixo:
 = Etapa de Planejamento e Release 1 =
 
 || *Nome* || *Papel* ||
-|| David Candeia || Desenvolvedor - Testador - Gerente||
-|| Felipe Leal Coutinho || Desenvolvedor - Testador||
+|| David Candeia || Desenvolvedor - Testador ||
+|| Felipe Leal Coutinho || Desenvolvedor - Testador - Gerente ||
 || Everton Leandro || Desenvolvedor - Testador||
+|| Diego Dantas || Desenvolvedor - Testador||
 
 
 = Release 2 =
 
 || *Nome* || *Papel* ||
-|| Felipe Leal Coutinho || Desenvolvedor - Testador - Gerente||
-|| David Candeia || Desenvolvedor - Testador||
-|| Everton Leandro || Desenvolvedor - Testador||
-
-
-= Release 3 =
-
-|| *Nome* || *Papel* ||
-|| Everton Leandro || Desenvolvedor - Testador - Gerente||
-|| Felipe Leal Coutinho || Desenvolvedor - Testador||
-|| David Candeia || Desenvolvedor - Testador||
-
-
+|| Felipe Leal Coutinho || Desenvolvedor - Testador ||
+|| David Candeia || Desenvolvedor - Testador - Gerente ||
+|| Everton Leandro || Desenvolvedor - Testador ||
+|| Diego Dantas || Desenvolvedor - Testador ||
 
 
 
