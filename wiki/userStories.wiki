@@ -22,7 +22,7 @@
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
 || *Estimativa Inicial: 60 h*  ||
 
-== US 04 ==
+== US04 ==
 || Implementar o setor de operações matemáticas básicas da HP-12c e CHS: +, -, ×, ÷ ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
 || *Estimativa Inicial: 20 h*  ||
