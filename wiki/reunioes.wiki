@@ -1,16 +1,7 @@
 = Reuniões = 
 
-=== Reunião 2 - 30/09/2008 (Reunião de planejamento)===
+=== Reunião 2 - 06/10/2008 (Reunião de planejamento)===
 
-_Pauta Proposta_
-----
- # Emulador para iPhone. Mandar email para o desenvolvedor
-----
-
-_Ata da Reunião_
-----
- # Emulador para iPhone. Mandar email para o desenvolvedor
-----
 
 
 === Reunião 1 - 24/09/2008 (Reunião de planejamento)===
