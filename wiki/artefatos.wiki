@@ -3,9 +3,9 @@
 
 Seguem abaixo os links para os vários artefatos gerados no decorrer do projeto:
 
- * [http://code.google.com/p/pyfinancial/wiki/artefatos/docVisao Documento de Visão]
  * [http://code.google.com/p/pyfinancial/wiki/artefatos/userStories User Stories]
  * [http://code.google.com/p/pyfinancial/wiki/artefatos/projetoArquitetural Projeto Arquitetural]
+ * [http://code.google.com/p/pyfinancial/wiki/artefatos/reqNaoFuncionais Requisitos Não-funcionais]
  * [http://code.google.com/p/pyfinancial/wiki/artefatos/planoReleases Plano de Releases]
  * [http://code.google.com/p/pyfinancial/wiki/artefatos/matrizDeCompetencias  Matriz de Competências]
  * [http://code.google.com/p/pyfinancial/wiki/artefatos/modeloTarefa Modelo de Tarefas]
