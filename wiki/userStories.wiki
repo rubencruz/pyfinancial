@@ -8,71 +8,69 @@
 || Estudos das ferramentas/linguagens necessárias para o ambiente de trabalho. Aqui deve-se estudar Python e PyUnit e PyEasyAccept para testes, framework QT para interface gráfica e estudar como fazer um pacote de instalação para Debian (.deb)||
 || TA 1 - Cada integrante será responsável por estudar uma das novas tecnologias e como resultado apresentará um seminário para os demais membros da equipe. ||
 || TA 2 - Cada integrante da equipe deverá implementar uma calculadora de funções básicas (soma, subtração, multiplicação, divisão) completa (em python, interface em Qt, instalador .deb, tratamento de erros) para validar o estudo. Essa calculadora deve rodar no N800. ||
-|| *Estimativa Inicial:*  ||
+|| *Estimativa Inicial: 60 h*  ||
 
 == US02 ==
 
 || Configuração do ambiente de trabalho. Aqui deve-se configurar: sistema operacional Ubuntu, IDE Eclipse, plugin PyDev, frameworks PyUnit e PyEasyAccept para testes, framework QT para interface gráfica, bind de Qt para Python, Scratchbox e Qt Designer (avaliando a ferramenta). Além disso deve-se verificar alguma eventual configuração para o N800. ||
-|| *Estimativa Inicial:*  ||
+|| *Estimativa Inicial: 60 h*  ||
 
 
 == US03 ==
 
 || Implementar o setor de entrada de dados, setor de limpeza. Aqui estamos considerando implementar interface, lógica e instalador. ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
-|| *Estimativa Inicial:*  ||
+|| *Estimativa Inicial: 60 h*  ||
 
 == US 04 ==
-|| Implementar o setor de operações matemáticas básicas da HP-12c e CHS: +, -, ×, ÷, 1/x, sq. root, LN x, ex, yx, n!, x2  ||
+|| Implementar o setor de operações matemáticas básicas da HP-12c e CHS: +, -, ×, ÷ ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
-|| *Estimativa Inicial:*  ||
+|| *Estimativa Inicial: 20 h*  ||
 
 == US05 ==
 
 || Implementar a funções financeiras básicas (n, i, PV, PMT, FV). ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
-|| *Estimativa Inicial:*  ||
+|| *Estimativa Inicial: 50 h*  ||
 
 == US06 ==
 
 || Implementar funções financeiras: NPV, IRR. ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
-|| *Estimativa Inicial:*  ||
+|| *Estimativa Inicial: 20 h*  ||
 
 == US07 ==
 
 || Implementar funções financeiras: AMORT, INT, RND. ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
-|| *Estimativa Inicial:*  ||
+|| *Estimativa Inicial: 20 h*  ||
+
 
 == US08 ==
 
-|| Implementar funções financeiras: 12x, 12%. ||
+|| Implementar funções financeiras: 12x, 12%, CFo, CFj, Nj. ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
-|| *Estimativa Inicial:*  ||
+|| *Estimativa Inicial: 40 h*  ||
+
 
 == US09 ==
 
-|| Implementar funções financeiras: CFo, CFj, Nj. ||
-|| TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
-|| *Estimativa Inicial:*  ||
+|| Implementar setor de armazenamento de dados e a persistência ||
+|| TA 1 - Garantir integridade dos dados salvos ||
+|| *Estimativa Inicial: 20 h*  ||
 
 == US10 ==
 
-|| Implementar setor de potência, raiz e porcentagem ||
+|| Implementar setor de potência, raiz, porcentagem e fatorial ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
-|| *Estimativa Inicial:*  ||
+|| *Estimativa Inicial: 20 h*  ||
+
 
 == US11 ==
 
 || Implementar operações com datas ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
-|| *Estimativa Inicial:*  ||
+|| *Estimativa Inicial: 30 h*  ||
 
-== US12 ==
-
-|| Implementar setor de armazenamento de dados e a persistência ||
-|| TA 1 - Garantir integridade dos dados salvos ||
-|| *Estimativa Inicial:*  ||
 
 [http://code.google.com/p/pyfinancial/wiki/artefatos artefatos]
