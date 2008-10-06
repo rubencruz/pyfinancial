@@ -9,7 +9,7 @@ Abaixo seguem os links para os arquivos contendo o planejamento de cada iteraç�
 
 === US01 ===
 
-Veja descrição da US aqui userStories
+Veja descrição da US [userStories aqui] 
 
 || Estudos das ferramentas/linguagens necessárias para o ambiente de trabalho. Aqui deve-se estudar Python e PyUnit e PyEasyAccept para testes, framework QT para interface gráfica e estudar como fazer um pacote de instalação para Debian (.deb)||
 || TA 1 - Cada integrante será responsável por estudar uma das novas tecnologias e como resultado apresentará um seminário para os demais membros da equipe. ||
