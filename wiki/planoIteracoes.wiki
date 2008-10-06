@@ -1,0 +1,25 @@
+#summary One-sentence summary of this page.
+
+= Plano de Iterações =
+
+
+Abaixo seguem os links para os arquivos contendo o planejamento de cada iteração:
+
+== Iteração 1 == 
+
+=== US01 ===
+
+Veja descrição da US aqui userStories
+
+|| Estudos das ferramentas/linguagens necessárias para o ambiente de trabalho. Aqui deve-se estudar Python e PyUnit e PyEasyAccept para testes, framework QT para interface gráfica e estudar como fazer um pacote de instalação para Debian (.deb)||
+|| TA 1 - Cada integrante será responsável por estudar uma das novas tecnologias e como resultado apresentará um seminário para os demais membros da equipe. ||
+|| TA 2 - Cada integrante da equipe deverá implementar uma calculadora de funções básicas (soma, subtração, multiplicação, divisão) completa (em python, interface em Qt, instalador .deb, tratamento de erros) para validar o estudo. Essa calculadora deve rodar no N800. ||
+
+ * Iteração 2: Os dados dessa iteração podem ser acompanhados em [http://seulunga.lcc.ufcg.edu.br:8080/xplanner/do/view/iteration?projectId=5325&returnto=%2Fdo%2Fview%2Fproject%3Foid%3D5325&oid=5608&fkey=5325 xplanner] 
+
+ * Iteração 3: Os dados dessa iteração podem ser acompanhados em [http://seulunga.lcc.ufcg.edu.br:8080/xplanner/do/view/iteration?projectId=0&returnto=%2Fdo%2Fview%2Fprojects&oid=6382 xplanner] 
+
+ * Iteração 4: Os dados dessa iteração podem ser acompanhados em [http://seulunga.lcc.ufcg.edu.br:8080/xplanner/do/view/iteration?projectId=0&returnto=%2Fdo%2Fview%2Fprojects&oid=6382 xplanner] 
+
+
+[http://code.google.com/p/blms/wiki/artefatos página de artefatos]
