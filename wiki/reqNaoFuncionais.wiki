@@ -1,0 +1,67 @@
+#summary One-sentence summary of this page.
+
+= Requisitos Não-funcionais =
+
+=== Interface ===
+
+Para a calculadora a ser desenvolvida na segunda etapa do projeto, deseja-se que sua interface seja similar a da calculadora HP12-C  que estamos usando como base(http://upload.wikimedia.org/wikipedia/commons/9/94/Hp12c.jpg). Deseja-se não necessariamente que a interface seja uma cópia da calculadora em questão, mas que a disposição de botões e o agrupamento de funções nos mesmos siga nosso modelo.
+A entrada de dados será realizada através do toque na tela nas regiões referentes a cada botão em questão.
+
+=== Facilidade de uso necessária ===
+
+O público alvo do produto serão os empregados de bancos, economistas e administradores que constantemente estão envolvidos com o uso de funções financeiras.
+Tomando por base a HP12-C, desejamos que o nível de dificuldade encontrado para uso de nossa calculadora seja o mesmo encontrada na calculadora física. Ou seja, faz-se necessário um certo treinamento inicial a respeito do que é cada uma das funções financeiras, ou mesmo ainda na parte aritmética é necessário que o usuário seja treinado sobre como usar as várias funções contidas em cada botão bem como ser informado a respeito da notação utilizada nas operações (http://pt.wikipedia.org/wiki/Nota%C3%A7%C3%A3o_Polonesa_Inversa).
+
+=== Volume de utilização ===
+
+A calculadora será mono-usuário, porém devendo ser robusta o suficiente para ficar sendo usada durante um longo intervalo de tempo ininterruptamente.
+
+=== Hardware e software alvo para o produto ===
+
+A calculadora deverá funcionar no Internet Tablet N800 da nokia (http://www.nseries.com/products/n800/#l=products,n800) no sistema operacional Maemo Diablo (4.1.x) (http://maemo.org/maemo_release_documentation/maemo4.1.x/Maemo_Diablo_Reference_Manual_for_maemo_4.1.pdf), com Python, PyQt e Qt4 (falta especificar as versões).
+
+=== Qualidade ===
+
+Com relação a precisão, deseja-se que os valores calculados em nossa calculadora não difiram em mais de 0.001 unidades dos valores calculados na HP12-C original.
+
+=== Tolerância a falha ===
+
+A calculadora deve fazer logs dos valores armazenados em seus registradores dos últimos valores utilizados pelo usuário para em eventual pane poder recuperar os mesmos ao ser novamente acionada.
+Entradas equivocadas do usuário deverão apresentar mensagens de erros que devem ser mais intuitivas do que as apresentadas pela calculadora original como "Erro 6".
+
+=== Desempenho ===
+
+O tempo de resposta dos resultados não deve ultrapassar o tempo que a calculadora HP 12c leva para executar as mesmas operações (considerando que só o programa da calculadora esteja em execução).
+
+=== Segurança ===
+
+Os arquivos que conterão os valores dos registradores recém utilizados pelo usuário deverão ficar protegidos de alteração pelo mesmo.
+
+=== Compatibilidade === 
+
+É desejável que a aplicação possa ser portada para versões mais novas do dispositivo, como o N810 e novas versões do Maemo.
+
+=== Internacionalização ===
+
+A calculadora deve ser desenvolvida para tornar possível a internacionalização
+
+=== Documentação ===
+
+Será necessário a elaboração de um manual explicando como o sistema pode ser usado. Essa documentação deverá ser fornecida em inglês.
+As classes do sistema devem ser todas documentadas em inglês
+
+=== Uso de padrões ===
+
+Iremos utilizar MVC e qualquer outro padrão que seja visto necessário durante o desenvolvimento.
+
+=== Packaging ===
+
+A distribuição do aplicativo será realizada através de um arquivo .deb que servirá como instalador para a mesma.
+
+=== Riscos aceitáveis ===
+
+O uso da tecnologia QT embora pareça que irá se tornar uma grande força no desenvolvimento de interfaces para dispositivos móveis, pode ser considerado um risco dado que o início do processo de habilitação da tecnologia nos dispositivos está ocorrendo no momento.
+
+
+
+[http://code.google.com/p/pyfinancial/wiki/artefatos Artefatos]
