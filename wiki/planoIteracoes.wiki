@@ -14,5 +14,14 @@ Veja descrição da US [userStories aqui]
 || Atividade || Descrição || Responsável || Estimativa de Tempo (h) || Tempo Real (h) ||
 || A1.1 || bla || blz || 12 || 12 ||
 
+=== US0 ===
+
+Veja descrição da US [userStories aqui] 
+
+|| Atividade || Descrição || Responsável || Estimativa de Tempo (h) || Tempo Real (h) ||
+|| A2.1 || bla || blz || 12 || 12 ||
+
+
+
 
 [http://code.google.com/p/blms/wiki/artefatos página de artefatos]
