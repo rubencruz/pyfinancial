@@ -20,7 +20,8 @@ Veja descrição da US [userStories aqui]
 Veja descrição da US [userStories aqui] 
 
 || Atividade || Descrição || Responsável || Estimativa de Tempo (h) || Tempo Real (h) ||
-|| A2.1 || bla || blz || 12 || 12 ||
+|| A2.1 || Instalar Eclipse || Todos || 1 ||  ||
+|| A2.2 || Instalar PyDev || Todos || 1 ||  ||
 
 
 
