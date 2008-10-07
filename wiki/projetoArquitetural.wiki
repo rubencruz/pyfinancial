@@ -1,15 +1,15 @@
 #summary One-sentence summary of this page.
 
-= Introduction =
-
-Add your content here.
+= Projeto Arquitetural =
 
 
-= Details =
+Link do documento do projeto Arquitetural: [http://pyfinancial.googlecode.com/files/Arquitetura.doc Projeto Arquitetural]
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
 
-[artefatos Artefatos]
+
+
+
+
+
+
+[artefatos Página de Artefatos]
