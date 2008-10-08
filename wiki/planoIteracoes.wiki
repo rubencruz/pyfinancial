@@ -12,7 +12,7 @@ Abaixo seguem os links para os arquivos contendo o planejamento de cada iteraç�
 Veja descrição da US [userStories aqui] 
 
 || Atividade || Descrição || Responsável || Estimativa de Tempo (h) || Tempo Real (h) ||
-|| A1.1 || bla || blz || 12 || 12 ||
+|| A1.1 || Avaliar uso de PyQt com Qt Designer [http://www.diotavelli.net/PyQtWiki/Creating_GUI_Applications_with_PyQt_and_Qt_Designer aqui] || Alguém || 4 ||  ||
 
 
 === US02 ===
@@ -24,7 +24,13 @@ Veja descrição da US [userStories aqui]
 || A2.2 || Instalar PyDev [http://pydev.sourceforge.net/ aqui] || Todos || 1 ||  ||
 || A2.3 || Instalar Subclipse [http://subclipse.tigris.org/ aqui] || Todos || 1 ||  ||
 || A2.4 || Compilar e instalar Qt 4.4.1 no Linux [ftp://ftp.trolltech.no/qt/source/qt-x11-opensource-src-4.4.1.tar.gz aqui] || Todos || 6 ||  ||
-|| A2.5 || Instalar SDK + Scratchbox + Xephyr [http://maemo.org/development/sdks/maemo-4-1-diablo-sdk/ aqui] [http://tablets-dev.nokia.com/4.1/INSTALL.txt aqui] || Todos || 8 ||  ||
+|| A2.5 || Instalar PyQt [http://wiki.python.org/moin/PyQt4 aqui] || Todos || 2 ||  ||
+|| A2.6 || Instalar SDK + Scratchbox + Xephyr [http://maemo.org/development/sdks/maemo-4-1-diablo-sdk/ aqui] [http://tablets-dev.nokia.com/4.1/INSTALL.txt aqui] || Todos || 8 ||  ||
+|| A2.7 || Instalar Qt Designer [http://trolltech.com/products/appdev/developer-tools/developer-tools?currentflipperobject=73543fa58dda72c632a376b97104ff78 aqui] [http://tablets-dev.nokia.com/4.1/INSTALL.txt aqui] || Todos || 8 ||  ||
+
+
+
+
 
 
 
