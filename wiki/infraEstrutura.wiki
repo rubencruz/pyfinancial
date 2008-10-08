@@ -8,6 +8,8 @@
 
 || Nome || Descrição || Download || Dicas ||
 || *Eclipse* || IDE de desenvolvimento ||  ||  ||
+|| *PyDev* || Plugin de Python para o Eclipse || http://pydev.sourceforge.net/ ||  ||
+|| *PyDevExtensions* || Funcionalidades Adicionais para o PyDev || http://www.fabioz.com/pydev/ ||  ||
 
 == Testes ==
 
