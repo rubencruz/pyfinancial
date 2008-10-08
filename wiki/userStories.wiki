@@ -14,7 +14,7 @@
 == US02 ==
 
 || Configuração do ambiente de trabalho. Aqui deve-se configurar: sistema operacional Ubuntu, IDE Eclipse, plugin PyDev, frameworks PyUnit e PyEasyAccept para testes, framework QT para interface gráfica, bind de Qt para Python, Scratchbox e Qt Designer (avaliando a ferramenta). Além disso deve-se verificar alguma eventual configuração para o N800. ||
-|| *Estimativa Inicial: 60 h*  ||
+|| *Estimativa Inicial: 43 h*  ||
 
 
 == US03 ==
