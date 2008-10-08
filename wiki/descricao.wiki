@@ -7,7 +7,6 @@ Diante desse contexto, propomos o desenvolvimento de uma calculadora financeira 
 O projeto pode ser dividido em duas etapas:
 
  # Desenvolver uma biblioteca financeira que possa ser depois utilizada como um módulo por outras aplicações. Pretende-se desenvolver essa biblioteca em Python dadas as vantagens que essa linguagem oferece na parte matemática.
-
- ## Criar uma calculadora financeira, que fará uso da gama de funções presentes em nossa biblioteca, para a plataforma Maemo da Nokia.
+ # Criar uma calculadora financeira, que fará uso da gama de funções presentes em nossa biblioteca, para a plataforma Maemo da Nokia.
 
 Outro aspecto inovador de nosso projeto é o uso do Framework QT (http://trolltech.com/products/qt/) para implementar a interface gráfica da calculadora.
