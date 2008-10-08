@@ -21,7 +21,9 @@ Veja descrição da US [userStories aqui]
 
 || Atividade || Descrição || Responsável || Estimativa de Tempo (h) || Tempo Real (h) ||
 || A2.1 || Instalar Eclipse || Todos || 1 ||  ||
-|| A2.2 || Instalar PyDev || Todos || 1 ||  ||
+|| A2.2 || Instalar PyDev [http://pydev.sourceforge.net/ aqui] || Todos || 1 ||  ||
+|| A2.3 || Instalar Subclipse [http://subclipse.tigris.org/ aqui] || Todos || 1 ||  ||
+|| A2.4 || Compilar e instalar Qt 4.4.1 no Linux [ftp://ftp.trolltech.no/qt/source/qt-x11-opensource-src-4.4.1.tar.gz aqui] || Todos || 6 ||  ||
 
 
 
