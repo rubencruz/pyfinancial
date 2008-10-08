@@ -32,7 +32,8 @@ Veja descrição da US [userStories aqui]
 || A2.10 || Instalar PyQt no N800 [http://pyqt.garage.maemo.org/ aqui] || Alguém || 2 ||  ||
 || A2.11 || Criar e configurar (inclui PyUnit, PyEasyAccept, etc) projeto da biblioteca financeira no svn do google || Alguém || 2 ||  ||
 || A2.12 || Criar e configurar (inclui PyUnit, PyEasyAccept, etc) projeto da calculadora financeira no svn do garrage (lincença BSD??? [http://pt.wikipedia.org/wiki/Licen%C3%A7as_BSD_e_GPL aqui]) [https://garage.maemo.org/ aqui] || Alguém || 2 ||  ||
-
+|| A2.13 || Instalar Latex e Kile || Todos || 1 ||  ||
+|| A2.14 || Configurar documento Latex e dar upload no svn || Alguém || 1 ||  ||
 
 
 [artefatos página de artefatos]
