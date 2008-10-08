@@ -5,9 +5,10 @@
 
 == US01 ==
 
-|| Estudos das ferramentas/linguagens necessárias para o ambiente de trabalho. Aqui deve-se estudar Python e PyUnit e PyEasyAccept para testes, framework QT para interface gráfica e estudar como fazer um pacote de instalação para Debian (.deb)||
+|| Estudos das ferramentas/linguagens necessárias para o ambiente de trabalho. Aqui deve-se estudar Python e PyUnit e PyEasyAccept para testes, framework QT para interface gráfica e estudar como fazer um pacote de instalação para Debian (.deb). Deve-se, também estudar conceitos de matemática financeira, bem como o funcionamento da HP12-C. ||
 || TA 1 - Cada integrante será responsável por estudar uma das novas tecnologias e como resultado apresentará um seminário para os demais membros da equipe. ||
 || TA 2 - Cada integrante da equipe deverá implementar uma calculadora de funções básicas (soma, subtração, multiplicação, divisão) completa (em python, interface em Qt, instalador .deb, tratamento de erros) para validar o estudo. Essa calculadora deve rodar no N800. ||
+|| TA 3 - Cada integrante deverá cumprir uma série de exercícios pré-selecionados para demonstrar o aprendizado na manipulacão da calculadora. ||
 || *Estimativa Inicial: 60 h*  ||
 
 == US02 ==
@@ -18,57 +19,58 @@
 
 == US03 ==
 
-|| Implementar o setor de entrada de dados, setor de limpeza. Aqui estamos considerando implementar interface, lógica e instalador. ||
+|| O usuário deve ser capaz de entrar valores na calculadora, determinando a formatação dos mesmos, bem como limpar os valores que ficarem armazenados em registradores. Essa US consiste em implementar o setor de entrada de dados, setor de limpeza. Aqui estamos considerando implementar interface, lógica e instalador. ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
 || *Estimativa Inicial: 60 h*  ||
 
 == US04 ==
-|| Implementar o setor de operações matemáticas básicas da HP-12c e CHS: +, -, ×, ÷ ||
+
+|| O usuário deve ser capaz de utilizar a calculadora como calculadora matemática. O mesmo deve poder realizar operações de soma, subtração, multiplicação e divisão. Essa US consiste em implementar o setor de operações matemáticas básicas da HP-12c e CHS: +, -, ×, ÷. ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
 || *Estimativa Inicial: 20 h*  ||
 
 == US05 ==
 
-|| Implementar a funções financeiras básicas (n, i, PV, PMT, FV). ||
+|| O usuário deve ser capaz de realizar um conjunto de operações financeiras de modo à determinar períodos de investimento, taxa de juros, valor presente, valor futuro e parcela de pagamento. Essa US consiste em implementar as funções financeiras básicas (n, i, PV, PMT, FV). ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
 || *Estimativa Inicial: 50 h*  ||
 
 == US06 ==
 
-|| Implementar funções financeiras: NPV, IRR. ||
+|| O usuário deve ser capaz de avaliar, além dos valores da US anterior para seus investimentos, os dados referentes ao valor presente líquido e a taxa interna de retorno do mesmo. Essa US consiste em implementar as funções financeiras: NPV, IRR. ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
 || *Estimativa Inicial: 20 h*  ||
 
 == US07 ==
 
-|| Implementar funções financeiras: AMORT, INT, RND. ||
+|| O usuário deve ser capaz de avaliar a amortização no pagamento de parcelas, os juros acumulados no período do investimento e arredondar valores calculados. Essa US consiste em implementar as funções financeiras: AMORT, INT, RND. ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
 || *Estimativa Inicial: 20 h*  ||
 
 
 == US08 ==
 
-|| Implementar funções financeiras: 12x, 12%, CFo, CFj, Nj. ||
+|| O usuário deve ser capaz de manipular fluxos de caixa na análise de seus investimentos. Essa US consiste em implementar as funções financeiras: 12x, 12%, CFo, CFj, Nj. ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
 || *Estimativa Inicial: 40 h*  ||
 
 
 == US09 ==
 
-|| Implementar setor de armazenamento de dados e a persistência ||
+|| O usuário deve ser capaz de recuperar os valores de sua última análise ao religar a calculadora. Essa US consiste em implementar o setor de armazenamento de dados e a persistência. ||
 || TA 1 - Garantir integridade dos dados salvos ||
 || *Estimativa Inicial: 20 h*  ||
 
 == US10 ==
 
-|| Implementar setor de potência, raiz, porcentagem e fatorial ||
+|| O usuário deve ser capaz de realizar operações matemáticas como potência (e^x, x^2, ln, y^x, x^1/2), operações com percentagem (variação percentual, percentual total, obtenção de percentuais) e ainda calcular fatoriais. Essa US consiste em implementar o setor de potência, raiz, porcentagem e fatorial. ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
 || *Estimativa Inicial: 20 h*  ||
 
 
 == US11 ==
 
-|| Implementar operações com datas ||
+|| O usuário deve ser capaz de manipular datas, em diferentes formatos, de modo a avaliar diferenças em datas, bem como obter datas. Essa US consiste em implementar as operações com datas. ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
 || *Estimativa Inicial: 30 h*  ||
 
