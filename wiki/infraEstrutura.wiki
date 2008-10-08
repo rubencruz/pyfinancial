@@ -12,7 +12,8 @@
 == Testes ==
 
 || Nome || Descrição || Download || Dicas ||
-|| *JUnit* || Testes de unidade ||  ||  ||
+|| *PyUnit* || Testes de unidade || http://pyunit.sourceforge.net/ ||  ||
+|| *PyEasyAccept* || Testes de Aceitação || http://www.pyeasyaccept.org/ ||  ||
 
 == Controle de Versões ==
 
