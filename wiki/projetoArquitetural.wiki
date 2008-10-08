@@ -3,7 +3,7 @@
 = Projeto Arquitetural =
 
 
-Link do documento do projeto Arquitetural: [http://pyfinancial.googlecode.com/files/Arquitetura.doc Projeto Arquitetural]
+Link do documento do projeto Arquitetural: [http://pyfinancial.googlecode.com/files/NovaArquitetura.doc Projeto Arquitetural]
 
 
 
