@@ -24,9 +24,7 @@ Veja descrição da US [userStories aqui]
 || A1.10 || Gerar calculadora de exemplo para N800 para validar estudos || Todos || 12 ||  ||
 || A1.11 || Estudar Latex e Kile || Todos || 4 ||  ||
 
-
-
-
+----
 === US02 ===
 
 Veja descrição da US [userStories aqui] 
