@@ -13,6 +13,17 @@ Veja descrição da US [userStories aqui]
 
 || Atividade || Descrição || Responsável || Estimativa de Tempo (h) || Tempo Real (h) ||
 || A1.1 || Avaliar uso de PyQt com Qt Designer [http://www.diotavelli.net/PyQtWiki/Creating_GUI_Applications_with_PyQt_and_Qt_Designer aqui] || Alguém || 4 ||  ||
+|| A1.2 || Estudar Python || Todos || 16 ||  ||
+|| A1.3 || Estudar PyUnit || Todos || 4 ||  ||
+|| A1.4 || Estudar PyEasyAccept || Todos || 4 ||  ||
+|| A1.5 || Estudar QT || Todos || 16 ||  ||
+|| A1.6 || Estudar PyQT || Todos || 8 ||  ||
+|| A1.7 || Estudar Qt Designer caso seja viável o uso no projeto || Todos || 12 ||  ||
+|| A1.8 || Estudar HP-12c e conceitos de matemática financeira || Todos || 8 ||  ||
+|| A1.9 || Estudar como fazer um .deb || Alguém || 3 ||  ||
+|| A1.10 || Gerar calculadora de exemplo para N800 para validar estudos || Todos || 12 ||  ||
+
+
 
 
 === US02 ===
