@@ -4,8 +4,8 @@
 Seguem abaixo os links para os vários artefatos gerados no decorrer do projeto:
 
  * [http://code.google.com/p/pyfinancial/wiki/artefatos/userStories User Stories]
- * [http://code.google.com/p/pyfinancial/wiki/artefatos/projetoArquitetural Projeto Arquitetural]
  * [http://code.google.com/p/pyfinancial/wiki/artefatos/reqNaoFuncionais Requisitos Não-funcionais]
+ * [http://code.google.com/p/pyfinancial/wiki/artefatos/projetoArquitetural Projeto Arquitetural]
  * [http://code.google.com/p/pyfinancial/wiki/artefatos/planoReleases Plano de Releases]
  * [http://code.google.com/p/pyfinancial/wiki/artefatos/planoIteracoes Plano de Iterações]
  * [http://pyfinancial.googlecode.com/files/BigChartEverton2.xls Big-Chart]
@@ -14,4 +14,4 @@ Seguem abaixo os links para os vários artefatos gerados no decorrer do projeto:
 
 
 
-[index página inicial]
+[index Página Inicial]
