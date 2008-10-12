@@ -1,4 +1,4 @@
-= Descrição =
+= Descrição do Projeto =
 
 O mundo hoje gira em torno dos negócios. Nunca se foi tão necessário saber a respeito de matemática financeira e fazer contas, em muitos casos até simples, para se projetar um pouco do futuro do seu dinheiro. Não por menos muitos são os emuladores para Desktops disponíveis para as várias versões de calculadoras (como a HP12-C Classic, Platinum, etc.), e agora comeca-se a se enveredar no mundo dos dispositivos móveis.
 
@@ -10,5 +10,12 @@ O projeto pode ser dividido em duas focos:
  # Criar uma calculadora financeira, que fará uso da gama de funções presentes em nossa biblioteca, para a plataforma Maemo da Nokia.
 
 Outro aspecto inovador de nosso projeto é o uso do Framework QT (http://trolltech.com/products/qt/) para implementar a interface gráfica da calculadora.
+
+
+= Processo de Desenvolvimento =
+
+Como parte das disciplinas de Projeto I e Projeto II, estaremos utilizando o processo [http://www.dsc.ufcg.edu.br/~jacques/cursos/2002.2/projii/xp1/xp1.html XP1] para o desenvolvimento do aplicativo em questão. 
+
+O processo [http://www.dsc.ufcg.edu.br/~jacques/cursos/2002.2/projii/xp1/xp1.html XP1] é baseado no processo [http://www.extremeprogramming.org/ XP], porém procurando ser mais simples do que este no intuito ampliar as chances de sucesso de quem venha a aplicá-lo, porém ser deixar de considerar questões essenciais que devem estar presentes em qualquer processo de desenvolvimento. O cerne do processo consiste na existência de três papéis: cliente, desenvolvedor e gerente de projeto. Cada um desses papéis têm suas obrigações bem definidas, bem como quando as mesmas deverão ser executadas. Outro ponto importante a ser considerado é a proximidade que se busca com o cliente de modo a ampliar as chances de que o resultado final obtido esteja mais próximo do desejado pelo mesmo.
 
 [index Página Inicial]
