@@ -47,4 +47,4 @@ Veja descrição da US [userStories aqui]
 || A2.14 || Configurar documento Latex e dar upload no svn || Everton || 1 ||  ||
 
 
-[artefatos página de Artefatos]
+[artefatos Artefatos]
