@@ -13,7 +13,7 @@ Abaixo seguem os links para os arquivos contendo o planejamento de cada iteraç�
 Veja descrição da US [userStories aqui] 
 
 || Atividade || Descrição || Responsável || Estimativa de Tempo (h) || Tempo Real (h) ||
-|| A1.1 || Avaliar uso de PyQt com Qt Designer [http://www.diotavelli.net/PyQtWiki/Creating_GUI_Applications_with_PyQt_and_Qt_Designer aqui] || Alguém || 4 ||  ||
+|| A1.1 || Avaliar uso de PyQt com Qt Designer [http://www.diotavelli.net/PyQtWiki/Creating_GUI_Applications_with_PyQt_and_Qt_Designer aqui] || David || 4 ||  ||
 || A1.2 || Estudar Python || Todos || 16 ||  ||
 || A1.3 || Estudar PyUnit || Todos || 4 ||  ||
 || A1.4 || Estudar PyEasyAccept || Todos || 4 ||  ||
@@ -21,7 +21,7 @@ Veja descrição da US [userStories aqui]
 || A1.6 || Estudar PyQT || Todos || 8 ||  ||
 || A1.7 || Estudar Qt Designer caso seja viável o uso no projeto || Todos || 12 ||  ||
 || A1.8 || Estudar HP-12c e conceitos de matemática financeira || Todos || 8 ||  ||
-|| A1.9 || Estudar como fazer um .deb || Alguém || 3 ||  ||
+|| A1.9 || Estudar como fazer um .deb || Everton || 3 ||  ||
 || A1.10 || Gerar calculadora de exemplo para N800 para validar estudos || Todos || 12 ||  ||
 || A1.11 || Estudar Latex e Kile || Todos || 4 ||  ||
 
@@ -41,10 +41,10 @@ Veja descrição da US [userStories aqui]
 || A2.8 || Instalar SO Diablo 4.1 no N800 [http://maemo.org/development/sdks/maemo-4-1-diablo-sdk/ aqui] [http://fosswire.com/2007/12/30/n800-users-flash-to-os2008/ aqui] || Felipe || 3 || 2 ||
 || A2.9 || Instalar Qt4 no N800 [http://qt4.garage.maemo.org/ aqui] || Felipe || 2 || 0,5 ||
 || A2.10 || Instalar PyQt no N800 [http://pyqt.garage.maemo.org/ aqui] || Felipe || 2 || 0,5 ||
-|| A2.11 || Criar e configurar (inclui PyUnit, PyEasyAccept, etc) projeto da biblioteca financeira no svn do google || Alguém || 2 ||  ||
-|| A2.12 || Criar e configurar (inclui PyUnit, PyEasyAccept, etc) projeto da calculadora financeira no svn do garrage (lincença BSD??? [http://pt.wikipedia.org/wiki/Licen%C3%A7as_BSD_e_GPL aqui]) [https://garage.maemo.org/ aqui] || Alguém || 2 ||  ||
+|| A2.11 || Criar e configurar (inclui PyUnit, PyEasyAccept, etc) projeto da biblioteca financeira no svn do google || Diego || 2 ||  ||
+|| A2.12 || Criar e configurar (inclui PyUnit, PyEasyAccept, etc) projeto da calculadora financeira no svn do garrage (lincença BSD??? [http://pt.wikipedia.org/wiki/Licen%C3%A7as_BSD_e_GPL aqui]) [https://garage.maemo.org/ aqui] || Diego || 2 ||  ||
 || A2.13 || Instalar Latex e Kile || Todos || 1 ||  ||
-|| A2.14 || Configurar documento Latex e dar upload no svn || Alguém || 1 ||  ||
+|| A2.14 || Configurar documento Latex e dar upload no svn || Everton || 1 ||  ||
 
 
-[artefatos página de artefatos]
+[artefatos página de Artefatos]
