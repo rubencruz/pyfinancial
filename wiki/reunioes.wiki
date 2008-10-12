@@ -7,7 +7,7 @@ Criamos mais documentos necessários para o planejamento.
 
 === Reunião 1 - 24/09/2008 (Reunião de planejamento)===
 
-Atividades Iniciais definidas: Estudar HP-12c, configurar Ubuntu, estudar requisitos não-funcionais, definir User Stories.
+Atividades iniciais definidas: Estudar HP-12c, configurar Ubuntu, estudar requisitos não-funcionais, definir User Stories.
 
 
 [http://code.google.com/p/pyfinancial/wiki/index Página Inicial]
