@@ -60,4 +60,4 @@
 || *Estimativa Inicial: 20 h*  ||
 
 
-[http://code.google.com/p/pyfinancial/wiki/artefatos artefatos]
+[http://code.google.com/p/pyfinancial/wiki/artefatos Artefatos]
