@@ -5,21 +5,21 @@
 
 == US01 ==
 
-|| Estudos das ferramentas/linguagens necessárias para o ambiente de trabalho. Aqui deve-se estudar Python e PyUnit e PyEasyAccept para testes, framework QT para interface gráfica e estudar como fazer um pacote de instalação para Debian (.deb). Deve-se, também estudar conceitos de matemática financeira, bem como o funcionamento da HP12-C. ||
+|| Estudos das ferramentas/linguagens necessárias para o ambiente de trabalho. Aqui deve-se estudar Python, PyUnit e PyEasyAccept para testes, framework QT para interface gráfica e estudar como gerar um pacote de instalação para Debian (.deb). Deve-se, também estudar conceitos de matemática financeira, bem como o funcionamento da HP12-C. ||
 || TA 1 - Cada integrante será responsável por estudar uma das novas tecnologias e como resultado apresentará um seminário para os demais membros da equipe. ||
-|| TA 2 - Cada integrante da equipe deverá implementar uma calculadora de funções básicas (soma, subtração, multiplicação, divisão) completa (em python, interface em Qt, instalador .deb, tratamento de erros) para validar o estudo. Essa calculadora deve rodar no N800. ||
+|| TA 2 - Cada integrante da equipe deverá implementar uma calculadora de funções básicas (soma, subtração, multiplicação, divisão) utilizando as tecnologias a serem empregadas ( python, interface em Qt, instalador .deb, tratamento de erros) para validar o estudo. Essa calculadora deve rodar no N800. ||
 || TA 3 - Cada integrante deverá cumprir uma série de exercícios pré-selecionados para demonstrar o aprendizado na manipulacão da calculadora. ||
 || *Estimativa Inicial: 60 h*  ||
 
 == US02 ==
 
-|| Configuração do ambiente de trabalho. Aqui deve-se configurar: sistema operacional Ubuntu, IDE Eclipse, plugin PyDev, frameworks PyUnit e PyEasyAccept para testes, framework QT para interface gráfica, bind de Qt para Python, Scratchbox e Qt Designer (avaliando a ferramenta). Além disso deve-se verificar alguma eventual configuração para o N800. ||
+|| Configuração do ambiente de trabalho. Aqui deve-se configurar: sistema operacional Ubuntu, IDE Eclipse, plugin PyDev, frameworks PyUnit e PyEasyAccept para testes, framework QT para interface gráfica, bind de Qt para Python, Scratchbox e Qt Designer (aqui será realizada uma avaliação da ferramenta de modo a verificar a compatibilidade da mesma com o PyQt). Além disso deve-se realizar as configurações necessárias no N800 como Python, Maemo Diablo, QT, etc. ||
 || *Estimativa Inicial: 43 h*  ||
 
 
 == US03 ==
 
-|| O usuário deve ser capaz de entrar valores na calculadora, determinando a formatação dos mesmos, bem como limpar os valores que ficarem armazenados em registradores. Essa US consiste em implementar o setor de entrada de dados, setor de limpeza. Aqui estamos considerando implementar interface, lógica e instalador. ||
+|| O usuário deve ser capaz de entrar valores na calculadora, determinando a formatação dos mesmos, bem como limpar os valores que ficarem armazenados em registradores. Essa US consiste em implementar o setor de entrada de dados e setor de limpeza. Aqui estamos considerando implementar interface, lógica e instalador. ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
 || *Estimativa Inicial: 60 h*  ||
 
@@ -60,19 +60,6 @@
 || O usuário deve ser capaz de recuperar os valores de sua última análise ao religar a calculadora. Essa US consiste em implementar o setor de armazenamento de dados e a persistência. ||
 || TA 1 - Garantir integridade dos dados salvos ||
 || *Estimativa Inicial: 20 h*  ||
-
-== US10 ==
-
-|| O usuário deve ser capaz de realizar operações matemáticas como potência (e^x, x^2, ln, y^x, x^1/2), operações com percentagem (variação percentual, percentual total, obtenção de percentuais) e ainda calcular fatoriais. Essa US consiste em implementar o setor de potência, raiz, porcentagem e fatorial. ||
-|| TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
-|| *Estimativa Inicial: 20 h*  ||
-
-
-== US11 ==
-
-|| O usuário deve ser capaz de manipular datas, em diferentes formatos, de modo a avaliar diferenças em datas, bem como obter datas. Essa US consiste em implementar as operações com datas. ||
-|| TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
-|| *Estimativa Inicial: 30 h*  ||
 
 
 [http://code.google.com/p/pyfinancial/wiki/artefatos artefatos]
