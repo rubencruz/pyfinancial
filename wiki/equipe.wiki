@@ -12,9 +12,9 @@ Quarta Feira,  16:00 - 18:00
 
 = Reuniões =
 
-Reunião com Cliente:               Quinta, 14:00 - 15:00
+Reunião com Cliente:               Quinta, 14:00 - 15:00   Local: Embedded
 
-Reunião de Acompanhamento:         Quinta, 15:00 - 16:00
+Reunião de Acompanhamento:         Quinta, 15:00 - 16:00   Local: Embedded 
 
 
 = Definição de papéis =
@@ -36,7 +36,7 @@ O conjunto de papéis assumidos a cada Release está descrito abaixo:
 
 
 
-= Etapa de Planejamento e Release 1 =
+= Etapa de Planejamento e Release 1 (01/10/2008 - 24/11/08) =
 
 || *Nome* || *Papel* ||
 || David Candeia || Desenvolvedor - Testador ||
@@ -45,7 +45,7 @@ O conjunto de papéis assumidos a cada Release está descrito abaixo:
 || Diego Dantas || Desenvolvedor - Testador||
 
 
-= Release 2 =
+= Release 2 (25/11/08 - 22/12/2008) =
 
 || *Nome* || *Papel* ||
 || Felipe Leal Coutinho || Desenvolvedor - Testador ||
