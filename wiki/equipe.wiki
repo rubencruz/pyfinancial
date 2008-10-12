@@ -12,9 +12,9 @@ Quarta Feira,  16:00 - 18:00
 
 = Reuniões =
 
-Reunião com Cliente:               Quinta, 14:00 - 16:00
+Reunião com Cliente:               Quinta, 14:00 - 15:00
 
-Reunião de Acompanhamento:         Terça, 10:00 - 12:00
+Reunião de Acompanhamento:         Quinta, 15:00 - 16:00
 
 
 = Definição de papéis =
@@ -32,7 +32,7 @@ Durante todo o desenvolvimento do projeto os papéis estarão distribuídos da s
 
 
 
-O conjunto de papéis assumidos a cada Release segue descrito abaixo:
+O conjunto de papéis assumidos a cada Release está descrito abaixo:
 
 
 
