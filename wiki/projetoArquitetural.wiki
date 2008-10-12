@@ -1,9 +1,7 @@
-#summary One-sentence summary of this page.
-
 = Projeto Arquitetural =
 
 
-Link do documento do projeto Arquitetural: [http://pyfinancial.googlecode.com/files/NovaArquitetura.doc Projeto Arquitetural]
+Link do documento do projeto Arquitetural: [http://pyfinancial.googlecode.com/files/Arquitetura2.doc Projeto Arquitetural]
 
 
 
@@ -12,4 +10,4 @@ Link do documento do projeto Arquitetural: [http://pyfinancial.googlecode.com/fi
 
 
 
-[artefatos Página de Artefatos]
+[artefatos Artefatos]
