@@ -39,18 +39,18 @@ Veja descrição da US [userStories aqui]
 Veja descrição da US [userStories aqui] 
 
 || Atividade || Descrição || Responsável || Estimativa de Tempo (h) || Tempo Real (h) ||
-|| A1 || Avaliar uso de PyQt com Qt Designer [http://www.diotavelli.net/PyQtWiki/Creating_GUI_Applications_with_PyQt_and_Qt_Designer aqui] || David || 4 ||  ||
-|| A2 || Estudar Python || Todos || 16 ||  ||
-|| A3 || Estudar PyUnit ^1^ || David || 3 ||  ||
-|| A4 || Estudar PyEasyAccept ^1^ || Everton || 3 ||  ||
-|| A5 || Estudar QT || Todos || 8 ||  ||
-|| A6 || Estudar PyQT || Todos || 16 ||  ||
-|| A7 || Estudar Qt Designer caso seja viável o uso no projeto || Todos || 8 ||  ||
-|| A8 || Estudar HP-12c e conceitos de matemática financeira || Todos || 8 ||  ||
-|| A9 || Estudar como fazer um .deb [http://home.cfl.rr.com/genecash/nokia/making_packages.html aqui] || Everton || 3 ||  ||
-|| A10 || Gerar calculadora de exemplo para N800 para validar estudos || Todos || 12 ||  ||
-|| A11 || Estudar Latex e Kile || Todos || 4 ||  ||
-|| A12 || Estudar Arquitetura Maemo e Scratchbox ^1^ || Felipe || 3 ||  ||
+|| A1 || Estudar Arquitetura Maemo e Scratchbox ^1^ || Felipe || 3 ||  ||
+|| A2 || Estudar como fazer um .deb [http://home.cfl.rr.com/genecash/nokia/making_packages.html aqui] || Everton || 3 ||  ||
+|| A3 || Estudar Python || Todos || 16 ||  ||
+|| A4 || Estudar PyUnit ^1^ || David || 3 ||  ||
+|| A5 || Estudar PyEasyAccept ^1^ || Everton || 3 ||  ||
+|| A6 || Estudar QT || Todos || 8 ||  ||
+|| A7 || Estudar PyQT || Todos || 16 ||  ||
+|| A8 || Avaliar uso de PyQt com Qt Designer [http://www.diotavelli.net/PyQtWiki/Creating_GUI_Applications_with_PyQt_and_Qt_Designer aqui] || David || 4 ||  ||
+|| A9 || Estudar Qt Designer caso seja viável o uso no projeto || Todos || 8 ||  ||
+|| A10 || Estudar HP-12c e conceitos de matemática financeira || Todos || 8 ||  ||
+|| A11 || Gerar calculadora de exemplo para N800 para validar estudos || Todos || 12 ||  ||
+|| A12 || Estudar Latex e Kile || Todos || 4 ||  ||
 
 ^1^ Uma pessoa será encarregada de estudar e criar uma apresentação para ensinar aos outros. O tempo estimado para a atividade inclui o tempo de estudo, criação da apresentação e aula.
 
