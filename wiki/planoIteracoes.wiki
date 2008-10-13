@@ -41,17 +41,17 @@ Veja descrição da US [userStories aqui]
 || Atividade || Descrição || Responsável || Estimativa de Tempo (h) || Tempo Real (h) ||
 || A1 || Avaliar uso de PyQt com Qt Designer [http://www.diotavelli.net/PyQtWiki/Creating_GUI_Applications_with_PyQt_and_Qt_Designer aqui] || David || 4 ||  ||
 || A2 || Estudar Python || Todos || 16 ||  ||
-|| A3 || Estudar PyUnit (*) || David || 3 ||  ||
-|| A4 || Estudar PyEasyAccept (*) || Everton || 3 ||  ||
+|| A3 || Estudar PyUnit ^1^ || David || 3 ||  ||
+|| A4 || Estudar PyEasyAccept ^1^ || Everton || 3 ||  ||
 || A5 || Estudar QT || Todos || 8 ||  ||
 || A6 || Estudar PyQT || Todos || 16 ||  ||
-|| A7 || Estudar Qt Designer caso seja viável o uso no projeto * || Todos || 8 ||  ||
+|| A7 || Estudar Qt Designer caso seja viável o uso no projeto ^1^ || Todos || 8 ||  ||
 || A8 || Estudar HP-12c e conceitos de matemática financeira || Todos || 8 ||  ||
 || A9 || Estudar como fazer um .deb || Everton || 3 ||  ||
 || A10 || Gerar calculadora de exemplo para N800 para validar estudos || Todos || 12 ||  ||
 || A11 || Estudar Latex e Kile || Todos || 4 ||  ||
-|| A12 || Estudar Arquitetura Maemo * || Felipe || 3 ||  ||
+|| A12 || Estudar Arquitetura Maemo e Scratchbox ^1^ || Felipe || 3 ||  ||
 
-1. Uma pessoa será encarregada de estudar e criar uma apresentação para ensinar aos outros. O tempo estimado para a atividade inclui o tempo de estudo, criação da apresentação e aula.
+^1^ Uma pessoa será encarregada de estudar e criar uma apresentação para ensinar aos outros. O tempo estimado para a atividade inclui o tempo de estudo, criação da apresentação e aula.
 
 [artefatos Artefatos]
