@@ -2,7 +2,7 @@
 
 == Gerência ==
 
-|| *Xplanner* || [http://seulunga.lcc.ufcg.edu.br:8080/xplanner/do/view/project?oid=5325] ||
+|| *Xplanner* || [http://] ||
 
 == Desenvolvimento ==
 
