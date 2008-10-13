@@ -7,6 +7,8 @@ Abaixo seguem os links para os arquivos contendo o planejamento de cada iteraç�
 
 == Iteração 1 == 
 
+
+
 ----
 === US01 ===
 
@@ -27,6 +29,8 @@ Veja descrição da US [userStories aqui]
 || A12 || Criar e configurar (inclui PyUnit, PyEasyAccept, etc) projeto da calculadora financeira no svn do garrage (lincença BSD??? [http://pt.wikipedia.org/wiki/Licen%C3%A7as_BSD_e_GPL aqui]) [https://garage.maemo.org/ aqui] || Diego || 2 ||  ||
 || A13 || Instalar Latex e Kile || Todos || 1 ||  ||
 || A14 || Configurar documento Latex e dar upload no svn || Everton || 1 ||  ||
+
+
 ----
 === US02 ===
 
