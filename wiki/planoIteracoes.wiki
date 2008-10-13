@@ -18,17 +18,19 @@ Veja descrição da US [userStories aqui]
 || A1 || Instalar Eclipse || Todos || 1 ||  ||
 || A2 || Instalar PyDev [http://pydev.sourceforge.net/ aqui] || Todos || 1 ||  ||
 || A3 || Instalar Subclipse [http://subclipse.tigris.org/ aqui] || Todos || 1 ||  ||
-|| A4 || Compilar e instalar Qt 4.4.1 no Linux [ftp://ftp.trolltech.no/qt/source/qt-x11-opensource-src-4.4.1.tar.gz aqui] || Todos || 9 ||  ||
+|| A4 || Compilar e instalar Qt 4.4.1 no Linux [ftp://ftp.trolltech.no/qt/source/qt-x11-opensource-src-4.4.1.tar.gz aqui] || Todos || 8 ||  ||
 || A5 || Instalar PyQt [http://wiki.python.org/moin/PyQt4 aqui] || Todos || 2 ||  ||
 || A6 || Instalar SDK + Scratchbox + Xephyr [http://maemo.org/development/sdks/maemo-4-1-diablo-sdk/ aqui] [http://tablets-dev.nokia.com/4.1/INSTALL.txt aqui] || Todos || 8 ||  ||
-|| A7 || Instalar Qt Designer [http://trolltech.com/products/appdev/developer-tools/developer-tools?currentflipperobject=73543fa58dda72c632a376b97104ff78 aqui] || Todos || 8 ||  ||
+|| A7 || Instalar Qt Designer [http://trolltech.com/products/appdev/developer-tools/developer-tools?currentflipperobject=73543fa58dda72c632a376b97104ff78 aqui] || Todos || 4 ||  ||
 || A8 || Instalar SO Diablo 4.1 no N800 [http://maemo.org/development/sdks/maemo-4-1-diablo-sdk/ aqui] [http://fosswire.com/2007/12/30/n800-users-flash-to-os2008/ aqui] || Felipe || 3 || 2 ||
 || A9 || Instalar Qt4 no N800 [http://qt4.garage.maemo.org/ aqui] || Felipe || 2 || 0,5 ||
 || A10 || Instalar PyQt no N800 [http://pyqt.garage.maemo.org/ aqui] || Felipe || 2 || 0,5 ||
 || A11 || Criar e configurar (inclui PyUnit, PyEasyAccept, etc) projeto da biblioteca financeira no svn do google || Diego || 2 ||  ||
-|| A12 || Criar e configurar (inclui PyUnit, PyEasyAccept, etc) projeto da calculadora financeira no svn do garrage (lincença BSD??? [http://pt.wikipedia.org/wiki/Licen%C3%A7as_BSD_e_GPL aqui]) [https://garage.maemo.org/ aqui] || Diego || 2 ||  ||
+|| A12 || Criar e configurar (inclui PyUnit, PyEasyAccept, etc) projeto da calculadora financeira no svn do garrage (lincença BSD) [https://garage.maemo.org/ aqui] || Diego || 2 ||  ||
 || A13 || Instalar Latex e Kile || Todos || 1 ||  ||
-|| A14 || Configurar documento Latex e dar upload no svn || Everton || 1 ||  ||
+|| A14 || Configurar documento Latex e dar upload no svn (formatação SBC) || Everton || 1 ||  ||
+|| A15 || Configurar Scratchbox (Qt4 e PyQt) || Todos || 4 ||  ||
+
 
 
 ----
@@ -39,16 +41,17 @@ Veja descrição da US [userStories aqui]
 || Atividade || Descrição || Responsável || Estimativa de Tempo (h) || Tempo Real (h) ||
 || A1 || Avaliar uso de PyQt com Qt Designer [http://www.diotavelli.net/PyQtWiki/Creating_GUI_Applications_with_PyQt_and_Qt_Designer aqui] || David || 4 ||  ||
 || A2 || Estudar Python || Todos || 16 ||  ||
-|| A3 || Estudar PyUnit || Todos || 4 ||  ||
-|| A4 || Estudar PyEasyAccept || Todos || 4 ||  ||
-|| A5 || Estudar QT || Todos || 16 ||  ||
-|| A6 || Estudar PyQT || Todos || 8 ||  ||
-|| A7 || Estudar Qt Designer caso seja viável o uso no projeto || Todos || 12 ||  ||
+|| A3 || Estudar PyUnit (*) || David || 3 ||  ||
+|| A4 || Estudar PyEasyAccept (*) || Everton || 3 ||  ||
+|| A5 || Estudar QT || Todos || 8 ||  ||
+|| A6 || Estudar PyQT || Todos || 16 ||  ||
+|| A7 || Estudar Qt Designer caso seja viável o uso no projeto * || Todos || 8 ||  ||
 || A8 || Estudar HP-12c e conceitos de matemática financeira || Todos || 8 ||  ||
 || A9 || Estudar como fazer um .deb || Everton || 3 ||  ||
 || A10 || Gerar calculadora de exemplo para N800 para validar estudos || Todos || 12 ||  ||
 || A11 || Estudar Latex e Kile || Todos || 4 ||  ||
+|| A12 || Estudar Arquitetura Maemo * || Felipe || 3 ||  ||
 
-
+1. Uma pessoa será encarregada de estudar e criar uma apresentação para ensinar aos outros. O tempo estimado para a atividade inclui o tempo de estudo, criação da apresentação e aula.
 
 [artefatos Artefatos]
