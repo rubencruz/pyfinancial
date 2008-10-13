@@ -13,7 +13,7 @@
 || TA 1 - Cada integrante será responsável por estudar uma das novas tecnologias e como resultado apresentará um seminário para os demais membros da equipe. ||
 || TA 2 - Cada integrante da equipe deverá implementar uma calculadora de funções básicas (soma, subtração, multiplicação, divisão) utilizando as tecnologias a serem empregadas ( python, interface em Qt, instalador .deb, tratamento de erros) para validar o estudo. Essa calculadora deve rodar no N800. ||
 || TA 3 - Cada integrante deverá cumprir uma série de exercícios pré-selecionados para demonstrar o aprendizado na manipulacão da calculadora. ||
-|| *Estimativa Inicial: 60 h*  ||
+|| *Estimativa Inicial: 88 h*  ||
 
 
 == US03 ==
