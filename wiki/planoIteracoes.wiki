@@ -45,7 +45,7 @@ Veja descrição da US [userStories aqui]
 || A4 || Estudar PyEasyAccept ^1^ || Everton || 3 ||  ||
 || A5 || Estudar QT || Todos || 8 ||  ||
 || A6 || Estudar PyQT || Todos || 16 ||  ||
-|| A7 || Estudar Qt Designer caso seja viável o uso no projeto ^1^ || Todos || 8 ||  ||
+|| A7 || Estudar Qt Designer caso seja viável o uso no projeto || Todos || 8 ||  ||
 || A8 || Estudar HP-12c e conceitos de matemática financeira || Todos || 8 ||  ||
 || A9 || Estudar como fazer um .deb || Everton || 3 ||  ||
 || A10 || Gerar calculadora de exemplo para N800 para validar estudos || Todos || 12 ||  ||
