@@ -3,16 +3,17 @@
 
 == US01 ==
 
+|| Configuração do ambiente de trabalho. Aqui deve-se configurar: sistema operacional Ubuntu, IDE Eclipse, plugin PyDev, frameworks PyUnit e PyEasyAccept para testes, framework QT para interface gráfica, bind de Qt para Python, Scratchbox e Qt Designer (aqui será realizada uma avaliação da ferramenta de modo a verificar a compatibilidade da mesma com o PyQt). Além disso deve-se realizar as configurações necessárias no N800 como Python, Maemo Diablo, QT, etc. ||
+|| *Estimativa Inicial: 43 h*  ||
+
+
+== US02 ==
+
 || Estudos das ferramentas/linguagens necessárias para o ambiente de trabalho. Aqui deve-se estudar Python, PyUnit e PyEasyAccept para testes, framework QT para interface gráfica e estudar como gerar um pacote de instalação para Debian (.deb). Deve-se, também estudar conceitos de matemática financeira, bem como o funcionamento da HP12-C. ||
 || TA 1 - Cada integrante será responsável por estudar uma das novas tecnologias e como resultado apresentará um seminário para os demais membros da equipe. ||
 || TA 2 - Cada integrante da equipe deverá implementar uma calculadora de funções básicas (soma, subtração, multiplicação, divisão) utilizando as tecnologias a serem empregadas ( python, interface em Qt, instalador .deb, tratamento de erros) para validar o estudo. Essa calculadora deve rodar no N800. ||
 || TA 3 - Cada integrante deverá cumprir uma série de exercícios pré-selecionados para demonstrar o aprendizado na manipulacão da calculadora. ||
 || *Estimativa Inicial: 60 h*  ||
-
-== US02 ==
-
-|| Configuração do ambiente de trabalho. Aqui deve-se configurar: sistema operacional Ubuntu, IDE Eclipse, plugin PyDev, frameworks PyUnit e PyEasyAccept para testes, framework QT para interface gráfica, bind de Qt para Python, Scratchbox e Qt Designer (aqui será realizada uma avaliação da ferramenta de modo a verificar a compatibilidade da mesma com o PyQt). Além disso deve-se realizar as configurações necessárias no N800 como Python, Maemo Diablo, QT, etc. ||
-|| *Estimativa Inicial: 43 h*  ||
 
 
 == US03 ==
