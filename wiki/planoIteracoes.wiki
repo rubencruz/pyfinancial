@@ -16,7 +16,7 @@ Veja descrição da US [userStories aqui]
 
 || Atividade || Descrição || Responsável || Estimativa de Tempo (h) || Tempo Real (h) ||
 || A1 || Instalar Eclipse || Todos || 1 ||  ||
-|| A2 || Instalar PyDev [http://pydev.sourceforge.net/ aqui] || Todos || 1 ||  ||
+|| A2 || Instalar PyDev [http://pydev.sourceforge.net/ aqui] OBS: Na instalação do extensions pode ser preciso ir em Manage Sites e ativar o site do Extensions se depois de adicioná-lo ele não aparecer na lista. || Todos || 1 ||  ||
 || A3 || Instalar Subclipse [http://subclipse.tigris.org/ aqui] || Todos || 1 ||  ||
 || A4 || Instalar Latex e Kile || Todos || 1 ||  ||
 || A5 || Compilar e instalar Qt 4.4.1 no Linux [ftp://ftp.trolltech.no/qt/source/qt-x11-opensource-src-4.4.1.tar.gz aqui] || Todos || 8 ||  ||
