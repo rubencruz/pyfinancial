@@ -38,7 +38,7 @@ Veja descrição da US [userStories aqui]
 || A2 || Instalar PyDev [http://pydev.sourceforge.net/ aqui] OBS: Na instalação do extensions pode ser preciso ir em Manage Sites e ativar o site do Extensions se depois de adicioná-lo ele não aparecer na lista. || Todos || 1 ||  ||
 || A3 || Instalar Subclipse [http://subclipse.tigris.org/ aqui] OBS: Instalar o [http://www.eclipse.org/downloads/download.php?file=/modeling/emf/emf/downloads/drops/2.4.1/R200808251517/emf-sdo-xsd-SDK-2.4.1.zip EMF] caso seja necessário || Todos || 1 ||  ||
 || A4 || Instalar Latex e Kile || Todos || 1 ||  ||
-|| A5 || Compilar e instalar Qt 4.4.1 no Linux [ftp://ftp.trolltech.no/qt/source/qt-x11-opensource-src-4.4.1.tar.gz aqui] || Todos || 8 ||  ||
+|| A5 || Instalar Qt 4 no Linux [http://flaviofabricio.blogspot.com/2008/08/tutorial-programando-para-qt-usando.html aqui] || Todos || 8 ||  ||
 || A6 || Instalar PyQt [http://wiki.python.org/moin/PyQt4 aqui] || Todos || 2 ||  ||
 || A7 || Instalar Qt Designer [http://trolltech.com/products/appdev/developer-tools/developer-tools?currentflipperobject=73543fa58dda72c632a376b97104ff78 aqui] || Todos || 4 ||  ||
 || A8 || Instalar SDK + Scratchbox + Xephyr [http://maemo.org/development/sdks/maemo-4-1-diablo-sdk/ aqui] [http://tablets-dev.nokia.com/4.1/INSTALL.txt aqui] || Todos || 8 ||  ||
