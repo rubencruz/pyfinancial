@@ -34,12 +34,12 @@ Veja descrição da US [userStories aqui]
 Veja descrição da US [userStories aqui] 
 
 || Atividade || Descrição || Responsável || Estimativa de Tempo (h) || Tempo Real (h) ||
-|| A1 || Instalar Eclipse || Todos || 1 ||  ||
-|| A2 || Instalar PyDev [http://pydev.sourceforge.net/ aqui] OBS: Na instalação do extensions pode ser preciso ir em Manage Sites e ativar o site do Extensions se depois de adicioná-lo ele não aparecer na lista. || Todos || 1 ||  ||
-|| A3 || Instalar Subclipse [http://subclipse.tigris.org/ aqui] OBS: Instalar o [http://www.eclipse.org/downloads/download.php?file=/modeling/emf/emf/downloads/drops/2.4.1/R200808251517/emf-sdo-xsd-SDK-2.4.1.zip EMF] caso seja necessário || Todos || 1 ||  ||
-|| A4 || Instalar Latex e Kile || Todos || 1 ||  ||
+|| A1 || Instalar Eclipse || Todos || 1 || 0,5(David) ||
+|| A2 || Instalar PyDev [http://pydev.sourceforge.net/ aqui] OBS: Na instalação do extensions pode ser preciso ir em Manage Sites e ativar o site do Extensions se depois de adicioná-lo ele não aparecer na lista. || Todos || 1 || 0,3(David) ||
+|| A3 || Instalar Subclipse [http://subclipse.tigris.org/ aqui] OBS: Instalar o [http://www.eclipse.org/downloads/download.php?file=/modeling/emf/emf/downloads/drops/2.4.1/R200808251517/emf-sdo-xsd-SDK-2.4.1.zip EMF] caso seja necessário || Todos || 1 || 0,2(David) ||
+|| A4 || Instalar Latex e Kile || Todos || 1 || 0,2(David) ||
 || A5 || Instalar Qt 4 no Linux [http://flaviofabricio.blogspot.com/2008/08/tutorial-programando-para-qt-usando.html aqui] || Todos || 8 ||  ||
-|| A6 || Instalar PyQt [http://wiki.python.org/moin/PyQt4 aqui] || Todos || 2 ||  ||
+|| A6 || Instalar PyQt [http://wiki.python.org/moin/PyQt4 aqui] || Todos || 2 ||  0,5(David) ||
 || A7 || Instalar Qt Designer [http://flaviofabricio.blogspot.com/2008/08/tutorial-programando-para-qt-usando.html aqui] || Todos || 4 ||  ||
 || A8 || Instalar SDK + Scratchbox + Xephyr [http://maemo.org/development/sdks/maemo-4-1-diablo-sdk/ aqui] [http://tablets-dev.nokia.com/4.1/INSTALL.txt aqui] || Todos || 8 ||  ||
 || A9 || Configurar Scratchbox (Qt4 e PyQt) [http://qt4.garage.maemo.org/ aqui] [http://pyqt.garage.maemo.org/ aqui] || Todos || 4 ||  ||
