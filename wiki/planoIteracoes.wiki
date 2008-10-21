@@ -46,9 +46,9 @@ Veja descrição da US [userStories aqui]
 || A10 || Criar e configurar (inclui PyUnit, PyEasyAccept, etc) projeto da biblioteca financeira no svn do google || Diego || 2 ||  ||
 || A11 || Criar e configurar (inclui PyUnit, PyEasyAccept, etc) projeto da calculadora financeira no svn do garrage (lincença BSD) [https://garage.maemo.org/ aqui] || Diego || 2 ||  ||
 || A12 || Configurar documento Latex e dar upload no svn (formatação SBC) || Everton || 1 ||  ||
-|| A13 || Instalar SO Diablo 4.1 no N800 [http://maemo.org/development/sdks/maemo-4-1-diablo-sdk/ aqui] [http://fosswire.com/2007/12/30/n800-users-flash-to-os2008/ aqui] || Felipe || 3 || 2 ||
-|| A14 || Instalar Qt4 no N800 [http://qt4.garage.maemo.org/ aqui] || Felipe || 2 || 0,5 ||
-|| A15 || Instalar PyQt no N800 [http://pyqt.garage.maemo.org/ aqui] || Felipe || 2 || 0,5 ||
+|| A13 || Instalar SO Diablo 4.1 no N800 [http://maemo.org/development/sdks/maemo-4-1-diablo-sdk/ aqui] [http://fosswire.com/2007/12/30/n800-users-flash-to-os2008/ aqui] || Felipe || 3 ||  ||
+|| A14 || Instalar Qt4 no N800 [http://qt4.garage.maemo.org/ aqui] || Felipe || 2 ||  ||
+|| A15 || Instalar PyQt no N800 [http://pyqt.garage.maemo.org/ aqui] || Felipe || 2 ||  ||
 
 
 [artefatos Artefatos]
