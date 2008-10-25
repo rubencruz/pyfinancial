@@ -15,7 +15,7 @@ Veja descrição da US [userStories aqui]
 || Atividade || Descrição || Responsável || Estimativa de Tempo (h) || Tempo Real (h) ||
 || A1 || Estudar Arquitetura Maemo e Scratchbox ^1^ || Felipe || 3 ||  ||
 || A2 || Estudar como fazer um .deb [http://home.cfl.rr.com/genecash/nokia/making_packages.html aqui] || Everton || 3 ||  ||
-|| A3 || Estudar Python || Todos || 16 ||  ||
+|| A3 || Estudar Python || Todos || 16 || 1,5 (Felipe) ||
 || A4 || Estudar PyUnit ^1^ || David || 3 ||  ||
 || A5 || Estudar PyEasyAccept ^1^ || Everton || 3 ||  ||
 || A6 || Estudar QT || Todos || 8 || 1,2 (David: http://trolltech.com/products/files/pdf/qt-4.4-whitepaper)  ||
