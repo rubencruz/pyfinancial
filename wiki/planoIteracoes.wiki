@@ -18,7 +18,7 @@ Veja descrição da US [userStories aqui]
 || A3 || Estudar Python || Todos || 16 || 1,5 (Felipe http://en.wikibooks.org/wiki/Python_Programming) ||
 || A4 || Estudar PyUnit ^1^ || David || 3 ||  ||
 || A5 || Estudar PyEasyAccept ^1^ || Everton || 3 ||  ||
-|| A6 || Estudar QT || Todos || 8 || 1,2 (David: http://trolltech.com/products/files/pdf/qt-4.4-whitepaper)  ||
+|| A6 || Estudar QT || Todos || 8 || 2,2 (David: http://trolltech.com/products/files/pdf/qt-4.4-whitepaper)  ||
 || A7 || Estudar PyQT || Todos || 16 ||  ||
 || A8 || Avaliar uso de PyQt com Qt Designer [http://www.diotavelli.net/PyQtWiki/Creating_GUI_Applications_with_PyQt_and_Qt_Designer aqui] || David || 4 ||  ||
 || A9 || Estudar Qt Designer caso seja viável o uso no projeto || Todos || 8 ||  ||
