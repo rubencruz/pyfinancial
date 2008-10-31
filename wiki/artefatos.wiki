@@ -10,6 +10,7 @@ Seguem abaixo os links para os vários artefatos gerados no decorrer do projeto:
  * [http://code.google.com/p/pyfinancial/wiki/artefatos/planoIteracoes Plano de Iterações]
  * [http://pyfinancial.googlecode.com/files/bigchart.xls Big-Chart]
  * [http://code.google.com/p/pyfinancial/wiki/glossario Glossário]
+ * [estudo Documentação do Estudo]
 
 
 
