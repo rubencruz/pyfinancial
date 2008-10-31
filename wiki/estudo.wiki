@@ -1,8 +1,64 @@
 # Validação do estudo
 
-= Introduction =
+= Configuração Eclipse com Pydev, Subclipse e Esbox =
 
 Add your content here.
+
+
+= Instalação e configuração do SDK, Scratchbox e Xephyr =
+
+Add your content here.
+
+
+= Instalação do Ambiente da Biblioteca Gráfica no Linux=
+
+Add your content here.
+
+
+= Instalação do Latex e Kile e configuração do template =
+
+Add your content here.
+
+
+= Configuração do ambiente no N800 =
+
+Add your content here.
+
+
+= Estudo de Python =
+
+Add your content here.
+
+
+= Estudo de PyUnit e PyEasyAccept =
+
+Add your content here.
+
+
+= Estudo de Qt, PyQt e QtDesigner =
+
+Add your content here.
+
+
+= Estudo do .deb =
+
+Add your content here.
+
+
+= Estudo do conceitos de matemática financeira =
+
+Add your content here.
+
+
+= Estudo de latex e kile =
+
+Add your content here.
+
+
+= Gerar calculadora de exemplo =
+
+Add your content here.
+
 
 
 = Details =
