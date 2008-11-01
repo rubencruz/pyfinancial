@@ -14,7 +14,7 @@ http://esbox.garage.maemo.org/
 
 = Instalação e configuração do SDK, Scratchbox e Xephyr =
 
-Add your content here.
+Para instalar as três ferramentas utilizou-se o seguinte tutorial: http://tablets-dev.nokia.com/4.1/INSTALL.txt
 
 
 = Instalação do Ambiente da Biblioteca Gráfica no Linux=
