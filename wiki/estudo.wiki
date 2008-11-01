@@ -29,7 +29,9 @@ Add your content here.
 
 Um dos membros do grupo estudou e apresentou para o restante o material dos cursos de Raul do Embedded. Foram cobertos os tópicos Scrathbox, SDK, Maemo, Esbox e Python para Maemo.
 
-[introducao_python.pdf introducao_python]
+[http://pyfinancial.googlecode.com/files/maemo_training_pt.pdf maemo_training_pt]
+[http://pyfinancial.googlecode.com/files/maemo_python.pdf maemo_python]
+[http://pyfinancial.googlecode.com/files/introducao_python.pdf introducao_python]
 
 
 = Estudo de Python =
