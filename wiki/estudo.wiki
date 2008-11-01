@@ -31,12 +31,22 @@ Add your content here.
 
 Para instalar o OS Diablo no N800 foi feito download da imagem do OS no link abaixo:
 http://tablets-dev.nokia.com/nokia_N800.php
+
+Antes de começar a instalar os ambiente no N800 foi necessário ativar os repositórios de desenvolvimento. Para isso, faça no N800:
+  # Start "Settings > Application Manager".
+  # Go to "Tools > Application catalogue", click "New".
+  # Enter "matrix" into the "Web Address" field and click "Cancel".
+  # Choosing the red pill will activate the red pill mode, obviously, and choosing the blue one will deactivate it.
+Agora é possível instalar o ssh através do Application Manager.
+
 Após isso, utilizou-se o seguinte tutorial para fazer o flash no equipamento:
 http://fosswire.com/2007/12/30/n800-users-flash-to-os2008/
 
 Após instalado o OS, foi instalado o Qt no N800. Para instalar basta clicar através do browser do N800 no link indicado na página do projeto (http://qt4.garage.maemo.org/) onde diz "How can I install Qt4 applications on my Maemo OS2008 Device?"
 
-Para instalar o PyQt
+Para instalar o PyQt, usamos o seguinte tutorial: http://pyqt.garage.maemo.org/installation.html
+
+Por fim, para instalar o ambiente de desenvolvimento de python no N800 é só acessar o N800 pelo ssh, se tornar root e rodar o comando "apt-get install maemo-python-device-env".
 
 
 = Estudo da Arquitetura Maemo =
