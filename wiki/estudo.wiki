@@ -2,7 +2,14 @@
 
 = Configuração Eclipse com Pydev, Subclipse e Esbox =
 
-Add your content here.
+Utilizamos o Eclipse Europa for C/C++ Developers para linux.
+http://www.eclipse.org/downloads/packages/release/europa/winter
+
+Instalamos os plugins Pydev, Subclipse e Esbox.
+http://pydev.sourceforge.net/download.html
+http://subclipse.tigris.org/
+http://esbox.garage.maemo.org/
+
 
 
 = Instalação e configuração do SDK, Scratchbox e Xephyr =
@@ -22,7 +29,14 @@ Add your content here.
 
 = Configuração do ambiente no N800 =
 
-Add your content here.
+Para instalar o OS Diablo no N800 foi feito download da imagem do OS no link abaixo:
+http://tablets-dev.nokia.com/nokia_N800.php
+Após isso, utilizou-se o seguinte tutorial para fazer o flash no equipamento:
+http://fosswire.com/2007/12/30/n800-users-flash-to-os2008/
+
+Após instalado o OS, foi instalado o Qt no N800. Para instalar basta clicar através do browser do N800 no link indicado na página do projeto (http://qt4.garage.maemo.org/) onde diz "How can I install Qt4 applications on my Maemo OS2008 Device?"
+
+Para instalar o PyQt
 
 
 = Estudo da Arquitetura Maemo =
@@ -37,11 +51,9 @@ Um dos membros do grupo estudou e apresentou para o restante o material dos curs
 = Estudo de Python =
 
 Para estudar python procuramos usar um tutorial para que já é programador. Usamos esse material que cobre de forma direta os principais conceitos da linguagem.
-
 http://en.wikibooks.org/wiki/Python_Programming
 
 Para estudar as diferenças de python para maemo, usamos o material oficial do projeto.
-
 http://pymaemo.garage.maemo.org/documentation/pymaemo_tutorial/python_maemo_howto.html
 
 
