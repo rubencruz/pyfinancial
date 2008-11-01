@@ -36,7 +36,13 @@ Um dos membros do grupo estudou e apresentou para o restante o material dos curs
 
 = Estudo de Python =
 
-Add your content here.
+Para estudar python procuramos usar um tutorial para que já é programador. Usamos esse material que cobre de forma direta os principais conceitos da linguagem.
+
+http://en.wikibooks.org/wiki/Python_Programming
+
+Para estudar as diferenças de python para maemo, usamos o material oficial do projeto.
+
+http://pymaemo.garage.maemo.org/documentation/pymaemo_tutorial/python_maemo_howto.html
 
 
 = Estudo de PyUnit e PyEasyAccept =
