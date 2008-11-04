@@ -72,9 +72,8 @@ http://pymaemo.garage.maemo.org/documentation/pymaemo_tutorial/python_maemo_howt
 
 == PyUnit ==
 
-* Para estudo do PyUnit seguimos o tutorial http://pyunit.sourceforge.net/pyunit.html, criando casos de testes similares aos do tutorial.
-
-* Preparou-se uma e realizou-se uma [http://pyfinancial.googlecode.com/files/PyUnit.ppt apresentação] com os principais comandos e principal estruturação de testes usando a ferramenta.
+  # Para estudo do PyUnit seguimos o tutorial http://pyunit.sourceforge.net/pyunit.html, criando casos de testes similares aos do tutorial.
+  # Preparou-se uma e realizou-se uma [http://pyfinancial.googlecode.com/files/PyUnit.ppt apresentação] com os principais comandos e principal estruturação de testes usando a ferramenta.
 
 
 
@@ -98,7 +97,6 @@ Add your content here.
 == QtDesigner ==
 
   # Leitura do manual da versão 4.4 (http://doc.trolltech.com/4.4/designer-manual.html) com desenvolvimento dos exemplos propostos. Em especial o tópico Using Qt Designer já que os demais retratam o uso de Qt juntamente com C++ que não é alvo de trabalho da equipe.
-
   # Desenvolvimento de exemplos simples usando o conjunto de widgets existentes como toolbox, menus, bars, botões, etc.
 
 
