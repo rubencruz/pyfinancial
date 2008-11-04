@@ -107,7 +107,8 @@ Add your content here.
 
 = Estudo do conceitos de matemática financeira =
 
-Add your content here.
+  # Leitura da [http://pyfinancial.googlegroups.com/web/5.+Fun%C3%A7Ses+B%C3%A1sicas+da+HP12C.doc?gda=I1lo21sAAAD3U4e8vu9PPSKlvlS0r9PSKm5b4a6wQOPTUgL34dz3aI_3kmXoikH4O8_3Soo-g9wKtosA8OcA_CeSZUeBvBGAVogPkaX-lTOduiVsLFTh7wZF2vdCvKU-TDZpFtcP-AU apostila introdutória]
+  # Leitura dos primeiros pontos necessários do livro [http://pyfinancial.googlegroups.com/web/MF-HP12C-JCS.pdf?gda=xWk--0IAAAD3U4e8vu9PPSKlvlS0r9PS8xYBDzsVBh4mv8WlrGok85iMwSep2Ry9c2aiT4Cuxa1V4u3aa4iAIyYQIqbG9naPgh6o8ccLBvP6Chud5KMzIQ Matemática Financeira]  
 
 
 = Estudo de latex e kile =
