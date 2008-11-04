@@ -85,21 +85,21 @@ Add your content here.
 
 == QT4.4 ==
 
-* Leitura do overview da ferramenta em http://trolltech.com/products/appdev
-* Leitura das principais seções relevantes a nosso trabalho do white-paper http://trolltech.com/products/files/pdf/qt-4.4-whitepaper: 2, 3, 4, 6, 7, 10, 12, 13, 15, 18, 19
+  # Leitura do overview da ferramenta em http://trolltech.com/products/appdev
+  # Leitura das principais seções relevantes a nosso trabalho do white-paper http://trolltech.com/products/files/pdf/qt-4.4-whitepaper: 2, 3, 4, 6, 7, 10, 12, 13, 15, 18, 19
 
 == PyQt4 ==
 
-* Leitura do tutorial http://zetcode.com/tutorials/pyqt4/ com desenvolvimento dos exemplos propostos
-* Busca pela API da tecnologia: http://www.riverbankcomputing.co.uk/static/Docs/PyQt4/html/classes.html
-* Foram realizados testes de conversão de arquivos .ui gerados pelo QtDesigner para arquivos PyQt através do comando pyuic -o <destino> <.ui origem> seguindo a abordagem adotada em http://www.diotavelli.net/PyQtWiki/Creating_GUI_Applications_with_PyQt_and_Qt_Designer
+  # Leitura do tutorial http://zetcode.com/tutorials/pyqt4/ com desenvolvimento dos exemplos propostos
+  # Busca pela API da tecnologia: http://www.riverbankcomputing.co.uk/static/Docs/PyQt4/html/classes.html
+  # Foram realizados testes de conversão de arquivos .ui gerados pelo QtDesigner para arquivos PyQt através do comando pyuic -o <destino> <.ui origem> seguindo a abordagem adotada em http://www.diotavelli.net/PyQtWiki/Creating_GUI_Applications_with_PyQt_and_Qt_Designer
 
 
 == QtDesigner ==
 
-* Leitura do manual da versão 4.4 (http://doc.trolltech.com/4.4/designer-manual.html) com desenvolvimento dos exemplos propostos. Em especial o tópico Using Qt Designer já que os demais retratam o uso de Qt juntamente com C++ que não é alvo de trabalho da equipe.
+  # Leitura do manual da versão 4.4 (http://doc.trolltech.com/4.4/designer-manual.html) com desenvolvimento dos exemplos propostos. Em especial o tópico Using Qt Designer já que os demais retratam o uso de Qt juntamente com C++ que não é alvo de trabalho da equipe.
 
-* Desenvolvimento de exemplos simples usando o conjunto de widgets existentes como toolbox, menus, bars, botões, etc.
+  # Desenvolvimento de exemplos simples usando o conjunto de widgets existentes como toolbox, menus, bars, botões, etc.
 
 
 = Estudo do .deb =
