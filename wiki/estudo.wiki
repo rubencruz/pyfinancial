@@ -25,7 +25,8 @@ Para instalar as três ferramentas utilizou-se o seguinte tutorial: http://table
  
 = Instalação do Latex e Kile e configuração do template =
 
-Add your content here.
+ # Para instalação do Latex e Kile seguimos o tutorial presente em http://www.ginux.ufla.br/node/18
+ # O template utilizado para a produção da monografia é o template que a SBC indica para construção de capítulos de livros (com algumas modificações). Esse template pode ser encontrado em http://www.sbc.org.br/index.php?language=1&content=downloads&id=287
 
 
 = Configuração do ambiente no N800 =
