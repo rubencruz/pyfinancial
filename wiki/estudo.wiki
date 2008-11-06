@@ -119,7 +119,7 @@ Add your content here.
 
 = Gerar calculadora de exemplo =
 
-Add your content here.
+Para gerar a calculadora de exemplo utilizou-se a [http://rpcalc.bellz.org/ rpCalc] como referência.
 
 
 
