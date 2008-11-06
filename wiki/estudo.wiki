@@ -77,6 +77,10 @@ http://pymaemo.garage.maemo.org/documentation/pymaemo_tutorial/python_maemo_howt
   # Para estudo do PyUnit seguimos o tutorial http://pyunit.sourceforge.net/pyunit.html, criando casos de testes similares aos do tutorial.
   # Preparou-se uma e realizou-se uma [http://pyfinancial.googlecode.com/files/PyUnit.ppt apresentação] com os principais comandos e principal estruturação de testes usando a ferramenta.
 
+== PyEasyAccept ==
+
+  # Para estudo do PyEasyAccept seguimos o tutorial http://pyeasyaccept.sourceforge.net/tutorial.html, criando casos de testes similares aos do tutorial.
+  # Preparou-se uma e realizou-se uma [http://pyfinancial.googlecode.com/files/PyEasyAccept.ppt apresentação] com os principais comandos e principal estruturação de testes usando a ferramenta.
 
 
 Add your content here.
