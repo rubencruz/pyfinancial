@@ -23,7 +23,7 @@ Após instalar o python, foi feito os seguintes passos para instalar o qt4 e o p
   * De dentro do Scratchbox, adicionar as linhas abaixo no arquivo /etc/apt/sources.list
 
 {{{
- deb http://repository.maemo.org/extras/ diablo free non-free
+deb http://repository.maemo.org/extras/ diablo free non-free
 deb-src http://repository.maemo.org/extras/ diablo free
 deb http://repository.maemo.org/extras-devel/ diablo free non-free
 deb-src http://repository.maemo.org/extras-devel/ diablo free
