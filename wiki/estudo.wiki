@@ -117,11 +117,6 @@ Add your content here.
   # Leitura dos primeiros pontos necessários do livro [http://pyfinancial.googlegroups.com/web/MF-HP12C-JCS.pdf?gda=xWk--0IAAAD3U4e8vu9PPSKlvlS0r9PS8xYBDzsVBh4mv8WlrGok85iMwSep2Ry9c2aiT4Cuxa1V4u3aa4iAIyYQIqbG9naPgh6o8ccLBvP6Chud5KMzIQ Matemática Financeira]  
 
 
-= Estudo de latex e kile =
-
-Add your content here.
-
-
 = Gerar calculadora de exemplo =
 
 Add your content here.
