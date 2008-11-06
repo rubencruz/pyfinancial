@@ -16,6 +16,21 @@ http://esbox.garage.maemo.org/
 
 Para instalar as três ferramentas utilizou-se o seguinte tutorial: http://tablets-dev.nokia.com/4.1/INSTALL.txt
 
+Para instalar o python no scrathbox utilizou-se o seguinte tutorial: 
+
+Após instalar o python, foi feito os seguintes passos para instalar o qt4 e o pyqt4 no scrathbox:
+
+  * De dentro do Scratchbox, adicionar as linhas abaixo no arquivo /etc/apt/sources.list
+
+{{{
+ deb http://repository.maemo.org/extras/ diablo free non-free
+deb-src http://repository.maemo.org/extras/ diablo free
+deb http://repository.maemo.org/extras-devel/ diablo free non-free
+deb-src http://repository.maemo.org/extras-devel/ diablo free
+}}} 
+
+  * Execute `apt-get update`
+  * 
 
 = Instalação do Ambiente da Biblioteca Gráfica no Linux=
 
