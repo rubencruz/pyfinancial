@@ -97,7 +97,7 @@ Add your content here.
 
   # Leitura do tutorial http://zetcode.com/tutorials/pyqt4/ com desenvolvimento dos exemplos propostos
   # Busca pela API da tecnologia: http://www.riverbankcomputing.co.uk/static/Docs/PyQt4/html/classes.html
-  # Foram realizados testes de conversão de arquivos .ui gerados pelo QtDesigner para arquivos PyQt através do comando pyuic -o <destino> <.ui origem> seguindo a abordagem adotada em http://www.diotavelli.net/PyQtWiki/Creating_GUI_Applications_with_PyQt_and_Qt_Designer
+  # Foram realizados testes de conversão de arquivos .ui gerados pelo QtDesigner para arquivos PyQt através do comando `pyuic -o <destino> <.ui origem>` seguindo a abordagem adotada em http://www.diotavelli.net/PyQtWiki/Creating_GUI_Applications_with_PyQt_and_Qt_Designer
 
 
 == QtDesigner ==
