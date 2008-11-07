@@ -31,7 +31,7 @@ deb-src http://repository.maemo.org/extras-devel/ diablo free
 
   * Execute `apt-get install python2.5-qt4-core python2.5-qt4-gui`
 
-= Instalação do Ambiente da Biblioteca Gráfica no Linux=
+= Instalação do Ambiente da Biblioteca Gráfica no Linux =
 
   # Instalação do QT4 e QT4.4 via apt-get seguindo o tutorial 1 presente em http://flaviofabricio.blogspot.com/2008/08/tutorial-programando-para-qt-usando.html
   # Instalação do PyQT4 através de apt-get com os seguintes módulos: python-qt4, python-qt4-dbg, python-qt4-common, python-qt4-dev, pyqt4-dev-tools
