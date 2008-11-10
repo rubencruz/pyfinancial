@@ -58,7 +58,7 @@ As classes do sistema devem ser todas documentadas em inglês
 
 === Uso de padrões ===
 
-Iremos utilizar o padrão MVC, bem como qualquer outro padrão que seja visto necessário durante o desenvolvimento.
+Iremos utilizar o padrão MVC [http://www.dsc.ufcg.edu.br/~jacques/cursos/map/html/arqu/mvc/mvc.htm aqui], bem como qualquer outro padrão que seja visto necessário durante o desenvolvimento.
 
 === Packaging ===
 
