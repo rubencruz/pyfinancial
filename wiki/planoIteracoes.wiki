@@ -55,7 +55,7 @@ Veja descrição da US [userStories aqui]
 
 Veja descrição da US [userStories aqui] 
 
-[http://spreadsheets.google.com/pub?key=pBp8Asq7_3isouOd6R-9ZVw Acesso para Plane de Iterações]
+[http://spreadsheets.google.com/pub?key=pBp8Asq7_3isouOd6R-9ZVw Acesso para Plano de Iterações]
 
 
 [artefatos Artefatos]
