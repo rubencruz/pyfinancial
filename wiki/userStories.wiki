@@ -26,7 +26,7 @@
 
 || O usuário deve ser capaz de utilizar a calculadora como calculadora matemática. O mesmo deve poder realizar operações de soma, subtração, multiplicação e divisão. Essa US consiste em implementar o setor de operações matemáticas básicas da HP-12c e CHS: +, -, ×, ÷. ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
-|| *Estimativa Inicial: 20 h*  ||
+|| *Estimativa Inicial: 19 h*  ||
 
 == US05 ==
 
