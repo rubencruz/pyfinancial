@@ -20,7 +20,7 @@
 
 || O usuário deve ser capaz de entrar valores na calculadora, determinando a formatação dos mesmos, bem como limpar os valores que ficarem armazenados em registradores. Essa US consiste em implementar o setor de entrada de dados e setor de limpeza. Aqui estamos considerando implementar interface, lógica e instalador. ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
-|| *Estimativa Inicial: 60 h*  ||
+|| *Estimativa Inicial: 33 h*  ||
 
 == US04 ==
 
