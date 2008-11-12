@@ -127,7 +127,7 @@ de interfaces gráficas para dispositivos móveis, podemos considerar que no mom
 
     Pacotes e módulos:
 
-        # Pacotes e Módulos devem ser curtos, com todos os caracteres em minúsculo e não utilizar underline
+        # Pacotes e Módulos devem ser curtos, com a primeira palavra iniciando em minúsculo e as seguintes iniciando em maiúsculo de forma similar a nomenclatura de classes abaixo
 
     Classes
 
