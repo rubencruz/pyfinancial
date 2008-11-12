@@ -69,5 +69,89 @@ A distribuição do aplicativo será realizada através de um arquivo .deb que s
 Embora haja a suspeita de que o Framework QT será bastante utilizado no desenvolvimento
 de interfaces gráficas para dispositivos móveis, podemos considerar que no momento estaremos enfrentando um risco ao fazer uso do mesmo. Isso se dá pelo fato de que o processo de portar o QT para os dispositivos está ocorrendo no momento, mas já temos versões do mesmo que podem ser utilizadas nos dispositivos.
 
+=== Padrão de Codificação ===
+
+* IDENTAÇÃO
+
+    4 Espaços (aqui pode-se configurar o TAB do editor para o número de espaços propostos)
+
+* LINHAS EM BRANCO:
+
+    2 Linhas em branco antes da declaração de uma função ou classe
+
+    1 Linha em branco para separar os métodos de uma classe
+
+    Linhas em branco extras podem ser usados para separa trechos lógicos, grupos de funções, declarações
+
+* ENCODING:
+
+    Utilizar o UTF-8 como codificação do arquivo
+
+* IMPORTAÇÃO DE MÓDULOS
+
+    Sempre realizar todas as importações no início do arquivo de modo que cada módulo deverá ser importado em uma linha, a não ser que se esteja especificando submódulos de um determeniado módulo. Ex:
+
+    Certo: import os                 			Errado: import sys, os
+
+           import sys
+
+           from subprocess import Popen, PIPE
+
+* ESPAÇOS EM BRANCO (FUNÇÕES E EXPRESSÕES)
+
+    Evitar os espaços em branco nas seguintes situações:
+
+        # Dentro de (parênteses) [colchetes] e {chaves}, a não ser em casos com muita agregação dos mesmos
+              # Certo: spam(ham[1], {eggs: 2})                 Errado:  spam( ham[ 1 ], { eggs: 2 } )
+        # Antes de uma “,” virgula, “;” ponto e virgula e “:” dois pontos
+              # Certo: if x == 4: print x, y; x, y = y, x      Errado:  if x == 4 : print x , y ; x , y = y , x
+        # Antes da abertura de parênteses em chamada de funções, definições e listas
+              # Certo: spam(1)                                 Errado:  spam (1)
+        # Antes da abertura de [colchetes] de indices e {chaves} de dicionários
+              # Certo: dict['key'] = list[index]               Errado:  dict ['key'] = list [index]
+        # Mais de um espaço em atribuições de valores
+              # Certo: x = 1                                   Errado:  x       = 1
+        # Não utilizar espaços com em chamadas de métodos com passagem de chaves nos parâmetros e também nos dicionários
+              # Certo: def complex(real, imag=0.0):            Errado: def complex(real, imag = 0.0):
+        # Sempre utilizar espaço simples ao se trabalhar com operadores (=, +=, -=, +, -, *, <=, ==, !=, and, not, ……… )
+
+ 
+* COMENTÁRIOS
+
+    Devem ser identados ao mesmo nível do código no qual se faz pertinente e sempre será utilizado comentários de blocos iniciados por “”" e finalizados por “”" (também chamados de docstring). Ao se utilizar uma descrição breve abrir e fechar a documentação na mesma linha.
+    Serão comentados todas as funções que sejam públicas (exceto os get e set)
+
+* CONVENÇÕES DE NOME
+
+    Nomes a evitar:
+
+        # Os seguintes caracteres: l (ele minuscúlo), O (o maiúsculo), I (i maiúsculo), ou qualquer outra letra como nomes de variáveis
+
+    Pacotes e módulos:
+
+        # Pacotes e Módulos devem ser curtos, com todos os caracteres em minúsculo e não utilizar underline
+
+    Classes
+
+        # UtilizarCapitalizarNomeSemExceção
+
+    Variáveis Global
+
+        # UTILIZAR_TODAS_AS_LETRAS_EM_MAIÚSCULA_E_COM_UNDERLINE
+
+    Nomes de funções e métodos
+
+        # Iniciar em minúscula para diferir das classes contudo utilizar Maiúsculas para formar mais palavras sem underline
+        # Métodos privados utilizam dois underlines __ no inicio do método
+
+    Variáveis, argumentos de métodos e variáveis de classes
+
+        # Nomenclatura similar a de métodos
+        * Atributos privados utilizam dois underlines __ no inicio do nome
+
+
+
+
+
 
 [http://code.google.com/p/pyfinancial/wiki/artefatos Artefatos]
