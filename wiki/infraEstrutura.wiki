@@ -2,7 +2,7 @@
 
 == Gerência ==
 
-|| *Xplanner* || [http://] ||
+|| *Xplanner* || http://les.dsc.ufcg.edu.br:8080/xplanner ||
 
 == Desenvolvimento ==
 
