@@ -12,42 +12,37 @@
 #*****************************************************************************
 
 
-class PyFinancialLibrary:
     
-    @classmethod
-    def sum(self, number1, number2):
-        """ Realize the sum operation between two values """
-        try:
-            return number1 + number2
-        except TypeError:
-            print("Incompatibility of types.")
+def sum(number1, number2):
+    """ Realize the sum operation between two values """
+    try:
+        return number1 + number2
+    except TypeError:
+        print("Incompatibility of types.")
     
-    @classmethod
-    def minus(self, number1, number2):
-        """ Realize the minus operation between two values """
-        try:
-            return number1 - number2
-        except TypeError:
-            print("Incompatibility of types.")
+def minus(number1, number2):
+    """ Realize the minus operation between two values """
+    try:
+        return number1 - number2
+    except TypeError:
+        print("Incompatibility of types.")
     
-    @classmethod
-    def mult(self, number1, number2):
-        """ Realize the multiplication operation between two values """
-        try:
-            return number1 * number2
-        except TypeError:
-            print("Incompatibility of types.")
+def mult(number1, number2):
+    """ Realize the multiplication operation between two values """
+    try:
+        return number1 * number2
+    except TypeError:
+        print("Incompatibility of types.")
     
-    @classmethod 
-    def div(self, number1, number2):
-        """ Realize the division operation between two values """
-        try:
-            n1 = float(number1)
-            n2 = float(number2)
-            return n1 / n2
-        except TypeError:
-            print("Incompatibility of types.")
-        except AttributeError:
-            print("Incompatibility of types.")
-        except ZeroDivisionError:
-            print("Division by zero")
+def div(number1, number2):
+    """ Realize the division operation between two values """
+    try:
+        n1 = float(number1)
+        n2 = float(number2)
+        return n1 / n2
+    except TypeError:
+        print("Incompatibility of types.")
+    except AttributeError:
+        print("Incompatibility of types.")
+    except ZeroDivisionError:
+        print("Division by zero")
