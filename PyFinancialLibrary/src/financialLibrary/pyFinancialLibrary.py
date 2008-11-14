@@ -12,7 +12,7 @@
 #*****************************************************************************
 
 
-class library:
+class PyFinancialLibrary:
     
     @classmethod
     def sum(self, number1, number2):
