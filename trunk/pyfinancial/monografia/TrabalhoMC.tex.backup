@@ -1,0 +1,117 @@
+% Monografia de Projeto 1 e 2
+% Alunos: Ello� B. Guedes
+%         Odilon F. Lima Jr
+% Orientadores: Joseana Mac�do Fechine
+%               Eust�quio Rangel de Queiroz
+\documentclass[a4paper,titlepage,12pt]{report}
+
+
+\usepackage{color}
+\usepackage{longtable}
+\usepackage[portuges,english]{babel}
+\usepackage[latin1]{inputenc}
+
+\usepackage{times}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{fancyvrb}
+
+\usepackage{graphicx,url}
+\usepackage{amssymb}
+\usepackage{epsfig}
+
+\sloppy
+% Comandos de estilo e espacamento ----------------------------------------
+\newlength{\defbaselineskip}
+\setlength{\defbaselineskip}{\baselineskip}
+\newcommand{\setlinespacing}[1]%
+           {\setlength{\baselineskip}{#1 \defbaselineskip}}
+
+\setcounter{topnumber}{2}
+\renewcommand{\topfraction}{.7}
+\setcounter{bottomnumber}{1}
+\renewcommand{\bottomfraction}{.3}
+\setcounter{totalnumber}{3}
+\renewcommand{\textfraction}{.2}
+\renewcommand{\floatpagefraction}{.5}
+\setcounter{dbltopnumber}{2}
+\renewcommand{\dbltopfraction}{.7}
+\renewcommand{\dblfloatpagefraction}{.5}
+%
+\oddsidemargin -28pt
+\evensidemargin -28pt
+\marginparwidth 50pt
+\marginparsep 5pt
+\topmargin -27pt
+\hoffset 15mm
+\textheight 237mm
+\textwidth 155mm
+\renewcommand{\baselinestretch}{1.5}
+%
+
+% ------------------------------------------------------------------------
+
+\begin{document}
+
+% Primeira Folha do Documento %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{./files/capa}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\selectlanguage{portuges}
+
+% Configura os n�meros das p�ginas para algarismos romanos
+\pagestyle{plain}
+\pagenumbering{roman}
+
+% -------- Lista de Figuras --------- %
+
+%\listoffigures
+%\newpage
+
+% ------------- �ndice -------------- %
+\tableofcontents
+\newpage
+
+
+
+\clearpage
+%% Corpo do documento -------------------
+%
+% Configura os n�meros das p�ginas para algarismos indo-arabicos
+\pagestyle{plain}
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\newenvironment{worduglystyle}[1]
+{\spaceskip=.33em plus \hsize #1}
+{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Definicao do cabecalho: secao do lado esquerdo e numero da pagina do lado direito
+\pagestyle{fancy}
+\addtolength{\headwidth}{\marginparsep}\addtolength{\headwidth}{\marginparwidth}\headwidth
+= \textwidth
+%\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}\lhead[\fancyplain{}{\bfseries\thepage}]%
+         {\fancyplain{}{\emph{\rightmark}}}\rhead[\fancyplain{}{\bfseries\leftmark}]%
+             {\fancyplain{}{\bfseries\thepage}}\cfoot{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{./files/introducao}
+
+
+% ------------------  Bibliografia  ------------------- %
+%% Bibliografia
+
+\bibliographystyle{sbc} % estilo de bibliografia
+\bibliography{referencias} % arquivos com as entradas bib.
+
+
+
+
+
+\end{document}
