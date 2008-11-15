@@ -1,13 +1,13 @@
-#summary One-sentence summary of this page.
-
-= Introduction =
-
-Add your content here.
+= Tabela de Riscos =
 
 
-= Details =
+||Data  || Risco  || Prioridade || Responsável || Status  || Providência/Solução ||
+|| 01/10/2008 || Uso da tecnologia PyQT/QT em dispositivos móveis || Alta || David/Felipe || Superado || Pesquisa e Estudo de uso de PyQT no dispositivo alvo ||
+|| 05/10/2008 || Grande variedade de tecnologias a serem usadas || Alta || Todos || Superado || Elaboração de Plano de Estudos e disseminação de conhecimento período de 15 dias ||
+|| 17/10/2008 || Problema na configuração do template Latex no que diz respeito ao uso de bibliotecas para, por exemplo, acentuação || Média || Everton || Superado || Pesquisa a respeito do uso da biblioteca e do template utilizado ||
+|| 18/10/2008 || Problema de instalação do SDK+Xephyr+ScratchBox em um dos ambientes de desenvolvimento || Média || David || Superado || Pesquisa em listas/grupos/sites a respeito do erro encontrado com o dpkg ||
+|| 05/11/2008 || Problema na configuração da rede via USB para o N800 || Média || Todos || Pendente || Busca por tutoriais de instalação da referida funcionalidade, bem como busca junto ao pessoal especializado do Embedded ||
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+
+
+[artefatos Artefatos]
