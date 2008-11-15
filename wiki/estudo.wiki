@@ -5,11 +5,13 @@
 Utilizamos o Eclipse Europa for C/C++ Developers para linux.
 http://www.eclipse.org/downloads/packages/release/europa/winter
 
-Instalamos os plugins Pydev, Subclipse e Esbox.
+Instalamos os plugins Pydev, Subclipse e Esbox nessa ordem.
 http://pydev.sourceforge.net/download.html
 http://subclipse.tigris.org/
 http://esbox.garage.maemo.org/
 
+Após instalar o Esbox, instale o qemu-arm:
+http://qemu-arm-eabi.wiki.sourceforge.net/
 
 
 = Instalação e configuração do SDK, Scratchbox e Xephyr =
