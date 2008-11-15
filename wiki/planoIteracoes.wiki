@@ -5,7 +5,7 @@
 
 Abaixo seguem os links para os arquivos contendo o planejamento de cada iteração:
 
-== Iteração 1 == 
+== Iteração 1 (13/10/2008 - 27/10/2008) == 
 
 ----
 === US01 ===
