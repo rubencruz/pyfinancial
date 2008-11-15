@@ -10,8 +10,6 @@ http://pydev.sourceforge.net/download.html
 http://subclipse.tigris.org/
 http://esbox.garage.maemo.org/
 
-Após instalar o Esbox, instale o qemu-arm:
-http://qemu-arm-eabi.wiki.sourceforge.net/
 
 
 = Instalação e configuração do SDK, Scratchbox e Xephyr =
@@ -38,6 +36,9 @@ deb-src http://repository.maemo.org/extras-devel/ diablo free
   # Instalação do QT4 e QT4.4 via apt-get seguindo o tutorial 1 presente em http://flaviofabricio.blogspot.com/2008/08/tutorial-programando-para-qt-usando.html
   # Instalação do PyQT4 através de apt-get com os seguintes módulos: python-qt4, python-qt4-dbg, python-qt4-common, python-qt4-dev, pyqt4-dev-tools
 
+
+Para conseguir rodar projetos python atrvés do Esbox, instale o qemu-arm no scratchbox:
+http://qemu-arm-eabi.wiki.sourceforge.net/
  
 = Instalação do Latex e Kile e configuração do template =
 
