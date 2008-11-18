@@ -31,6 +31,12 @@ deb-src http://repository.maemo.org/extras-devel/ diablo free
 
   * Execute `apt-get install python2.5-qt4-core python2.5-qt4-gui`
 
+  * Caso ocorra problemas com o qemu (vide https://garage.maemo.org/pipermail/pymaemo-developers/2008-August/000480.html) na hora de rodar aplicações com PyQT, especialmente devido ao python 2.5, deve-se (baseado em http://setanta.wordpress.com/2007/11/20/qemu-arm-eabi-no-scratchbox/):
+         # sudo apt-get install gcc-3.4
+         # svn co https://qemu-arm-eabi.svn.sourceforge.net/svnroot/qemu-arm-eabi/trunk qemu-arm-eabi
+         # cd qemu-arm-eabi
+         # Seguir as instruções do README
+
 = Instalação do Ambiente da Biblioteca Gráfica no Linux =
 
   # Instalação do QT4 e QT4.4 via apt-get seguindo o tutorial 1 presente em http://flaviofabricio.blogspot.com/2008/08/tutorial-programando-para-qt-usando.html
