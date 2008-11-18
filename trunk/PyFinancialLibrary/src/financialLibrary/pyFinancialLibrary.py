@@ -18,7 +18,7 @@ def sum(number1, number2):
 def minus(number1, number2):
     """ Realize the minus operation between two values """
     try:
-        return number1 - number2
+        return number2 - number1
     except TypeError:
         print("Incompatibility of types.")
     
@@ -34,7 +34,7 @@ def div(number1, number2):
     try:
         n1 = float(number1)
         n2 = float(number2)
-        return n1 / n2
+        return n2 / n1
     except TypeError:
         print("Incompatibility of types.")
     except AttributeError:
