@@ -37,7 +37,3 @@ def div(number1, number2):
         return n2 / n1
     except TypeError:
         print("Incompatibility of types.")
-    except AttributeError:
-        print("Incompatibility of types.")
-    except ZeroDivisionError:
-        print("Division by zero")
