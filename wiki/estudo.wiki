@@ -142,6 +142,16 @@ Add your content here.
 
 Para gerar a calculadora de exemplo utilizou-se a [http://rpcalc.bellz.org/ rpCalc] como referência.
 
+= Gerar .deb =
+
+Primeiramente é necessário gerar um arquivo setup.py que vai gerar automaticamente o .deb. Para isso seguimos o seguinte tutorial: http://home.cfl.rr.com/genecash/nokia/making_packages.html
+
+== Para gerar o deb e instalar no n800 ==
+  # Vá na raiz do projeto e apague as pasta build e dist se tiver.
+  # Rode `python setup.py bdist_debian`
+  # O deb foi gerado em dist
+  # Copie para o n800 e instale com `dpkg -i nomedodeb.deb`
+
 
 
 [http://code.google.com/p/pyfinancial/wiki/artefatos Artefatos]
