@@ -43,3 +43,5 @@ def div(number1, number2):
         return n1 / n2
     except TypeError:
         raise TypeError, "Incompatibility of types."
+    except ZeroDivisionError:
+        raise ZeroDivisionError, "Zero division."
