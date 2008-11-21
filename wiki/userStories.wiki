@@ -32,13 +32,13 @@
 
 || O usuário deve ser capaz de realizar um conjunto de operações financeiras de modo à determinar períodos de investimento, taxa de juros, valor presente, valor futuro e parcela de pagamento. Essa US consiste em implementar as funções financeiras básicas (n, i, PV, PMT, FV). ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
-|| *Estimativa Inicial: 50 h*  ||
+|| *Estimativa Inicial: 36 h*  ||
 
 == US06 ==
 
 || O usuário deve ser capaz de avaliar, além dos valores da US anterior para seus investimentos, os dados referentes ao valor presente líquido e a taxa interna de retorno do mesmo. Essa US consiste em implementar as funções financeiras: NPV, IRR. ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
-|| *Estimativa Inicial: 20 h*  ||
+|| *Estimativa Inicial: 29 h*  ||
 
 == US07 ==
 
