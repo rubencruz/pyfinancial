@@ -15,7 +15,7 @@ def add(number1, number2):
         n2 = float(number2)
         return n1 + n2
     except ValueError, TypeError:
-        raise ValueError, "Incompatibility of types."
+        raise TypeError, "Incompatibility of types."
     
 def sub(number1, number2):
     """ Realize the subtraction operation between two values """
