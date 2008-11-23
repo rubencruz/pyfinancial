@@ -15,18 +15,21 @@ class LibraryTestCase (unittest.TestCase):
         try:
             add(3, "-5as")           
             self.fail("Expected a ValueError")
-        except ValueError:
+        except TypeError, e:
             pass
+            #self.assertEquals(e.message, "Incompatibility of types.")
         try:
             add(3, "*")           
             self.fail("Expected a ValueError")
-        except ValueError:
+        except TypeError, e:
             pass
+            #assert e.message == "Incompatibility of types."
         try:
             add(3, list())           
             self.fail("Expected a TypeError")
-        except TypeError:
+        except TypeError, e:
             pass
+            #assert e.message == "Incompatibility of types."
         
     
     def testMinus(self):
@@ -42,18 +45,21 @@ class LibraryTestCase (unittest.TestCase):
         try:
             add(3, "-5as")           
             self.fail("Expected a ValueError")
-        except ValueError:
+        except TypeError, e:
             pass
+            #assert e.message == "Incompatibility of types."
         try:
             add(3, "*")           
             self.fail("Expected a ValueError")
-        except ValueError:
+        except TypeError, e:
             pass
+            #assert e.message == "Incompatibility of types."
         try:
             add(3, list())           
             self.fail("Expected a TypeError")
-        except TypeError:
+        except TypeError, e:
             pass
+            #assert e.message == "Incompatibility of types."
     
     def testMult(self):
         """ Verifies the mult method of pyFinancialLibrary.py """
@@ -68,18 +74,21 @@ class LibraryTestCase (unittest.TestCase):
         try:
             add(3, "-5as")           
             self.fail("Expected a ValueError")
-        except ValueError:
+        except TypeError, e:
             pass
+            #assert e.message == "Incompatibility of types."
         try:
             add(3, "*")           
             self.fail("Expected a ValueError")
-        except ValueError:
+        except TypeError, e:
             pass
+            #assert e.message == "Incompatibility of types."
         try:
             add(3, list())           
             self.fail("Expected a TypeError")
-        except TypeError:
+        except TypeError, e:
             pass
+            #assert e.message == "Incompatibility of types."
 
     def testDiv(self):
         """ Verifies the div method of pyFinancialLibrary.py """
@@ -93,21 +102,26 @@ class LibraryTestCase (unittest.TestCase):
         try:
             add(3, "-5as")           
             self.fail("Expected a ValueError")
-        except ValueError:
+        except TypeError, e:
             pass
+            #assert e.message == "Incompatibility of types."
         try:
             add(3, "*")           
             self.fail("Expected a ValueError")
-        except ValueError:
+        except TypeError, e:
             pass
+            #assert e.message == "Incompatibility of types."
         try:
             add(3, list())           
             self.fail("Expected a TypeError")
-        except TypeError:
+        except TypeError, e:
             pass
+            #assert e.message == "Incompatibility of types."
+        
         try:
             div(3, 0)           
             self.fail("Expected a ZeroDivisionError")
-        except ZeroDivisionError:
-            pass 
+        except ZeroDivisionError, e:
+            pass
+            #assert e.message == "Zero division."
         
