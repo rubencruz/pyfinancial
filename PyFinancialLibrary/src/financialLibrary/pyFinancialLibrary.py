@@ -10,6 +10,7 @@
     
 def add(number1, number2):
     """ Realize the addition operation between two values """
+    
     try:
         n1 = float(number1)
         n2 = float(number2)
@@ -19,6 +20,7 @@ def add(number1, number2):
     
 def sub(number1, number2):
     """ Realize the subtraction operation between two values """
+    
     try:
         n1 = float(number1)
         n2 = float(number2)
@@ -28,6 +30,7 @@ def sub(number1, number2):
     
 def mult(number1, number2):
     """ Realize the multiplication operation between two values """
+    
     try:
         n1 = float(number1)
         n2 = float(number2)
@@ -37,6 +40,7 @@ def mult(number1, number2):
     
 def div(number1, number2):
     """ Realize the division operation between two values """
+    
     try:
         n1 = float(number1)
         n2 = float(number2)
@@ -45,3 +49,4 @@ def div(number1, number2):
         raise TypeError, "Incompatibility of types."
     except ZeroDivisionError:
         raise ZeroDivisionError, "Zero division."
+    

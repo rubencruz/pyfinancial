@@ -1,3 +1,10 @@
+#****************************************************************************
+# libraryTests.py, This module contains unit tests for our library 
+#
+# pyFinancial, a financial library for python users
+# Copyright (C) 2008, Felipe Leal, David Candeia, Everton Leandro and Diego Dantas
+#*****************************************************************************
+
 from financialLibrary.pyFinancialLibrary import *
 import unittest
 
@@ -5,6 +12,7 @@ class LibraryTestCase (unittest.TestCase):
     
     def testAdd(self):
         """ Verifies the add method of pyFinancialLibrary.py """
+        
         assert add(1, 2) == 3
         assert add(0, 0) == 0
         assert add(-5, 5) == 0
@@ -34,6 +42,7 @@ class LibraryTestCase (unittest.TestCase):
     
     def testMinus(self):
         """ Verifies the sub method of pyFinancialLibrary.py """
+        
         assert sub(2, 1) == 1
         assert sub(0, 0) == 0
         assert sub(5, -5) == 10
@@ -63,6 +72,7 @@ class LibraryTestCase (unittest.TestCase):
     
     def testMult(self):
         """ Verifies the mult method of pyFinancialLibrary.py """
+        
         assert mult(1, 2) == 2
         assert mult(0, 0) == 0
         assert mult(-5, 5) == -25
@@ -92,6 +102,7 @@ class LibraryTestCase (unittest.TestCase):
 
     def testDiv(self):
         """ Verifies the div method of pyFinancialLibrary.py """
+        
         assert div(1, 2) == 0.5
         assert div(2, 1) == 2
         assert div(-5, 5) == -1
