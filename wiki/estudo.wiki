@@ -181,7 +181,7 @@ http://pymaemo.garage.maemo.org/documentation/pymaemo_tutorial/python_maemo_howt
  # Vá na raiz do projeto e apague as pasta build e dist se tiver
  # python setup.py bdist_debian
  # As pastas dist/ e build/ devem ter sido criadas
- # Entre na pasta dist/ e copie o arquivo pyfinancialcalculator_*_all.deb para o N800 via scp
+ # Entre na pasta dist/ e copie o arquivo pyfinancialcalculator_{ID de versão}_all.deb para o N800 via scp
  # Instale a aplicação com: dpkg -i pyfinancialetcetc.deb
 
 
