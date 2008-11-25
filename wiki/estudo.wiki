@@ -77,6 +77,7 @@ Para instalar o PyQt, usamos o seguinte tutorial: http://pyqt.garage.maemo.org/i
 
 = Configuração USB N800 no Desktop =
 
+ * Links de referência: http://wiki.maemo.org/USB_networking e http://maemo.org/development/documentation/pc_connectivity/
  * Ensure that the usbnet module is available to your kernel (try modprobe usbnet, then lsmod to check).
  * Edit the network interface configuration in the host's "/etc/network/interfaces" file appending:
      mapping hotplug
