@@ -176,13 +176,6 @@ http://pymaemo.garage.maemo.org/documentation/pymaemo_tutorial/python_maemo_howt
 
 = Estudo do .deb =
 
-== Geração do pacote de instalação ==
-
- # Vá na raiz do projeto e apague as pasta build e dist se tiver
- # python setup.py bdist_debian
- # As pastas dist/ e build/ devem ter sido criadas
- # Entre na pasta dist/ e copie o arquivo pyfinancialcalculator_{ID de versão}_all.deb para o N800 via scp
- # Instale a aplicação com: dpkg -i pyfinancialetcetc.deb
 
 
 = Estudo do conceitos de matemática financeira =
@@ -199,11 +192,14 @@ Para gerar a calculadora de exemplo utilizou-se a [http://rpcalc.bellz.org/ rpCa
 
 Primeiramente é necessário gerar um arquivo setup.py que vai gerar automaticamente o .deb. Para isso seguimos o seguinte tutorial: http://home.cfl.rr.com/genecash/nokia/making_packages.html
 
-== Para gerar o deb e instalar no n800 ==
-  # Vá na raiz do projeto e apague as pasta build e dist se tiver.
-  # Rode `python setup.py bdist_debian`
-  # O deb foi gerado em dist
-  # Copie para o n800 e instale com `dpkg -i nomedodeb.deb`
+== Geração do pacote de instalação ==
+
+ # Vá na raiz do projeto e apague as pasta build e dist se tiver
+ # python setup.py bdist_debian
+ # As pastas dist/ e build/ devem ter sido criadas
+ # Entre na pasta dist/ e copie o arquivo pyfinancialcalculator_{ID de versão}_all.deb para o N800 via scp
+ # Instale a aplicação com: dpkg -i pyfinancialcalculator_{ID de versão}_all.deb
+
 
 
 
