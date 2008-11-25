@@ -1,5 +1,45 @@
 # Validação do estudo
 
+= Configuração USB N800 no Desktop =
+
+* Ensure that the usbnet module is available to your kernel (try modprobe usbnet, then lsmod to check).
+
+* Edit the network interface configuration in the host's "/etc/network/interfaces" file appending:
+
+     mapping hotplug
+
+        script grep
+        map usb0 
+
+    auto usb0
+    iface usb0 inet static
+    address 192.168.2.14
+    netmask 255.255.255.0
+    network 192.168.2.0
+    broadcast 192.168.2.255
+    up iptables -t nat -A POSTROUTING -o eth0 -s 192.168.2.15 -j MASQUERADE
+    up echo 1 > /proc/sys/net/ipv4/ip_forward
+    down iptables -t nat -D POSTROUTING -o eth0 -s 192.168.2.15 -j MASQUERADE
+    down echo 0 > /proc/sys/net/ipv4/ip_forward 
+
+* On the Tablet:
+
+    # Run Settings > Control Panel > USB networking
+    # Click “Setup USB networking”
+       #You may see a message saying “Unable to connect via USB. Memory card in use: Removable memory card”.
+       # If so:
+          # Unmount the drives on the host.
+          # Unplug the cable.
+          # Click “Setup USB networking” again.
+    # Plug in the USB cable.
+
+* sudo ifdown usb0
+* sudo ifup usb0
+* Test the connection: "ping 192.168.2.15"
+* 
+
+
+
 = Configuração Eclipse com Pydev, Subclipse e Esbox =
 
 Utilizamos o Eclipse Europa for C/C++ Developers para linux.
