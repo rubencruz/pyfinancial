@@ -1,52 +1,5 @@
 # Validação do estudo
 
-= Configuração USB N800 no Desktop =
-
- * Ensure that the usbnet module is available to your kernel (try modprobe usbnet, then lsmod to check).
- * Edit the network interface configuration in the host's "/etc/network/interfaces" file appending:
-     mapping hotplug
-
-        script grep
-        map usb0 
-
-    auto usb0
-
-    iface usb0 inet static
-
-    address 192.168.2.14
-
-    netmask 255.255.255.0
-
-    network 192.168.2.0
-
-    broadcast 192.168.2.255
-
-    up iptables -t nat -A POSTROUTING -o eth0 -s 192.168.2.15 -j MASQUERADE
-
-    up echo 1 > /proc/sys/net/ipv4/ip_forward
-
-    down iptables -t nat -D POSTROUTING -o eth0 -s 192.168.2.15 -j MASQUERADE
-
-    down echo 0 > /proc/sys/net/ipv4/ip_forward 
-
-
- * On the Tablet:
-    # Run Settings > Control Panel > USB networking
-    # Click “Setup USB networking”
-       #You may see a message saying “Unable to connect via USB. Memory card in use: Removable memory card”.
-       # If so:
-          # Unmount the drives on the host.
-          # Unplug the cable.
-          # Click “Setup USB networking” again.
-    # Plug in the USB cable.
- * On Desktop 
-    # sudo ifdown usb0
-    # sudo ifup usb0
-    # Test the connection: "ping 192.168.2.15"
-    # ssh root@192.168.2.15
-    # scp arquivo root@192.168.2.15:/home/user/
-
-
 
 = Configuração Eclipse com Pydev, Subclipse e Esbox =
 
@@ -122,6 +75,52 @@ Após instalado o python, foi instalado o Qt no N800. Para instalar basta clicar
 Para instalar o PyQt, usamos o seguinte tutorial: http://pyqt.garage.maemo.org/installation.html
 
 
+= Configuração USB N800 no Desktop =
+
+ * Ensure that the usbnet module is available to your kernel (try modprobe usbnet, then lsmod to check).
+ * Edit the network interface configuration in the host's "/etc/network/interfaces" file appending:
+     mapping hotplug
+
+        script grep
+        map usb0 
+
+    auto usb0
+
+    iface usb0 inet static
+
+    address 192.168.2.14
+
+    netmask 255.255.255.0
+
+    network 192.168.2.0
+
+    broadcast 192.168.2.255
+
+    up iptables -t nat -A POSTROUTING -o eth0 -s 192.168.2.15 -j MASQUERADE
+
+    up echo 1 > /proc/sys/net/ipv4/ip_forward
+
+    down iptables -t nat -D POSTROUTING -o eth0 -s 192.168.2.15 -j MASQUERADE
+
+    down echo 0 > /proc/sys/net/ipv4/ip_forward 
+
+
+ * On the Tablet:
+    # Run Settings > Control Panel > USB networking
+    # Click “Setup USB networking”
+       #You may see a message saying “Unable to connect via USB. Memory card in use: Removable memory card”.
+       # If so:
+          # Unmount the drives on the host.
+          # Unplug the cable.
+          # Click “Setup USB networking” again.
+    # Plug in the USB cable.
+ * On Desktop 
+    # sudo ifdown usb0
+    # sudo ifup usb0
+    # Test the connection: "ping 192.168.2.15"
+    # ssh root@192.168.2.15
+    # scp arquivo root@192.168.2.15:/home/user/
+
 = Estudo da Arquitetura Maemo =
 
 Um dos membros do grupo estudou e apresentou para o restante o material dos cursos de Raul do Embedded. Foram cobertos os tópicos Scrathbox, SDK, Maemo, Esbox e Python para Maemo.
@@ -177,7 +176,13 @@ http://pymaemo.garage.maemo.org/documentation/pymaemo_tutorial/python_maemo_howt
 
 = Estudo do .deb =
 
-Add your content here.
+== Geração do pacote de instalação ==
+
+ # Vá na raiz do projeto e apague as pasta build e dist se tiver
+ # python setup.py bdist_debian
+ # As pastas dist/ e build/ devem ter sido criadas
+ # Entre na pasta dist/ e copie o arquivo pyfinancialcalculator_*_all.deb para o N800 via scp
+ # Instale a aplicação com: dpkg -i pyfinancialetcetc.deb
 
 
 = Estudo do conceitos de matemática financeira =
