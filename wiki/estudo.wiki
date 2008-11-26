@@ -70,7 +70,22 @@ http://fosswire.com/2007/12/30/n800-users-flash-to-os2008/
 
 Para instalar o ambiente de desenvolvimento de python no N800 é só acessar o N800 pelo ssh, se tornar root e rodar o comando "apt-get install maemo-python-device-env".
 
-Após instalado o python, foi instalado o Qt no N800. Para instalar basta clicar através do browser do N800 no link indicado na página do projeto (http://qt4.garage.maemo.org/) onde diz "How can I install Qt4 applications on my Maemo OS2008 Device?"
+Após instalado o python, foi instalado o Qt no N800. Primeiro temos que ativar o repositório de desenvolvimento.
+
+  * Faça ssh como root para o N800 e adicione as linhas abaixo no arquivo /etc/apt/sources.list
+
+{{{
+deb http://repository.maemo.org/extras/ diablo free non-free
+deb-src http://repository.maemo.org/extras/ diablo free
+deb http://repository.maemo.org/extras-devel/ diablo free non-free
+deb-src http://repository.maemo.org/extras-devel/ diablo free
+}}} 
+
+  * Execute `apt-get update`
+
+Outra alternativa para ativar o repositório é clicar através do browser do N800 no link indicado na página do projeto (http://qt4.garage.maemo.org/) onde diz "How can I install Qt4 applications on my Maemo OS2008 Device?"
+
+Após isso, logado como root no N800 instale os pacotes que você quer. Exemplo: `apt-get install libqt4-core`
 
 Para instalar o PyQt, usamos o seguinte tutorial: http://pyqt.garage.maemo.org/installation.html
 
