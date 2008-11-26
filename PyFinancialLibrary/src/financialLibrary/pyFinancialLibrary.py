@@ -55,5 +55,6 @@ def div(number1, number2):
         raise ZeroDivisionError, "Zero division."
 
 def equalNums(number1, number2):
+    """ Verify if two numbers are equals """
     return (number1 - number2).__abs__() < tolerance 
     
