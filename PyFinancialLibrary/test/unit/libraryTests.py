@@ -10,129 +10,125 @@ import unittest
 
 class LibraryTestCase (unittest.TestCase):
     
+    def testEqualNums(self):
+        """ Verifies the equalNums method of pyFinancialLibrary.py """
+        
+        self.assertTrue (equalNums(1,1))
+        self.assertTrue(equalNums(0.0, 0.0))
+        self.assertTrue(equalNums(0.000000000001, 0.000000000000011))
+        self.assertTrue(equalNums(-0.000000000001, 0.000000000000011))
+        self.assertTrue(equalNums(0.000000000001, -0.000000000000011))
+        self.assertTrue(equalNums(-0.000000000001, -0.000000000000011))
+        self.assertFalse(equalNums(0.000000001, 0.000000011))
+        self.assertFalse(equalNums(-123.4567891231, 123.4567891230))        
+    
     def testAdd(self):
         """ Verifies the add method of pyFinancialLibrary.py """
         
-        assert add(1, 2) == 3
-        assert add(0, 0) == 0
-        assert add(-5, 5) == 0
-        assert add(-0.3, 5) == 4.7
-        assert add(-0.3, -5) == -5.3
-        assert add(-0.2372, 0.0001) == -0.2371
-        assert add(-0.2372, -0.00001) == -0.23721
+        assert equalNums(add(1, 2), 3)
+        assert equalNums(add(0, 0), 0)
+        assert equalNums(add(-5, 5), 0)
+        assert equalNums(add(-0.3, 5), 4.7)
+        assert equalNums(add(-0.3, -5), -5.3)
+        assert equalNums(add(-0.2372, 0.0001),-0.2371)
+        assert equalNums(add(-0.2372, -0.00001), -0.23721)
         try:
             add(3, "-5as")           
             self.fail("Expected a ValueError")
-        except TypeError, e:
+        except TypeError:
             pass
-            #self.assertEquals(e.message, "Incompatibility of types.")
         try:
             add(3, "*")           
             self.fail("Expected a ValueError")
-        except TypeError, e:
-            pass
-            #assert e.message == "Incompatibility of types."
+        except TypeError:
+            pass            
         try:
             add(3, list())           
             self.fail("Expected a TypeError")
-        except TypeError, e:
-            pass
-            #assert e.message == "Incompatibility of types."
-        
+        except TypeError:
+            pass      
     
     def testMinus(self):
         """ Verifies the sub method of pyFinancialLibrary.py """
         
-        assert sub(2, 1) == 1
-        assert sub(0, 0) == 0
-        assert sub(5, -5) == 10
-        assert sub(5, -0.3) == 5.3
-        assert sub(-5, -0.3) == -4.7
-#        assert sub(-0.2372, 0.0001) == -0.2373
-#        assert sub(-0.2372, -0.00001) == -0.23719
-        
+        assert equalNums(sub(2, 1), 1)
+        assert equalNums(sub(0, 0), 0)
+        assert equalNums(sub(5, -5), 10)
+        assert equalNums(sub(5, -0.3), 5.3)
+        assert equalNums(sub(-5, -0.3), -4.7)
+        assert equalNums(sub(-0.2372, 0.0001), -0.2373)
+        assert equalNums(sub(-0.2372, -0.00001), -0.23719)        
         try:
-            add(3, "-5as")           
+            sub(3, "-5as")           
             self.fail("Expected a ValueError")
-        except TypeError, e:
-            pass
-            #assert e.message == "Incompatibility of types."
+        except TypeError:
+            pass            
         try:
-            add(3, "*")           
+            sub(3, "*")           
             self.fail("Expected a ValueError")
-        except TypeError, e:
-            pass
-            #assert e.message == "Incompatibility of types."
+        except TypeError:
+            pass            
         try:
-            add(3, list())           
+            sub(3, list())           
             self.fail("Expected a TypeError")
-        except TypeError, e:
+        except TypeError:
             pass
-            #assert e.message == "Incompatibility of types."
     
     def testMult(self):
         """ Verifies the mult method of pyFinancialLibrary.py """
         
-        assert mult(1, 2) == 2
-        assert mult(0, 0) == 0
-        assert mult(-5, 5) == -25
-        assert mult(-0.3, 5) == -1.5
-        assert mult(-0.3, -5) == 1.5
-        assert mult(-0.2372, 0.0001) == -0.00002372
-#        assert mult(-0.2372, -0.00001) == 0.000002372
-        
+        assert equalNums(mult(1, 2), 2)
+        assert equalNums(mult(0, 0), 0)
+        assert equalNums(mult(-5, 5), -25)
+        assert equalNums(mult(-0.3, 5), -1.5)
+        assert equalNums(mult(-0.3, -5), 1.5)
+        assert equalNums(mult(-0.2372, 0.0001), -0.00002372)
+        assert equalNums(mult(-0.2372, -0.00001), 0.000002372)        
         try:
-            add(3, "-5as")           
+            mult(3, "-5as")           
             self.fail("Expected a ValueError")
-        except TypeError, e:
+        except TypeError:
             pass
-            #assert e.message == "Incompatibility of types."
         try:
-            add(3, "*")           
+            mult(3, "*")           
             self.fail("Expected a ValueError")
-        except TypeError, e:
+        except TypeError:
             pass
-            #assert e.message == "Incompatibility of types."
         try:
-            add(3, list())           
+            mult(3, list())           
             self.fail("Expected a TypeError")
-        except TypeError, e:
+        except TypeError:
             pass
-            #assert e.message == "Incompatibility of types."
 
     def testDiv(self):
         """ Verifies the div method of pyFinancialLibrary.py """
         
-        assert div(1, 2) == 0.5
-        assert div(2, 1) == 2
-        assert div(-5, 5) == -1
-        assert div(-0.3, 5) == -0.06
-        assert div(-0.3, -5) == 0.06
-        assert div(-0.2372, 0.0001) == -2372
-#        assert div(-0.2372, -0.00001) == 23720
+        assert equalNums(div(1, 2), 0.5)
+        assert equalNums(div(2, 1),  2)
+        assert equalNums(div(-5, 5), -1)
+        assert equalNums(div(5, -5), -1)
+        assert equalNums(div(-0.3, 5), -0.06)
+        assert equalNums(div(-0.3, -5), 0.06)
+        assert equalNums(div(-0.2372, 0.0001), -2372)
+        assert equalNums(div(-0.2372, -0.00001), 23720)
         try:
-            add(3, "-5as")           
+            div(3, "-5as")           
             self.fail("Expected a ValueError")
-        except TypeError, e:
+        except TypeError:
             pass
-            #assert e.message == "Incompatibility of types."
         try:
-            add(3, "*")           
+            div(3, "*")           
             self.fail("Expected a ValueError")
-        except TypeError, e:
+        except TypeError:
             pass
-            #assert e.message == "Incompatibility of types."
         try:
-            add(3, list())           
+            div(3, list())           
             self.fail("Expected a TypeError")
-        except TypeError, e:
-            pass
-            #assert e.message == "Incompatibility of types."
-        
+        except TypeError:
+            pass        
         try:
             div(3, 0)           
             self.fail("Expected a ZeroDivisionError")
-        except ZeroDivisionError, e:
+        except ZeroDivisionError:
             pass
-            #assert e.message == "Zero division."
         
