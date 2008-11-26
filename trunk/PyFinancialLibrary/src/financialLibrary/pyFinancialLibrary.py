@@ -6,7 +6,7 @@
 # Copyright (C) 2008, Felipe Leal, David Candeia, Everton Leandro and Diego Dantas
 #*****************************************************************************
 
-
+tolerance = 0.0000000001
     
 def add(number1, number2):
     """ Realize the addition operation between two values """
@@ -24,6 +24,8 @@ def sub(number1, number2):
     try:
         n1 = float(number1)
         n2 = float(number2)
+        if (equalNums(number1, number2)):
+            return 0
         return n1 - n2
     except ValueError, TypeError:
         raise TypeError, "Incompatibility of types."
@@ -44,9 +46,14 @@ def div(number1, number2):
     try:
         n1 = float(number1)
         n2 = float(number2)
+        if (equalNums(number1, number2)):
+            return 1
         return n1 / n2
     except ValueError, TypeError:
         raise TypeError, "Incompatibility of types."
     except ZeroDivisionError:
         raise ZeroDivisionError, "Zero division."
+
+def equalNums(number1, number2):
+    return (number1 - number2).__abs__() < tolerance 
     
