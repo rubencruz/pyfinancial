@@ -41,6 +41,6 @@
 || *HP-12c para iPhone* || http://mac.softpedia.com/get/iPhone-Applications/Tools-Utilities/HP-12C-iPhone.shtml ||
 || *Emulador Web HP-12c* || http://www.epx.com.br/ctb/hp12c.php ||
 || *Lista das funções da HP-12c* || http://www.hpmuseum.org/features/12cf.htm ||
-
+|| *Definição de funções da HP-12c* || http://h20331.www2.hp.com/Hpsub/cache/299940-0-0-225-121.html ||
 
 [http://code.google.com/p/pyfinancial/wiki/index página inicial]
