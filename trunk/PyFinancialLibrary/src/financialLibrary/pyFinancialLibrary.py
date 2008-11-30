@@ -1,12 +1,44 @@
-#****************************************************************************
-# library.py, This module contains the implementation of functions in the 
-# calculator HP12-C
+# *********************************************************************************
+# Copyright (c) 2008, Felipe Coutinho, David Maia, Everton Leandro and Diego Dantas
+# All rights reserved.
 #
-# pyFinancial, a financial library for python users
-# Copyright (C) 2008, Felipe Leal, David Candeia, Everton Leandro and Diego Dantas
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above copyright
+#       notice, this list of conditions and the following disclaimer in the
+#       documentation and/or other materials provided with the distribution.
+#     * Neither the name of the PyFinancial Calculator Team nor the
+#       names of its contributors may be used to endorse or promote products
+#       derived from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY Felipe Coutinho, 
+# David Maia, Everton Leandro and Diego Dantas ''AS IS'' AND ANY
+# EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL <copyright holder> BE LIABLE FOR ANY
+# DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+# (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+# LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+# ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+# SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# *********************************************************************************
+#
+# library.py, This module contains the implementation of functions in the 
+# calculator HP12-C  
+#
 #*****************************************************************************
 
+
+import math
+
 tolerance = 0.0000000001
+
+#Payment modes
+PAYMENT_TYPE_BEGINNING = 0
+PAYMENT_TYPE_END = 1
     
 def add(number1, number2):
     """ Realize the addition operation between two values """
@@ -56,5 +88,105 @@ def div(number1, number2):
 
 def equalNums(number1, number2):
     """ Verify if two numbers are equals """
+    
     return (number1 - number2).__abs__() < tolerance 
+
+def numberOfPayments(paymentMode, i, fv, pv, pmt):
+    """ This function is responsible for calculating the number of payments 
+    given the payment mode (at the beggining or end of the month), the present value, 
+    the future value, the return rate and the payment """
+    
+    if (i == 0):
+        if (pmt == 0):
+            raise ValueError, "Can't calculate PMT with PMT=0"
+        
+        value = (pv - fv) / pmt
+        if (value < 0):
+            raise ValueError, "Impossible scenario: Negative n"
+        return value
+    
+    if (paymentMode == PAYMENT_TYPE_BEGINNING):
+        return __nBeg(i, pv, pmt, fv)
+    elif(paymentMode == PAYMENT_TYPE_END):
+        return __nEnd(i, pv, pmt, fv)
+    
+    raise SystemError, "Internal Error: No condition matched for n"
+
+def __nBeg(ir, pv, pmt, fv):
+    """ This function is responsible for calculating the number of payments 
+    given the present value, the future value, the return rate and the payment
+    and that the payment mode is at the beggining of the month. """ 
+    
+    return math.log((-fv*ir + pmt*ir + pmt)/(ir*pmt + pmt + ir*pv)) / math.log(ir + 1)
+
+def __nEnd(ir, pv, pmt, fv):
+    """ This function is responsible for calculating the number of payments 
+    given the present value, the future value, the return rate and the payment
+    and that the payment mode is at the end of the month. """
+    
+    return math.log((pmt - fv*ir)/(pmt + ir*pv)) / math.log(ir + 1)
+
+def presentValue(paymentMode, i, fv, n, pmt):
+    """ This function is responsible for calculating the present value of scenario 
+    given the payment mode (at the beggining or end of the month), the number of payments, 
+    the future value, the return rate and the payment """
+    
+    if i == 0:
+        return fv + n * pmt
+    elif pmt == 0:
+        return fv / math.pow(1+i/100, n)
+    
+    if (paymentMode == PAYMENT_TYPE_BEGINNING):
+        return __pvBeg(n, i, pmt, fv)
+    elif(paymentMode == PAYMENT_TYPE_END):
+        return __pvEnd(n, i, pmt, fv)
+    
+    raise SystemError, "Internal Error: No condition matched for pv"
+
+def __pvBeg(np, i, pmt, fv ):
+    """ This function is responsible for calculating the present value 
+    given the number of payments, the return rate, the payment, the future value 
+    and that the payment mode is at the beggining of the month. """
+    
+    return ((i + 1)**-np * (-fv * i - (i+1) * ((i + 1)**np - 1) * pmt))/i
+
+def __pvEnd(np, i, pmt, fv ):
+    """ This function is responsible for calculating the present value 
+    given the number of payments, the return rate, the payment, the future value 
+    and that the payment mode is at the end of the month. """
+    
+    return ((i + 1)**-np * (-pmt * (i + 1)**np - fv * i + pmt))/i
+
+def payment(paymentMode, i, fv, n, pv):
+    """ This function is responsible for calculating the payment of scenario 
+    given the payment mode (at the beggining or end of the month), the return rate, 
+    the future value, the number of payments and the present value """
+    
+    if i == 0:
+        if n == 0:
+            raise ValueError, "Can't calculate pmt with i = 0 and n = 0"
+        return (pv - fv)/n
+    elif fv == 0:
+        return ((math.pow(1+i/100, n) * i/100 ) / (math.pow(1+i/100,n) -1)) * pv
+    
+    if (paymentMode == PAYMENT_TYPE_BEGINNING):
+        return _pmtBeg(n, i, pv, fv)
+    elif(paymentMode == PAYMENT_TYPE_END):
+        return _pmtEnd(n, i, pv, fv)
+
+def _pmtBeg(n, i, pv, fv):
+    """ This function is responsible for calculating the payment 
+    given the number of payments, the return rate, the present value, 
+    the future value and that the payment mode is at the beggining of the month. """
+    
+    return - ( (i * (pv * (i + 1)**n + fv )) / 
+               ((i + 1) * ((i + 1)**n - 1) ) )
+
+def _pmtEnd(n, i, pv, fv):
+    """ This function is responsible for calculating the payment 
+    given the number of payments, the return rate, the present value, 
+    the future value and that the payment mode is at the end of the month. """
+    
+    return - ( (i * (pv * (i + 1)**n + fv )) / 
+               ((i + 1)**n - 1) )
     
