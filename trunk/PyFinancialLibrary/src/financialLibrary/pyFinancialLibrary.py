@@ -189,4 +189,31 @@ def _pmtEnd(n, i, pv, fv):
     
     return - ( (i * (pv * (i + 1)**n + fv )) / 
                ((i + 1)**n - 1) )
+
+def futureValue(paymentMode, i, pv, n, pmt):
+    """ This function is responsible for calculating the future value of scenario 
+    given the payment mode (at the beggining or end of the month), the number of payments, 
+    the present value, the return rate and the payment """
+#    return -(pv * math.pow((1 + i/100), n))
+    if (i == 0):
+        return pv - n * pmt
+    if (paymentMode == PAYMENT_TYPE_BEGINNING):
+        return _fvBeg(n, i, pv, pmt)
+    elif(paymentMode == PAYMENT_TYPE_END):
+        return _fvEnd(n, i, pv, pmt)    
+    return None 
+    raise SystemError, "Internal Error: No condition matched for fv"
+
+def _fvBeg(np, i, pv, pmt):
+    """ This function is responsible for calculating the number of payments 
+    given the present value, the future value, the return rate and the payment
+    and that the payment mode is at the beggining of the month. """
     
+    return ((i + 1) * pmt - (i + 1)**np * (i * pmt + pmt + i*pv))/i
+
+def _fvEnd(np, i, pv, pmt):
+    """ This function is responsible for calculating the number of payments 
+    given the present value, the future value, the return rate and the payment
+    and that the payment mode is at the end of the month. """
+    
+    return (pmt - (i + 1)**np * (pmt + i * pv) )/i
