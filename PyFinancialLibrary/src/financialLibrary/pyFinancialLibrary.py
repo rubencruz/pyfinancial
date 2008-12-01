@@ -32,6 +32,8 @@
 #*****************************************************************************
 
 
+# LINK consulta: http://www.crd2000.com.br/crd012d.htm
+
 import math
 
 tolerance = 0.0000000001
@@ -104,13 +106,15 @@ def numberOfPayments(paymentMode, i, fv, pv, pmt):
         if (value < 0):
             raise ValueError, "Impossible scenario: Negative n"
         return value
+    elif pmt == 0 and i != 0 and fv != 0 and pv != 0:
+        return math.log10(fv / pv) / math.log10(1+i)
     
     if (paymentMode == PAYMENT_TYPE_BEGINNING):
         return __nBeg(i, pv, pmt, fv)
     elif(paymentMode == PAYMENT_TYPE_END):
         return __nEnd(i, pv, pmt, fv)
     
-    raise SystemError, "Internal Error: No condition matched for n"
+    return 0
 
 def __nBeg(ir, pv, pmt, fv):
     """ This function is responsible for calculating the number of payments 
@@ -141,7 +145,7 @@ def presentValue(paymentMode, i, fv, n, pmt):
     elif(paymentMode == PAYMENT_TYPE_END):
         return __pvEnd(n, i, pmt, fv)
     
-    raise SystemError, "Internal Error: No condition matched for pv"
+    return 0
 
 def __pvBeg(np, i, pmt, fv ):
     """ This function is responsible for calculating the present value 
@@ -168,11 +172,15 @@ def payment(paymentMode, i, fv, n, pv):
         return (pv - fv)/n
     elif fv == 0:
         return ((math.pow(1+i/100, n) * i/100 ) / (math.pow(1+i/100,n) -1)) * pv
+    elif pv == 0 and fv != 0 and i != 0 and n != 0:
+        return fv * i / (math.pow(1+i, n)-1)
     
     if (paymentMode == PAYMENT_TYPE_BEGINNING):
         return _pmtBeg(n, i, pv, fv)
     elif(paymentMode == PAYMENT_TYPE_END):
         return _pmtEnd(n, i, pv, fv)
+    
+    return 0
 
 def _pmtBeg(n, i, pv, fv):
     """ This function is responsible for calculating the payment 
@@ -195,14 +203,19 @@ def futureValue(paymentMode, i, pv, n, pmt):
     given the payment mode (at the beggining or end of the month), the number of payments, 
     the present value, the return rate and the payment """
 #    return -(pv * math.pow((1 + i/100), n))
-    if (i == 0):
+    if (i == 0 and pv != 0 and n != 0 and pmt != 0):
         return pv - n * pmt
+    elif (pmt == 0 and pv != 0 and n != 0 and i != 0):
+        return pv * math.pow(1+i, n)
+    elif pv == 0 and pmt != 0 and i != 0 and n != 0:
+        return pmt * ((math.pow(i+1, n)-1) / i)
+    
     if (paymentMode == PAYMENT_TYPE_BEGINNING):
         return _fvBeg(n, i, pv, pmt)
     elif(paymentMode == PAYMENT_TYPE_END):
         return _fvEnd(n, i, pv, pmt)    
-    return None 
-    raise SystemError, "Internal Error: No condition matched for fv"
+
+    return 0
 
 def _fvBeg(np, i, pv, pmt):
     """ This function is responsible for calculating the number of payments 
@@ -217,3 +230,29 @@ def _fvEnd(np, i, pv, pmt):
     and that the payment mode is at the end of the month. """
     
     return (pmt - (i + 1)**np * (pmt + i * pv) )/i
+
+def interestRate(paymentMode, fv, pv, n, pmt):
+    """ This function is responsible for calculating the interest rate given 
+    the present value, the future value, the number of payments and the payment
+    and that the payment mode is at beggining or end of the month. """ 
+    
+    #Testing which information is available
+    if fv != 0 and pv != 0 and n != 0:
+        return (math.pow(fv / pv, 1 / n) - 1) * 100
+    
+    if n == 0:
+        number = numberOfPayments(paymentMode, 0, fv, pv, pmt)
+        if number != 0:
+            return (math.pow(fv / pv, 1 / number) - 1) * 100
+    
+    if pv == 0:
+        presentValue = presentValue(paymentMode, 0, fv, n, pmt)
+        if presentValue != 0:
+            return (math.pow(fv / presentValue, 1 / n) - 1) * 100
+    
+    if fv == 0:
+        futureValue = futureValue(paymentMode, 0, pv, n, pmt)
+        if futureValue != 0:
+                return (math.pow(futureValue / presentValue, 1 / n) - 1) * 100
+     
+    return 0       
