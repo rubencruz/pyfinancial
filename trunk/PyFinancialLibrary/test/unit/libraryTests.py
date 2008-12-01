@@ -131,4 +131,178 @@ class LibraryTestCase (unittest.TestCase):
             self.fail("Expected a ZeroDivisionError")
         except ZeroDivisionError:
             pass
+    
+    def testNumberOfPayments(self):
         
+        #Scenario with only some variables
+        n = numberOfPayments(PAYMENT_TYPE_END, 3.95, 50000, -24895.9738, 0)
+        assert n != None
+        assert n != 0
+        self.assertAlmostEquals(18, n, 0.00001)
+        
+        n = numberOfPayments(PAYMENT_TYPE_END, 0, 20008.36, -10000, -2500.696667)
+        assert n != None
+        assert n != 0
+        self.assertAlmostEquals(12, n, 0.00001)
+        
+        #Scenario with the four variables
+        n = numberOfPayments(PAYMENT_TYPE_END, 5, 0.000002080, -30000, -5910.52)
+        assert n != None
+        assert n != 0
+        self.assertAlmostEquals(6, n, 0.00001)
+        
+        n = numberOfPayments(PAYMENT_TYPE_END, 19.58131745, -500, 100, 9.790658e-11)
+        assert n != None
+        assert n != 0
+        self.assertAlmostEquals(9, n, 0.00001)
+        
+        #Scenario with payment mode in the beggining of the month
+        n = numberOfPayments(PAYMENT_TYPE_BEGINNING, 5, 0.000002080, -30000, -5910.52)
+        assert n != None
+        assert n != 0
+        self.assertAlmostEquals(6, n, 0.00001)
+        
+        n = numberOfPayments(PAYMENT_TYPE_BEGINNING, 19.58131745, -500, 100, 9.790658e-11)
+        assert n != None
+        assert n != 0
+        self.assertAlmostEquals(9, n, 0.00001)
+    
+    def testPresentValue(self):
+        #Scenario with only some variables
+        pv = presentValue(PAYMENT_TYPE_END, 3.95, 50000, 18, 0)
+        assert pv != None
+        assert pv != 0
+        self.assertAlmostEquals(-24895.9738, pv, 0.00001)
+        
+        pv = presentValue(PAYMENT_TYPE_END, 0, 20008.36, 12, -2500.696667)
+        assert pv != None
+        assert pv != 0
+        self.assertAlmostEquals(-10000, pv, 0.00001)
+        
+        #Scenario with the four variables
+        pv = presentValue(PAYMENT_TYPE_END, 5, 0.000002080, 6, -5910.52)
+        assert pv != None
+        assert pv != 0
+        self.assertAlmostEquals(-30000, pv, 0.00001)
+        
+        pv = presentValue(PAYMENT_TYPE_END, 19.58131745, -500, 9, 9.790658e-11)
+        assert pv != None
+        assert pv != 0
+        self.assertAlmostEquals(100, pv, 0.00001)
+        
+        #Scenario with payment mode in the beggining of the month
+        pv = presentValue(PAYMENT_TYPE_BEGINNING, 5, 0.000002080, 6, -5910.52)
+        assert pv != None
+        assert pv != 0
+        self.assertAlmostEquals(-30000, pv, 0.00001)
+        
+        pv = presentValue(PAYMENT_TYPE_BEGINNING, 19.58131745, -500, 9, 9.790658e-11)
+        assert pv != None
+        assert pv != 0
+        self.assertAlmostEquals(100, pv, 0.00001)
+   
+    def testFutureValue(self):
+       
+        #Scenario with only some variables
+        fv = futureValue(PAYMENT_TYPE_END, 3.95, -24895.9738, 18, 0)
+        assert fv != None
+        assert fv != 0
+        self.assertAlmostEquals( 50000, fv, 0.00001)
+       
+        
+        fv = futureValue(PAYMENT_TYPE_END, 0, -10000, 12, -2500.696667)
+        assert fv != None
+        assert fv != 0
+        self.assertAlmostEquals(20008.36, fv, 0.00001)#
+        
+        #Scenario with the four variables
+        fv = futureValue(PAYMENT_TYPE_END, 5, 0.000002080, 6, -5910.52)
+        assert fv != None
+        assert fv != 0
+        self.assertAlmostEquals(-30000, fv, 0.00001)
+        
+        fv = futureValue(PAYMENT_TYPE_END, 19.58131745, 100, 9, 9.790658e-11)
+        assert fv != None
+        assert fv != 0
+        self.assertAlmostEquals(-500, fv, 0.00001)#
+        
+        #Scenario with payment mode in the beggining of the month
+        fv = futureValue(PAYMENT_TYPE_BEGINNING, 5, -30000, 6, -5910.52)
+        assert fv != None
+        assert fv != 0
+        self.assertAlmostEquals(0.000002080, fv, 0.00001)#
+        
+        fv = futureValue(PAYMENT_TYPE_BEGINNING, 19.58131745, 100, 9, 9.790658e-11)
+        assert fv != None
+        assert fv != 0
+        self.assertAlmostEquals(-500, fv, 0.00001)#       
+    
+    def testPayment(self):
+        #Scenario with only some variables
+        pmt = payment(PAYMENT_TYPE_END, 3.95, 50000, 18, -24895.9738)
+        assert pmt != None
+        assert pmt != 0
+        self.assertAlmostEquals( -1958.631969, pmt, 0.00001)
+        
+        pmt = payment(PAYMENT_TYPE_END, 0, 20008.36, 12, -10000)
+        assert pmt != None
+        assert pmt != 0
+        self.assertAlmostEquals(-2500.696667, pmt, 0.00001)#
+        
+        #Scenario with the four variables
+        pmt = payment(PAYMENT_TYPE_END, 5, -30000, 6,  0.000002080)
+        assert pmt != None
+        assert pmt != 0
+        self.assertAlmostEquals(-5910.52, pmt, 0.00001)#
+        
+        pmt = payment(PAYMENT_TYPE_END, 19.58131745, -500, 9, 100)
+        assert pmt != None
+        assert pmt != 0
+        self.assertAlmostEquals(9.790658e-11, pmt, 0.00001)#
+        
+        #Scenario with payment mode in the beggining of the month
+        pmt = payment(PAYMENT_TYPE_BEGINNING, 5, 0.000002080, 6, -30000)
+        assert pmt != None
+        assert pmt != 0
+        self.assertAlmostEquals(-5910.52, pmt, 0.00001)#
+        
+        pmt = payment(PAYMENT_TYPE_BEGINNING, 19.58131745, -500, 9, 100)
+        assert pmt != None
+        assert pmt != 0
+        self.assertAlmostEquals( 9.790658e-11, pmt, 0.00001)#
+    
+    def interestRate(self): 
+        
+        #Scenario with only some variables
+        i = interestRate(PAYMENT_TYPE_END, 50000, -24895.9738, 18, 0)
+        assert i != None
+        assert i != 0
+        self.assertAlmostEquals(3.95 , i, 0.00001)#
+       
+        
+        i = interestRate(PAYMENT_TYPE_END, 20008.36, -10000, 12, 0)
+        assert i != None
+        assert i != 0
+        self.assertAlmostEquals(5.949999192, i, 0.00001)#
+        
+        #Scenario with the four variables
+        i = interestRate(PAYMENT_TYPE_END, -30000, 0.000002080, 6, -5910.52)
+        assert i != None
+        assert i != 0
+        self.assertAlmostEquals(5, i, 0.00001)# 
+        
+        i = interestRate(PAYMENT_TYPE_END, -500, 100, 9, 9.790658e-11)
+        assert i != None
+        assert i != 0
+        self.assertAlmostEquals(19.58131745, i, 0.00001)#
+        
+        #Scenario with payment mode in the beggining of the month
+        i = futureValue(PAYMENT_TYPE_BEGINNING, 0.000002080, -30000, 6, -5910.52)
+        assert i != None
+        assert i != 0
+        self.assertAlmostEquals(5, i, 0.00001)#
+        
+        i = futureValue(PAYMENT_TYPE_BEGINNING, -500, 100, 9, 9.790658e-11)
+        assert i != None
+        assert i != 0
+        self.assertAlmostEquals(19.58131745, i, 0.00001)#      
