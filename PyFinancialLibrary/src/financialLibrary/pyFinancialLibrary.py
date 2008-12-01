@@ -106,8 +106,12 @@ def numberOfPayments(paymentMode, i, fv, pv, pmt):
         if (value < 0):
             raise ValueError, "Impossible scenario: Negative n"
         return value
+    
     elif pmt == 0 and i != 0 and fv != 0 and pv != 0:
-        return math.log10(fv / pv) / math.log10(1+i)
+        fv = math.fabs(fv)
+        pv = math.fabs(pv)
+        i = math.fabs(i)
+        return (math.log(fv / pv)) / (math.log(1+ (i / 100)))
     
     if (paymentMode == PAYMENT_TYPE_BEGINNING):
         return __nBeg(i, pv, pmt, fv)
