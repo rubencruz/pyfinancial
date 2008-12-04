@@ -66,7 +66,7 @@ Antes de começar a instalar os ambiente no N800 foi necessário ativar os repos
   # Go to "Tools > Application catalogue", click "New".
   # Enter "matrix" into the "Web Address" field and click "Cancel".
   # Choosing the red pill will activate the red pill mode, obviously, and choosing the blue one will deactivate it.
-Agora é possível instalar o ssh através do Application Manager.
+Agora é possível instalar o openssh através do Application Manager. Habilite o catálogo Extras no Application catalogue e instale o openssh através do Application Manager.
 
 Para instalar o ambiente de desenvolvimento de python no N800 é só acessar o N800 pelo ssh, se tornar root e rodar o comando "apt-get install maemo-python-device-env".
 
