@@ -33,14 +33,15 @@
 
 
 # LINK consulta: http://www.crd2000.com.br/crd012d.htm
+# http://www.ufcg-uaac.com/Curso_extensao_gestao_investimentos.htm
 
 import math
 
 tolerance = 0.0000000001
 
 #Payment modes
-PAYMENT_TYPE_BEGINNING = 0
-PAYMENT_TYPE_END = 1
+PAYMENT_TYPE_END = 0
+PAYMENT_TYPE_BEGINNING = 1
     
 def add(number1, number2):
     """ Realize the addition operation between two values """
@@ -111,12 +112,23 @@ def numberOfPayments(paymentMode, i, fv, pv, pmt):
         fv = math.fabs(fv)
         pv = math.fabs(pv)
         i = math.fabs(i)
-        return (math.log(fv / pv)) / (math.log(1+ (i / 100)))
+        n = (math.log(fv / pv)) / (math.log(1+ (i / 100)))
+        if n < 0:
+            raise ValueError, "Impossible scenario: Negative n"
+        return n
     
     if (paymentMode == PAYMENT_TYPE_BEGINNING):
-        return __nBeg(i, pv, pmt, fv)
+        n = __nBeg(float(i) / 100, pv, pmt, fv)
+        if n < 0:
+            raise ValueError, "Impossible scenario: Negative n"
+        
+        return n
     elif(paymentMode == PAYMENT_TYPE_END):
-        return __nEnd(i, pv, pmt, fv)
+        n = __nEnd(float(i) / 100, pv, pmt, fv)
+        if n < 0:
+            raise ValueError, "Impossible scenario: Negative n"
+        
+        return n
     
     return 0
 
@@ -140,15 +152,29 @@ def presentValue(paymentMode, i, fv, n, pmt):
     the future value, the return rate and the payment """
     
     if i == 0:
-        return fv + n * pmt
+        pv = fv + n * pmt
+        if pmt > 0:
+            return math.fabs(pv)
+        elif pv > 0:
+            return -pv
+        
+        return pv
+        
     elif pmt == 0:
-        return fv / math.pow(1+i/100, n)
+        return -fv / math.pow(1+i/100, n)
     
-    if (paymentMode == PAYMENT_TYPE_BEGINNING):
-        return __pvBeg(n, i, pmt, fv)
-    elif(paymentMode == PAYMENT_TYPE_END):
-        return __pvEnd(n, i, pmt, fv)
-    
+#    if (paymentMode == PAYMENT_TYPE_BEGINNING):
+#        return __pvBeg(n, i, pmt, fv)
+#    elif(paymentMode == PAYMENT_TYPE_END):
+#        return __pvEnd(n, i, pmt, fv)
+    if i != 0:
+        dotPosition = str(float(n)).find(".")
+        nIntPart = int(n)
+        nFracPart = float(str(float(n))[dotPosition:])
+        i = float(i) / 100
+        pv = -((1+i*paymentMode)*pmt*( (1-(1+i)**(-nIntPart)) / i )+fv*(1+i)**(-nIntPart)) / (1+i)**nFracPart    
+        return pv
+        
     return 0
 
 def __pvBeg(np, i, pmt, fv ):
@@ -175,16 +201,29 @@ def payment(paymentMode, i, fv, n, pv):
             raise ValueError, "Can't calculate pmt with i = 0 and n = 0"
         return (pv - fv)/n
     elif fv == 0:
-        return ((math.pow(1+i/100, n) * i/100 ) / (math.pow(1+i/100,n) -1)) * pv
+        pmt = ((math.pow(1+i/100, n) * i/100 ) / (math.pow(1+i/100,n) -1)) * pv
+        if (pv > 0 and pmt > 0) or (pv < 0 and pmt < 0):
+            return -pmt
+        
+        return pmt
+        
     elif pv == 0 and fv != 0 and i != 0 and n != 0:
         return fv * i / (math.pow(1+i, n)-1)
     
-    if (paymentMode == PAYMENT_TYPE_BEGINNING):
-        return _pmtBeg(n, i, pv, fv)
-    elif(paymentMode == PAYMENT_TYPE_END):
-        return _pmtEnd(n, i, pv, fv)
+#    if (paymentMode == PAYMENT_TYPE_BEGINNING):
+#        return _pmtBeg(n, i, pv, fv)
+#    elif(paymentMode == PAYMENT_TYPE_END):
+#        return _pmtEnd(n, i, pv, fv)
     
-    return 0
+    dotPosition = str(float(n)).find(".")
+    nIntPart = int(n)
+    nFracPart = float(str(float(n))[dotPosition:])
+    i = float(i) / 100
+    pmt = ((pv * (1+i) ** nFracPart) + fv * (1+i)**(-nIntPart)) / ((1+i*paymentMode)* ( (1-(1+i)**(-nIntPart))/i ))
+    if (pv > 0 and pmt > 0) or (pv < 0 and pmt < 0):
+        return -pmt
+        
+    return pmt                                                               
 
 def _pmtBeg(n, i, pv, fv):
     """ This function is responsible for calculating the payment 
@@ -209,16 +248,24 @@ def futureValue(paymentMode, i, pv, n, pmt):
 #    return -(pv * math.pow((1 + i/100), n))
     if (i == 0 and pv != 0 and n != 0 and pmt != 0):
         return pv - n * pmt
-    elif (pmt == 0 and pv != 0 and n != 0 and i != 0):
-        return pv * math.pow(1+i, n)
-    elif pv == 0 and pmt != 0 and i != 0 and n != 0:
-        return pmt * ((math.pow(i+1, n)-1) / i)
+#    elif (pmt == 0 and pv != 0 and n != 0 and i != 0):
+#        return pv * (1+i)** n
+#    elif pv == 0 and pmt != 0 and i != 0 and n != 0:
+#        return pmt * ((math.pow(i+1, n)-1) / i)
     
-    if (paymentMode == PAYMENT_TYPE_BEGINNING):
-        return _fvBeg(n, i, pv, pmt)
-    elif(paymentMode == PAYMENT_TYPE_END):
-        return _fvEnd(n, i, pv, pmt)    
-
+#    if (paymentMode == PAYMENT_TYPE_BEGINNING):
+#        return _fvBeg(n, i, pv, pmt)
+#    elif(paymentMode == PAYMENT_TYPE_END):
+#        return _fvEnd(n, i, pv, pmt)    
+    
+    if i != 0:
+        dotPosition = str(float(n)).find(".")
+        nIntPart = int(n)
+        nFracPart = float(str(float(n))[dotPosition:])
+        i = float(i) / 100
+        fv = - ( (pv * (1+i)** nFracPart) + (1+i * paymentMode)* pmt * ( (1 - (i+1)**(-nIntPart)) / i   ) ) / ( (i+1)**(-nIntPart) )    
+        return fv
+        
     return 0
 
 def _fvBeg(np, i, pv, pmt):
@@ -242,21 +289,21 @@ def interestRate(paymentMode, fv, pv, n, pmt):
     
     #Testing which information is available
     if fv != 0 and pv != 0 and n != 0:
-        return (math.pow(fv / pv, 1 / n) - 1) * 100
+        return (math.pow(abs(fv / pv), 1 / n) - 1) * 100
     
     if n == 0:
         number = numberOfPayments(paymentMode, 0, fv, pv, pmt)
         if number != 0:
-            return (math.pow(fv / pv, 1 / number) - 1) * 100
+            return (math.pow(abs(fv / pv), 1 / number) - 1) * 100
     
     if pv == 0:
-        presentValue = presentValue(paymentMode, 0, fv, n, pmt)
-        if presentValue != 0:
-            return (math.pow(fv / presentValue, 1 / n) - 1) * 100
+        pv2 = presentValue(paymentMode, 0, fv, n, pmt)
+        if pv2 != 0:
+            return (math.pow(abs(fv / pv2), 1 / n) - 1) * 100
     
     if fv == 0:
-        futureValue = futureValue(paymentMode, 0, pv, n, pmt)
-        if futureValue != 0:
-                return (math.pow(futureValue / presentValue, 1 / n) - 1) * 100
+        fv2 = futureValue(paymentMode, 0, pv, n, pmt)
+        if fv2 != 0:
+                return (math.pow(abs(fv2 / pv), 1 / n) - 1) * 100
      
     return 0       
