@@ -306,4 +306,11 @@ def interestRate(paymentMode, fv, pv, n, pmt):
         if fv2 != 0:
                 return (math.pow(abs(fv2 / pv), 1 / n) - 1) * 100
      
-    return 0       
+    return 0
+
+def netPresentValue(interRate, cashFlowsList):
+    npv = 0.0
+    i = div(interRate, 100)
+    for count in range(0,len(cashFlowsList)):
+        npv = add(npv, div(cashFlowsList[count], add(1, i)**count ))
+    return npv
