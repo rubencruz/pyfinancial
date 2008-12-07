@@ -32,7 +32,7 @@
 #*****************************************************************************
 
 import unittest
-from model.pyFinancialLibrary import *
+from financialLibrary.pyFinancialLibrary import *
 
 TOLERANCE = 3
 
