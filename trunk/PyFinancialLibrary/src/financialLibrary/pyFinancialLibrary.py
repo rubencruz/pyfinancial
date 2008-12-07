@@ -81,6 +81,8 @@ def div(number1, number2):
     try:
         n1 = float(number1)
         n2 = float(number2)
+        if equalNums(n1, 0.0):
+            return 0.0
         if (equalNums(number1, number2)):
             return 1
         return n1 / n2
@@ -311,6 +313,7 @@ def interestRate(paymentMode, fv, pv, n, pmt):
 def netPresentValue(interRate, cashFlowsList):
     npv = 0.0
     i = div(interRate, 100)
+    const = add(1, i)
     for count in range(0,len(cashFlowsList)):
-        npv = add(npv, div(cashFlowsList[count], add(1, i)**count ))
+        npv = add(npv, div(cashFlowsList[count], const**count ))
     return npv
