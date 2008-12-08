@@ -81,9 +81,7 @@ def div(number1, number2):
     try:
         n1 = float(number1)
         n2 = float(number2)
-        if equalNums(n1, 0.0):
-            return 0.0
-        if (equalNums(number1, number2)):
+        if (equalNums(number1, number2) and not equalNums(number, 0.0)):
             return 1
         return n1 / n2
     except ValueError, TypeError:
@@ -315,5 +313,9 @@ def netPresentValue(interRate, cashFlowsList):
     i = div(interRate, 100)
     const = add(1, i)
     for count in range(0,len(cashFlowsList)):
-        npv = add(npv, div(cashFlowsList[count], const**count ))
+        try:
+            npv = add(npv, div(cashFlowsList[count], const**count ))
+        except ZeroDivisionError:
+            pass
+        
     return npv
