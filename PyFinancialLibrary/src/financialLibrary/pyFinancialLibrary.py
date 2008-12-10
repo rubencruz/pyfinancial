@@ -316,8 +316,6 @@ def netPresentValue(interRate, cashFlowsList):
     
     npv = 0.0
     i = div(interRate, 100)
-    if equalNums(i, -1.0) or i < -1.0:
-        raise ValueError
     const = add(1, i)
     for count in range(0,len(cashFlowsList)):
         npv = add(npv, div(cashFlowsList[count], const**count ))
@@ -330,5 +328,28 @@ def __checkInterestRate(interestRate):
         raise ValueError, "Interest rate can not be equal or less than -100%"
     
 def interestRateOfReturn(cashFlowsList):
-    return 0.0
-        
+    step = 0.05 # 0.05%
+    
+    i = 0.0
+    npv = netPresentValue(i, cashFlowsList)
+    if equalNums(npv, 0.0):
+        return i
+    elif npv > 0.0:
+        while npv > 0.0:
+            iBefore = i
+            npvBefore = npv
+            
+            i = i + step
+            npv = netPresentValue(i, cashFlowsList)
+        return __findIRR(iBefore, npvBefore, i, npv)
+    else:
+        while npv < 0.0:
+            iBefore = i
+            npvBefore = npv
+            
+            i = i + step
+            npv = netPresentValue(i, cashFlowsList)
+        return __findIRR(iBefore, npvBefore, i, npv)
+
+def __findIRR(upperX, upperY, downX, downY):
+    return div(upperY*downX - downY*upperX, upperY - downY)        
