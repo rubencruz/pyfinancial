@@ -309,13 +309,26 @@ def interestRate(paymentMode, fv, pv, n, pmt):
     return 0
 
 def netPresentValue(interRate, cashFlowsList):
+    try:
+        __checkInterestRate(interRate)
+    except Exception, e:
+        raise ValueError, e.message + " at NPV." 
+    
     npv = 0.0
     i = div(interRate, 100)
+    if equalNums(i, -1.0) or i < -1.0:
+        raise ValueError
     const = add(1, i)
     for count in range(0,len(cashFlowsList)):
-        try:
-            npv = add(npv, div(cashFlowsList[count], const**count ))
-        except ZeroDivisionError:
-            pass
+        npv = add(npv, div(cashFlowsList[count], const**count ))
         
     return npv
+
+def __checkInterestRate(interestRate):
+    i = div(interestRate, 100)
+    if equalNums(i, -1.0) or i < -1.0:
+        raise ValueError, "Interest rate can not be equal or less than -100%"
+    
+def interestRateOfReturn(cashFlowsList):
+    return 0.0
+        
