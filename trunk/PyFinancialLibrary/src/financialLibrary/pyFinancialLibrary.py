@@ -101,7 +101,7 @@ def numberOfPayments(paymentMode, i, fv, pv, pmt):
     
     if (i == 0):
         if (pmt == 0):
-            raise ValueError, "Can't calculate PMT with PMT=0"
+            raise ValueError, "Can't calculate n with PMT and i = 0"
         
         value = (pv - fv) / pmt
         if (value < 0):
@@ -112,10 +112,13 @@ def numberOfPayments(paymentMode, i, fv, pv, pmt):
         fv = math.fabs(fv)
         pv = math.fabs(pv)
         i = math.fabs(i)
-        n = (math.log(fv / pv)) / (math.log(1+ (i / 100)))
+        n = (math.log(float(fv) / pv)) / (math.log(1.0 + (i / 100)))
         if n < 0:
             raise ValueError, "Impossible scenario: Negative n"
         return n
+    
+    if (not pv and not fv) or (not pv and not pmt) or (not pmt and not fv):
+        raise ValueError, "Can't calculate n with only two registers!"
     
     if (paymentMode == PAYMENT_TYPE_BEGINNING):
         n = __nBeg(float(i) / 100, pv, pmt, fv)
@@ -137,14 +140,14 @@ def __nBeg(ir, pv, pmt, fv):
     given the present value, the future value, the return rate and the payment
     and that the payment mode is at the beggining of the month. """ 
     
-    return math.log((-fv*ir + pmt*ir + pmt)/(ir*pmt + pmt + ir*pv)) / math.log(ir + 1)
+    return math.log((-fv * float(ir) + pmt* float(ir) + pmt)/(float(ir) * pmt + pmt + float(ir) * pv)) / math.log(float(ir) + 1)
 
 def __nEnd(ir, pv, pmt, fv):
     """ This function is responsible for calculating the number of payments 
     given the present value, the future value, the return rate and the payment
     and that the payment mode is at the end of the month. """
     
-    return math.log((pmt - fv*ir)/(pmt + ir*pv)) / math.log(ir + 1)
+    return math.log((pmt - fv * float(ir))/(pmt + float(ir) * pv)) / math.log(float(ir) + 1)
 
 def presentValue(paymentMode, i, fv, n, pmt):
     """ This function is responsible for calculating the present value of scenario 
@@ -152,6 +155,9 @@ def presentValue(paymentMode, i, fv, n, pmt):
     the future value, the return rate and the payment """
     
     if i == 0:
+        if pmt == 0 or fv == 0 or n == 0:
+            raise ValueError, "Can't calculate pv with only two registers!"
+        
         pv = fv + n * pmt
         if pmt > 0:
             return math.fabs(pv)
@@ -161,6 +167,8 @@ def presentValue(paymentMode, i, fv, n, pmt):
         return pv
         
     elif pmt == 0:
+        if i == 0 or fv == 0 or n == 0:
+            raise ValueError, "Can't calculate pv with only two registers!"
         return -fv / math.pow(1+i/100, n)
     
 #    if (paymentMode == PAYMENT_TYPE_BEGINNING):
@@ -168,11 +176,13 @@ def presentValue(paymentMode, i, fv, n, pmt):
 #    elif(paymentMode == PAYMENT_TYPE_END):
 #        return __pvEnd(n, i, pmt, fv)
     if i != 0:
+        if (not pmt and not fv) or (not pmt and not n) or (not fv and not n):
+            raise ValueError, "Can't calculate pv with only two registers!"
         dotPosition = str(float(n)).find(".")
         nIntPart = int(n)
         nFracPart = float(str(float(n))[dotPosition:])
         i = float(i) / 100
-        pv = -((1+i*paymentMode)*pmt*( (1-(1+i)**(-nIntPart)) / i )+fv*(1+i)**(-nIntPart)) / (1+i)**nFracPart    
+        pv = -((1.0+i*paymentMode)*pmt*( (1.0-(1.0+i)**(-nIntPart)) / float(i) )+fv*(1.0+i)**(-nIntPart)) / (1.0+i)**nFracPart    
         return pv
         
     return 0
@@ -197,29 +207,36 @@ def payment(paymentMode, i, fv, n, pv):
     the future value, the number of payments and the present value """
     
     if i == 0:
-        if n == 0:
-            raise ValueError, "Can't calculate pmt with i = 0 and n = 0"
+        if n == 0 or fv == 0 or pv == 0:
+            raise ValueError, "Can't calculate pmt with only two registers!"
         return (pv - fv)/n
     elif fv == 0:
-        pmt = ((math.pow(1+i/100, n) * i/100 ) / (math.pow(1+i/100,n) -1)) * pv
+        if n == 0 or i == 0 or pv == 0:
+            raise ValueError, "Can't calculate pmt with only two registers!"
+        pmt = ((math.pow(1+i/100, n) * i/100 ) / (math.pow(1+i/100,n) -1)*(1+i/100)) * pv
         if (pv > 0 and pmt > 0) or (pv < 0 and pmt < 0):
             return -pmt
         
         return pmt
         
     elif pv == 0 and fv != 0 and i != 0 and n != 0:
-        return fv * i / (math.pow(1+i, n)-1)
+        pmt = fv * i / (math.pow(1+i, n)-1)
+        if (pv > 0 and pmt > 0) or (pv < 0 and pmt < 0):
+            return -pmt
     
 #    if (paymentMode == PAYMENT_TYPE_BEGINNING):
 #        return _pmtBeg(n, i, pv, fv)
 #    elif(paymentMode == PAYMENT_TYPE_END):
 #        return _pmtEnd(n, i, pv, fv)
     
+    if not n and not pv:
+        raise ValueError, "Can't calculate pmt with only two registers!"
+    
     dotPosition = str(float(n)).find(".")
     nIntPart = int(n)
     nFracPart = float(str(float(n))[dotPosition:])
     i = float(i) / 100
-    pmt = ((pv * (1+i) ** nFracPart) + fv * (1+i)**(-nIntPart)) / ((1+i*paymentMode)* ( (1-(1+i)**(-nIntPart))/i ))
+    pmt = ((pv * (1.0+i) ** nFracPart) + fv * (1.0+i)**(-nIntPart)) / ((1.0+i*paymentMode)* ( (1.0-(1.0+i)**(-nIntPart))/ float(i) ))
     if (pv > 0 and pmt > 0) or (pv < 0 and pmt < 0):
         return -pmt
         
@@ -247,7 +264,17 @@ def futureValue(paymentMode, i, pv, n, pmt):
     the present value, the return rate and the payment """
 #    return -(pv * math.pow((1 + i/100), n))
     if (i == 0 and pv != 0 and n != 0 and pmt != 0):
-        return pv - n * pmt
+        fv = math.fabs(pv + n * pmt)
+        if (pv > 0 and pmt > 0):
+            return -fv
+        return fv
+#        iValue = interestRate(paymentMode, 0, pv, n, pmt)
+#        fv = pv * (1+iValue)**n
+#        return fv
+            
+    if (not pv and not n) or (not pv and not i) or (not pv and not pmt) or (not pmt and not n) or (not pmt and not i) or (not n and not i):
+        raise ValueError, "Can't calculate n with only two registers!"
+        
 #    elif (pmt == 0 and pv != 0 and n != 0 and i != 0):
 #        return pv * (1+i)** n
 #    elif pv == 0 and pmt != 0 and i != 0 and n != 0:
@@ -259,11 +286,14 @@ def futureValue(paymentMode, i, pv, n, pmt):
 #        return _fvEnd(n, i, pv, pmt)    
     
     if i != 0:
+        if (not n and not pv) or (not n and not pmt) or (not pmt and not pv):
+            raise ValueError, "Can't calculate pmt with only two registers!"
+        
         dotPosition = str(float(n)).find(".")
         nIntPart = int(n)
         nFracPart = float(str(float(n))[dotPosition:])
         i = float(i) / 100
-        fv = - ( (pv * (1+i)** nFracPart) + (1+i * paymentMode)* pmt * ( (1 - (i+1)**(-nIntPart)) / i   ) ) / ( (i+1)**(-nIntPart) )    
+        fv = - ( (pv * (1.0+i)** nFracPart) + (1.0+i * paymentMode)* pmt * ( (1.0 - (i+1.0)**(-nIntPart)) / float(i)   ) ) / ( (i+1.0)**(-nIntPart) )    
         return fv
         
     return 0
@@ -289,26 +319,41 @@ def interestRate(paymentMode, fv, pv, n, pmt):
     
     #Testing which information is available
     if fv != 0 and pv != 0 and n != 0:
-        return (math.pow(abs(fv / pv), 1 / n) - 1) * 100
+        i = (math.pow(abs(float(fv) / pv), 1 / float(n)) - 1) * 100
+        if (i < 0 and abs(fv) > abs(pv)) or (i > 0  and abs(fv) < abs(pv)):
+            raise ValueError, "Calculated i, pv and fv do not match!!"
+        return i
     
     if n == 0:
         number = numberOfPayments(paymentMode, 0, fv, pv, pmt)
         if number != 0:
-            return (math.pow(abs(fv / pv), 1 / number) - 1) * 100
+            i = (math.pow(abs(float(fv) / pv), 1 / float(number)) - 1) * 100
+            if (i < 0 and fv > pv) or (i > 0  and fv < pv):
+                raise ValueError, "Calculated i, pv and fv do not match!!"
+            return i
     
     if pv == 0:
         pv2 = presentValue(paymentMode, 0, fv, n, pmt)
         if pv2 != 0:
-            return (math.pow(abs(fv / pv2), 1 / n) - 1) * 100
+            i = (math.pow(abs(float(fv) / pv2), 1 / float(n)) - 1) * 100
+            if (i < 0 and fv > pv) or (i > 0  and fv < pv) or (i < 0 and pv < 0 and fv < 0 and pmt < 0) or(i > 0 and pv > 0 and fv > 0 and pmt > 0):
+                raise ValueError, "Calculated i, pv and fv do not match!!"
+            return i
     
     if fv == 0:
         fv2 = futureValue(paymentMode, 0, pv, n, pmt)
         if fv2 != 0:
-                return (math.pow(abs(fv2 / pv), 1 / n) - 1) * 100
+                i =  (math.pow(abs(float(fv2) / pv), 1 / float(n)) - 1) * 100
+                if (i < 0 and fv > pv) or (i > 0  and fv < pv):
+                    raise ValueError, "Calculated i, pv and fv do not match!!"
+                return i
      
     return 0
 
 def netPresentValue(interRate, cashFlowsList):
+    """ This function will perform the calculation of the npv value for a certain number of cash flows 
+    that were previously informed """
+    
     try:
         __checkInterestRate(interRate)
     except Exception, e:
@@ -316,6 +361,8 @@ def netPresentValue(interRate, cashFlowsList):
     
     npv = 0.0
     i = div(interRate, 100)
+    if equalNums(i, -1.0) or i < -1.0:
+        raise ValueError
     const = add(1, i)
     for count in range(0,len(cashFlowsList)):
         npv = add(npv, div(cashFlowsList[count], const**count ))
@@ -328,8 +375,10 @@ def __checkInterestRate(interestRate):
         raise ValueError, "Interest rate can not be equal or less than -100%"
     
 def interestRateOfReturn(cashFlowsList):
-    step = 0.05 # 0.05%
+    """ This function will perform the calculation of the intern return rate (IRR)
+    for a certain number of cash flows that were previously informed """
     
+    step = 0.05 # 0.05%    
     i = 0.0
     npv = netPresentValue(i, cashFlowsList)
     if equalNums(npv, 0.0):
@@ -352,4 +401,10 @@ def interestRateOfReturn(cashFlowsList):
         return __findIRR(iBefore, npvBefore, i, npv)
 
 def __findIRR(upperX, upperY, downX, downY):
-    return div(upperY*downX - downY*upperX, upperY - downY)        
+    return div(upperY*downX - downY*upperX, upperY - downY)     
+
+def amortization(pv, i, n):
+    pass
+
+def simpleInterest(pv, n, i):
+    pass      
