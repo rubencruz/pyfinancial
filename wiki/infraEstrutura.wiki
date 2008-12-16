@@ -19,7 +19,8 @@
 
 == Controle de Versões ==
 
-|| *SVN* || Acesso read-only http://pyfinancial.googlecode.com/svn/trunk/ ||
+|| *SVN* || Biblioteca Financeira --> Acesso read-only http://pyfinancial.googlecode.com/svn/trunk/ ||
+|| *Garage SVN* || Calculadora --> Acesso read-only https://garage.maemo.org/scm/?group_id=822 ||
 
 == Qt ==
 
