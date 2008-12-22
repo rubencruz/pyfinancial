@@ -1,0 +1,12 @@
+#summary One-sentence summary of this page.
+
+= Análise das fórmulas =
+
+Link indicando o conjunto de fórmulas levantadas até o presente momento, bem como análises no que diz respeito aos resultados gerados pelas mesmas:
+
+ * [http://docs.google.com/Doc?id=dzv5hhj_29dkdjg5ff&hl=en Fórmulas]
+
+
+
+
+[Artefatos voltar]
