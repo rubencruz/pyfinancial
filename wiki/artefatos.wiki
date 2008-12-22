@@ -12,6 +12,7 @@ Seguem abaixo os links para os vários artefatos gerados no decorrer do projeto:
  * [http://code.google.com/p/pyfinancial/wiki/glossario Glossário]
  * [estudo Documentação do Estudo]
  * [tabRiscos Tabela de Riscos]
+ * [docFormulas Análise das fórmulas]
 
 
 
