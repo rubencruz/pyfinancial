@@ -42,7 +42,7 @@
 
 == US07 ==
 
-|| O usuário deve ser capaz de avaliar a amortização no pagamento de parcelas, os juros acumulados no período do investimento e arredondar valores calculados. Essa US consiste em implementar as funções financeiras: AMORT, INT, RND. ||
+|| O usuário deve ser capaz de avaliar a amortização no pagamento de parcelas, os juros acumulados no período do investimento e arredondar valores calculados. Essa US consiste em implementar as funções financeiras: AMORT Simples, AMORT Francesa, RND. ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
 || *Estimativa Inicial: 20 h*  ||
 
