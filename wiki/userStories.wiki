@@ -49,7 +49,7 @@
 
 == US08 ==
 
-|| O usuário deve ser capaz de manipular fluxos de caixa na análise de seus investimentos. Essa US consiste em implementar as funções financeiras: 12x, 12%, CFo, CFj, Nj. ||
+|| O usuário deve ser capaz de manipular fluxos de caixa na análise de seus investimentos. Essa US consiste em implementar as funções financeiras: CFo, CFj, Nj. ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
 || *Estimativa Inicial: 40 h*  ||
 
