@@ -2,7 +2,7 @@
 
 O mundo hoje gira em torno dos negócios. Nunca se foi tão necessário saber a respeito de matemática financeira e fazer contas, em muitos casos até simples, para se projetar um pouco do futuro do seu dinheiro. Não por menos muitos são os emuladores para Desktops disponíveis para as várias versões de calculadoras (como a HP12-C Classic, Platinum, etc.), e agora comeca-se a se enveredar no mundo dos dispositivos móveis.
 
-Diante desse contexto, propomos o desenvolvimento de uma calculadora financeira, tendo como dispositivo alvo o Internet Tablet N800 da Nokia (http://www.nseries.com/products/n800/#l=products,n800), baseada na HP12-C (http://www.hp.com/latam/br/produtos/calculadoras/12c.html), mas procurando fornecer diferenciais, como, por exemplo, uma melhoria nas mensagens de erros apresentadas ao usuário final.
+Diante desse contexto, propomos o desenvolvimento de uma calculadora financeira, tendo como dispositivo alvo o Internet Tablet N800 da Nokia (http://www.nseries.com/products/n800/#l=products,n800), baseada na HP12-C (http://www.hp.com/latam/br/produtos/calculadoras/12c.html), mas procurando fornecer diferenciais, como, por exemplo, uma melhoria nas mensagens de erros apresentadas ao usuário final e introdução de novas funcionalidades.
 
 O projeto pode ser dividido em duas focos:
 
