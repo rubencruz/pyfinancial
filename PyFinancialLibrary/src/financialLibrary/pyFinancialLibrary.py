@@ -37,6 +37,8 @@
 
 from decimal import Decimal, InvalidOperation
 
+TOLERANCE = Decimal("0.0000000001")
+
 #Payment modes
 PAYMENT_TYPE_END = 0
 PAYMENT_TYPE_BEGINNING = 1
@@ -128,13 +130,13 @@ def numberOfPayments(paymentMode, i, fv, pv, pmt):
         raise ValueError, "Can't calculate n with only two registers!"
     
     if (paymentMode == PAYMENT_TYPE_BEGINNING):
-        n = __nBeg(Decimal(i) / 100, pv, pmt, fv)
+        n = __nBeg(Decimal(i) / Decimal("100"), pv, pmt, fv)
         if n < 0:
             raise ValueError, "Impossible scenario: Negative n"
         
         return n
     elif(paymentMode == PAYMENT_TYPE_END):
-        n = __nEnd(Decimal(i) / 100, pv, pmt, fv)
+        n = __nEnd(Decimal(i) / Decimal("100"), pv, pmt, fv)
         if n < 0:
             raise ValueError, "Impossible scenario: Negative n"
         
@@ -147,14 +149,14 @@ def __nBeg(ir, pv, pmt, fv):
     given the present value, the future value, the return rate and the payment
     and that the payment mode is at the beggining of the month. """ 
     
-    return ((-fv * Decimal(ir) + pmt* Decimal(ir) + pmt)/(Decimal(ir) * pmt + pmt + Decimal(ir) * pv)).ln() / (Decimal(ir) + 1).ln()
+    return ((-fv * Decimal(ir) + pmt* Decimal(ir) + pmt)/(Decimal(ir) * pmt + pmt + Decimal(ir) * pv)).ln() / (Decimal(ir) + Decimal("1")).ln()
 
 def __nEnd(ir, pv, pmt, fv):
     """ This function is responsible for calculating the number of payments 
     given the present value, the future value, the return rate and the payment
     and that the payment mode is at the end of the month. """
     
-    return ((pmt - fv * Decimal(ir))/(pmt + Decimal(ir) * pv)).ln() / (Decimal(ir) + 1).ln()
+    return ((pmt - fv * Decimal(ir))/(pmt + Decimal(ir) * pv)).ln() / (Decimal(ir) + Decimal("1")).ln()
 
 def presentValue(paymentMode, i, fv, n, pmt):
     """ This function is responsible for calculating the present value of scenario 
@@ -205,14 +207,14 @@ def __pvBeg(np, i, pmt, fv ):
     given the number of payments, the return rate, the payment, the future value 
     and that the payment mode is at the beggining of the month. """
     
-    return ((i + 1)**-np * (-fv * i - (i+1) * ((i + 1)**np - 1) * pmt))/i
+    return ((i + Decimal("1"))**-np * (-fv * i - (i+Decimal("1")) * ((i + Decimal("1"))**np - Decimal("1")) * pmt))/i
 
 def __pvEnd(np, i, pmt, fv ):
     """ This function is responsible for calculating the present value 
     given the number of payments, the return rate, the payment, the future value 
     and that the payment mode is at the end of the month. """
     
-    return ((i + 1)**-np * (-pmt * (i + 1)**np - fv * i + pmt))/i
+    return ((i + Decimal("1"))**-np * (-pmt * (i + Decimal("1"))**np - fv * i + pmt))/i
 
 def payment(paymentMode, i, fv, n, pv):
     """ This function is responsible for calculating the payment of scenario 
@@ -231,14 +233,14 @@ def payment(paymentMode, i, fv, n, pv):
     elif fv == 0:
         if n == 0 or i == 0 or pv == 0:
             raise ValueError, "Can't calculate pmt with only two registers!"
-        pmt = ((((1+i/100)**n) * i/100 ) / (((1+i/100)**n) -1)*(1+i/100)) * pv
+        pmt = ((((Decimal("1")+i/Decimal("100"))**n) * i/Decimal("100") ) / (((Decimal("1")+i/Decimal("100"))**n) -Decimal("1"))*(Decimal("1")+i/Decimal("100"))) * pv
         if (pv > 0 and pmt > 0) or (pv < 0 and pmt < 0):
             return -pmt
         
         return pmt
         
     elif pv == 0 and fv != 0 and i != 0 and n != 0:
-        pmt = fv * i / (((1+i)** n)-1)
+        pmt = fv * i / (((Decimal("1")+i)** n)-Decimal("1"))
         if (pv > 0 and pmt > 0) or (pv < 0 and pmt < 0):
             return -pmt
     
@@ -253,8 +255,8 @@ def payment(paymentMode, i, fv, n, pv):
     dotPosition = str(Decimal(n)).find(".")
     nIntPart = int(n)
     nFracPart = Decimal(str(Decimal(n))[dotPosition:])
-    i = Decimal(i) / 100
-    pmt = ((pv * (1.0+i) ** nFracPart) + fv * (1.0+i)**(-nIntPart)) / ((1.0+i*paymentMode)* ( (1.0-(1.0+i)**(-nIntPart))/ Decimal(i) ))
+    i = Decimal(i) / Decimal("100")
+    pmt = ((pv * (Decimal("1.0")+i) ** nFracPart) + fv * (Decimal("1.0")+i)**(-nIntPart)) / ((Decimal("1.0")+i*paymentMode)* ( (Decimal("1.0")-(Decimal("1.0")+i)**(-nIntPart))/ Decimal(i) ))
     if (pv > 0 and pmt > 0) or (pv < 0 and pmt < 0):
         return -pmt
         
@@ -265,16 +267,16 @@ def _pmtBeg(n, i, pv, fv):
     given the number of payments, the return rate, the present value, 
     the future value and that the payment mode is at the beggining of the month. """
     
-    return - ( (i * (pv * (i + 1)**n + fv )) / 
-               ((i + 1) * ((i + 1)**n - 1) ) )
+    return - ( (i * (pv * (i + Decimal("1"))**n + fv )) / 
+               ((i + Decimal("1")) * ((i + Decimal("1"))**n - Decimal("1")) ) )
 
 def _pmtEnd(n, i, pv, fv):
     """ This function is responsible for calculating the payment 
     given the number of payments, the return rate, the present value, 
     the future value and that the payment mode is at the end of the month. """
     
-    return - ( (i * (pv * (i + 1)**n + fv )) / 
-               ((i + 1)**n - 1) )
+    return - ( (i * (pv * (i + Decimal("1"))**n + fv )) / 
+               ((i + Decimal("1"))**n - Decimal("1")) )
 
 def futureValue(paymentMode, i, pv, n, pmt):
     """ This function is responsible for calculating the future value of scenario 
@@ -296,9 +298,19 @@ def futureValue(paymentMode, i, pv, n, pmt):
 #        return fv
             
     if (not pv and not n) or (not pv and not i) or (not pv and not pmt) or (not pmt and not n) or (not pmt and not i) or (not n and not i):
-        raise ValueError, "Can't calculate n with only two registers!"
-            
-    if i != 0:
+        raise ValueError, "Can't calculate fv with only two registers!"
+        
+#    elif (pmt == 0 and pv != 0 and n != 0 and i != 0):
+#        return pv * (1+i)** n
+#    elif pv == 0 and pmt != 0 and i != 0 and n != 0:
+#        return pmt * ((math.pow(i+1, n)-1) / i)
+    
+#    if (paymentMode == PAYMENT_TYPE_BEGINNING):
+#        return _fvBeg(n, i, pv, pmt)
+#    elif(paymentMode == PAYMENT_TYPE_END):
+#        return _fvEnd(n, i, pv, pmt)    
+    
+    if i != Decimal("0"):
         if (not n and not pv) or (not n and not pmt) or (not pmt and not pv):
             raise ValueError, "Can't calculate pmt with only two registers!"
         
@@ -316,14 +328,14 @@ def _fvBeg(np, i, pv, pmt):
     given the present value, the future value, the return rate and the payment
     and that the payment mode is at the beggining of the month. """
     
-    return ((i + 1) * pmt - (i + 1)**np * (i * pmt + pmt + i*pv))/i
+    return ((i + Decimal("1")) * pmt - (i + Decimal("1"))**np * (i * pmt + pmt + i*pv))/i
 
 def _fvEnd(np, i, pv, pmt):
     """ This function is responsible for calculating the number of payments 
     given the present value, the future value, the return rate and the payment
     and that the payment mode is at the end of the month. """
     
-    return (pmt - (i + 1)**np * (pmt + i * pv) )/i
+    return (pmt - (i + Decimal("1"))**np * (pmt + i * pv) )/i
 
 def interestRate(paymentMode, fv, pv, n, pmt):
     """ This function is responsible for calculating the interest rate given 
@@ -338,31 +350,31 @@ def interestRate(paymentMode, fv, pv, n, pmt):
     
     #Testing which information is available
     if fv != 0 and pv != 0 and n != 0:
-        i = (((abs(Decimal(fv) / pv))** (1 / Decimal(n))) - 1) * 100
+        i = (((abs(Decimal(fv) / pv))** (Decimal("1") / Decimal(n))) - Decimal("1")) * Decimal("100")
         if (i < 0 and abs(fv) > abs(pv)) or (i > 0  and abs(fv) < abs(pv)):
             raise ValueError, "Calculated i, pv and fv do not match!!"
         return i
     
     if n == 0:
-        number = numberOfPayments(paymentMode, 0, fv, pv, pmt)
+        number = numberOfPayments(paymentMode, Decimal("0"), fv, pv, pmt)
         if number != 0:
-            i = (((abs(Decimal(fv) / pv))** (1 / Decimal(number))) - 1) * 100
+            i = (((abs(Decimal(fv) / pv))** (Decimal("1") / Decimal(number))) - Decimal("1")) * Decimal("100")
             if (i < 0 and fv > pv) or (i > 0  and fv < pv):
                 raise ValueError, "Calculated i, pv and fv do not match!!"
             return i
     
     if pv == 0:
-        pv2 = presentValue(paymentMode, 0, fv, n, pmt)
+        pv2 = presentValue(paymentMode, Decimal("0"), fv, n, pmt)
         if pv2 != 0:
-            i = (((abs(Decimal(fv) / pv2))** (1 / Decimal(n))) - 1) * 100
+            i = (((abs(Decimal(fv) / pv2))** (Decimal("1") / Decimal(n))) - Decimal("1")) * Decimal("100")
             if (i < 0 and fv > pv) or (i > 0  and fv < pv) or (i < 0 and pv < 0 and fv < 0 and pmt < 0) or(i > 0 and pv > 0 and fv > 0 and pmt > 0):
                 raise ValueError, "Calculated i, pv and fv do not match!!"
             return i
     
     if fv == 0:
-        fv2 = futureValue(paymentMode, 0, pv, n, pmt)
+        fv2 = futureValue(paymentMode, Decimal("0"), pv, n, pmt)
         if fv2 != 0:
-                i =  (((abs(Decimal(fv2) / pv))** (1 / Decimal(n))) - 1) * 100
+                i =  (((abs(Decimal(fv2) / pv))** (Decimal("1") / Decimal(n))) - Decimal("1")) * Decimal("100")
                 if (i < 0 and fv > pv) or (i > 0  and fv < pv):
                     raise ValueError, "Calculated i, pv and fv do not match!!"
                 return i
@@ -422,14 +434,79 @@ def interestRateOfReturn(cashFlowsList):
 def __findIRR(upperX, upperY, downX, downY):
     return div(upperY*downX - downY*upperX, upperY - downY)     
 
-def amortization(pv, i, n):
-    pass
+def calculateFrenchPmt(pv, i, n):
+    return pv * ( (((Decimal("1")+i)**n) * i) / ( ((Decimal("1")+i)**n)-Decimal("1") ) )
+    
+def frenchAmortization(pv, i, n):
+    """ This method will implement the amortization based on the french system for PRICE payment """
+    
+    if i == None or pv == None or n == None or i == 0 or pv == 0 or n == 0:
+        raise ValueError, "Cannot calculate amortization without pv, n and i"
+    realRate = i / Decimal('100.0')
+    
+    #Getting pmt
+    pmt = calculateFrenchPmt(pv, realRate, n)
+    
+    #Storing information for first period, containing for each period: pmt, interest, acumulated interest, amortization, acumulated amortization and amount to be payed
+    amortizationPlan = [ [Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), pv] ]
+    
+    #Calculating information for other periods
+    for index in xrange(1, n+1, 1):
+        lastAmountToBePayed = amortizationPlan[index-1][5]
+        acumulatedAmortization = amortizationPlan[index-1][4]
+        acumulatedInterest = amortizationPlan[index-1][2]
+        
+        amortization = (pmt - (pv* realRate) ) * (realRate+1)**(index-1)
+        interest = pmt - amortization
+        amountToBePayed = lastAmountToBePayed - amortization
+        newAcumulatedAmortization = acumulatedAmortization + amortization
+        newAcumulatedInterest = acumulatedInterest + interest
+        
+        if amountToBePayed <= TOLERANCE:
+            amountToBePayed = Decimal('0')
+        
+        amortizationPlan.append( [pmt, interest, newAcumulatedInterest, amortization, newAcumulatedAmortization, amountToBePayed]  )
+     
+    return amortizationPlan   
 
+def equalsAmortization(pv, i, n):
+    
+    if i == None or pv == None or n == None or i == 0 or pv == 0 or n == 0:
+            raise ValueError, "Cannot calculate amortization without pv, n and i"
+    realRate = i / Decimal('100.0')
+    
+    #Getting constant amortization
+    amortization = Decimal(pv) / n
+    
+    #Storing information for first period, containing for each period: pmt, interest, acumulated interest, amortization, acumulated amortization and amount to be payed
+    amortizationPlan = [ [Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), pv] ]
+    
+    #Calculating information for other periods
+    for index in xrange(1, n+1, 1):
+        lastAmountToBePayed = amortizationPlan[index-1][5]
+        acumulatedAmortization = amortizationPlan[index-1][4]
+        acumulatedInterest = amortizationPlan[index-1][2]
+        
+        interest = (pv * realRate) - (amortization * realRate * (index-1))
+        payment = amortization + interest
+        
+        newAmountToBePayed = lastAmountToBePayed - amortization
+        newAcumulatedAmortization = acumulatedAmortization + amortization
+        newAcumulatedInterest = acumulatedInterest + interest
+        
+        if newAmountToBePayed <= TOLERANCE:
+            newAmountToBePayed = Decimal('0')
+            
+        amortizationPlan.append( [ payment, interest, newAcumulatedInterest, amortization, newAcumulatedAmortization,  newAmountToBePayed  ] )   
+        
+    return amortizationPlan
+        
 def simpleInterest(pv, n, i):
-    pass      
+    pass
 
 def convertToDecimal(arg1):
     if arg1 == None:
         return None
     argDec1 = Decimal(str(arg1))
-    return argDec1 
+    return argDec1       
+
