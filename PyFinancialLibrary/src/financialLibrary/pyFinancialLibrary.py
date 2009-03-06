@@ -168,6 +168,12 @@ def presentValue(paymentMode, i, fv, n, pmt):
     n = convertToDecimal(n)
     pmt = convertToDecimal(pmt)
 
+    if i == Decimal("0") and pmt == Decimal("0") and fv == Decimal("0") and n == Decimal("0"):
+        return Decimal("0")
+    
+    if pmt == Decimal("0") and fv == Decimal("0") and n == Decimal("0"):
+        return Decimal("0")
+
     
     if i == 0:
         if pmt == 0 or fv == 0 or n == 0:
