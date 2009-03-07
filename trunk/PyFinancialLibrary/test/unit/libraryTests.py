@@ -157,13 +157,19 @@ class LibraryTestCase (unittest.TestCase):
         self.assertAlmostEquals(Decimal("0"), n, TOLERANCE)
         
         #Testing one value
-        n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("0"))
-        assert n != None
-        self.assertAlmostEquals(Decimal("0"), n, TOLERANCE)
+        try
+            n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("0"))
+            assert n != None
+            self.fail("Invalid n calculation!")
+        except ValueError:    
+            pass
         
-        n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("-10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("0"))
-        assert n != None
-        self.assertAlmostEquals(Decimal("0"), n, TOLERANCE)
+        try
+            self.assertAlmostEquals(Decimal("0"), n, TOLERANCE)
+            n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("-10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("0"))
+            self.fail("Invalid n calculation!")
+        except ValueError:    
+            pass
         
         try:
             n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("0"), fv=Decimal("100"), pv=Decimal("0"), pmt=Decimal("0"))
@@ -202,13 +208,19 @@ class LibraryTestCase (unittest.TestCase):
         self.assertAlmostEquals(Decimal("0"), n, TOLERANCE)
         
         #Testing two values
-        n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("10"), fv=Decimal("100"), pv=Decimal("0"), pmt=Decimal("0"))
-        assert n != None
-        self.assertAlmostEquals(Decimal("243"), n, TOLERANCE)
+        try:
+            n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("10"), fv=Decimal("100"), pv=Decimal("0"), pmt=Decimal("0"))
+            assert n != None
+            self.fail("Invalid n calculation!")
+        except ValueError:    
+            pass
         
-        n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("-10"), fv=Decimal("-100"), pv=Decimal("0"), pmt=Decimal("0"))
-        assert n != None
-        self.assertAlmostEquals(Decimal("-218"), n, TOLERANCE)
+        try:
+            n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("-10"), fv=Decimal("-100"), pv=Decimal("0"), pmt=Decimal("0"))
+            assert n != None
+            self.fail("Invalid n calculation!")
+        except ValueError:    
+            pass
         
         try:
             n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("-10"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("0"))
@@ -242,18 +254,22 @@ class LibraryTestCase (unittest.TestCase):
         except ValueError:
             pass
         
-        n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("0"), fv=Decimal("10"), pv=Decimal("0"), pmt=Decimal("5"))
-        assert n != None
-        self.assertAlmostEquals(Decimal("-2"), n, TOLERANCE)
+        try:
+            n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("0"), fv=Decimal("10"), pv=Decimal("0"), pmt=Decimal("5"))
+            self.fail("Invalid n calculation")
+        except ValueError:
+            pass
         
         n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("0"), fv=Decimal("-10"), pv=Decimal("0"), pmt=Decimal("5"))
         assert n != None
         self.assertAlmostEquals(Decimal("2"), n, TOLERANCE)
         
-        n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("0"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("5"))
-        assert n != None
-        self.assertAlmostEquals(Decimal("-10"), n, TOLERANCE)
-        
+        try:
+            n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("0"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("5"))
+            self.fail("Invalid n calculation")
+        except ValueError:
+            pass
+                
         n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("0"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("-10"))
         assert n != None
         self.assertAlmostEquals(Decimal("5"), n, TOLERANCE)
@@ -269,10 +285,12 @@ class LibraryTestCase (unittest.TestCase):
         assert n != None
         self.assertAlmostEquals(Decimal("17"), n, TOLERANCE)
         
-        n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("10"), fv=Decimal("50"), pv=Decimal("0"), pmt=Decimal("10"))
-        assert n != None
-        self.assertAlmostEquals(Decimal("-7"), n, TOLERANCE)
-        
+        try:
+            n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("10"), fv=Decimal("50"), pv=Decimal("0"), pmt=Decimal("10"))
+            self.fail("Invalid n calculation")
+        except ValueError:
+            pass
+                
         n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("10"), fv=Decimal("50"), pv=Decimal("0"), pmt=Decimal("-10"))
         assert n != None
         self.assertAlmostEquals(Decimal("5"), n, TOLERANCE)
@@ -285,9 +303,11 @@ class LibraryTestCase (unittest.TestCase):
         assert n != None
         self.assertAlmostEquals(Decimal("4"), n, TOLERANCE)
         
-        n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("10"), fv=Decimal("0"), pv=Decimal("-10"), pmt=Decimal("-10"))
-        assert n != None
-        self.assertAlmostEquals(Decimal("-1"), n, TOLERANCE)
+        try:
+            n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("10"), fv=Decimal("0"), pv=Decimal("-10"), pmt=Decimal("-10"))
+            self.fail("Invalid n calculation")
+        except ValueError:
+            pass
         
         n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("-10"), fv=Decimal("0"), pv=Decimal("10"), pmt=Decimal("-10"))
         assert n != None
@@ -298,9 +318,11 @@ class LibraryTestCase (unittest.TestCase):
         assert n != None
         self.assertAlmostEquals(Decimal("4"), n, TOLERANCE)
         
-        n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("-5"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("2"))
-        assert n != None
-        self.assertAlmostEquals(Decimal("-11"), n, TOLERANCE)
+        try:
+            n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("-5"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("2"))
+            self.fail("Invalid n calculation")
+        except ValueError:
+            pass
         
         #>> BEG MODE 
         n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("0"))
@@ -308,14 +330,18 @@ class LibraryTestCase (unittest.TestCase):
         self.assertAlmostEquals(Decimal("0"), n, TOLERANCE)
         
         #Testing one value
-        n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("0"))
-        assert n != None
-        self.assertAlmostEquals(Decimal("0"), n, TOLERANCE)
+        try:
+            n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("0"))
+            self.fail("Invalid n calculation")
+        except ValueError:
+            pass
         
-        n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("-10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("0"))
-        assert n != None
-        self.assertAlmostEquals(Decimal("0"), n, TOLERANCE)
-        
+        try:
+            n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("-10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("0"))
+            self.fail("Invalid n calculation")
+        except ValueError:
+            pass
+                
         try:
             n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), fv=Decimal("100"), pv=Decimal("0"), pmt=Decimal("0"))
             assert n != None
@@ -353,14 +379,20 @@ class LibraryTestCase (unittest.TestCase):
         self.assertAlmostEquals(Decimal("0"), n, TOLERANCE)
         
         #Testing two values
-        n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), fv=Decimal("100"), pv=Decimal("0"), pmt=Decimal("0"))
-        assert n != None
-        self.assertAlmostEquals(Decimal("243"), n, TOLERANCE)
-        
-        n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("-10"), fv=Decimal("-100"), pv=Decimal("0"), pmt=Decimal("0"))
-        assert n != None
-        self.assertAlmostEquals(Decimal("-218"), n, TOLERANCE)
-        
+        try:
+            n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), fv=Decimal("100"), pv=Decimal("0"), pmt=Decimal("0"))
+            assert n != None
+            self.fail("Invalid n calculation!")
+        except ValueError:    
+            pass
+
+        try:
+            n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("-10"), fv=Decimal("-100"), pv=Decimal("0"), pmt=Decimal("0"))
+            assert n != None
+            self.fail("Invalid n calculation!")
+        except ValueError:    
+            pass
+                
         try:
             n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("-10"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("0"))
             self.fail("Invalid n calculation")
@@ -393,18 +425,22 @@ class LibraryTestCase (unittest.TestCase):
         except ValueError:
             pass
         
-        n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), fv=Decimal("10"), pv=Decimal("0"), pmt=Decimal("5"))
-        assert n != None
-        self.assertAlmostEquals(Decimal("-2"), n, TOLERANCE)
+        try:
+            n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), fv=Decimal("10"), pv=Decimal("0"), pmt=Decimal("5"))
+            self.fail("Invalid n calculation")
+        except ValueError:
+            pass
         
         n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), fv=Decimal("-10"), pv=Decimal("0"), pmt=Decimal("5"))
         assert n != None
         self.assertAlmostEquals(Decimal("2"), n, TOLERANCE)
         
-        n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("5"))
-        assert n != None
-        self.assertAlmostEquals(Decimal("-10"), n, TOLERANCE)
-        
+        try:
+            n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("5"))
+            self.fail("Invalid n calculation")
+        except ValueError:
+            pass
+            
         n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("-10"))
         assert n != None
         self.assertAlmostEquals(Decimal("5"), n, TOLERANCE)
@@ -420,13 +456,15 @@ class LibraryTestCase (unittest.TestCase):
         assert n != None
         self.assertAlmostEquals(Decimal("17"), n, TOLERANCE)
         
-        n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), fv=Decimal("50"), pv=Decimal("0"), pmt=Decimal("10"))
-        assert n != None
-        self.assertAlmostEquals(Decimal("-7"), n, TOLERANCE)
+        try:
+            n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), fv=Decimal("50"), pv=Decimal("0"), pmt=Decimal("10"))
+            self.fail("Invalid n calculation")
+        except ValueError:
+            pass
         
         n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), fv=Decimal("50"), pv=Decimal("0"), pmt=Decimal("-10"))
         assert n != None
-        self.assertAlmostEquals(Decimal("5"), n, TOLERANCE)
+        self.assertAlmostEquals(Decimal("4"), n, TOLERANCE)
         
         n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), fv=Decimal("50"), pv=Decimal("10"), pmt=Decimal("-10"))
         assert n != None
@@ -436,9 +474,11 @@ class LibraryTestCase (unittest.TestCase):
         assert n != None
         self.assertAlmostEquals(Decimal("4"), n, TOLERANCE)
         
-        n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), fv=Decimal("0"), pv=Decimal("-10"), pmt=Decimal("-10"))
-        assert n != None
-        self.assertAlmostEquals(Decimal("-1"), n, TOLERANCE)
+        try:
+            n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), fv=Decimal("0"), pv=Decimal("-10"), pmt=Decimal("-10"))
+            self.fail("Invalid n calculation")
+        except ValueError:
+            pass
         
         n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("-10"), fv=Decimal("0"), pv=Decimal("10"), pmt=Decimal("-10"))
         assert n != None
@@ -449,10 +489,12 @@ class LibraryTestCase (unittest.TestCase):
         assert n != None
         self.assertAlmostEquals(Decimal("4"), n, TOLERANCE)
         
-        n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("-5"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("2"))
-        assert n != None
-        self.assertAlmostEquals(Decimal("-11"), n, TOLERANCE)
-        
+        try:
+            n = numberOfPayments(PAYMENT_TYPE_BEGINNING, i=Decimal("-5"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("2"))
+            self.fail("Invalid n calculation")
+        except ValueError:
+            pass
+                
         #Scenario with only some variables
         n = numberOfPayments(PAYMENT_TYPE_END, 3.95, 50000, -24895.9738, 0)
         assert n != None
@@ -568,11 +610,11 @@ class LibraryTestCase (unittest.TestCase):
 
         #Testing with 3 parameters
         pv = presentValue(PAYMENT_TYPE_END, i=Decimal('10'), fv=Decimal('-50'), n=Decimal('6'), pmt=Decimal('0'))
-        self.assertAlmostEquals(Decimal("28.22"), pv, TOLERANCE)
+        self.assertAlmostEquals(Decimal("28.224"), pv, TOLERANCE)
         
         #FIXME: Considerar o n negativo como erro?
         pv = presentValue(PAYMENT_TYPE_END, i=Decimal('10'), fv=Decimal('50'), n=Decimal('-6'), pmt=Decimal('0'))
-        self.assertAlmostEquals(Decimal("-88.58"), pv, TOLERANCE)
+        self.assertAlmostEquals(Decimal("-88.578"), pv, TOLERANCE)
         
         pv = presentValue(PAYMENT_TYPE_END, i=Decimal('10'), fv=Decimal('-100'), n=Decimal('0'), pmt=Decimal('-50'))
         self.assertAlmostEquals(Decimal("100"), pv, TOLERANCE)
@@ -582,10 +624,10 @@ class LibraryTestCase (unittest.TestCase):
         
         #FIXME: Considerar o n negativo como erro?
         pv = presentValue(PAYMENT_TYPE_END, i=Decimal('10'), fv=Decimal('0'), n=Decimal('-6'), pmt=Decimal('-100'))
-        self.assertAlmostEquals(Decimal("-600"), pv, TOLERANCE)
+        self.assertAlmostEquals(Decimal("-771.561"), pv, TOLERANCE)
         
         pv = presentValue(PAYMENT_TYPE_END, i=Decimal('-10'), fv=Decimal('0'), n=Decimal('6'), pmt=Decimal('-100'))
-        self.assertAlmostEquals(Decimal("881.68"), pv, TOLERANCE)
+        self.assertAlmostEquals(Decimal("881.676"), pv, TOLERANCE)
         
         pv = presentValue(PAYMENT_TYPE_END, i=Decimal('0'), fv=Decimal('100'), n=Decimal('5'), pmt=Decimal('-50'))
         self.assertAlmostEquals(Decimal("150"), pv, TOLERANCE)
@@ -668,11 +710,11 @@ class LibraryTestCase (unittest.TestCase):
 
         #Testing with 3 parameters
         pv = presentValue(PAYMENT_TYPE_BEGINNING, i=Decimal('10'), fv=Decimal('-50'), n=Decimal('6'), pmt=Decimal('0'))
-        self.assertAlmostEquals(Decimal("28.22"), pv, TOLERANCE)
+        self.assertAlmostEquals(Decimal("28.224"), pv, TOLERANCE)
         
         #FIXME: Considerar o n negativo como erro?
         pv = presentValue(PAYMENT_TYPE_BEGINNING, i=Decimal('10'), fv=Decimal('50'), n=Decimal('-6'), pmt=Decimal('0'))
-        self.assertAlmostEquals(Decimal("-88.58"), pv, TOLERANCE)
+        self.assertAlmostEquals(Decimal("-88.578"), pv, TOLERANCE)
         
         pv = presentValue(PAYMENT_TYPE_BEGINNING, i=Decimal('10'), fv=Decimal('-100'), n=Decimal('0'), pmt=Decimal('-50'))
         self.assertAlmostEquals(Decimal("100"), pv, TOLERANCE)
@@ -682,10 +724,10 @@ class LibraryTestCase (unittest.TestCase):
         
         #FIXME: Considerar o n negativo como erro?
         pv = presentValue(PAYMENT_TYPE_BEGINNING, i=Decimal('10'), fv=Decimal('0'), n=Decimal('-6'), pmt=Decimal('-100'))
-        self.assertAlmostEquals(Decimal("-600"), pv, TOLERANCE)
+        self.assertAlmostEquals(Decimal("-848.717"), pv, TOLERANCE)
         
         pv = presentValue(PAYMENT_TYPE_BEGINNING, i=Decimal('-10'), fv=Decimal('0'), n=Decimal('6'), pmt=Decimal('-100'))
-        self.assertAlmostEquals(Decimal("881.68"), pv, TOLERANCE)
+        self.assertAlmostEquals(Decimal("793.509"), pv, TOLERANCE)
         
         pv = presentValue(PAYMENT_TYPE_BEGINNING, i=Decimal('0'), fv=Decimal('100'), n=Decimal('5'), pmt=Decimal('-50'))
         self.assertAlmostEquals(Decimal("150"), pv, TOLERANCE)
@@ -698,13 +740,13 @@ class LibraryTestCase (unittest.TestCase):
         self.assertAlmostEquals(Decimal("-350"), pv, TOLERANCE)
         
         pv = presentValue(PAYMENT_TYPE_BEGINNING, i=Decimal('3.5'), fv=Decimal('-550'), n=Decimal('3'), pmt=Decimal('25'))
-        self.assertAlmostEquals(Decimal("426.028"), pv, TOLERANCE)
+        self.assertAlmostEquals(Decimal("423.576"), pv, TOLERANCE)
         
         pv = presentValue(PAYMENT_TYPE_BEGINNING, i=Decimal('-3.5'), fv=Decimal('550'), n=Decimal('3'), pmt=Decimal('-25'))
-        self.assertAlmostEquals(Decimal("-531.468"), pv, TOLERANCE)
+        self.assertAlmostEquals(Decimal("-534.288"), pv, TOLERANCE)
         
         pv = presentValue(PAYMENT_TYPE_BEGINNING, i=Decimal('-10'), fv=Decimal('550'), n=Decimal('-3'), pmt=Decimal('25'))
-        self.assertAlmostEquals(Decimal("-333.2"), pv, TOLERANCE)
+        self.assertAlmostEquals(Decimal("-339.975"), pv, TOLERANCE)
         
         #Scenario with only some variables
         pv = presentValue(PAYMENT_TYPE_END, 3.95, 50000, 18, 0)
@@ -850,7 +892,7 @@ class LibraryTestCase (unittest.TestCase):
         
         fv = futureValue(PAYMENT_TYPE_END, i=Decimal("10"), pv=Decimal("-30"), n=Decimal("-2"), pmt=Decimal("0"))
         assert fv != None
-        self.assertAlmostEquals( Decimal("24.79"), fv, TOLERANCE)
+        self.assertAlmostEquals( Decimal("24.793"), fv, TOLERANCE)
         
         fv = futureValue(PAYMENT_TYPE_END, i=Decimal("10"), pv=Decimal("-30"), n=Decimal("0"), pmt=Decimal("10"))
         assert fv != None
@@ -870,7 +912,7 @@ class LibraryTestCase (unittest.TestCase):
         
         fv = futureValue(PAYMENT_TYPE_END, i=Decimal("10"), pv=Decimal("0"), n=Decimal("-2"), pmt=Decimal("10"))
         assert fv != None
-        self.assertAlmostEquals( Decimal("17.36"), fv, TOLERANCE)
+        self.assertAlmostEquals( Decimal("17.355"), fv, TOLERANCE)
         
         fv = futureValue(PAYMENT_TYPE_END, i=Decimal("10"), pv=Decimal("0"), n=Decimal("2"), pmt=Decimal("-10"))
         assert fv != None
@@ -887,11 +929,11 @@ class LibraryTestCase (unittest.TestCase):
         
         fv = futureValue(PAYMENT_TYPE_END, i=Decimal("10"), pv=Decimal("-25"), n=Decimal("-2"), pmt=Decimal("10"))
         assert fv != None
-        self.assertAlmostEquals( Decimal("38.02"), fv, TOLERANCE)
+        self.assertAlmostEquals( Decimal("38.017"), fv, TOLERANCE)
         
         fv = futureValue(PAYMENT_TYPE_END, i=Decimal("-10"), pv=Decimal("-25"), n=Decimal("2"), pmt=Decimal("10"))
         assert fv != None
-        self.assertAlmostEquals( Decimal("1.25"), fv, TOLERANCE)
+        self.assertAlmostEquals( Decimal("1.3"), fv, TOLERANCE)
        
         #BEG MODE 
         fv = futureValue(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), pv=Decimal("0"), n=Decimal("0"), pmt=Decimal("0"))
@@ -987,7 +1029,7 @@ class LibraryTestCase (unittest.TestCase):
         
         fv = futureValue(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), pv=Decimal("-30"), n=Decimal("-2"), pmt=Decimal("0"))
         assert fv != None
-        self.assertAlmostEquals( Decimal("24.79"), fv, TOLERANCE)
+        self.assertAlmostEquals( Decimal("24.8"), fv, TOLERANCE)
         
         fv = futureValue(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), pv=Decimal("-30"), n=Decimal("0"), pmt=Decimal("10"))
         assert fv != None
@@ -1007,28 +1049,28 @@ class LibraryTestCase (unittest.TestCase):
         
         fv = futureValue(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), pv=Decimal("0"), n=Decimal("-2"), pmt=Decimal("10"))
         assert fv != None
-        self.assertAlmostEquals( Decimal("17.36"), fv, TOLERANCE)
+        self.assertAlmostEquals( Decimal("19.1"), fv, TOLERANCE)
         
         fv = futureValue(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), pv=Decimal("0"), n=Decimal("2"), pmt=Decimal("-10"))
         assert fv != None
-        self.assertAlmostEquals( Decimal("21"), fv, TOLERANCE)
+        self.assertAlmostEquals( Decimal("23.1"), fv, TOLERANCE)
        
         #Four values
         fv = futureValue(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), pv=Decimal("25"), n=Decimal("2"), pmt=Decimal("-10"))
         assert fv != None
-        self.assertAlmostEquals( Decimal("-9.25"), fv, TOLERANCE)
+        self.assertAlmostEquals( Decimal("-7.2"), fv, TOLERANCE)
         
         fv = futureValue(PAYMENT_TYPE_BEGINNING, i=Decimal("-10"), pv=Decimal("25"), n=Decimal("2"), pmt=Decimal("-10"))
         assert fv != None
-        self.assertAlmostEquals( Decimal("-1.25"), fv, TOLERANCE)
+        self.assertAlmostEquals( Decimal("-3.2"), fv, TOLERANCE)
         
         fv = futureValue(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), pv=Decimal("-25"), n=Decimal("-2"), pmt=Decimal("10"))
         assert fv != None
-        self.assertAlmostEquals( Decimal("38.02"), fv, TOLERANCE)
+        self.assertAlmostEquals( Decimal("39.8"), fv, TOLERANCE)
         
         fv = futureValue(PAYMENT_TYPE_BEGINNING, i=Decimal("-10"), pv=Decimal("-25"), n=Decimal("2"), pmt=Decimal("10"))
         assert fv != None
-        self.assertAlmostEquals( Decimal("1.25"), fv, TOLERANCE)
+        self.assertAlmostEquals( Decimal("3.2"), fv, TOLERANCE)
        
         #Scenario with only some variables
 #        fv = futureValue(PAYMENT_TYPE_END, 3.95, -24895.9738, 18, 0)
