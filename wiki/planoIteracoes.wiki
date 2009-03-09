@@ -52,11 +52,17 @@ Veja descrição da US [userStories aqui]
 
 
 ----
-=== Próximas US's ===
+=== US4 - 6 ===
 
 Veja descrição da US [userStories aqui] 
 
 [http://spreadsheets.google.com/pub?key=pBp8Asq7_3isouOd6R-9ZVw Acesso para Plano de Iterações]
+
+=== Demais US´s === 
+
+Veja descrição da US [userStories aqui]
+
+[http://les.dsc.ufcg.edu.br:8080/xplanner/do/logout Xplanner]
 
 
 [artefatos Artefatos]
