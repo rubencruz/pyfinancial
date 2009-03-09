@@ -38,6 +38,16 @@ from financialLibrary.pyFinancialLibrary import *
 TOLERANCE = 3
 
 class LibraryTestCase (unittest.TestCase):
+    
+    def myAssertRaises(self, error, msg, method, *a, **kw):
+        try:
+            method(*a, **kw)
+        except error, e:
+            pass
+#            if e.message != msg:
+#                self.fail("Wrong message: " + e.message)
+        else:
+            self.fail("Expected a " + str(error))
      
     def testAdd(self):
         """ Verifies the add method of pyFinancialLibrary.py """
@@ -157,14 +167,14 @@ class LibraryTestCase (unittest.TestCase):
         self.assertAlmostEquals(Decimal("0"), n, TOLERANCE)
         
         #Testing one value
-        try
+        try:
             n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("0"))
             assert n != None
             self.fail("Invalid n calculation!")
         except ValueError:    
             pass
         
-        try
+        try:
             self.assertAlmostEquals(Decimal("0"), n, TOLERANCE)
             n = numberOfPayments(PAYMENT_TYPE_END, i=Decimal("-10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("0"))
             self.fail("Invalid n calculation!")
@@ -1121,6 +1131,267 @@ class LibraryTestCase (unittest.TestCase):
         self.assertAlmostEquals(Decimal("20008.36"), fv, TOLERANCE)    
     
     def testPayment(self):
+        
+        #END MODE 
+        pmt = payment(PAYMENT_TYPE_END, i=Decimal("0"), pv=Decimal("0"), n=Decimal("0"), fv=Decimal("0"))
+        assert pmt != None
+        self.assertAlmostEquals( Decimal("0"), pmt, TOLERANCE)
+        
+        #One value
+        self.myAssertRaises(ValueError, "Error 5", payment, PAYMENT_TYPE_END, i=Decimal("10"), 
+                            pv=Decimal("0"), n=Decimal("0"), fv=Decimal("0"))
+        
+        self.myAssertRaises(ValueError, "Error 5", payment, PAYMENT_TYPE_END, i=Decimal("-10"), 
+                            pv=Decimal("0"), n=Decimal("0"), fv=Decimal("0"))
+         
+        self.myAssertRaises(ValueError, "Error 5", payment, PAYMENT_TYPE_END, i=Decimal("0"), 
+                            pv=Decimal("50"), n=Decimal("0"), fv=Decimal("0"))      
+        
+        self.myAssertRaises(ValueError, "Error 5", payment, PAYMENT_TYPE_END, i=Decimal("0"), 
+                            pv=Decimal("-50"), n=Decimal("0"), fv=Decimal("0"))
+        
+        pmt = payment(PAYMENT_TYPE_END, i=Decimal("0"), pv=Decimal("0"), n=Decimal("2"), fv=Decimal("0"))
+        assert pmt != None
+        self.assertAlmostEquals( Decimal("0"), pmt, TOLERANCE)
+        
+        pmt = payment(PAYMENT_TYPE_END, i=Decimal("0"), pv=Decimal("0"), n=Decimal("-2"), fv=Decimal("0"))
+        assert pmt != None
+        self.assertAlmostEquals( Decimal("0"), pmt, TOLERANCE)
+        
+        self.myAssertRaises(ValueError, "Error 5", payment, PAYMENT_TYPE_END, i=Decimal("0"), 
+                            pv=Decimal("0"), n=Decimal("0"), fv=Decimal("50"))
+        
+        self.myAssertRaises(ValueError, "Error 5", payment, PAYMENT_TYPE_END, i=Decimal("0"), 
+                            pv=Decimal("0"), n=Decimal("0"), fv=Decimal("-50"))
+       
+        #Two values
+        self.myAssertRaises(ValueError, "Error 5", payment, PAYMENT_TYPE_END, i=Decimal("10"), 
+                            pv=Decimal("50"), n=Decimal("0"), fv=Decimal("0"))
+
+        self.myAssertRaises(ValueError, "Error 5", payment, PAYMENT_TYPE_END, i=Decimal("-10"), 
+                            pv=Decimal("50"), n=Decimal("0"), fv=Decimal("0"))
+        
+        pmt = payment(PAYMENT_TYPE_END, i=Decimal("-10"), pv=Decimal("0"), n=Decimal("2"), fv=Decimal("0"))
+        assert pmt != None
+        self.assertAlmostEquals( Decimal("0"), pmt, TOLERANCE)
+        
+        pmt = payment(PAYMENT_TYPE_END, i=Decimal("10"), pv=Decimal("0"), n=Decimal("-2"), fv=Decimal("0"))
+        assert pmt != None
+        self.assertAlmostEquals( Decimal("0"), pmt, TOLERANCE)
+
+        self.myAssertRaises(ValueError, "Error 5", payment, PAYMENT_TYPE_END, i=Decimal("10"), 
+                            pv=Decimal("0"), n=Decimal("0"), fv=Decimal("5"))
+
+        self.myAssertRaises(ValueError, "Error 5", payment, PAYMENT_TYPE_END, i=Decimal("10"), 
+                            pv=Decimal("0"), n=Decimal("0"), fv=Decimal("-5"))
+        
+        pmt = payment(PAYMENT_TYPE_END, i=Decimal("0"), pv=Decimal("30"), n=Decimal("2"), fv=Decimal("0"))
+        assert pmt != None
+        self.assertAlmostEquals( Decimal("-15"), pmt, TOLERANCE)
+        
+        pmt = payment(PAYMENT_TYPE_END, i=Decimal("0"), pv=Decimal("30"), n=Decimal("-2"), fv=Decimal("0"))
+        assert pmt != None
+        self.assertAlmostEquals( Decimal("15"), pmt, TOLERANCE)
+        
+        self.myAssertRaises(ValueError, "Error 5", payment, PAYMENT_TYPE_END, i=Decimal("0"), 
+                            pv=Decimal("30"), n=Decimal("0"), fv=Decimal("10"))
+
+        self.myAssertRaises(ValueError, "Error 5", payment, PAYMENT_TYPE_END, i=Decimal("0"), 
+                            pv=Decimal("30"), n=Decimal("0"), fv=Decimal("-10"))
+        
+        pmt = payment(PAYMENT_TYPE_END, i=Decimal("0"), pv=Decimal("0"), n=Decimal("10"), fv=Decimal("-10"))
+        assert pmt != None
+        self.assertAlmostEquals( Decimal("1"), pmt, TOLERANCE)
+        
+        pmt = payment(PAYMENT_TYPE_END, i=Decimal("0"), pv=Decimal("0"), n=Decimal("-10"), fv=Decimal("10"))
+        assert pmt != None
+        self.assertAlmostEquals( Decimal("1"), pmt, TOLERANCE)
+        
+        #Three values
+        pmt = payment(PAYMENT_TYPE_END, i=Decimal("10"), pv=Decimal("30"), n=Decimal("2"), fv=Decimal("0"))
+        assert pmt != None
+        self.assertAlmostEquals( Decimal("-17.285714"), pmt, TOLERANCE)
+        
+        pmt = payment(PAYMENT_TYPE_END, i=Decimal("10"), pv=Decimal("-30"), n=Decimal("-2"), fv=Decimal("0"))
+        assert pmt != None
+        self.assertAlmostEquals( Decimal("-14.285714"), pmt, TOLERANCE)
+        
+        self.myAssertRaises(ValueError, "Error 5", payment, PAYMENT_TYPE_END, i=Decimal("10"), 
+                            pv=Decimal("-30"), n=Decimal("0"), fv=Decimal("10"))
+
+        self.myAssertRaises(ValueError, "Error 5", payment, PAYMENT_TYPE_END, i=Decimal("-10"), 
+                            pv=Decimal("30"), n=Decimal("0"), fv=Decimal("-10"))
+        
+        pmt = payment(PAYMENT_TYPE_END, i=Decimal("0"), pv=Decimal("30"), n=Decimal("2"), fv=Decimal("-10"))
+        assert pmt != None
+        self.assertAlmostEquals( Decimal("-10"), pmt, TOLERANCE)
+        
+        pmt = payment(PAYMENT_TYPE_END, i=Decimal("0"), pv=Decimal("-30"), n=Decimal("-2"), fv=Decimal("10"))
+        assert pmt != None
+        self.assertAlmostEquals( Decimal("-10"), pmt, TOLERANCE)
+        
+        pmt = payment(PAYMENT_TYPE_END, i=Decimal("10"), pv=Decimal("0"), n=Decimal("-2"), fv=Decimal("10"))
+        assert pmt != None
+        self.assertAlmostEquals( Decimal("5.761904"), pmt, TOLERANCE)
+        
+        pmt = payment(PAYMENT_TYPE_END, i=Decimal("10"), pv=Decimal("0"), n=Decimal("2"), fv=Decimal("-10"))
+        assert pmt != None
+        self.assertAlmostEquals( Decimal("4.761904"), pmt, TOLERANCE)
+       
+        #Four values
+        pmt = payment(PAYMENT_TYPE_END, i=Decimal("10"), pv=Decimal("25"), n=Decimal("2"), fv=Decimal("-10"))
+        assert pmt != None
+        self.assertAlmostEquals( Decimal("-9.642857"), pmt, TOLERANCE)
+        
+        pmt = payment(PAYMENT_TYPE_END, i=Decimal("-10"), pv=Decimal("25"), n=Decimal("2"), fv=Decimal("-10"))
+        assert pmt != None
+        self.assertAlmostEquals( Decimal("-5.394736"), pmt, TOLERANCE)
+        
+        pmt = payment(PAYMENT_TYPE_END, i=Decimal("10"), pv=Decimal("-25"), n=Decimal("-2"), fv=Decimal("10"))
+        assert pmt != None
+        self.assertAlmostEquals( Decimal("-6.142857"), pmt, TOLERANCE)
+        
+        pmt = payment(PAYMENT_TYPE_END, i=Decimal("-10"), pv=Decimal("-25"), n=Decimal("2"), fv=Decimal("10"))
+        assert pmt != None
+        self.assertAlmostEquals( Decimal("5.394736"), pmt, TOLERANCE)
+       
+        #BEG MODE
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), pv=Decimal("0"), n=Decimal("0"), fv=Decimal("0"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("0"), pmt, TOLERANCE)
+#        
+#        #One value
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), pv=Decimal("0"), n=Decimal("0"), fv=Decimal("0"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("0"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("-10"), pv=Decimal("0"), n=Decimal("0"), fv=Decimal("0"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("0"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), pv=Decimal("50"), n=Decimal("0"), fv=Decimal("0"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("-50"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), pv=Decimal("-50"), n=Decimal("0"), fv=Decimal("0"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("50"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), pv=Decimal("0"), n=Decimal("2"), fv=Decimal("0"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("0"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), pv=Decimal("0"), n=Decimal("-2"), fv=Decimal("0"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("0"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), pv=Decimal("0"), n=Decimal("0"), fv=Decimal("50"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("0"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), pv=Decimal("0"), n=Decimal("0"), fv=Decimal("-50"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("0"), pmt, TOLERANCE)
+#        
+#        #Two values
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), pv=Decimal("50"), n=Decimal("0"), fv=Decimal("0"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("-50"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("-10"), pv=Decimal("50"), n=Decimal("0"), fv=Decimal("0"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("-50"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("-10"), pv=Decimal("0"), n=Decimal("2"), fv=Decimal("0"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("0"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), pv=Decimal("0"), n=Decimal("-2"), fv=Decimal("0"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("0"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), pv=Decimal("0"), n=Decimal("0"), fv=Decimal("5"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("0"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), pv=Decimal("0"), n=Decimal("0"), fv=Decimal("-5"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("0"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), pv=Decimal("30"), n=Decimal("2"), fv=Decimal("0"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("-30"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), pv=Decimal("30"), n=Decimal("-2"), fv=Decimal("0"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("-30"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), pv=Decimal("30"), n=Decimal("0"), fv=Decimal("10"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("-30"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), pv=Decimal("30"), n=Decimal("0"), fv=Decimal("-10"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("-30"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), pv=Decimal("0"), n=Decimal("10"), fv=Decimal("-10"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("100"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), pv=Decimal("0"), n=Decimal("-10"), fv=Decimal("10"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("100"), pmt, TOLERANCE)
+#        
+#        #Three values
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), pv=Decimal("30"), n=Decimal("2"), fv=Decimal("0"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("-36.3"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), pv=Decimal("-30"), n=Decimal("-2"), fv=Decimal("0"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("24.8"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), pv=Decimal("-30"), n=Decimal("0"), fv=Decimal("10"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("30"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("-10"), pv=Decimal("30"), n=Decimal("0"), fv=Decimal("-10"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("-30"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), pv=Decimal("30"), n=Decimal("2"), fv=Decimal("-10"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("-10"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("0"), pv=Decimal("-30"), n=Decimal("-2"), fv=Decimal("10"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("50"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), pv=Decimal("0"), n=Decimal("-2"), fv=Decimal("10"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("19.1"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), pv=Decimal("0"), n=Decimal("2"), fv=Decimal("-10"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("23.1"), pmt, TOLERANCE)
+#       
+#        #Four values
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), pv=Decimal("25"), n=Decimal("2"), fv=Decimal("-10"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("-7.2"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("-10"), pv=Decimal("25"), n=Decimal("2"), fv=Decimal("-10"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("-3.2"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("10"), pv=Decimal("-25"), n=Decimal("-2"), fv=Decimal("10"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("39.8"), pmt, TOLERANCE)
+#        
+#        pmt = payment(PAYMENT_TYPE_BEGINNING, i=Decimal("-10"), pv=Decimal("-25"), n=Decimal("2"), fv=Decimal("10"))
+#        assert pmt != None
+#        self.assertAlmostEquals( Decimal("3.2"), pmt, TOLERANCE)
+        
         
 #        #Scenario with only some variables
 #        pmt = payment(PAYMENT_TYPE_END, 3.95, 0, 18, -24895.9738)
