@@ -10,7 +10,7 @@ Abaixo seguem os links para os arquivos contendo o planejamento de cada iteraç�
 ----
 === US01 ===
 
-Veja descrição da US [userStories aqui] 
+Veja descrição das US´s [userStories aqui] 
 
 || Atividade || Descrição || Responsável || Estimativa de Tempo (h) ||
 || A1 || Estudar Arquitetura Maemo e Scratchbox ^1^ || Felipe || 3 ||
@@ -31,7 +31,7 @@ Veja descrição da US [userStories aqui]
 ----
 === US02 ===
 
-Veja descrição da US [userStories aqui] 
+Veja descrição das US´s [userStories aqui] 
 
 || Atividade || Descrição || Responsável || Estimativa de Tempo (h) ||
 || A1 || Instalar Eclipse || Todos || 1 ||
@@ -54,13 +54,13 @@ Veja descrição da US [userStories aqui]
 ----
 === US4 - 6 ===
 
-Veja descrição da US [userStories aqui] 
+Veja descrição das US´s [userStories aqui] 
 
 [http://spreadsheets.google.com/pub?key=pBp8Asq7_3isouOd6R-9ZVw Acesso para Plano de Iterações]
 
 === Demais US´s === 
 
-Veja descrição da US [userStories aqui]
+Veja descrição das US´s [userStories aqui]
 
 [http://les.dsc.ufcg.edu.br:8080/xplanner/do/logout Xplanner]
 
