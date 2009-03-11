@@ -48,6 +48,12 @@ class LibraryTestCase (unittest.TestCase):
 #                self.fail("Wrong message: " + e.message)
         else:
             self.fail("Expected a " + str(error))
+            
+    def myAssertEquals(self, expected_result, method, *a, **kw):
+        res = method(*a, **kw)
+        assert res != None
+        self.assertAlmostEquals(expected_result, res, TOLERANCE)
+            
      
     def testAdd(self):
         """ Verifies the add method of pyFinancialLibrary.py """
@@ -1413,6 +1419,324 @@ class LibraryTestCase (unittest.TestCase):
 #        self.assertAlmostEquals( Decimal("9.790658e-11"), pmt, TOLERANCE)#
     
     def testInterestRate(self): 
+        
+        # END MODE 
+        self.myAssertEquals(Decimal("0"), interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("0"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("0"))
+        
+        #Testing one value
+        self.myAssertEquals(Decimal("0"), interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("0"))
+
+        self.myAssertEquals(Decimal("0"), interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("-10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("0"))
+
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("0"), fv=Decimal("100"), pv=Decimal("0"), pmt=Decimal("0"))
+
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("0"), fv=Decimal("-100"), pv=Decimal("0"), pmt=Decimal("0"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("0"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("0"))
+
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("0"), fv=Decimal("0"), pv=Decimal("-50"), pmt=Decimal("0"))
+
+        self.myAssertEquals(Decimal("0"), interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("0"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("70"))
+
+        self.myAssertEquals(Decimal("0"), interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("0"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("-70"))
+        
+        #Testing two values
+#        try:
+#            i = interestRate(PAYMENT_TYPE_END, n=Decimal("10"), fv=Decimal("100"), pv=Decimal("0"), pmt=Decimal("0"))
+#            assert i != None
+#            self.fail("Invalid n calculation!")
+#        except ValueError:    
+#            pass
+#        
+#        try:
+#            i = interestRate(PAYMENT_TYPE_END, n=Decimal("-10"), fv=Decimal("-100"), pv=Decimal("0"), pmt=Decimal("0"))
+#            assert i != None
+#            self.fail("Invalid n calculation!")
+#        except ValueError:    
+#            pass
+#        
+#        try:
+#            i = interestRate(PAYMENT_TYPE_END, n=Decimal("-10"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("0"))
+#            self.fail("Invalid n calculation")
+#        except ValueError:
+#            pass    
+#        
+#        try:
+#            i = interestRate(PAYMENT_TYPE_END, n=Decimal("10"), fv=Decimal("0"), pv=Decimal("-50"), pmt=Decimal("0"))
+#            self.fail("Invalid n calculation")
+#        except ValueError:
+#            pass
+#        
+#        i = interestRate(PAYMENT_TYPE_END, n=Decimal("10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("100"))
+#        assert i != None
+#        self.assertAlmostEquals(Decimal("0"), i, TOLERANCE)
+#        
+#        i = interestRate(PAYMENT_TYPE_END, n=Decimal("10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("-100"))
+#        assert i != None
+#        self.assertAlmostEquals(Decimal("0"), i, TOLERANCE)
+#        
+#        try:
+#            i = interestRate(PAYMENT_TYPE_END, n=Decimal("0"), fv=Decimal("10"), pv=Decimal("50"), pmt=Decimal("0"))
+#            self.fail("Invalid n calculation")
+#        except ValueError:
+#            pass
+#        
+#        try:
+#            i = interestRate(PAYMENT_TYPE_END, n=Decimal("0"), fv=Decimal("10"), pv=Decimal("-50"), pmt=Decimal("0"))
+#            self.fail("Invalid n calculation")
+#        except ValueError:
+#            pass
+#        
+#        try:
+#            i = interestRate(PAYMENT_TYPE_END, n=Decimal("0"), fv=Decimal("10"), pv=Decimal("0"), pmt=Decimal("5"))
+#            self.fail("Invalid n calculation")
+#        except ValueError:
+#            pass
+#        
+#        i = interestRate(PAYMENT_TYPE_END, n=Decimal("0"), fv=Decimal("-10"), pv=Decimal("0"), pmt=Decimal("5"))
+#        assert i != None
+#        self.assertAlmostEquals(Decimal("2"), i, TOLERANCE)
+#        
+#        try:
+#            i = interestRate(PAYMENT_TYPE_END, n=Decimal("0"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("5"))
+#            self.fail("Invalid n calculation")
+#        except ValueError:
+#            pass
+#                
+#        i = interestRate(PAYMENT_TYPE_END, n=Decimal("0"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("-10"))
+#        assert i != None
+#        self.assertAlmostEquals(Decimal("5"), i, TOLERANCE)
+#        
+#        #Three values
+#        try:
+#            i = interestRate(PAYMENT_TYPE_END, n=Decimal("10"), fv=Decimal("50"), pv=Decimal("10"), pmt=Decimal("0"))
+#            self.fail("Invalid n calculation")
+#        except ValueError:
+#            pass
+#        
+#        i = interestRate(PAYMENT_TYPE_END, n=Decimal("10"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("0"))
+#        assert i != None
+#        self.assertAlmostEquals(Decimal("17"), i, TOLERANCE)
+#        
+#        try:
+#            i = interestRate(PAYMENT_TYPE_END, n=Decimal("10"), fv=Decimal("50"), pv=Decimal("0"), pmt=Decimal("10"))
+#            self.fail("Invalid n calculation")
+#        except ValueError:
+#            pass
+#                
+#        i = interestRate(PAYMENT_TYPE_END, n=Decimal("10"), fv=Decimal("50"), pv=Decimal("0"), pmt=Decimal("-10"))
+#        assert i != None
+#        self.assertAlmostEquals(Decimal("5"), i, TOLERANCE)
+#        
+#        i = interestRate(PAYMENT_TYPE_END, n=Decimal("0"), fv=Decimal("50"), pv=Decimal("10"), pmt=Decimal("-10"))
+#        assert i != None
+#        self.assertAlmostEquals(Decimal("6"), i, TOLERANCE)
+#        
+#        i = interestRate(PAYMENT_TYPE_END, n=Decimal("0"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("-10"))
+#        assert i != None
+#        self.assertAlmostEquals(Decimal("4"), i, TOLERANCE)
+#        
+#        try:
+#            i = interestRate(PAYMENT_TYPE_END, n=Decimal("10"), fv=Decimal("0"), pv=Decimal("-10"), pmt=Decimal("-10"))
+#            self.fail("Invalid n calculation")
+#        except ValueError:
+#            pass
+#        
+#        i = interestRate(PAYMENT_TYPE_END, n=Decimal("-10"), fv=Decimal("0"), pv=Decimal("10"), pmt=Decimal("-10"))
+#        assert i != None
+#        self.assertAlmostEquals(Decimal("1"), i, TOLERANCE)
+#        
+#        #Four values
+#        i = interestRate(PAYMENT_TYPE_END, n=Decimal("5"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("-10"))
+#        assert i != None
+#        self.assertAlmostEquals(Decimal("4"), i, TOLERANCE)
+#        
+#        try:
+#            i = interestRate(PAYMENT_TYPE_END, n=Decimal("-5"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("2"))
+#            self.fail("Invalid n calculation")
+#        except ValueError:
+#            pass
+#        
+#        #>> BEG MODE 
+#        i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("0"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("0"))
+#        assert i != None
+#        self.assertAlmostEquals(Decimal("0"), i, TOLERANCE)
+#        
+#        #Testing one value
+#        try:
+#            i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("0"))
+#            self.fail("Invalid n calculation")
+#        except ValueError:
+#            pass
+#        
+#        try:
+#            i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("-10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("0"))
+#            self.fail("Invalid n calculation")
+#        except ValueError:
+#            pass
+#                
+#        try:
+#            i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("0"), fv=Decimal("100"), pv=Decimal("0"), pmt=Decimal("0"))
+#            assert i != None
+#            self.fail("Invalid n calculation!")
+#        except ValueError:    
+#            pass
+#            
+#        try:
+#            i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("0"), fv=Decimal("-100"), pv=Decimal("0"), pmt=Decimal("0"))
+#            assert i != None
+#            self.fail("Invalid n calculation!")
+#        except ValueError:    
+#            pass
+#        
+#        try:
+#            i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("0"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("0"))
+#            assert i != None
+#            self.fail("Invalid n calculation!")
+#        except ValueError:    
+#            pass
+#        
+#        try:
+#            i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("0"), fv=Decimal("0"), pv=Decimal("-50"), pmt=Decimal("0"))
+#            assert i != None
+#            self.fail("Invalid n calculation!")
+#        except ValueError:    
+#            pass
+#        
+#        i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("0"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("70"))
+#        assert i != None
+#        self.assertAlmostEquals(Decimal("0"), i, TOLERANCE)
+#        
+#        i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("0"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("-70"))
+#        assert i != None
+#        self.assertAlmostEquals(Decimal("0"), i, TOLERANCE)
+#        
+#        #Testing two values
+#        try:
+#            i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("10"), fv=Decimal("100"), pv=Decimal("0"), pmt=Decimal("0"))
+#            assert i != None
+#            self.fail("Invalid n calculation!")
+#        except ValueError:    
+#            pass
+#
+#        try:
+#            i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("-10"), fv=Decimal("-100"), pv=Decimal("0"), pmt=Decimal("0"))
+#            assert i != None
+#            self.fail("Invalid n calculation!")
+#        except ValueError:    
+#            pass
+#                
+#        try:
+#            i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("-10"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("0"))
+#            self.fail("Invalid n calculation")
+#        except ValueError:
+#            pass    
+#        
+#        try:
+#            i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("10"), fv=Decimal("0"), pv=Decimal("-50"), pmt=Decimal("0"))
+#            self.fail("Invalid n calculation")
+#        except ValueError:
+#            pass
+#        
+#        i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("100"))
+#        assert i != None
+#        self.assertAlmostEquals(Decimal("0"), i, TOLERANCE)
+#        
+#        i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("-100"))
+#        assert i != None
+#        self.assertAlmostEquals(Decimal("0"), i, TOLERANCE)
+#        
+#        try:
+#            i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("0"), fv=Decimal("10"), pv=Decimal("50"), pmt=Decimal("0"))
+#            self.fail("Invalid n calculation")
+#        except ValueError:
+#            pass
+#        
+#        try:
+#            i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("0"), fv=Decimal("10"), pv=Decimal("-50"), pmt=Decimal("0"))
+#            self.fail("Invalid n calculation")
+#        except ValueError:
+#            pass
+#        
+#        try:
+#            i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("0"), fv=Decimal("10"), pv=Decimal("0"), pmt=Decimal("5"))
+#            self.fail("Invalid n calculation")
+#        except ValueError:
+#            pass
+#        
+#        i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("0"), fv=Decimal("-10"), pv=Decimal("0"), pmt=Decimal("5"))
+#        assert i != None
+#        self.assertAlmostEquals(Decimal("2"), i, TOLERANCE)
+#        
+#        try:
+#            i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("0"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("5"))
+#            self.fail("Invalid n calculation")
+#        except ValueError:
+#            pass
+#            
+#        i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("0"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("-10"))
+#        assert i != None
+#        self.assertAlmostEquals(Decimal("5"), i, TOLERANCE)
+#        
+#        #Three values
+#        try:
+#            i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("10"), fv=Decimal("50"), pv=Decimal("10"), pmt=Decimal("0"))
+#            self.fail("Invalid n calculation")
+#        except ValueError:
+#            pass
+#        
+#        i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("10"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("0"))
+#        assert i != None
+#        self.assertAlmostEquals(Decimal("17"), i, TOLERANCE)
+#        
+#        try:
+#            i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("10"), fv=Decimal("50"), pv=Decimal("0"), pmt=Decimal("10"))
+#            self.fail("Invalid n calculation")
+#        except ValueError:
+#            pass
+#        
+#        i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("10"), fv=Decimal("50"), pv=Decimal("0"), pmt=Decimal("-10"))
+#        assert i != None
+#        self.assertAlmostEquals(Decimal("4"), i, TOLERANCE)
+#        
+#        i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("0"), fv=Decimal("50"), pv=Decimal("10"), pmt=Decimal("-10"))
+#        assert i != None
+#        self.assertAlmostEquals(Decimal("6"), i, TOLERANCE)
+#        
+#        i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("0"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("-10"))
+#        assert i != None
+#        self.assertAlmostEquals(Decimal("4"), i, TOLERANCE)
+#        
+#        try:
+#            i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("10"), fv=Decimal("0"), pv=Decimal("-10"), pmt=Decimal("-10"))
+#            self.fail("Invalid n calculation")
+#        except ValueError:
+#            pass
+#        
+#        i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("-10"), fv=Decimal("0"), pv=Decimal("10"), pmt=Decimal("-10"))
+#        assert i != None
+#        self.assertAlmostEquals(Decimal("1"), i, TOLERANCE)
+#        
+#        #Four values
+#        i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("5"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("-10"))
+#        assert i != None
+#        self.assertAlmostEquals(Decimal("4"), i, TOLERANCE)
+#        
+#        try:
+#            i = interestRate(PAYMENT_TYPE_BEGINNING, n=Decimal("-5"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("2"))
+#            self.fail("Invalid n calculation")
+#        except ValueError:
+#            pass
+#        
 
         #Scenario with only some variables
         i = interestRate(PAYMENT_TYPE_END, 50000, -24895.9738, 18, 0)
