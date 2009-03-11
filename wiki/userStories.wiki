@@ -54,10 +54,59 @@
 || *Estimativa Inicial: 40 h*  ||
 
 
-== US09 ==
+
+= Projeto 2 =
+
+
+== US 09 ==
+
+|| Escrita da monografia ||
+|| TA 1 - Avaliacao da mesma segundo o cliente ||
+|| *Estimativa Inicial: h*  ||
+
+== US10 ==
+
+|| Fechamento das fórmulas em uso  ||
+|| TA 1 - Elaboracao de testes de aceitacao e unidade para os mesmos de acordo com os resultados da HP12-C ||
+|| TA 2 - Documentacao das formulas ||
+|| *Estimativa Inicial: 30 h*  ||
+
+== US11 ==
+
+|| Implementacao das funcoes auxiliares de conversao de periodos (12x) e taxas de juros (12/). ||
+|| TA 1 - Elaboracao de testes de aceitacao para os mesmos conforme resultados da HP12-C. ||
+|| *Estimativa Inicial: 30 h*  ||
+
+== US12 ==
+
+ || O usuário deverá poder usar os vários registradores (1 a 9 e .1 a .9) para armazenar e recuperar valores a serem usados em cálculos. ||
+|| TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
+|| *Estimativa Inicial: 20 h*  ||
+
+
+== US13 ==
+
+|| Permitir calculos percentuais, porcentagem, diferenca percentual e porcentagem do total, vide a HP12-C. ||
+|| TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
+|| *Estimativa Inicial: 20 h*  ||
+
+
+== US14 ==
 
 || O usuário deve ser capaz de recuperar os valores de sua última análise ao religar a calculadora. Essa US consiste em implementar o setor de armazenamento de dados e a persistência. ||
 || TA 1 - Garantir integridade dos dados salvos ||
+|| *Estimativa Inicial: 20 h*  ||
+
+== US15 ==
+
+|| O usuário deve ser capaz de realizar operações matemáticas como potência (e^x, x^2, ln, y^x, x^1/2, parte fracionaria e parte inteira), e ainda calcular fatoriais. Essa US consiste em implementar o setor de potência, raiz, porcentagem e fatorial. ||
+|| TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
+|| *Estimativa Inicial: 20 h*  ||
+
+== US16 ==
+
+|| Personalizacao da interface ||
+|| TA 1 - Producao de um aplicativo com interface mais intuitiva do que a que esta sendo usada. ||
 || *Estimativa Inicial: 20 h*  ||
 
 
