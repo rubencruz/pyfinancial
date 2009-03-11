@@ -14,12 +14,12 @@
 || Iteração 04	|| US05, US06	|| 
 || Iteração 05	|| US07, US08   ||
 
-|| Release 03 - () || Gerente - Everton Leandro||
+|| Release 03 - (13/04/09) || Gerente - Everton Leandro||
 || Iteração	|| User Story	|| 
 || Iteração 06	|| US10, US11	|| 
 || Iteração 05	|| US12, US13   ||
 
-|| Release 04 - () || Gerente - Diego Dantas ||
+|| Release 04 - (11/05/09) || Gerente - Diego Dantas ||
 || Iteração	|| User Story	|| 
 || Iteração 07	|| US14, US15	|| 
 || Iteração 08	|| US16, US09   ||
