@@ -14,4 +14,14 @@
 || Iteração 04	|| US05, US06	|| 
 || Iteração 05	|| US07, US08   ||
 
+|| Release 03 - () || Gerente - Everton Leandro||
+|| Iteração	|| User Story	|| 
+|| Iteração 06	|| US10, US11	|| 
+|| Iteração 05	|| US12, US13   ||
+
+|| Release 04 - () || Gerente - Diego Dantas ||
+|| Iteração	|| User Story	|| 
+|| Iteração 07	|| US14, US15	|| 
+|| Iteração 08	|| US16, US09   ||
+
 [http://code.google.com/p/pyfinancial/wiki/artefatos Artefatos]
