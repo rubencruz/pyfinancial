@@ -35,7 +35,7 @@
 # LINK consulta: http://www.crd2000.com.br/crd012d.htm
 # http://www.ufcg-uaac.com/Curso_extensao_gestao_investimentos.htm
 
-from decimal import Decimal, InvalidOperation
+from decimal import Decimal, InvalidOperation, DivisionByZero
 
 TOLERANCE = Decimal("0.0000000001")
 
@@ -108,41 +108,72 @@ def numberOfPayments(paymentMode, i, fv, pv, pmt):
     pv = convertToDecimal(pv)
     pmt = convertToDecimal(pmt)
     
-    if (i == 0):
-        if (pmt == 0):
-            raise ValueError, "Can't calculate n with PMT and i = 0"
+    
+    #All parameters are zero
+    if (i == Decimal("0") and fv == Decimal("0") and pv == Decimal("0") and pmt == Decimal("0")):
+        return Decimal("0")
+    
+    if (i <= Decimal("-100")):
+        raise ValueError("Impossible scenario: i value less than -100")
+    
+    try:
+    
+        if (i == Decimal("0")):
+            if (pmt == Decimal("0")):
+                
+                #Special case
+                d = (i / Decimal("100")) / ( 1+(i*paymentMode / Decimal("100")) ) 
+                upperBound = max(fv*d, pv*d)
+                lowerBound = min(fv*d, pv*d)
+                
+                #Searching for a pmt 
+                found = False
+                firstValue = lowerBound 
+                while (firstValue < upperBound):
+                    dec = (pv - fv) / firstValue
+                    if Decimal(str(round(dec))) == dec:
+                        pmt = firstValue
+                        found = True
+                    else:
+                        firstValue += Decimal("0.1")    
+                
+                if not found:
+                    raise ValueError, "Can't calculate n with PMT and i = 0"
+            
+            value = (pv - fv) / pmt
+            if (value < Decimal("0")):
+                raise ValueError, "Impossible scenario: Negative n"
+            return value
         
-        value = (pv - fv) / pmt
-        if (value < 0):
-            raise ValueError, "Impossible scenario: Negative n"
-        return value
-    
-    elif pmt == 0 and i != 0 and fv != 0 and pv != 0:
-        fv = abs(fv)
-        pv = abs(pv)
-        i = abs(i)
-        n = (Decimal(fv) / pv).ln() / (Decimal('1.0') + (i / Decimal('100.0'))).ln()
-        if n < 0:
-            raise ValueError, "Impossible scenario: Negative n"
-        return n
-    
-    if (not pv and not fv) or (not pv and not pmt) or (not pmt and not fv):
-        raise ValueError, "Can't calculate n with only two or less registers!"
-    
-    if (paymentMode == PAYMENT_TYPE_BEGINNING):
-        n = __nBeg(Decimal(i) / Decimal("100"), pv, pmt, fv)
-        if n < 0:
-            raise ValueError, "Impossible scenario: Negative n"
+        elif pmt == Decimal("0") and i != Decimal("0") and fv != Decimal("0") and pv != Decimal("0"):
+            fv = abs(fv)
+            pv = abs(pv)
+            i = abs(i)
+            n = (Decimal(fv) / pv).ln() / (Decimal('1.0') + (i / Decimal('100.0'))).ln()
+            if n < Decimal("0"):
+                raise ValueError, "Impossible scenario: Negative n"
+            return n
         
-        return n
-    elif(paymentMode == PAYMENT_TYPE_END):
-        n = __nEnd(Decimal(i) / Decimal("100"), pv, pmt, fv)
-        if n < 0:
-            raise ValueError, "Impossible scenario: Negative n"
+    #    if (not pv and not fv) or (not pv and not pmt) or (not pmt and not fv):
+    #        raise ValueError, "Can't calculate n with only two or less registers!"
         
-        return n
+        if (paymentMode == PAYMENT_TYPE_BEGINNING):
+            n = __nBeg(Decimal(i) / Decimal("100"), pv, pmt, fv)
+            if n < Decimal("0"):
+                raise ValueError, "Impossible scenario: Negative n"
+            
+            return n
+        elif(paymentMode == PAYMENT_TYPE_END):
+            n = __nEnd(Decimal(i) / Decimal("100"), pv, pmt, fv)
+            if n < Decimal("0"):
+                raise ValueError, "Impossible scenario: Negative n"
+            
+            return n
     
-    return 0
+    except (InvalidOperation, DivisionByZero):
+        raise ValueError("Impossible scenario")
+    
+    return Decimal("0")
 
 def __nBeg(ir, pv, pmt, fv):
     """ This function is responsible for calculating the number of payments 
@@ -168,6 +199,9 @@ def presentValue(paymentMode, i, fv, n, pmt):
     n = convertToDecimal(n)
     pmt = convertToDecimal(pmt)
 
+    if i <= Decimal("-100"):
+        raise ValueError, "Invalid scenario: invalid i"
+
     if i == Decimal("0") and pmt == Decimal("0") and fv == Decimal("0") and n == Decimal("0"):
         return Decimal("0")
     
@@ -175,20 +209,20 @@ def presentValue(paymentMode, i, fv, n, pmt):
         return Decimal("0")
 
     
-    if i == 0:
-        if pmt == 0 or fv == 0 or n == 0:
+    if i == Decimal("0"):
+        if pmt == Decimal("0") or fv == Decimal("0") or n == Decimal("0"):
             raise ValueError, "Can't calculate pv with only two or less registers!"
         
         pv = fv + n * pmt
-        if pmt > 0:
+        if pmt > Decimal("0"):
             return abs(pv)
-        elif pv > 0:
+        elif pv > Decimal("0"):
             return -pv
         
         return pv
         
-    elif pmt == 0:
-        if i == 0 or fv == 0 or n == 0:
+    elif pmt == Decimal("0"):
+        if i == Decimal("0") or fv == Decimal("0") or n == Decimal("0"):
             raise ValueError, "Can't calculate pv with only two or less registers!"
         return -fv / ((Decimal('1.0')+i/Decimal('100.0'))** n)
     
@@ -196,7 +230,7 @@ def presentValue(paymentMode, i, fv, n, pmt):
 #        return __pvBeg(n, i, pmt, fv)
 #    elif(paymentMode == PAYMENT_TYPE_END):
 #        return __pvEnd(n, i, pmt, fv)
-    if i != 0:
+    if i != Decimal("0"):
         if (not pmt and not fv) or (not pmt and not n) or (not fv and not n):
             raise ValueError, "Can't calculate pv with only two or less registers!"
         dotPosition = str(Decimal(n)).find(".")
@@ -232,22 +266,26 @@ def payment(paymentMode, i, fv, n, pv):
     pv = convertToDecimal(pv)
     n = convertToDecimal(n)
     
-    if i == 0:
-        if n == 0 or fv == 0 or pv == 0:
+    #Error condition
+    if n == Decimal("0") or i <= Decimal("-100"):
+        raise ValueError, "Invalid scenario: invalid parameters "+str(n)+" "+str(i)
+    
+    if i == Decimal("0"):
+        if n == Decimal("0") or fv == Decimal("0") or pv == Decimal("0"):
             raise ValueError, "Can't calculate pmt with only two or less registers!"
         return (pv - fv)/n
-    elif fv == 0:
-        if n == 0 or i == 0 or pv == 0:
+    elif fv == Decimal("0"):
+        if n == Decimal("0") or i == Decimal("0") or pv == Decimal("0"):
             raise ValueError, "Can't calculate pmt with only two or less registers!"
         pmt = ((((Decimal("1")+i/Decimal("100"))**n) * i/Decimal("100") ) / (((Decimal("1")+i/Decimal("100"))**n) -Decimal("1"))*(Decimal("1")+i/Decimal("100"))) * pv
-        if (pv > 0 and pmt > 0) or (pv < 0 and pmt < 0):
+        if (pv > Decimal("0") and pmt > Decimal("0")) or (pv < Decimal("0") and pmt < Decimal("0")):
             return -pmt
         
         return pmt
         
-    elif pv == 0 and fv != 0 and i != 0 and n != 0:
+    elif pv == Decimal("0") and fv != Decimal("0") and i != Decimal("0") and n != Decimal("0"):
         pmt = fv * i / (((Decimal("1")+i)** n)-Decimal("1"))
-        if (pv > 0 and pmt > 0) or (pv < 0 and pmt < 0):
+        if (pv > Decimal("0") and pmt > Decimal("0")) or (pv < Decimal("0") and pmt < Decimal("0")):
             return -pmt
     
 #    if (paymentMode == PAYMENT_TYPE_BEGINNING):
@@ -263,7 +301,7 @@ def payment(paymentMode, i, fv, n, pv):
     nFracPart = Decimal(str(Decimal(n))[dotPosition:])
     i = Decimal(i) / Decimal("100")
     pmt = ((pv * (Decimal("1.0")+i) ** nFracPart) + fv * (Decimal("1.0")+i)**(-nIntPart)) / ((Decimal("1.0")+i*paymentMode)* ( (Decimal("1.0")-(Decimal("1.0")+i)**(-nIntPart))/ Decimal(i) ))
-    if (pv > 0 and pmt > 0) or (pv < 0 and pmt < 0):
+    if (pv > Decimal("0") and pmt > Decimal("0")) or (pv < Decimal("0") and pmt < Decimal("0")):
         return -pmt
         
     return pmt                                                               
@@ -293,10 +331,14 @@ def futureValue(paymentMode, i, pv, n, pmt):
     n = convertToDecimal(n)
     pv = convertToDecimal(pv)
     pmt = convertToDecimal(pmt)
-
-    if (i == 0 and pv != 0 and n != 0 and pmt != 0):
+    
+    #Error condition
+    if i <= Decimal("-100"):
+        raise ValueError, "Invalid scenario: Invalid i"
+    
+    if (i == Decimal("0") and pv != Decimal("0") and n != Decimal("0") and pmt != Decimal("0")):
         fv = abs(pv + n * pmt)
-        if (pv > 0 and pmt > 0):
+        if (pv > Decimal("0") and pmt > Decimal("0")):
             return -fv
         return fv
 #        iValue = interestRate(paymentMode, 0, pv, n, pmt)
@@ -353,39 +395,43 @@ def interestRate(paymentMode, fv, pv, n, pmt):
     pv = convertToDecimal(pv)
     pmt = convertToDecimal(pmt)
 
+    #Error conditions
+    if (n <= Decimal("0") or n >= Decimal("10**10") or 
+        (fv.is_signed() and pv.is_signed() and pmt.is_signed()) or (not fv.is_signed() and not pv.is_signed() and not pmt.is_signed())):
+        raise ValueError, "Impossible scenario: invalid parameters"
     
     #Testing which information is available
-    if fv != 0 and pv != 0 and n != 0:
+    if fv != Decimal("0") and pv != Decimal("0") and n != Decimal("0"):
         i = (((abs(Decimal(fv) / pv))** (Decimal("1") / Decimal(n))) - Decimal("1")) * Decimal("100")
-        if (i < 0 and abs(fv) > abs(pv)) or (i > 0  and abs(fv) < abs(pv)):
+        if (i < Decimal("0") and abs(fv) > abs(pv)) or (i > Decimal("0")  and abs(fv) < abs(pv)) or (i <= Decimal("-100")):
             raise ValueError, "Calculated i, pv and fv do not match!!"
         return i
     
-    if n == 0:
+    if n == Decimal("0"):
         number = numberOfPayments(paymentMode, Decimal("0"), fv, pv, pmt)
-        if number != 0:
+        if number != Decimal("0"):
             i = (((abs(Decimal(fv) / pv))** (Decimal("1") / Decimal(number))) - Decimal("1")) * Decimal("100")
-            if (i < 0 and fv > pv) or (i > 0  and fv < pv):
+            if (i < Decimal("0") and fv > pv) or (i > Decimal("0")  and fv < pv) or (i <= Decimal("-100")):
                 raise ValueError, "Calculated i, pv and fv do not match!!"
             return i
     
-    if pv == 0:
+    if pv == Decimal("0"):
         pv2 = presentValue(paymentMode, Decimal("0"), fv, n, pmt)
-        if pv2 != 0:
+        if pv2 != Decimal("0"):
             i = (((abs(Decimal(fv) / pv2))** (Decimal("1") / Decimal(n))) - Decimal("1")) * Decimal("100")
-            if (i < 0 and fv > pv) or (i > 0  and fv < pv) or (i < 0 and pv < 0 and fv < 0 and pmt < 0) or(i > 0 and pv > 0 and fv > 0 and pmt > 0):
-                raise ValueError, "Calculated i, pv and fv do not match!!"
+            if (i < Decimal("0") and fv > pv) or (i > Decimal("0")  and fv < pv) or (i < Decimal("0") and pv < Decimal("0") and fv < Decimal("0") and pmt < Decimal("0")) or (i > Decimal("0") and pv > Decimal("0") and fv > Decimal("0") and pmt > Decimal("0")) or (i <= Decimal("-100")):
+                    raise ValueError, "Calculated i, pv and fv do not match!!"
             return i
     
-    if fv == 0:
+    if fv == Decimal("0"):
         fv2 = futureValue(paymentMode, Decimal("0"), pv, n, pmt)
-        if fv2 != 0:
+        if fv2 != Decimal("0"):
                 i =  (((abs(Decimal(fv2) / pv))** (Decimal("1") / Decimal(n))) - Decimal("1")) * Decimal("100")
-                if (i < 0 and fv > pv) or (i > 0  and fv < pv):
+                if (i < Decimal("0") and fv > pv) or (i > Decimal("0")  and fv < pv) or (i <= Decimal("-100")):
                     raise ValueError, "Calculated i, pv and fv do not match!!"
                 return i
      
-    return 0
+    return Decimal("0")
 
 def netPresentValue(interRate, cashFlowsList):
     """ This function will perform the calculation of the npv value for a certain number of cash flows 
@@ -446,7 +492,7 @@ def calculateFrenchPmt(pv, i, n):
 def frenchAmortization(pv, i, n):
     """ This method will implement the amortization based on the french system for PRICE payment """
     
-    if i == None or pv == None or n == None or i == 0 or pv == 0 or n == 0:
+    if i == None or pv == None or n == None or i == Decimal("0") or pv == Decimal("0") or n == Decimal("0"):
         raise ValueError, "Cannot calculate amortization without pv, n and i"
     realRate = i / Decimal('100.0')
     
