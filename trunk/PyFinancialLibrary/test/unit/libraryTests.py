@@ -1466,6 +1466,174 @@ class LibraryTestCase (unittest.TestCase):
                             n=Decimal("0"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("-70"))
         
         #Testing two values
+<<<<<<< .mine
+        self.myAssertEquals(Decimal("935.904449"), interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("10"), fv=Decimal("100"), pv=Decimal("0"), pmt=Decimal("0"))
+        
+        self.myAssertEquals(Decimal("0"), interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("-10"), fv=Decimal("-100"), pv=Decimal("0"), pmt=Decimal("0"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("-10"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("0"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("10"), fv=Decimal("0"), pv=Decimal("-50"), pmt=Decimal("0"))
+        
+        self.myAssertEquals(Decimal("9.534621"), interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("100"))
+        
+        self.myAssertEquals(Decimal("9.534621"), interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("-100"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("0"), fv=Decimal("10"), pv=Decimal("50"), pmt=Decimal("0"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("0"), fv=Decimal("10"), pv=Decimal("-50"), pmt=Decimal("0"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("0"), fv=Decimal("10"), pv=Decimal("0"), pmt=Decimal("5"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("0"), fv=Decimal("-10"), pv=Decimal("0"), pmt=Decimal("5"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("0"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("5"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("0"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("-10"))
+        
+        #Three values
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("10"), fv=Decimal("50"), pv=Decimal("10"), pmt=Decimal("0"))
+        
+        self.myAssertEquals(Decimal("17.461894"), interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("10"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("0"))
+        
+        self.myAssertEquals(Decimal("6.731716"), interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("10"), fv=Decimal("50"), pv=Decimal("0"), pmt=Decimal("10"))
+        
+        self.myAssertEquals(Decimal("7.539328"), interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("10"), fv=Decimal("50"), pv=Decimal("0"), pmt=Decimal("-10"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("10"), fv=Decimal("0"), pv=Decimal("-10"), pmt=Decimal("-10"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("-10"), fv=Decimal("0"), pv=Decimal("10"), pmt=Decimal("-10"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("0"), fv=Decimal("50"), pv=Decimal("10"), pmt=Decimal("-10"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("0"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("-10"))
+        
+        #Four values
+        self.myAssertEquals(Decimal("-7.348063"), interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("5"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("-10"))
+        
+        self.myAssertEquals(Decimal("-19.623850"), interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("-5"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("2"))
+        
+        #>> BEG MODE
+        self.myAssertEquals(Decimal("0"), interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("0"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("0"))
+        
+        #Testing one value
+        self.myAssertEquals(Decimal("0"), interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("0"))
+
+        self.myAssertEquals(Decimal("0"), interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("-10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("0"))
+
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("0"), fv=Decimal("100"), pv=Decimal("0"), pmt=Decimal("0"))
+
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("0"), fv=Decimal("-100"), pv=Decimal("0"), pmt=Decimal("0"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("0"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("0"))
+
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("0"), fv=Decimal("0"), pv=Decimal("-50"), pmt=Decimal("0"))
+
+        self.myAssertEquals(Decimal("0"), interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("0"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("70"))
+
+        self.myAssertEquals(Decimal("0"), interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("0"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("-70"))
+        
+        #Testing two values
+        self.myAssertEquals(Decimal("935.904449"), interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("10"), fv=Decimal("100"), pv=Decimal("0"), pmt=Decimal("0"))
+        
+        self.myAssertEquals(Decimal("-89.815279"), interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("-10"), fv=Decimal("-100"), pv=Decimal("0"), pmt=Decimal("0"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("-10"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("0"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("10"), fv=Decimal("0"), pv=Decimal("-50"), pmt=Decimal("0"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("100"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("-100"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("0"), fv=Decimal("10"), pv=Decimal("50"), pmt=Decimal("0"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("0"), fv=Decimal("10"), pv=Decimal("-50"), pmt=Decimal("0"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("0"), fv=Decimal("10"), pv=Decimal("0"), pmt=Decimal("5"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("0"), fv=Decimal("-10"), pv=Decimal("0"), pmt=Decimal("5"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("0"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("5"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("0"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("-10"))
+        
+        #Three values
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("10"), fv=Decimal("50"), pv=Decimal("10"), pmt=Decimal("0"))
+        
+        self.myAssertEquals(Decimal("17.461894"), interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("10"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("0"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("10"), fv=Decimal("50"), pv=Decimal("0"), pmt=Decimal("10"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("10"), fv=Decimal("50"), pv=Decimal("0"), pmt=Decimal("-10"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("10"), fv=Decimal("0"), pv=Decimal("-10"), pmt=Decimal("-10"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("-10"), fv=Decimal("0"), pv=Decimal("10"), pmt=Decimal("-10"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("0"), fv=Decimal("50"), pv=Decimal("10"), pmt=Decimal("-10"))
+        
+        self.myAssertRaises(ValueError, "Error 5", interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("0"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("-10"))
+        
+        #Four values
+        self.myAssertEquals(Decimal("-5.421430"), interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("5"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("-10"))
+        
+        self.myAssertEquals(Decimal("-21.220346"), interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("-5"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("2"))
+         
+=======
 #        try:
 #            i = interestRate(PAYMENT_TYPE_END, n=Decimal("10"), fv=Decimal("100"), pv=Decimal("0"), pmt=Decimal("0"))
 #            assert i != None
@@ -1767,6 +1935,7 @@ class LibraryTestCase (unittest.TestCase):
 #        except ValueError:
 #            pass
 #        
+>>>>>>> .r272
 
         #Scenario with only some variables
         i = interestRate(PAYMENT_TYPE_END, 50000, -24895.9738, 18, 0)
