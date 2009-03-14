@@ -80,7 +80,7 @@
 
 == US12 ==
 
- || O usuário da calculadora deverá ser capaz de manipular os 18 registradores simples da mesma, fora os outros 5 financeiros. Com isso o usuário deve ser capaz de atribuir valores a esses registradores, bem como recuperar os valores armazenados. Aqui também teremos a implementação da função de rolagem de valores dos registradores X, Y, Z e W. ||
+|| O usuário da calculadora deverá ser capaz de manipular os 18 registradores simples da mesma, fora os outros 5 financeiros. Com isso o usuário deve ser capaz de atribuir valores a esses registradores, bem como recuperar os valores armazenados. Aqui também teremos a implementação da função de rolagem de valores dos registradores X, Y, Z e W. ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
 || *Estimativa Inicial: 20 h*  ||
 
