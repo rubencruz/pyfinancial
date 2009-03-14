@@ -3,7 +3,9 @@
 = Plano de Iterações =
 
 
-Abaixo seguem os links para os arquivos contendo o planejamento de cada iteração:
+Abaixo seguem os links para os arquivos ou xplanner contendo o planejamento de cada iteração:
+
+= Projeto I =
 
 == Iteração 1 (14/10/2008 - 27/10/2008) == 
 
@@ -63,6 +65,14 @@ Veja descrição das US´s [userStories aqui]
 Veja descrição das US´s [userStories aqui]
 
 [http://les.dsc.ufcg.edu.br:8080/xplanner/do/logout Xplanner]
+
+ 
+= Projeto 2 =
+
+Veja descrição das US´s [userStories aqui]
+
+[http://les.dsc.ufcg.edu.br:8080/xplanner/do/logout Xplanner]
+
 
 
 [artefatos Artefatos]
