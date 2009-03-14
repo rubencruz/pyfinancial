@@ -55,58 +55,59 @@
 
 
 
+
 = Projeto 2 =
 
 
 == US 09 ==
 
-|| Escrita da monografia ||
+|| Essa US consiste em elaborar a documentação formal do projeto através da escrita de uma monografia a ser entregue no final do semestre. ||
 || TA 1 - Avaliacao da mesma segundo o cliente ||
-|| *Estimativa Inicial: h*  ||
+|| *Estimativa Inicial: 30h*  ||
 
 == US10 ==
 
-|| Fechamento das fórmulas em uso  ||
-|| TA 1 - Elaboracao de testes de aceitacao e unidade para os mesmos de acordo com os resultados da HP12-C ||
-|| TA 2 - Documentacao das formulas ||
+|| Dados os problemas encontrados na convergência das fórmulas o objetivo dessa US é encontrar um conjunto final de fórmulas a serem utilizadas cujos resultados sejam coerentes com os apresentados pela HP12-C.  ||
+|| TA 1 - Elaboracao de testes de aceitação e unidade para os mesmos de acordo com os resultados da HP12-C ||
+|| TA 2 - Documentação das fórmulas ||
 || *Estimativa Inicial: 30 h*  ||
 
 == US11 ==
 
-|| Implementacao das funcoes auxiliares de conversao de periodos (12x) e taxas de juros (12/). ||
-|| TA 1 - Elaboracao de testes de aceitacao para os mesmos conforme resultados da HP12-C. ||
+|| Essa US deve permitir ao usuário da calculadora realizar conversões de taxas de juros e períodos de aplicação. O usuário será capaz de informar uma taxa de juros anual e requisitar sua conversão para uma taxa mensal (função 12/) ou ainda informar um período em anos de seu investimento e requisitar a conversão desse período para meses (função 12x).  ||
+|| TA 1 - Elaboração de testes de aceitação para os mesmos conforme resultados da HP12-C. ||
 || *Estimativa Inicial: 30 h*  ||
 
 == US12 ==
 
- || O usuário deverá poder usar os vários registradores (1 a 9 e .1 a .9) para armazenar e recuperar valores a serem usados em cálculos. ||
+ || O usuário da calculadora deverá ser capaz de manipular os 18 registradores simples da mesma, fora os outros 5 financeiros. Com isso o usuário deve ser capaz de atribuir valores a esses registradores, bem como recuperar os valores armazenados. Aqui também teremos a implementação da função de rolagem de valores dos registradores X, Y, Z e W. ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
 || *Estimativa Inicial: 20 h*  ||
 
 
 == US13 ==
 
-|| Permitir calculos percentuais, porcentagem, diferenca percentual e porcentagem do total, vide a HP12-C. ||
+|| O usuário deve poder realizar cálculos percentuais com qualquer um dos valores armazenados na calculadora. Os cálculos permitidos serão porcentagem, diferença percentual e porcentagem do total, vide a HP12-C. ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
 || *Estimativa Inicial: 20 h*  ||
 
 
 == US14 ==
 
-|| O usuário deve ser capaz de recuperar os valores de sua última análise ao religar a calculadora. Essa US consiste em implementar o setor de armazenamento de dados e a persistência. ||
+|| O usuário deve ser capaz de recuperar os valores de sua última análise ao religar a calculadora. Essa US consiste em implementar a persitência periódica dos registradores e sua recuperação no religamento da calculadora. ||
 || TA 1 - Garantir integridade dos dados salvos ||
 || *Estimativa Inicial: 20 h*  ||
 
 == US15 ==
 
-|| O usuário deve ser capaz de realizar operações matemáticas como potência (e^x, x^2, ln, y^x, x^1/2, parte fracionaria e parte inteira), e ainda calcular fatoriais. Essa US consiste em implementar o setor de potência, raiz, porcentagem e fatorial. ||
+|| O usuário deve ser capaz de realizar operações matemáticas mais elaboradas com qualquer um dos valores que estejam armazenados em registradores. As operações permitidas serão e^x, x^2, ln, y^x, x^1/2, parte fracionária e parte inteira. ||
 || TA 1 - Comparar os resultados obtidos com a nossa implementação com os da HP-12c ||
 || *Estimativa Inicial: 20 h*  ||
 
 == US16 ==
 
-|| Personalizacao da interface ||
-|| TA 1 - Producao de um aplicativo com interface mais intuitiva do que a que esta sendo usada. ||
+|| Essa US consiste em reorganizar a interface da nossa calculadora de modo a conseguir uma maior independência do formato adotado na HP12-C. Durante nossos estudos percebemos que várias funções da HP12-C são bem complicadas de serem utilizadas, e aqui iremos facilitar o uso de tais funções, principalmentes para usuários que não estão habituados com o uso de calculadoras desse porte. ||
+|| TA 1 - Produção de um aplicativo com interface mais intuitiva do que a que está sendo usada. ||
 || *Estimativa Inicial: 20 h*  ||
 
 
