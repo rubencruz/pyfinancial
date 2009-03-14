@@ -9,13 +9,10 @@
    Periodicidade do vencimento do juro ou número de vezes em que o juro é processado (calculado) num ano: anual, semestral, trimestral, mensal, etc).
 
 === Capitalização Linear ===
-   A capitalização linear – ou método de formação dos juros simples – considera a
-incidência periódica de uma dada taxa de juros sobre uma base de cálculo fixa.
+   A capitalização linear – ou método de formação dos juros simples – considera a incidência periódica de uma dada taxa de juros sobre uma base de cálculo fixa.
 
 === Capitalização exponencial ===
-   A capitalização exponencial ou – método de formação dos juros compostos –
-considera a incidência periódica de uma dada taxa de juros sobre uma base de cálculo
-variável.
+   A capitalização exponencial ou – método de formação dos juros compostos – considera a incidência periódica de uma dada taxa de juros sobre uma base de cálculo variável.
 
 === Capital inicial ===
    Capital existente na data-pólo inicial.
@@ -35,8 +32,7 @@ variável.
    Datas localizadas entre a data-pólo inicial e a data-pólo final, onde existem movimentações financeiras.
 
 === Diagrama de tempo ===
-   Diagrama que apresenta o fluxo de caixa juntamente com os instantes de tempo das movimentações. Por convenção, recebimentos, entradas ou fluxos positivos são
-representados por setas apontando para cima ao passo que saídas ou pagamentos ou fluxos negativos são representados por setas apontando para baixo.
+   Diagrama que apresenta o fluxo de caixa juntamente com os instantes de tempo das  movimentações. Por convenção, recebimentos, entradas ou fluxos positivos são representados por setas apontando para cima ao passo que saídas ou pagamentos ou fluxos negativos são representados por setas apontando para baixo.
 
 == F ==
 
@@ -69,3 +65,6 @@ representados por setas apontando para cima ao passo que saídas ou pagamentos o
 
 === Valor Nominal ===
    Representa um fluxo qualquer situado entre a data-focal intermediária 1 e a data-pólo final.
+
+
+[artefatos Artefatos]
