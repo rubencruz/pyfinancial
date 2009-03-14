@@ -1,0 +1,71 @@
+#summary One-sentence summary of this page.
+
+= Glossário =
+
+== C ==
+
+
+=== Capitalização ===
+   Periodicidade do vencimento do juro ou número de vezes em que o juro é processado (calculado) num ano: anual, semestral, trimestral, mensal, etc).
+
+=== Capitalização Linear ===
+   A capitalização linear – ou método de formação dos juros simples – considera a
+incidência periódica de uma dada taxa de juros sobre uma base de cálculo fixa.
+
+=== Capitalização exponencial ===
+   A capitalização exponencial ou – método de formação dos juros compostos –
+considera a incidência periódica de uma dada taxa de juros sobre uma base de cálculo
+variável.
+
+=== Capital inicial ===
+   Capital existente na data-pólo inicial.
+
+=== Capital final ===
+   Capital existente na data-pólo final.
+
+== D ==
+
+=== Data-pólo inicial === 
+   Data de início do investimento.
+
+=== Data-pólo final === 
+   Data de resgate do investimento.
+
+=== Datas-focais intermediárias === 
+   Datas localizadas entre a data-pólo inicial e a data-pólo final, onde existem movimentações financeiras.
+
+=== Diagrama de tempo ===
+   Diagrama que apresenta o fluxo de caixa juntamente com os instantes de tempo das movimentações. Por convenção, recebimentos, entradas ou fluxos positivos são
+representados por setas apontando para cima ao passo que saídas ou pagamentos ou fluxos negativos são representados por setas apontando para baixo.
+
+== F ==
+
+=== Fluxo de Caixa ===
+   Montante de caixa recebido e gasto por uma empresa durante um período de tempo definido, algumas vezes ligado a um projeto específico.
+
+== J ==
+
+=== Juros Simples ===
+   No sistema de juros simples, os juros são calculados sobre o principal da dívida (valor inicial emprestado ou aplicado)
+
+=== Juros Compostos ===
+   No sistema de juros compostos, os juros de cada período somam-se à dívida, insidindo juros sobre ele no período seguinte
+
+
+== S ==
+
+=== Série Simples ===
+   Quando um fluxo de caixa apresenta apenas datas-pólo, ou seja, temos apenas dois fluxos.
+
+=== Série Complexa ===
+   Quando um fluxo apresenta ao menos uma data-focal intermediária além das datas-pólo, ou seja, temos no mínimo três fluxos.
+
+
+
+== V ==
+
+=== Valor Atual ===
+   Representa um fluxo qualquer situado na data-pólo inicial.
+
+=== Valor Nominal ===
+   Representa um fluxo qualquer situado entre a data-focal intermediária 1 e a data-pólo final.
