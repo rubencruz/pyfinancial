@@ -202,41 +202,21 @@ def presentValue(paymentMode, i, fv, n, pmt):
 
     if i <= Decimal("-100"):
         raise ValueError, "Invalid scenario: invalid i"
-
-    if i == Decimal("0") and pmt == Decimal("0") and fv == Decimal("0") and n == Decimal("0"):
-        return Decimal("0")
-    
-    if pmt == Decimal("0") and fv == Decimal("0") and n == Decimal("0"):
-        return Decimal("0")
-
     
     if i == Decimal("0"):
         
         pv = fv + n * pmt
-        #if pmt > Decimal("0"):
-        #    return abs(pv)
-        #elif pv > Decimal("0"):
-        #    return -pv
-        
         return -pv
         
-    elif pmt == Decimal("0"):
-        #if i == Decimal("0") or fv == Decimal("0") or n == Decimal("0"):
-        #    raise ValueError, "Can't calculate pv with only two or less registers!"
-        return -fv / ((Decimal('1.0')+i/Decimal('100.0'))** n)
+    i = Decimal(i) / Decimal('100.0')
     
-    if i != Decimal("0"):
-        #if (not pmt and not fv) or (not pmt and not n) or (not fv and not n):
-        #    raise ValueError, "Can't calculate pv with only two or less registers!"
-        dotPosition = str(Decimal(n)).find(".")
-        nIntPart = int(n)
-        nFracPart = Decimal(str(Decimal(n))[dotPosition:])
-        i = Decimal(i) / Decimal('100.0')
-        pv = -((Decimal('1.0')+i*paymentMode)*pmt*( (Decimal('1.0')-(Decimal('1.0')+i)**(-nIntPart)) / Decimal(i) )+fv*(Decimal('1.0')+i)**(-nIntPart)) / (Decimal('1.0')+i)**nFracPart    
-#        pv = pmt * (((1+i)**n)-1) / (((1+i)**n)*i) 
-        return pv
-        
-    return Decimal('0.0')
+    if paymentMode == PAYMENT_TYPE_END:
+        return ((Decimal('1.0')+i)**-n) * (-pmt * ((Decimal('1.0')+i)**n) - fv*i + pmt) / i
+    elif paymentMode == PAYMENT_TYPE_BEGINNING:
+        return ((Decimal('1.0')+i)**-n) * (-fv*i - (Decimal('1.0')+i)*(((Decimal('1.0')+i)**n)-Decimal('1.0'))*pmt ) / i
+    else:
+        #TODO - Raise a library exception
+        raise Exception()
 
 def __pvBeg(np, i, pmt, fv ):
     """ This function is responsible for calculating the present value 
