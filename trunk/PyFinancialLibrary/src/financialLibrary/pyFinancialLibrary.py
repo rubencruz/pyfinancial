@@ -211,29 +211,23 @@ def presentValue(paymentMode, i, fv, n, pmt):
 
     
     if i == Decimal("0"):
-        if pmt == Decimal("0") or fv == Decimal("0") or n == Decimal("0"):
-            raise ValueError, "Can't calculate pv with only two or less registers!"
         
         pv = fv + n * pmt
-        if pmt > Decimal("0"):
-            return abs(pv)
-        elif pv > Decimal("0"):
-            return -pv
+        #if pmt > Decimal("0"):
+        #    return abs(pv)
+        #elif pv > Decimal("0"):
+        #    return -pv
         
-        return pv
+        return -pv
         
     elif pmt == Decimal("0"):
-        if i == Decimal("0") or fv == Decimal("0") or n == Decimal("0"):
-            raise ValueError, "Can't calculate pv with only two or less registers!"
+        #if i == Decimal("0") or fv == Decimal("0") or n == Decimal("0"):
+        #    raise ValueError, "Can't calculate pv with only two or less registers!"
         return -fv / ((Decimal('1.0')+i/Decimal('100.0'))** n)
     
-#    if (paymentMode == PAYMENT_TYPE_BEGINNING):
-#        return __pvBeg(n, i, pmt, fv)
-#    elif(paymentMode == PAYMENT_TYPE_END):
-#        return __pvEnd(n, i, pmt, fv)
     if i != Decimal("0"):
-        if (not pmt and not fv) or (not pmt and not n) or (not fv and not n):
-            raise ValueError, "Can't calculate pv with only two or less registers!"
+        #if (not pmt and not fv) or (not pmt and not n) or (not fv and not n):
+        #    raise ValueError, "Can't calculate pv with only two or less registers!"
         dotPosition = str(Decimal(n)).find(".")
         nIntPart = int(n)
         nFracPart = Decimal(str(Decimal(n))[dotPosition:])
