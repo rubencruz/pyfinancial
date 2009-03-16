@@ -431,13 +431,11 @@ class LibraryTestCase (unittest.TestCase):
         self.myAssertEquals(Decimal("0"), presentValue, PAYMENT_TYPE_END, 
                  i=Decimal("-10"), fv=Decimal("0"), n=Decimal("0"), pmt=Decimal("50"))
 
-        #FIX - Review this test
-        #self.myAssertEquals(Decimal("20"), presentValue, PAYMENT_TYPE_END, 
-        #         i=Decimal("0"), fv=Decimal("-20"), n=Decimal("2"), pmt=Decimal("-10"))
+        self.myAssertEquals(Decimal("40"), presentValue, PAYMENT_TYPE_END, 
+                 i=Decimal("0"), fv=Decimal("-20"), n=Decimal("2"), pmt=Decimal("-10"))
 
-        #FIX - Review this test
-        #self.myAssertEquals(Decimal("-20"), presentValue, PAYMENT_TYPE_END, 
-        #         i=Decimal("0"), fv=Decimal("20"), n=Decimal("-2"), pmt=Decimal("-10"))
+        self.myAssertEquals(Decimal("-40"), presentValue, PAYMENT_TYPE_END, 
+                 i=Decimal("0"), fv=Decimal("20"), n=Decimal("-2"), pmt=Decimal("-10"))
 
         self.myAssertEquals(Decimal("20"), presentValue, PAYMENT_TYPE_END, 
                  i=Decimal("0"), fv=Decimal("-20"), n=Decimal("0"), pmt=Decimal("100"))
@@ -457,9 +455,8 @@ class LibraryTestCase (unittest.TestCase):
         self.myAssertEquals(Decimal("28.224"), presentValue, PAYMENT_TYPE_END, 
                  i=Decimal("10"), fv=Decimal("-50"), n=Decimal("6"), pmt=Decimal("0"))
 
-        #FIX - Review this test
-#        self.myAssertEquals(Decimal("-88.578"), presentValue, PAYMENT_TYPE_END, 
-#                 i=Decimal("10"), fv=Decimal("50"), n=Decimal("-6"), pmt=Decimal("-10"))
+        self.myAssertEquals(Decimal("-165.734150"), presentValue, PAYMENT_TYPE_END, 
+                 i=Decimal("10"), fv=Decimal("50"), n=Decimal("-6"), pmt=Decimal("-10"))
         
         self.myAssertEquals(Decimal("100"), presentValue, PAYMENT_TYPE_END, 
                  i=Decimal("10"), fv=Decimal("-100"), n=Decimal("0"), pmt=Decimal("-50"))
@@ -502,9 +499,8 @@ class LibraryTestCase (unittest.TestCase):
         self.myAssertEquals(Decimal("-10"), presentValue, PAYMENT_TYPE_BEGINNING, 
                  i=Decimal("0"), fv=Decimal("10"), n=Decimal("0"), pmt=Decimal("0"))
 
-        #FIX - Review this test
-#        self.myAssertEquals(Decimal("20.50"), presentValue, PAYMENT_TYPE_BEGINNING, 
-#                 i=Decimal("0"), fv=Decimal("0"), n=Decimal("-20.50"), pmt=Decimal("0"))
+        self.myAssertEquals(Decimal("0"), presentValue, PAYMENT_TYPE_BEGINNING, 
+                 i=Decimal("0"), fv=Decimal("0"), n=Decimal("-20.50"), pmt=Decimal("0"))
 
         self.myAssertEquals(Decimal("0"), presentValue, PAYMENT_TYPE_BEGINNING, 
                  i=Decimal("0"), fv=Decimal("0"), n=Decimal("10"), pmt=Decimal("0"))
@@ -602,10 +598,10 @@ class LibraryTestCase (unittest.TestCase):
         
         #Scenario with payment mode in the beggining of the month
         #FIX - Review this test
-#        pv = presentValue(PAYMENT_TYPE_BEGINNING, 5, 0.000002080, 6, -5910.52)
-#        assert pv != None
-#        assert pv != Decimal("0")
-#        self.assertAlmostEquals(Decimal("29999.979"), pv, TOLERANCE)
+        pv = presentValue(PAYMENT_TYPE_BEGINNING, 5, 0.000002080, 6, -5910.52)
+        assert pv != None
+        assert pv != Decimal("0")
+        self.assertAlmostEquals(Decimal("31499.97845"), pv, TOLERANCE)
         
         pv = presentValue(PAYMENT_TYPE_BEGINNING, 19.58131745, -500, 9, 9.790658e-11)
         assert pv != None
