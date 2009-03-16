@@ -74,5 +74,5 @@ Veja descrição das US´s [userStories aqui]
 [http://les.dsc.ufcg.edu.br:8080/xplanner/do/login Iterações no Xplanner]
 
 
-
+----
 [artefatos Artefatos]
