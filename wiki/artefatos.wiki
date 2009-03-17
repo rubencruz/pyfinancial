@@ -8,7 +8,7 @@ Seguem abaixo os links para os vários artefatos gerados no decorrer do projeto:
  * [http://code.google.com/p/pyfinancial/wiki/artefatos/projetoArquitetural Projeto Arquitetural]
  * [http://code.google.com/p/pyfinancial/wiki/artefatos/planoReleases Plano de Releases]
  * [http://code.google.com/p/pyfinancial/wiki/artefatos/planoIteracoes Plano de Iterações]
- * [http://pyfinancial.googlecode.com/files/BigChartPyFinancialFinal.xls Big Chart]
+ * [http://pyfinancial.googlecode.com/files/BigChartPyFinancial1P2.xls Big Chart]
  * [http://code.google.com/p/pyfinancial/wiki/glossario Glossário]
  * [estudo Documentação do Estudo]
  * [tabRiscos Tabela de Riscos]
