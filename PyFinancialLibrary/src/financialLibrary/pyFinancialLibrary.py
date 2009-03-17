@@ -211,26 +211,26 @@ def presentValue(paymentMode, i, fv, n, pmt):
     i = Decimal(i) / Decimal('100.0')
     
     if paymentMode == PAYMENT_TYPE_END:
-        return ((Decimal('1.0')+i)**-n) * (-pmt * ((Decimal('1.0')+i)**n) - fv*i + pmt) / i
+        return __pvEnd(n, i, pmt, fv)
     elif paymentMode == PAYMENT_TYPE_BEGINNING:
-        return ((Decimal('1.0')+i)**-n) * (-fv*i - (Decimal('1.0')+i)*(((Decimal('1.0')+i)**n)-Decimal('1.0'))*pmt ) / i
+        return __pvBeg(n, i, pmt, fv)
     else:
         #TODO - Raise a library exception
         raise Exception()
 
-def __pvBeg(np, i, pmt, fv ):
+def __pvBeg(n, i, pmt, fv ):
     """ This function is responsible for calculating the present value 
     given the number of payments, the return rate, the payment, the future value 
     and that the payment mode is at the beggining of the month. """
     
-    return ((i + Decimal("1"))**-np * (-fv * i - (i+Decimal("1")) * ((i + Decimal("1"))**np - Decimal("1")) * pmt))/i
+    return ((i + Decimal("1"))**-n * (-fv * i - (i+Decimal("1")) * ((i + Decimal("1"))**n - Decimal("1")) * pmt))/i
 
-def __pvEnd(np, i, pmt, fv ):
+def __pvEnd(n, i, pmt, fv ):
     """ This function is responsible for calculating the present value 
     given the number of payments, the return rate, the payment, the future value 
     and that the payment mode is at the end of the month. """
     
-    return ((i + Decimal("1"))**-np * (-pmt * (i + Decimal("1"))**np - fv * i + pmt))/i
+    return ((i + Decimal("1"))**-n * (-pmt * (i + Decimal("1"))**n - fv * i + pmt))/i
 
 def payment(paymentMode, i, fv, n, pv):
     """ This function is responsible for calculating the payment of scenario 
@@ -312,65 +312,36 @@ def futureValue(paymentMode, i, pv, n, pmt):
     pv = convertToDecimal(pv)
     pmt = convertToDecimal(pmt)
     
-    if i == Decimal("0") and pv == Decimal("0") and n == Decimal("0") and pmt == Decimal("0"):
-        return Decimal("0") 
-    
     #Error condition
     if i <= Decimal("-100"):
         raise ValueError, "Invalid scenario: Invalid i"
     
-    if (i == Decimal("0") and pv != Decimal("0") and n != Decimal("0") and pmt != Decimal("0")):
-        fv = abs(pv + n * pmt)
-        if (pv > Decimal("0") and pmt > Decimal("0")):
-            return -fv
-        return fv
-#        iValue = interestRate(paymentMode, 0, pv, n, pmt)
-#        fv = pv * (1+iValue)**n
-#        return fv
-            
-    if (not pv and not n) or (not pv and not i) or (not pv and not pmt) or (not pmt and not n) or (not pmt and not i) or (not n and not i):
-        raise ValueError, "Can't calculate fv with only two or less registers!"
-        
-#    elif (pmt == 0 and pv != 0 and n != 0 and i != 0):
-#        return pv * (1+i)** n
-#    elif pv == 0 and pmt != 0 and i != 0 and n != 0:
-#        return pmt * ((math.pow(i+1, n)-1) / i)
-    
-#    if (paymentMode == PAYMENT_TYPE_BEGINNING):
-#        return _fvBeg(n, i, pv, pmt)
-#    elif(paymentMode == PAYMENT_TYPE_END):
-#        return _fvEnd(n, i, pv, pmt)    
-    
-    if i != Decimal("0"):
-        if (not n and not pv) or (not n and not pmt) or (not pmt and not pv):
-            raise ValueError, "Can't calculate pmt with only two or less registers!"
-        
-        if paymentMode == PAYMENT_TYPE_END:
-            fv = pmt * (((1+i)**n)-1) / i
-            return fv
-        
-        dotPosition = str(Decimal(n)).find(".")
-        nIntPart = int(n)
-        nFracPart = Decimal(str(Decimal(n))[dotPosition:])
-        i = Decimal(i) / Decimal('100.0')
-        fv = - ( (pv * (Decimal('1.0')+i)** nFracPart) + (Decimal('1.0')+i * paymentMode)* pmt * ( (Decimal('1.0') - (i+Decimal('1.0'))**(-nIntPart)) / Decimal(i)   ) ) / ( (i+Decimal('1.0'))**(-nIntPart) )    
-        return fv
-        
-    return Decimal('0.0')
+    if i == Decimal("0"):
+        return - (pv + n * pmt)
 
-def _fvBeg(np, i, pv, pmt):
+    i = i / Decimal("100")
+    
+    if paymentMode == PAYMENT_TYPE_END:
+        return __fvEnd(n, i, pv, pmt)
+    elif paymentMode == PAYMENT_TYPE_BEGINNING:
+        return __fvBeg(n, i, pv, pmt)
+    else:
+        #TODO - Raise a library exception
+        raise Exception()
+
+def __fvBeg(n, i, pv, pmt):
     """ This function is responsible for calculating the number of payments 
     given the present value, the future value, the return rate and the payment
     and that the payment mode is at the beggining of the month. """
     
-    return ((i + Decimal("1")) * pmt - (i + Decimal("1"))**np * (i * pmt + pmt + i*pv))/i
+    return ((i + Decimal("1")) * pmt - (i + Decimal("1"))**n * (i * pmt + pmt + i*pv))/i
 
-def _fvEnd(np, i, pv, pmt):
+def __fvEnd(n, i, pv, pmt):
     """ This function is responsible for calculating the number of payments 
     given the present value, the future value, the return rate and the payment
     and that the payment mode is at the end of the month. """
     
-    return (pmt - (i + Decimal("1"))**np * (pmt + i * pv) )/i
+    return (pmt - ((i + Decimal("1"))**n) * (pmt + i * pv) )/i
 
 def interestRate(paymentMode, fv, pv, n, pmt):
     """ This function is responsible for calculating the interest rate given 
