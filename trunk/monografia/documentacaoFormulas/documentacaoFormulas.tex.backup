@@ -1,0 +1,51 @@
+\documentclass[a4paper,10pt]{article}
+
+
+%opening
+\title{Documentacao das Formulas}
+\author{PyFinancial}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\section{Formulas}
+
+\begin{center}
+% use packages: array
+\begin{tabular}{|l|c|c|}
+
+\hline
+pv - BEG & $ pv = (i+1)^{-n} * ( -fv*i - (i+1) * ( (i+1)^{n} -1)*pmt  ) / i $ \\ 
+\hline
+pv - END & $ pv = (i+1)^{-n} * ( -pmt*(i+1)^{n} - fv*i + pmt) / i  $ \\
+\hline
+pv - i = 0 & $ pv = fv + n * pmt $ \\
+\hline
+fv - BEG & $ fv = ( (i+1)*pmt - (i+1)^{n}*(i*pmt + pmt + i*pv) ) / i $  \\ 
+\hline
+fv - END & $ fv = ( pmt - (i+1)^{n} * (pmt + i*pv) ) / i $  \\
+\hline
+fv - i = 0 & $ fv = - (pv + n*pmt)$  \\  
+\hline
+n - BEG & $ n = log( (-fv*i + pmt*i + pmt) / (i*pmt + pmt + i*pv) ) / log(i+1) $ \\ 
+\hline
+n - END & $ n = log( (pmt - fv*i) / (pmt + i*pv) ) / log(i+1) $ \\ 
+\hline
+n - i = 0 & $ n = (pv - fv) / pmt $ \\
+\hline
+pmt - BEG & $ pmt = i*( pv* ( i+1 )^{n} + fv ) / ( (i+1)*( (i+1)^{n} - 1 ) )$ \\ 
+i & × \\ 
+npv & × \\ 
+irr & ×
+
+\end{tabular}
+\end{center}
+
+
+
+\end{document}

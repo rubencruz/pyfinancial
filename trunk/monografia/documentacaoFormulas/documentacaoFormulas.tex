@@ -1,0 +1,55 @@
+\documentclass[a4paper,10pt]{article}
+
+
+%opening
+\title{Documentacao das Formulas}
+\author{PyFinancial}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\section{Formulas}
+
+
+\begin{tabular}{|l|l|l|l|}
+
+\hline
+pv - BEG & $ pv = (i+1)^{-n} * ( -fv*i - (i+1) * ( (i+1)^{n} -1)*pmt  ) / i $ & http://www.arachnoid.com/lutusp/finance.html \\ 
+\hline
+pv - END & $ pv = (i+1)^{-n} * ( -pmt*(i+1)^{n} - fv*i + pmt) / i  $ & http://www.arachnoid.com/lutusp/finance.html \\
+\hline
+pv - i = 0 & $ pv = fv + n * pmt $ & Material de Camilo e Livro \\
+\hline
+fv - BEG & $ fv = ( (i+1)*pmt - (i+1)^{n}*(i*pmt + pmt + i*pv) ) / i $ & http://www.arachnoid.com/lutusp/finance.html \\ 
+\hline
+fv - END & $ fv = ( pmt - (i+1)^{n} * (pmt + i*pv) ) / i $ & http://www.arachnoid.com/lutusp/finance.html \\
+\hline
+fv - i = 0 & $ fv = - (pv + n*pmt)$ & Material de Camilo e Livro \\  
+\hline
+n - BEG & $ n = log( (-fv*i + pmt*i + pmt) / (i*pmt + pmt + i*pv) ) / log(i+1) $  & http://www.arachnoid.com/lutusp/finance.html \\ 
+\hline
+n - END & $ n = log( (pmt - fv*i) / (pmt + i*pv) ) / log(i+1) $ & http://www.arachnoid.com/lutusp/finance.html \\ 
+\hline
+n - i = 0 & $ n = (pv - fv) / pmt $ & Material de Camilo e Livro \\
+\hline
+pmt - BEG & $ pmt = - i*( pv* ( i+1 )^{n} + fv ) / ( (i+1)*( (i+1)^{n} - 1 ) )$ & http://www.arachnoid.com/lutusp/finance.html \\ 
+\hline
+pmt - END & $ pmt = - i*( pv*(i+1)^{n} + fv ) / ((i+1)^{n} - 1) $ & http://www.arachnoid.com/lutusp/finance.html \\
+\hline
+pmt - i = 0 & $ pmt = (pv - fv) / n $ & Material de Camilo e Livro \\  
+\hline
+i & $ i = (|fv / pv|^{1/n} - 1) * 100 $ & http://www.crd2000.com.br/crd012d.htm \\ 
+\hline
+npv & $ NPV = CF_{0} + CF_{1} / (1+i)^{1} + CF_{2} / (1+i)^{2} + ... + CF_{n} / (1+i)^{n}  $ & Manual da HP c00363319 \\ 
+\hline
+irr & Resolvido por iteração da fórmula acima até que $ NPV = 0. $ & Livro que está com everton \\
+\hline
+
+\end{tabular}
+
+\end{document}
