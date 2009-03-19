@@ -35,7 +35,7 @@
 # LINK consulta: http://www.crd2000.com.br/crd012d.htm
 # http://www.ufcg-uaac.com/Curso_extensao_gestao_investimentos.htm
 
-from decimal import Decimal, InvalidOperation, DivisionByZero
+from decimal import Decimal, InvalidOperation, DivisionByZero, ROUND_UP, ROUND_HALF_UP
 
 TOLERANCE = Decimal("0.0000000001")
 
@@ -107,7 +107,9 @@ def numberOfPayments(paymentMode, i, fv, pv, pmt):
     fv = convertToDecimal(fv)
     pv = convertToDecimal(pv)
     pmt = convertToDecimal(pmt)
-    
+
+    if (paymentMode != PAYMENT_TYPE_BEGINNING and paymentMode != PAYMENT_TYPE_END):
+        raise ValueError, "Invalid scenario: Should select BEG or END"
     
     #All parameters are zero
     if (i == Decimal("0") and fv == Decimal("0") and pv == Decimal("0") and pmt == Decimal("0")):
@@ -117,33 +119,28 @@ def numberOfPayments(paymentMode, i, fv, pv, pmt):
         raise ValueError("Impossible scenario: i value less than -100")
     
     try:
-    
-        if (i == Decimal("-100")):            
-            value = (pv - fv) / pmt
-            
-#            if ((pv >= Decimal("0") and fv >= Decimal("0") and pmt >= Decimal("0")) or (pv < Decimal("0") and fv < Decimal("0") and pmt < Decimal("0"))  )  :
-#                raise ValueError, "Impossible scenario: Negative n"
-#            return abs(value)
-            return value
-                
         if (paymentMode == PAYMENT_TYPE_BEGINNING):
-            n = __nBeg(Decimal(i) / Decimal("100"), pv, pmt, fv)
+            n = __nBeg(i / Decimal("100"), pv, pmt, fv)
             
-            if n.is_infinite():
-                raise ValueError, "Impossible scenario: Negative n"
+        else:
+            n = __nEnd(i / Decimal("100"), pv, pmt, fv)
             
-            return n
-        elif(paymentMode == PAYMENT_TYPE_END):
-            n = __nEnd(Decimal(i) / Decimal("100"), pv, pmt, fv)
-            
-            if n.is_infinite():
-                raise ValueError, "Impossible scenario: Negative n"
-            return n
-    
-    except (InvalidOperation, DivisionByZero):
-        raise ValueError("Impossible scenario")
 
-    return Decimal("0")
+        if n.is_infinite():
+            raise ValueError, "Impossible scenario: Negative n"
+                
+    except (InvalidOperation, DivisionByZero):
+        try:
+            if (pv > Decimal("0") and fv > Decimal("0")) or (pv < Decimal("0") and fv < Decimal("0")):
+                n = (abs(pv + fv))/abs(pmt)
+            else:
+                n = (abs(pv) - abs(fv))/abs(pmt)
+            if presentValue(paymentMode, i, fv, n, pmt) != pv:
+                n = -n
+        except (InvalidOperation, DivisionByZero):
+            raise ValueError("Impossible scenario")
+
+    return n.quantize(Decimal("1"), ROUND_UP)
 
 def __nBeg(ir, pv, pmt, fv):
     """ This function is responsible for calculating the number of payments 
@@ -157,7 +154,7 @@ def __nEnd(ir, pv, pmt, fv):
     given the present value, the future value, the return rate and the payment
     and that the payment mode is at the end of the month. """
     
-    return ((pmt - fv * Decimal(ir))/(pmt + Decimal(ir) * pv)).log10() / (Decimal(ir) + Decimal("1")).log10()
+    return ((pmt - fv * ir)/(pmt + ir * pv)).log10() / (ir + Decimal("1")).log10()
 
 def presentValue(paymentMode, i, fv, n, pmt):
     """ This function is responsible for calculating the present value of scenario 
@@ -210,6 +207,9 @@ def payment(paymentMode, i, fv, n, pv):
     fv = convertToDecimal(fv)
     pv = convertToDecimal(pv)
     n = convertToDecimal(n)
+
+    if (paymentMode != PAYMENT_TYPE_BEGINNING and paymentMode != PAYMENT_TYPE_END):
+        raise ValueError, "Invalid scenario: Should select BEG or END"
     
     if n == Decimal("0") and fv == Decimal("0") and i == Decimal("0") and pv == Decimal("0"):
         return Decimal("0")
@@ -217,8 +217,6 @@ def payment(paymentMode, i, fv, n, pv):
     #Error condition
     if n == Decimal("0") or i <= Decimal("-100"):
         raise ValueError, "Invalid scenario: invalid parameters "+str(n)+" "+str(i)
-    if (paymentMode != PAYMENT_TYPE_BEGINNING and paymentMode != PAYMENT_TYPE_END):
-        raise ValueError, "Invalid scenario: Should select BEG or END"
     
     if i == Decimal("0"):
         if (pv > Decimal("0") and fv > Decimal("0")) or (pv < Decimal("0") and fv < Decimal("0")):
