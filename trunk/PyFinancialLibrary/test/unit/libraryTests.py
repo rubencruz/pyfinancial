@@ -219,14 +219,14 @@ class LibraryTestCase (unittest.TestCase):
         self.myAssertRaises(ValueError, "Error 5", numberOfPayments, PAYMENT_TYPE_END, 
                             i=Decimal("0"), fv=Decimal("10"), pv=Decimal("-50"), pmt=Decimal("0"))
         
-        #FIXME - Review this test
+        #FIXME - Review this test: No emulador deu -2
 #        self.myAssertRaises(ValueError, "Error 5", numberOfPayments, PAYMENT_TYPE_END, 
 #                            i=Decimal("0"), fv=Decimal("10"), pv=Decimal("0"), pmt=Decimal("5"))
                 
         self.myAssertEquals(Decimal("2"), numberOfPayments, PAYMENT_TYPE_END, 
                  i=Decimal("0"), fv=Decimal("-10"), pv=Decimal("0"), pmt=Decimal("5"))
 
-        #FIXME - Review this test
+        #FIXME - Review this test: No emulador deu -10
 #        self.myAssertRaises(ValueError, "Error 5", numberOfPayments, PAYMENT_TYPE_END, 
 #                            i=Decimal("0"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("5"))
         
@@ -240,20 +240,20 @@ class LibraryTestCase (unittest.TestCase):
         self.myAssertEquals(Decimal("1"), numberOfPayments, PAYMENT_TYPE_END, 
                  i=Decimal("10"), fv=Decimal("0"), pv=Decimal("-10"), pmt=Decimal("70"))
         
-        #FIXME - Review this test
+        #FIXME - Review this test: No emulador deu -7,00
 #        self.myAssertRaises(ValueError, "Error 5", numberOfPayments, PAYMENT_TYPE_END, 
 #                            i=Decimal("10"), fv=Decimal("50"), pv=Decimal("0"), pmt=Decimal("10"))
                 
         self.myAssertEquals(Decimal("5"), numberOfPayments, PAYMENT_TYPE_END, 
                  i=Decimal("10"), fv=Decimal("50"), pv=Decimal("0"), pmt=Decimal("-10"))
         
-        #FIXME - Review this test
+        #FIXME - Review this test: No emulador deu 6
 #        self.myAssertEquals(Decimal("4"), numberOfPayments, PAYMENT_TYPE_END, 
 #                 i=Decimal("0"), fv=Decimal("50"), pv=Decimal("10"), pmt=Decimal("-10"))
-#        
+#        No emulador deu: 4 
 #        self.myAssertEquals(Decimal("6"), numberOfPayments, PAYMENT_TYPE_END, 
 #                 i=Decimal("0"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("-10"))
-                
+#        No emulador deu -1
 #        self.myAssertRaises(ValueError, "Error 5", numberOfPayments, PAYMENT_TYPE_END, 
 #                            i=Decimal("10"), fv=Decimal("0"), pv=Decimal("-10"), pmt=Decimal("-10"))
         
@@ -264,10 +264,9 @@ class LibraryTestCase (unittest.TestCase):
         self.myAssertEquals(Decimal("4"), numberOfPayments, PAYMENT_TYPE_END, 
                  i=Decimal("5"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("-10"))        
               
-        #FIXME - Review this test
+        #FIXME - Review this test: No emulador deu -11 e no nosso -11.82
 #        self.myAssertRaises(ValueError, "Error 5", numberOfPayments, PAYMENT_TYPE_END, 
 #                            i=Decimal("-5"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("2"))
-        
         
         #>> BEG MODE 
         self.myAssertEquals(Decimal("0"), numberOfPayments, PAYMENT_TYPE_BEGINNING, 
@@ -323,14 +322,14 @@ class LibraryTestCase (unittest.TestCase):
         self.myAssertRaises(ValueError, "Error 5", numberOfPayments, PAYMENT_TYPE_BEGINNING, 
                             i=Decimal("0"), fv=Decimal("10"), pv=Decimal("-50"), pmt=Decimal("0"))
 
-        #FIXME - Review this test        
+        #FIXME - Review this test: No emulador deu -2      
 #        self.myAssertRaises(ValueError, "Error 5", numberOfPayments, PAYMENT_TYPE_BEGINNING, 
 #                            i=Decimal("0"), fv=Decimal("10"), pv=Decimal("0"), pmt=Decimal("5"))
                 
         self.myAssertEquals(Decimal("2"), numberOfPayments, PAYMENT_TYPE_BEGINNING, 
                  i=Decimal("0"), fv=Decimal("-10"), pv=Decimal("0"), pmt=Decimal("5"))
                 
-        #FIXME - Review this test
+        #FIXME - Review this test: No emulador deu -10
 #        self.myAssertRaises(ValueError, "Error 5", numberOfPayments, PAYMENT_TYPE_BEGINNING, 
 #                            i=Decimal("0"), fv=Decimal("0"), pv=Decimal("50"), pmt=Decimal("5"))
             
@@ -344,25 +343,25 @@ class LibraryTestCase (unittest.TestCase):
         self.myAssertEquals(Decimal("17"), numberOfPayments, PAYMENT_TYPE_BEGINNING, 
                  i=Decimal("10"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("0"))
         
-        #FIXME - Review this test
+        #FIXME - Review this test: No emulador deu -6
 #        self.myAssertRaises(ValueError, "Error 5", numberOfPayments, PAYMENT_TYPE_BEGINNING, 
 #                            i=Decimal("10"), fv=Decimal("50"), pv=Decimal("0"), pmt=Decimal("10"))
         
         self.myAssertEquals(Decimal("4"), numberOfPayments, PAYMENT_TYPE_BEGINNING, 
                  i=Decimal("10"), fv=Decimal("50"), pv=Decimal("0"), pmt=Decimal("-10"))
         
-        #FIXME - Review this test
+        #FIXME - Review this test: No emulador deu 6
 #        self.myAssertEquals(Decimal("4"), numberOfPayments, PAYMENT_TYPE_BEGINNING, 
 #                 i=Decimal("0"), fv=Decimal("50"), pv=Decimal("10"), pmt=Decimal("-10"))       
         
         self.myAssertEquals(Decimal("0"), numberOfPayments, PAYMENT_TYPE_BEGINNING, 
                  i=Decimal("0"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("0"))
         
-        #FIXME - Review this test
+        #FIXME - Review this test: No emulador deu 4
 #        self.myAssertEquals(Decimal("6"), numberOfPayments, PAYMENT_TYPE_BEGINNING, 
 #                 i=Decimal("0"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("-10"))
                 
-        #FIXME - Review this test
+        #FIXME - Review this test: No emulador deu 0 e o nosso -1
 #        self.myAssertRaises(ValueError, "Error 5", numberOfPayments, PAYMENT_TYPE_BEGINNING, 
 #                            i=Decimal("10"), fv=Decimal("0"), pv=Decimal("-10"), pmt=Decimal("-10"))
                 
@@ -375,28 +374,28 @@ class LibraryTestCase (unittest.TestCase):
         self.myAssertEquals(Decimal("4"), numberOfPayments, PAYMENT_TYPE_BEGINNING, 
                  i=Decimal("5"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("-10"))
         
-        #FIXME - Review this test
+        #FIXME - Review this test: No emulador deu -11 e o nosso -11.82
 #        self.myAssertRaises(ValueError, "Error 5", numberOfPayments, PAYMENT_TYPE_BEGINNING, 
 #                            i=Decimal("-5"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("2"))
                 
         #Scenario with only some variables
 
-        #FIXME - Review this test
+        #FIXME - Review this test Nosso deu 19
 #        self.myAssertEquals(Decimal("18"), numberOfPayments, PAYMENT_TYPE_END, 
 #                 i=Decimal("3.95"), fv=Decimal("50000"), pv=Decimal("-24895.9738"), pmt=Decimal("0"))
         
         self.myAssertRaises(ValueError, "Error 5", numberOfPayments, PAYMENT_TYPE_END, 
                  i=Decimal("3.95"), fv=Decimal("0"), pv=Decimal("100"), pmt=Decimal("0"))
         
-        #FIXME - Review this test
+        #FIXME - Review this test No emulador deu 78 e no nosso tb
 #        self.myAssertEquals(Decimal("16"), numberOfPayments, PAYMENT_TYPE_END, 
 #                 i=Decimal("3.95"), fv=Decimal("50000"), pv=Decimal("-2500.696667"), pmt=Decimal("0"))
         
-        #FIXME - Review this test
+        #FIXME - Review this test No emulador deu 4 e no nosso 5
 #        self.myAssertEquals(Decimal("4"), numberOfPayments, PAYMENT_TYPE_END, 
 #                 i=Decimal("0"), fv=Decimal("20008.36"), pv=Decimal("-10000"), pmt=Decimal("-2500.696667"))
         
-        #FIXME - Review this test
+        #FIXME - Review this test No emulador deu -4 e no nosso -4.63
 #        self.myAssertRaises(ValueError, "Error 5", numberOfPayments, PAYMENT_TYPE_END, 
 #                            i=Decimal("5"), fv=Decimal("0.000002080"), pv=Decimal("-30000"), pmt=Decimal("-5910.52"))
                 
