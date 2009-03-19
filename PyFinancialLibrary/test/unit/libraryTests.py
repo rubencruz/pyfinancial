@@ -1005,7 +1005,6 @@ class LibraryTestCase (unittest.TestCase):
         self.myAssertRaises(ValueError, "Error 5", payment, PAYMENT_TYPE_BEGINNING, i=Decimal("0"), 
                             pv=Decimal("30"), n=Decimal("0"), fv=Decimal("-10"))
         
-        #FIXME - Review these test
         self.myAssertEquals(Decimal("1"), payment, PAYMENT_TYPE_BEGINNING, 
                  i=Decimal("0"), pv=Decimal("0"), n=Decimal("10"), fv=Decimal("-10"))
         

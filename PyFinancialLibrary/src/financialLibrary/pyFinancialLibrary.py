@@ -217,19 +217,23 @@ def payment(paymentMode, i, fv, n, pv):
     #Error condition
     if n == Decimal("0") or i <= Decimal("-100"):
         raise ValueError, "Invalid scenario: invalid parameters "+str(n)+" "+str(i)
+    if (paymentMode != PAYMENT_TYPE_BEGINNING and paymentMode != PAYMENT_TYPE_END):
+        raise ValueError, "Invalid scenario: Should select BEG or END"
     
-    if (paymentMode == PAYMENT_TYPE_BEGINNING and (i == Decimal("-100") or i == Decimal("0"))
-         or paymentMode == PAYMENT_TYPE_END and (i == Decimal("-100")) ):
-        pmt = (pv - fv)/n
-            
-        return -pmt 
+    if i == Decimal("0"):
+        if (pv > Decimal("0") and fv > Decimal("0")) or (pv < Decimal("0") and fv < Decimal("0")):
+            pmt = (abs(pv + fv))/abs(n)
+        else:
+            pmt = (abs(pv) - abs(fv))/abs(n)
+        if presentValue(paymentMode, i, fv, n, pmt) == pv:
+            return pmt
+        else:
+            return -pmt 
                 
     if (paymentMode == PAYMENT_TYPE_BEGINNING):
-        return _pmtBeg(n, i / Decimal("100"), pv, fv)
-    elif(paymentMode == PAYMENT_TYPE_END):
-        return _pmtEnd(n, i / Decimal("100"), pv, fv)
+        return _pmtBeg(n, i, pv, fv)
     else:
-        raise ValueError, "Invalid scenario: Should select BEG or END"
+        return _pmtEnd(n, i, pv, fv)
     
     
 def _pmtBeg(n, i, pv, fv):
@@ -237,6 +241,7 @@ def _pmtBeg(n, i, pv, fv):
     given the number of payments, the return rate, the present value, 
     the future value and that the payment mode is at the beggining of the month. """
     
+    i = i / Decimal("100")
     return - ( (i * (pv * (i + Decimal("1"))**n + fv )) / 
                ((i + Decimal("1")) * ((i + Decimal("1"))**n - Decimal("1")) ) )
 
@@ -245,6 +250,7 @@ def _pmtEnd(n, i, pv, fv):
     given the number of payments, the return rate, the present value, 
     the future value and that the payment mode is at the end of the month. """
     
+    i = i / Decimal("100")
     return - ( (i * (pv * (i + Decimal("1"))**n + fv )) / 
                ((i + Decimal("1"))**n - Decimal("1")) )
 
