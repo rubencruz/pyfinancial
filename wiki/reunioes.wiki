@@ -2,6 +2,10 @@
 
 = Log de reunioes =
 
+== Reuniao de acompanhamento (16/03/2009) ==
+
+Optamos por buscar a implementação de novas fórmulas encontradas em http://www.arachnoid.com/lutusp/finance.html, bem como decidimos ampliar os casos que estavam sendo testados de modo a cobrir novas situações não previstas anteriormente.
+
 == Reuniao de acompanhamento (11/03/2009) ==
 
 Durante a reunião discutimos os aspectos relacionadas as dificuldades que estão sendo enfrentadas mediante a dificuldade de convergência nas fórmulas financeiras encontradas, inclusive em manuais da própria HP, com os resultados obtidos nas calculadora HP12-C. Discutimos a respeito das próximas User Stories a serem implementadas, bem como a prioridade das mesmas. Estabelecemos que iremos tentar mais uma vez um contato com o professor de Administração que estava nos orientando, e caso não obtenhamos sucesso iremos procurar uma outra estratégia para fixar algumas das fórmulas já implementadas.
