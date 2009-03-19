@@ -118,7 +118,7 @@ def numberOfPayments(paymentMode, i, fv, pv, pmt):
     
     try:
     
-        if (i == Decimal("0")):            
+        if (i == Decimal("-100")):            
             value = (pv - fv) / pmt
             
 #            if ((pv >= Decimal("0") and fv >= Decimal("0") and pmt >= Decimal("0")) or (pv < Decimal("0") and fv < Decimal("0") and pmt < Decimal("0"))  )  :
@@ -129,21 +129,20 @@ def numberOfPayments(paymentMode, i, fv, pv, pmt):
         if (paymentMode == PAYMENT_TYPE_BEGINNING):
             n = __nBeg(Decimal(i) / Decimal("100"), pv, pmt, fv)
             
-            if n < Decimal("0") or n.is_infinite():
+            if n.is_infinite():
                 raise ValueError, "Impossible scenario: Negative n"
             
             return n
         elif(paymentMode == PAYMENT_TYPE_END):
             n = __nEnd(Decimal(i) / Decimal("100"), pv, pmt, fv)
             
-            if n < Decimal("0") or n.is_infinite():
+            if n.is_infinite():
                 raise ValueError, "Impossible scenario: Negative n"
-            
             return n
     
     except (InvalidOperation, DivisionByZero):
         raise ValueError("Impossible scenario")
-    
+
     return Decimal("0")
 
 def __nBeg(ir, pv, pmt, fv):
@@ -219,7 +218,8 @@ def payment(paymentMode, i, fv, n, pv):
     if n == Decimal("0") or i <= Decimal("-100"):
         raise ValueError, "Invalid scenario: invalid parameters "+str(n)+" "+str(i)
     
-    if i == Decimal("0"):
+    if (paymentMode == PAYMENT_TYPE_BEGINNING and (i == Decimal("-100") or i == Decimal("0"))
+         or paymentMode == PAYMENT_TYPE_END and (i == Decimal("-100")) ):
         pmt = (pv - fv)/n
             
         return -pmt 
