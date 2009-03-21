@@ -15,37 +15,54 @@
 
 \section{Formulas}
 
-\begin{center}
-% use packages: array
-\begin{tabular}{|l|c|c|}
+
+\begin{tabular}{|l|l|l|l|}
 
 \hline
-pv - BEG & $ pv = (i+1)^{-n} * ( -fv*i - (i+1) * ( (i+1)^{n} -1)*pmt  ) / i $ \\ 
+pv - BEG & $ pv = (i+1)^{-n} * ( -fv*i - (i+1) * ( (i+1)^{n} -1)*pmt  ) / i $ & http://www.arachnoid.com/lutusp/finance.html \\ 
 \hline
-pv - END & $ pv = (i+1)^{-n} * ( -pmt*(i+1)^{n} - fv*i + pmt) / i  $ \\
+pv - END & $ pv = (i+1)^{-n} * ( -pmt*(i+1)^{n} - fv*i + pmt) / i  $ & http://www.arachnoid.com/lutusp/finance.html \\
 \hline
-pv - i = 0 & $ pv = fv + n * pmt $ \\
+pv - i = 0 & $ pv = fv + n * pmt $ & Material de Camilo e Livro \\
 \hline
-fv - BEG & $ fv = ( (i+1)*pmt - (i+1)^{n}*(i*pmt + pmt + i*pv) ) / i $  \\ 
+fv - BEG & $ fv = ( (i+1)*pmt - (i+1)^{n}*(i*pmt + pmt + i*pv) ) / i $ & http://www.arachnoid.com/lutusp/finance.html \\ 
 \hline
-fv - END & $ fv = ( pmt - (i+1)^{n} * (pmt + i*pv) ) / i $  \\
+fv - END & $ fv = ( pmt - (i+1)^{n} * (pmt + i*pv) ) / i $ & http://www.arachnoid.com/lutusp/finance.html \\
 \hline
-fv - i = 0 & $ fv = - (pv + n*pmt)$  \\  
+fv - i = 0 & $ fv = - (pv + n*pmt)$ & Material de Camilo e Livro \\  
 \hline
-n - BEG & $ n = log( (-fv*i + pmt*i + pmt) / (i*pmt + pmt + i*pv) ) / log(i+1) $ \\ 
+n - BEG & $ n = log( (-fv*i + pmt*i + pmt) / (i*pmt + pmt + i*pv) ) / log(i+1) $  & http://www.arachnoid.com/lutusp/finance.html \\ 
 \hline
-n - END & $ n = log( (pmt - fv*i) / (pmt + i*pv) ) / log(i+1) $ \\ 
+n - END & $ n = log( (pmt - fv*i) / (pmt + i*pv) ) / log(i+1) $ & http://www.arachnoid.com/lutusp/finance.html \\ 
 \hline
-n - i = 0 & $ n = (pv - fv) / pmt $ \\
+n - i = 0 & Se pólos com sinal igual: $ n = |(pv - fv)| / |pmt| $, c.c  $ n = (|pv| - |fv|) / |pmt|   ^{1} $. & Material de Camilo e Livro \\
 \hline
-pmt - BEG & $ pmt = i*( pv* ( i+1 )^{n} + fv ) / ( (i+1)*( (i+1)^{n} - 1 ) )$ \\ 
-i & × \\ 
-npv & × \\ 
-irr & ×
+pmt - BEG & $ pmt = - i*( pv* ( i+1 )^{n} + fv ) / ( (i+1)*( (i+1)^{n} - 1 ) )$ & http://www.arachnoid.com/lutusp/finance.html \\ 
+\hline
+pmt - END & $ pmt = - i*( pv*(i+1)^{n} + fv ) / ((i+1)^{n} - 1) $ & http://www.arachnoid.com/lutusp/finance.html \\
+\hline
+pmt - i = 0 & Se pólos com sinal igual: $ pmt = |(pv - fv)| / |n| $, c.c $ pmt = (|pv| - |fv|) / |n|  ^{1} $ & Material de Camilo e Livro \\  
+\hline
+i & $ i = (|fv / pv|^{1/n} - 1) * 100 $ & http://www.crd2000.com.br/crd012d.htm \\ 
+\hline
+npv & $ NPV = CF_{0} + CF_{1} / (1+i)^{1} + CF_{2} / (1+i)^{2} + ... + CF_{n} / (1+i)^{n}  $ & Manual da HP c00363319 \\ 
+\hline
+irr & Resolvido por iteração da fórmula acima até que $ NPV = 0. $ & Livro que está com everton \\
+\hline
+SAF: pmt & $ pmt = pv * (1+i)^{n} * i / ((1+i)^{n}-1) $ & Material Adail \\
+\hline
+SAF: amort & $ A_{t} = (pmt - (pv*i)) * (i+1)^{t-1} $ & Material Adail \\
+\hline
+SAC: juros & $ J_{t} = pv*i - (A_{t}*i*t-1) $
+\hline
+SAC: amort & $ A_{t} = pv / n $ & Material Adail \\
+\hline
+ 
 
 \end{tabular}
-\end{center}
 
+Observacoes: 
 
+$ ^{1} $ : Faz-se ainda um novo cálculo do pv com o valor resultante do n. Se o valor retornado for diferente, inverte-se o sinal do n.
 
 \end{document}
