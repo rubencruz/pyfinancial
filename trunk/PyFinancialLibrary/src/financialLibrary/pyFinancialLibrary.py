@@ -116,7 +116,7 @@ def numberOfPayments(paymentMode, i, fv, pv, pmt):
         return Decimal("0")
     
     if (i <= Decimal("-100")):
-        raise ValueError("Impossible scenario: i value less than -100")
+        raise ValueError("Invalid scenario: i value less than -100")
     
     try:
         if (paymentMode == PAYMENT_TYPE_BEGINNING):
@@ -127,7 +127,7 @@ def numberOfPayments(paymentMode, i, fv, pv, pmt):
             
 
         if n.is_infinite():
-            raise ValueError, "Impossible scenario: Negative n"
+            raise ValueError, "Invalid scenario: Infinite n"
                 
     except (InvalidOperation, DivisionByZero):
         try:
@@ -138,9 +138,13 @@ def numberOfPayments(paymentMode, i, fv, pv, pmt):
             if presentValue(paymentMode, i, fv, n, pmt) != pv:
                 n = -n
         except (InvalidOperation, DivisionByZero):
-            raise ValueError("Impossible scenario")
+            raise ValueError("Invalid scenario: Impossible operations")
 
-    return n.quantize(Decimal("1"), ROUND_UP)
+    finalValue = n.quantize(Decimal("1"), ROUND_UP)
+    
+    if finalValue < Decimal("0"):
+        raise ValueError("Invalid scenario: Negative n")
+    return finalValue
 
 def __nBeg(ir, pv, pmt, fv):
     """ This function is responsible for calculating the number of payments 
