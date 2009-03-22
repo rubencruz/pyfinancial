@@ -399,6 +399,8 @@ def __findIRR(upperX, upperY, downX, downY):
     return div(upperY*downX - downY*upperX, upperY - downY)     
 
 def calculateFrenchPmt(pv, i, n):
+    """ This function calculates the pmt of an amortization plan based on the french system """
+    
     return pv * ( (((Decimal("1")+i)**n) * i) / ( ((Decimal("1")+i)**n)-Decimal("1") ) )
     
 def frenchAmortization(pv, i, n):
@@ -434,13 +436,14 @@ def frenchAmortization(pv, i, n):
     return amortizationPlan   
 
 def equalsAmortization(pv, i, n):
+    """ This method will implement the amortization based on the constant amortization system for PRICE payment """
     
     if i == None or pv == None or n == None or i == 0 or pv == 0 or n == 0:
             raise ValueError, "Cannot calculate amortization without pv, n and i"
     realRate = i / Decimal('100.0')
     
     #Getting constant amortization
-    amortization = Decimal(pv) / n
+    amortization = convertToDecimal(pv) / n
     
     #Storing information for first period, containing for each period: pmt, interest, acumulated interest, amortization, acumulated amortization and amount to be payed
     amortizationPlan = [ [Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), pv] ]
@@ -464,11 +467,41 @@ def equalsAmortization(pv, i, n):
         amortizationPlan.append( [ payment, interest, newAcumulatedInterest, amortization, newAcumulatedAmortization,  newAmountToBePayed  ] )   
         
     return amortizationPlan
+
+def convertAnualPeriodsToMonthPeriods(numberOfAnualPeriods):
+    """ This function will convert anual periods to month periods for financial calculations """
+    
+    if numberOfAnualPeriods == None:
+        raise ValueError, "Invalid scenario: Inexistent number of periods"
+    
+    decimalNumberOfAnualPeriods = convertToDecimal(numberOfAnualPeriods)
+    if not decimalNumberOfAnualPeriods._isinteger():
+        raise ValueError, "Invalid scenario: Number of periods is not an integer"
+    
+    #Converting the anual number of periods to month periods
+    monthPeriods = numberOfAnualPeriods * Decimal("12.0")
+    return monthPeriods
+     
+def convertAnualRateToMonthRates(anualRate, isCompoundInterest):
+    """ This function will convert an anual rate to a month rate according to the fact that it's dealing with 
+    a compound rate system or a simple one """
+    
+    if anualRate == None:
+        raise ValueError, "Invalid scenario: Inexistent rate to convert"
+    
+    if isCompoundInterest:#Converting rates in a compound rate system
+        monthRate = (Decimal("1.0")+convertToDecimal(anualRate))**(Decimal("0.083333333")) - Decimal("1.0")
+    else:#Converting rates in a simple rate system
+        monthRate = anualRate / Decimal("12.0")
+     
+    return monthRate
         
 def simpleInterest(pv, n, i):
     pass
 
 def convertToDecimal(arg1):
+    """ This function will convert the number received as an argument to a Decimal representation """
+    
     if arg1 == None:
         return None
     argDec1 = Decimal(str(arg1))
