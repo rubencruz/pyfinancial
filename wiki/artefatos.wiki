@@ -13,6 +13,7 @@ Seguem abaixo os links para os vários artefatos gerados no decorrer do projeto:
  * [estudo Documentação do Estudo]
  * [tabRiscos Tabela de Riscos]
  * [docFormulas Análise das fórmulas]
+ * [tabErros Tabela de erros da calculadora]
 
 
 
