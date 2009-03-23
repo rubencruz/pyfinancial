@@ -34,6 +34,8 @@ A calculadora deve fazer logs dos valores armazenados em seus registradores corr
 
 Entradas equivocadas do usuário deverão apresentar mensagens de erros que devem ser mais intuitivas do que as apresentadas pela calculadora original como "Erro 6".
 
+Veja a [tabErros tabela de erros]
+
 === Desempenho ===
 
 O tempo de resposta dos resultados não deve ultrapassar o tempo que a calculadora HP12-C leva para executar as mesmas operações (considerando que só o programa da calculadora esteja em execução).
