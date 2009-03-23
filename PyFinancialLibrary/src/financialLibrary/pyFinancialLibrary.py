@@ -469,7 +469,7 @@ def equalsAmortization(pv, i, n):
     return amortizationPlan
 
 def convertAnualPeriodsToMonthPeriods(numberOfAnualPeriods):
-    """ This function will convert anual periods to month periods for financial calculations """
+    """ This function will convert annual periods to month periods for financial calculations """
     
     if numberOfAnualPeriods == None:
         raise ValueError, "Invalid scenario: Inexistent number of periods"
@@ -483,7 +483,7 @@ def convertAnualPeriodsToMonthPeriods(numberOfAnualPeriods):
     return monthPeriods
      
 def convertAnualRateToMonthRates(anualRate, isCompoundInterest):
-    """ This function will convert an anual rate to a month rate according to the fact that it's dealing with 
+    """ This function will convert an annual rate to a month rate according to the fact that it's dealing with 
     a compound rate system or a simple one """
     
     if anualRate == None:
