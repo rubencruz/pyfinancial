@@ -1501,3 +1501,32 @@ class LibraryTestCase (unittest.TestCase):
             pass
         else:
             self.fail("Should give pv, n and i")
+            
+    def testConvertAnualPeriodsToMonthPeriods(self):
+        try:
+            convertAnualPeriodsToMonthPeriods(None)
+            self.fail("Expected a ValueError")
+        except ValueError:
+            pass
+        
+        try:
+            convertAnualPeriodsToMonthPeriods("a")
+            self.fail("Expected a ValueError")
+        except ValueError:
+            pass
+        
+        try:
+            convertAnualPeriodsToMonthPeriods("1.5")
+            self.fail("Expected a ValueError")
+        except ValueError:
+            pass
+        
+        try:
+            convertAnualPeriodsToMonthPeriods("-2")
+            self.fail("Expected a ValueError")
+        except ValueError:
+            pass
+        
+        assert None != convertAnualPeriodsToMonthPeriods("0")
+        assert Decimal("0") == convertAnualPeriodsToMonthPeriods("0")
+        assert Decimal("24") == convertAnualPeriodsToMonthPeriods("2")            
