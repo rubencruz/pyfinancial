@@ -1529,4 +1529,5 @@ class LibraryTestCase (unittest.TestCase):
         
         assert None != convertAnualPeriodsToMonthPeriods("0")
         assert Decimal("0") == convertAnualPeriodsToMonthPeriods("0")
-        assert Decimal("24") == convertAnualPeriodsToMonthPeriods("2")            
+        assert Decimal("24") == convertAnualPeriodsToMonthPeriods("2")
+            
