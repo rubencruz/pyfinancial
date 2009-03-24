@@ -15,13 +15,14 @@ Nesse contexto, a HP12-C se coloca como uma calculadora líder de mercado a vár
 
 Observando um pouco a história recente dos dispositivos móveis percebemos o grande crescimento no uso dos mesmos no cotidiano das pessoas \cite{celular}. Conjuntamente com esse aumento de uso/venda, surgiu também um forte mercado de desenvolvimento de aplicativos para dispositivos móveis e hoje são inúmeros os aplicativos que podem ser adquiridos para as mais variadas plataformas, tanto através de compra nos sites oficiais de fornecedores como através de desenvolvedores disjuntos ou ainda através de pirataria. Esses aplicativos tipicamente perpassam o mundo da multimídia, como jogos, players, etc, da organização de tarefas, com calendários e agendas dentre outros, etc. 
 
-Entretanto, não é comum vermos aplicativos relacionados ao mundo financeiro. Recentemente um grande avanço nessa área foi o lançamento de um emulador da HP12-C para o Iphone da Apple \cite{iphone}. Logo, enxergamos aqui uma boa oportunidade de alavancar um pouco mais esse nicho de aplicativos ao criarmos uma calculadora financeira para os dispositivos da Nokia, mais especificadamente para o N800. 
-
-Do ponto de vista funcional, nossa calculadora é uma calculadora financeira que irá oferecer ao usuário o cálculo das várias funções financeiras básicas existentes na HP12-C, com análises através de juros simples e compostos, bem como cálculo de planos de amortizações.  A solução proposta visa oferecer um nível de confiança similar ao da HP12-C, com resultados bem próximos do que é encontrado na mesma, e, tirando proveito das facilidades de interação que o dispositivo nos provê, oferecer uma maior praticidade no cálculo das várias funções financeiras ali presentes.
+Entretanto, não é comum vermos aplicativos relacionados ao mundo financeiro. Recentemente um grande avanço nessa área foi o lançamento de um emulador da HP12-C para o Iphone da Apple \cite{iphone}.
 
 
-\section{Contexto do Projeto}
 
-\subsection{Pessoas e Processos}
-\subsection{Ambiente de Execução}
-\subsection{Aplicações Correlatas}
+
+
+\section{Teste 1}
+
+
+\subsection{Teste 2}
+\subsubsection{Teste 3}
