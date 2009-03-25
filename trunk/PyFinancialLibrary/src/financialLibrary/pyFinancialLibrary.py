@@ -34,8 +34,9 @@
 
 # LINK consulta: http://www.crd2000.com.br/crd012d.htm
 # http://www.ufcg-uaac.com/Curso_extensao_gestao_investimentos.htm
-
 from decimal import Decimal, InvalidOperation, DivisionByZero, ROUND_UP, ROUND_HALF_UP
+from financialLibrary.pyFinancialLibraryException import PyFinancialLibraryException
+
 
 TOLERANCE = Decimal("0.0000000001")
 
@@ -50,10 +51,10 @@ def add(number1, number2):
         n1 = convertToDecimal(number1)
         n2 = convertToDecimal(number2)
         return n1 + n2
-    except InvalidOperation:
-        raise InvalidOperation, "Incompatibility of types."
-    except ValueError, TypeError:
-        raise TypeError, "Incompatibility of types."
+    except InvalidOperation, TypeError:
+        raise PyFinancialLibraryException("Invalid scenario: Impossible operations." )
+    except ValueError:
+        raise PyFinancialLibraryException("Invalid scenario: Impossible operations." )
     
 def sub(number1, number2):
     """ Realize the subtraction operation between two values """
@@ -64,10 +65,10 @@ def sub(number1, number2):
         if (number1 == number2):
             return Decimal('0.0')
         return n1 - n2
-    except InvalidOperation:
-        raise InvalidOperation, "Incompatibility of types."
-    except ValueError, TypeError:
-        raise TypeError, "Incompatibility of types."
+    except InvalidOperation, TypeError:
+        raise PyFinancialLibraryException("Invalid scenario: Impossible operations." )
+    except ValueError:
+        raise PyFinancialLibraryException("Invalid scenario: Impossible operations." )
     
 def mult(number1, number2):
     """ Realize the multiplication operation between two values """
@@ -76,10 +77,10 @@ def mult(number1, number2):
         n1 = convertToDecimal(number1)
         n2 = convertToDecimal(number2)
         return n1 * n2
-    except InvalidOperation:
-        raise InvalidOperation, "Incompatibility of types."
-    except ValueError, TypeError:
-        raise TypeError, "Incompatibility of types."
+    except InvalidOperation, TypeError:
+        raise PyFinancialLibraryException("Invalid scenario: Impossible operations." )
+    except ValueError:
+        raise PyFinancialLibraryException("Invalid scenario: Impossible operations." )
     
 def div(number1, number2):
     """ Realize the division operation between two values """
@@ -90,12 +91,10 @@ def div(number1, number2):
         if n1 == n2 and n1 != Decimal('0.0'):
             return Decimal('1.0')
         return n1 / n2
-    except InvalidOperation:
-        raise InvalidOperation, "Incompatibility of types."
-    except ValueError, TypeError:
-        raise TypeError, "Incompatibility of types."
-    except ZeroDivisionError:
-        raise ZeroDivisionError, "Zero division."
+    except InvalidOperation, TypeError:
+        raise PyFinancialLibraryException("Invalid scenario: Impossible operations." )
+    except ValueError, ZeroDivisionError:
+        raise PyFinancialLibraryException("Invalid scenario: Impossible operations." )
 
 
 def numberOfPayments(paymentMode, i, fv, pv, pmt):
@@ -109,15 +108,15 @@ def numberOfPayments(paymentMode, i, fv, pv, pmt):
     pmt = convertToDecimal(pmt)
 
     if (paymentMode != PAYMENT_TYPE_BEGINNING and paymentMode != PAYMENT_TYPE_END):
-        raise ValueError, "Invalid scenario: Should select BEG or END"
+        raise PyFinancialLibraryException("Invalid scenario: Should select BEG or END." )
     
     #All parameters are zero
     if (i == Decimal("0") and fv == Decimal("0") and pv == Decimal("0") and pmt == Decimal("0")):
         return Decimal("0")
     
     if (i <= Decimal("-100")):
-        raise ValueError("Invalid scenario: i value less than -100")
-    
+        raise PyFinancialLibraryException("Invalid scenario: i value less than -100." )
+        
     try:
         if (paymentMode == PAYMENT_TYPE_BEGINNING):
             n = __nBeg(i / Decimal("100"), pv, pmt, fv)
@@ -127,7 +126,7 @@ def numberOfPayments(paymentMode, i, fv, pv, pmt):
             
 
         if n.is_infinite():
-            raise ValueError, "Invalid scenario: Infinite n"
+            raise PyFinancialLibraryException, "Invalid scenario: Infinite n."
                 
     except (InvalidOperation, DivisionByZero):
         try:
@@ -138,12 +137,12 @@ def numberOfPayments(paymentMode, i, fv, pv, pmt):
             if presentValue(paymentMode, i, fv, n, pmt) != pv:
                 n = -n
         except (InvalidOperation, DivisionByZero):
-            raise ValueError("Invalid scenario: Impossible operations")
+            raise PyFinancialLibraryException("Invalid scenario: Impossible operations.")
 
     finalValue = n.quantize(Decimal("1"), ROUND_UP)
     
     if finalValue < Decimal("0"):
-        raise ValueError("Invalid scenario: Negative n")
+        raise PyFinancialLibraryException("Invalid scenario: Error(s) in the values os operators of capitalization (n, i, PV, FV or PMT).")
     return finalValue
 
 def __nBeg(ir, pv, pmt, fv):
@@ -171,7 +170,7 @@ def presentValue(paymentMode, i, fv, n, pmt):
     pmt = convertToDecimal(pmt)
 
     if i <= Decimal("-100"):
-        raise ValueError, "Invalid scenario: invalid i"
+        raise PyFinancialLibraryException, "Invalid scenario: i value less than -100." 
     
     if i == Decimal("0"):
         
@@ -185,8 +184,7 @@ def presentValue(paymentMode, i, fv, n, pmt):
     elif paymentMode == PAYMENT_TYPE_BEGINNING:
         return __pvBeg(n, i, pmt, fv)
     else:
-        #TODO - Raise a library exception
-        raise Exception()
+        raise PyFinancialLibraryException, "Invalid scenario: Should select BEG or END." 
 
 def __pvBeg(n, i, pmt, fv ):
     """ This function is responsible for calculating the present value 
@@ -213,14 +211,14 @@ def payment(paymentMode, i, fv, n, pv):
     n = convertToDecimal(n)
 
     if (paymentMode != PAYMENT_TYPE_BEGINNING and paymentMode != PAYMENT_TYPE_END):
-        raise ValueError, "Invalid scenario: Should select BEG or END"
+        raise PyFinancialLibraryException, "Invalid scenario: Should select BEG or END."
     
     if n == Decimal("0") and fv == Decimal("0") and i == Decimal("0") and pv == Decimal("0"):
         return Decimal("0")
     
     #Error condition
     if n == Decimal("0") or i <= Decimal("-100"):
-        raise ValueError, "Invalid scenario: invalid parameters "+str(n)+" "+str(i)
+        raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators capitalization (n, i, PV, FV or PMT)." 
     
     if i == Decimal("0"):
         if (pv > Decimal("0") and fv > Decimal("0")) or (pv < Decimal("0") and fv < Decimal("0")):
@@ -268,7 +266,7 @@ def futureValue(paymentMode, i, pv, n, pmt):
     
     #Error condition
     if i <= Decimal("-100"):
-        raise ValueError, "Invalid scenario: Invalid i"
+        raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators capitalization (n, i, PV, FV or PMT)."
     
     if i == Decimal("0"):
         return - (pv + n * pmt)
@@ -280,8 +278,7 @@ def futureValue(paymentMode, i, pv, n, pmt):
     elif paymentMode == PAYMENT_TYPE_BEGINNING:
         return __fvBeg(n, i, pv, pmt)
     else:
-        #TODO - Raise a library exception
-        raise Exception()
+        raise PyFinancialLibraryException, "Invalid scenario: Should select BEG or END." 
 
 def __fvBeg(n, i, pv, pmt):
     """ This function is responsible for calculating the number of payments 
@@ -310,13 +307,13 @@ def interestRate(paymentMode, fv, pv, n, pmt):
     #Error conditions
     if (n <= Decimal("0") or n >= Decimal("10**10") or 
         (fv.is_signed() and pv.is_signed() and pmt.is_signed()) or (not fv.is_signed() and not pv.is_signed() and not pmt.is_signed())):
-        raise ValueError, "Impossible scenario: invalid parameters"
+        raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators capitalization (n, i, PV, FV or PMT)."
     
     #Testing which information is available
     if fv != Decimal("0") and pv != Decimal("0") and n != Decimal("0"):
         i = (((abs(Decimal(fv) / pv)) ** (Decimal("1") / Decimal(n))) - Decimal("1")) * Decimal("100")
         if (i < Decimal("0") and abs(fv) > abs(pv)) or (i > Decimal("0")  and abs(fv) < abs(pv)) or (i <= Decimal("-100")):
-            raise ValueError, "Calculated i, pv and fv do not match!!"
+            raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators capitalization (n, i, PV, FV or PMT)."
         return i
     
     if n == Decimal("0"):
@@ -324,7 +321,7 @@ def interestRate(paymentMode, fv, pv, n, pmt):
         if number != Decimal("0"):
             i = (((abs(Decimal(fv) / pv))** (Decimal("1") / Decimal(number))) - Decimal("1")) * Decimal("100")
             if (i < Decimal("0") and fv > pv) or (i > Decimal("0")  and fv < pv) or (i <= Decimal("-100")):
-                raise ValueError, "Calculated i, pv and fv do not match!!"
+                raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators capitalization (n, i, PV, FV or PMT)."
             return i
     
     if pv == Decimal("0"):
@@ -332,7 +329,7 @@ def interestRate(paymentMode, fv, pv, n, pmt):
         if pv2 != Decimal("0"):
             i = (((abs(Decimal(fv) / pv2))** (Decimal("1") / Decimal(n))) - Decimal("1")) * Decimal("100")
             if (i < Decimal("0") and fv > pv) or (i > Decimal("0")  and fv < pv) or (i < Decimal("0") and pv < Decimal("0") and fv < Decimal("0") and pmt < Decimal("0")) or (i > Decimal("0") and pv > Decimal("0") and fv > Decimal("0") and pmt > Decimal("0")) or (i <= Decimal("-100")):
-                    raise ValueError, "Calculated i, pv and fv do not match!!"
+                    raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators capitalization (n, i, PV, FV or PMT)."
             return i
     
     if fv == Decimal("0"):
@@ -340,7 +337,7 @@ def interestRate(paymentMode, fv, pv, n, pmt):
         if fv2 != Decimal("0"):
                 i =  (((abs(Decimal(fv2) / pv))** (Decimal("1") / Decimal(n))) - Decimal("1")) * Decimal("100")
                 if (i < Decimal("0") and fv > pv) or (i > Decimal("0")  and fv < pv) or (i <= Decimal("-100")):
-                    raise ValueError, "Calculated i, pv and fv do not match!!"
+                    raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators capitalization (n, i, PV, FV or PMT)."
                 return i
      
     return Decimal("0")
@@ -352,7 +349,7 @@ def netPresentValue(interRate, cashFlowsList):
     try:
         __checkInterestRate(interRate)
     except Exception, e:
-        raise ValueError, e.message + " at NPV." 
+        raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators capitalization (n, i, PV, FV or PMT)." 
     
     npv = Decimal('0.0')
     i = div(interRate, 100)
@@ -367,7 +364,7 @@ def netPresentValue(interRate, cashFlowsList):
 def __checkInterestRate(interestRate):
     i = div(interestRate, 100)
     if i == Decimal('-1.0') or i < Decimal('-1.0'):
-        raise ValueError, "Interest rate can not be equal or less than -100%"
+        raise PyFinancialLibraryException, "Invalid scenario: i value less than -100." 
     
 def interestRateOfReturn(cashFlowsList):
     """ This function will perform the calculation of the intern return rate (IRR)
@@ -407,7 +404,7 @@ def frenchAmortization(pv, i, n):
     """ This method will implement the amortization based on the french system for PRICE payment """
     
     if i == None or pv == None or n == None or i == Decimal("0") or pv == Decimal("0") or n == Decimal("0"):
-        raise ValueError, "Cannot calculate amortization without pv, n and i"
+        raise PyFinancialLibraryException, "Some values for calculating amortization have not been provided." 
     realRate = i / Decimal('100.0')
     
     #Getting pmt
@@ -472,11 +469,11 @@ def convertAnualPeriodsToMonthPeriods(numberOfAnualPeriods):
     """ This function will convert annual periods to month periods for financial calculations """
     
     if numberOfAnualPeriods == None:
-        raise ValueError, "Invalid scenario: Inexistent number of periods"
+        raise PyFinancialLibraryException, "Some values for calculating amortization have not been provided."
     
     decimalNumberOfAnualPeriods = convertToDecimal(numberOfAnualPeriods)
     if not decimalNumberOfAnualPeriods._isinteger():
-        raise ValueError, "Invalid scenario: Number of periods is not an integer"
+        raise PyFinancialLibraryException, "Invalid scenario: Impossible operations." 
     
     #Converting the anual number of periods to month periods
     monthPeriods = numberOfAnualPeriods * Decimal("12.0")
@@ -487,7 +484,7 @@ def convertAnualRateToMonthRates(anualRate, isCompoundInterest):
     a compound rate system or a simple one """
     
     if anualRate == None:
-        raise ValueError, "Invalid scenario: Inexistent rate to convert"
+        raise PyFinancialLibraryException, "Some values for calculating amortization have not been provided."
     
     if isCompoundInterest:#Converting rates in a compound rate system
         monthRate = (Decimal("1.0")+convertToDecimal(anualRate))**(Decimal("0.083333333")) - Decimal("1.0")

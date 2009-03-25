@@ -1,0 +1,1 @@
+class PyFinancialLibraryException (Exception): pass
