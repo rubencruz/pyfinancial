@@ -1511,4 +1511,17 @@ class LibraryTestCase (unittest.TestCase):
         
         self.myAssertEquals(Decimal("0"), convertAnualPeriodsToMonthPeriods, "0")
         self.myAssertEquals(Decimal("24"), convertAnualPeriodsToMonthPeriods, "2")
+    
+    def testConvertAnualRateToMonthRates(self):
+        
+        self.myAssertRaises(PyFinancialLibraryException, "Exception expected", convertAnualRateToMonthRates, None, True)
+        self.myAssertRaises(PyFinancialLibraryException, "Exception expected", convertAnualRateToMonthRates, None, False)
+        self.myAssertRaises(PyFinancialLibraryException, "Exception expected", convertAnualRateToMonthRates, None)
+        
+        self.myAssertEquals(Decimal("30"), convertAnualRateToMonthRates, "360", False)
+        self.myAssertEquals(Decimal("30"), convertAnualRateToMonthRates, "360")
+        self.myAssertEquals(Decimal("0"), convertAnualRateToMonthRates, "0", False)
+        self.myAssertEquals(Decimal("7"), convertAnualRateToMonthRates, "84", False)
+        self.myAssertEquals(Decimal("42"), convertAnualRateToMonthRates, "504", False)
+        self.myAssertEquals(Decimal('7.934843773411037759276511400'), convertAnualRateToMonthRates, "1.5", True)
         
