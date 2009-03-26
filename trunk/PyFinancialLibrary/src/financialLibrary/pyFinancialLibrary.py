@@ -131,12 +131,7 @@ def numberOfPayments(paymentMode, i, fv, pv, pmt):
                 
     except (InvalidOperation, DivisionByZero):
         try:
-            if (pv > Decimal("0") and fv > Decimal("0")) or (pv < Decimal("0") and fv < Decimal("0")):
-                n = (abs(pv + fv))/abs(pmt)
-            else:
-                n = (abs(pv) - abs(fv))/abs(pmt)
-            if presentValue(paymentMode, i, fv, n, pmt) != pv:
-                n = -n
+            n = - (fv + pv)/pmt
         except (InvalidOperation, DivisionByZero):
             raise PyFinancialLibraryException("Invalid scenario: Error(s) in the values os operators of capitalization (n, i, PV, FV or PMT).")
 
@@ -222,14 +217,7 @@ def payment(paymentMode, i, fv, n, pv):
         raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators capitalization (n, i, PV, FV or PMT)." 
     
     if i == Decimal("0"):
-        if (pv > Decimal("0") and fv > Decimal("0")) or (pv < Decimal("0") and fv < Decimal("0")):
-            pmt = (abs(pv + fv))/abs(n)
-        else:
-            pmt = (abs(pv) - abs(fv))/abs(n)
-        if presentValue(paymentMode, i, fv, n, pmt) == pv:
-            return pmt
-        else:
-            return -pmt 
+        return -(fv + pv)/n
                 
     if (paymentMode == PAYMENT_TYPE_BEGINNING):
         return _pmtBeg(n, i, pv, fv)
@@ -304,44 +292,73 @@ def interestRate(paymentMode, fv, pv, n, pmt):
     fv = convertToDecimal(fv)
     pv = convertToDecimal(pv)
     pmt = convertToDecimal(pmt)
+    
+    if (paymentMode != PAYMENT_TYPE_BEGINNING and paymentMode != PAYMENT_TYPE_END):
+        raise PyFinancialLibraryException, "Invalid scenario: Should select BEG or END."
+    
+    if n == Decimal("0") and fv == Decimal("0") and pmt == Decimal("0") and pv == Decimal("0"):
+        return Decimal("0")    
 
     #Error conditions
-    if (n <= Decimal("0") or n >= Decimal("10**10") or 
+    if (n <= Decimal("0") or n >= (Decimal("10")**Decimal("10")) or 
         (fv.is_signed() and pv.is_signed() and pmt.is_signed()) or (not fv.is_signed() and not pv.is_signed() and not pmt.is_signed())):
         raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators capitalization (n, i, PV, FV or PMT)."
     
-    #Testing which information is available
-    if fv != Decimal("0") and pv != Decimal("0") and n != Decimal("0"):
-        i = (((abs(Decimal(fv) / pv)) ** (Decimal("1") / Decimal(n))) - Decimal("1")) * Decimal("100")
-        if (i < Decimal("0") and abs(fv) > abs(pv)) or (i > Decimal("0")  and abs(fv) < abs(pv)) or (i <= Decimal("-100")):
-            raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators capitalization (n, i, PV, FV or PMT)."
-        return i
+    ir = Decimal("0.01")
+    tir = ir
+    maxtries = 400
+    val = 0
+    oldval = 0
+    delta = 0
+    olddelta = 0
     
-    if n == Decimal("0"):
-        number = numberOfPayments(paymentMode, Decimal("0"), fv, pv, pmt)
-        if number != Decimal("0"):
-            i = (((abs(Decimal(fv) / pv))** (Decimal("1") / Decimal(number))) - Decimal("1")) * Decimal("100")
-            if (i < Decimal("0") and fv > pv) or (i > Decimal("0")  and fv < pv) or (i <= Decimal("-100")):
-                raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators capitalization (n, i, PV, FV or PMT)."
-            return i
+    if fv == Decimal("0") and pv == Decimal("0"):
+        if pmt < Decimal("0"):
+            return Decimal("-1")
+        else:
+            return Decimal("1")
+    else:
+        k = 0
+        solved = False
+        while k < 2 and not solved:
+            i = 0
+            j = 0
+            if k == 0:
+                guess = ir
+            else:
+                guess = -ir
+            gd = guess * Decimal("0.5")
+            if(gd == Decimal("0.0")):
+                gd = Decimal("1.0")
+                
+            while i < maxtries and j <= 3:
+                guess += gd
+                if(guess != Decimal("0.0")):
+                    val = futureValue(paymentMode, guess * Decimal("100"), pv, n, pmt)
+                    delta = abs(val-fv)
+                if i > 0 :
+                    j += 1
+                    if (abs(val-oldval) > Decimal("1.0E-8")) or (delta > Decimal("1.0E-8")):
+                        j = 0
+                    if(delta > olddelta):
+                        gd *= Decimal("-0.5")
+                    
+                oldval = val;
+                olddelta = delta;
+                
+                i += 1
+
+            if(i < maxtries):
+                tir = guess
+                solved = True
+
+            k += 1
+
+        if not solved:
+            raise PyFinancialLibraryException, "Error"
     
-    if pv == Decimal("0"):
-        pv2 = presentValue(paymentMode, Decimal("0"), fv, n, pmt)
-        if pv2 != Decimal("0"):
-            i = (((abs(Decimal(fv) / pv2))** (Decimal("1") / Decimal(n))) - Decimal("1")) * Decimal("100")
-            if (i < Decimal("0") and fv > pv) or (i > Decimal("0")  and fv < pv) or (i < Decimal("0") and pv < Decimal("0") and fv < Decimal("0") and pmt < Decimal("0")) or (i > Decimal("0") and pv > Decimal("0") and fv > Decimal("0") and pmt > Decimal("0")) or (i <= Decimal("-100")):
-                    raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators capitalization (n, i, PV, FV or PMT)."
-            return i
-    
-    if fv == Decimal("0"):
-        fv2 = futureValue(paymentMode, Decimal("0"), pv, n, pmt)
-        if fv2 != Decimal("0"):
-                i =  (((abs(Decimal(fv2) / pv))** (Decimal("1") / Decimal(n))) - Decimal("1")) * Decimal("100")
-                if (i < Decimal("0") and fv > pv) or (i > Decimal("0")  and fv < pv) or (i <= Decimal("-100")):
-                    raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators capitalization (n, i, PV, FV or PMT)."
-                return i
-     
-    return Decimal("0")
+    return tir * Decimal("100")
+
 
 def netPresentValue(interRate, cashFlowsList):
     """ This function will perform the calculation of the npv value for a certain number of cash flows 
