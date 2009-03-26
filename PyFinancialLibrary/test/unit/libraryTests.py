@@ -1503,31 +1503,12 @@ class LibraryTestCase (unittest.TestCase):
             self.fail("Some values for calculating amortization have not been provided.")
             
     def testConvertAnualPeriodsToMonthPeriods(self):
-        try:
-            convertAnualPeriodsToMonthPeriods(None)
-            self.fail("Exception expected")
-        except PyFinancialLibraryException:
-            pass
+
+        self.myAssertRaises(PyFinancialLibraryException, "Exception expected", convertAnualPeriodsToMonthPeriods, None)
+        self.myAssertRaises(PyFinancialLibraryException, "Exception expected", convertAnualPeriodsToMonthPeriods, "a")
+        self.myAssertRaises(PyFinancialLibraryException, "Exception expected", convertAnualPeriodsToMonthPeriods, "1.5")
+        self.myAssertRaises(PyFinancialLibraryException, "Exception expected", convertAnualPeriodsToMonthPeriods, "-2")
         
-        try:
-            convertAnualPeriodsToMonthPeriods("a")
-            self.fail("Exception expected")
-        except PyFinancialLibraryException:
-            pass
+        self.myAssertEquals(Decimal("0"), convertAnualPeriodsToMonthPeriods, "0")
+        self.myAssertEquals(Decimal("24"), convertAnualPeriodsToMonthPeriods, "2")
         
-        try:
-            convertAnualPeriodsToMonthPeriods("1.5")
-            self.fail("Exception expected")
-        except PyFinancialLibraryException:
-            pass
-        
-        try:
-            convertAnualPeriodsToMonthPeriods("-2")
-            self.fail("Exception expected")
-        except PyFinancialLibraryException:
-            pass
-        
-        assert None != convertAnualPeriodsToMonthPeriods("0")
-        assert Decimal("0") == convertAnualPeriodsToMonthPeriods("0")
-        assert Decimal("24") == convertAnualPeriodsToMonthPeriods("2")
-            
