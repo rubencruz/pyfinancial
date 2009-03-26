@@ -2,6 +2,12 @@
 
 = Log de reunioes =
 
+== Reuniao de acompanhamento (23/03/2009) ==
+
+Avaliação dos resultados obtidos com a implementação das fórmulas presentes em http://www.arachnoid.com/lutusp/finance.html, onde permanece o problema da implementação do i. As alternativas consideradas foram buscar o código de implementação da calculadora da página e a procura de auxílio junto ao professor Eustáquio para uma resolução via métodos numéricos.
+
+Discussão do status geral das demais tarefas e definição de prazos para finalização das atividades em aberto.
+
 == Reuniao de acompanhamento (16/03/2009) ==
 
 Optamos por buscar a implementação de novas fórmulas encontradas em http://www.arachnoid.com/lutusp/finance.html, bem como decidimos ampliar os casos que estavam sendo testados de modo a cobrir novas situações não previstas anteriormente.
