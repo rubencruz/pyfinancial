@@ -15,14 +15,46 @@ Nesse contexto, a HP12-C se coloca como uma calculadora líder de mercado a vár
 
 Observando um pouco a história recente dos dispositivos móveis percebemos o grande crescimento no uso dos mesmos no cotidiano das pessoas \cite{celular}. Conjuntamente com esse aumento de uso/venda, surgiu também um forte mercado de desenvolvimento de aplicativos para dispositivos móveis e hoje são inúmeros os aplicativos que podem ser adquiridos para as mais variadas plataformas, tanto através de compra nos sites oficiais de fornecedores como através de desenvolvedores disjuntos ou ainda através de pirataria. Esses aplicativos tipicamente perpassam o mundo da multimídia, como jogos, players, etc, da organização de tarefas, com calendários e agendas dentre outros, etc. 
 
-Entretanto, não é comum vermos aplicativos relacionados ao mundo financeiro. Recentemente um grande avanço nessa área foi o lançamento de um emulador da HP12-C para o Iphone da Apple \cite{iphone}.
+Entretanto, não é comum vermos aplicativos relacionados ao mundo financeiro. Recentemente um grande avanço nessa área foi o lançamento de um emulador da HP12-C para o Iphone da Apple \cite{iphone}. Logo, enxergamos aqui uma boa oportunidade de alavancar um pouco mais esse nicho de aplicativos ao criarmos uma calculadora financeira para os dispositivos da Nokia, mais especificadamente para o N800, e propomos o desenvolvimento da calculadora PyFinancial. 
+
+Do ponto de vista funcional, nossa calculadora é uma calculadora financeira que irá oferecer ao usuário o cálculo das várias funções financeiras básicas existentes na HP12-C, com análises através de juros simples e compostos, bem como cálculo de planos de amortizações.  A solução proposta visa oferecer um nível de confiança similar ao da HP12-C, com resultados bem próximos do que é encontrado na mesma, e, tirando proveito das facilidades de interação que o dispositivo nos provê, oferecer uma maior praticidade no cálculo das várias funções financeiras ali presentes.
 
 
+\section{Contexto do Projeto}
+
+\subsection{Pessoas e Processos}
+* Pessoas e Processos (Perfil dos Usuários/Skateholders e Processos que vão empregar o sistema)
+
+Conforme relatado acima, o perfil principal de usuários que visamos abranger com nossa aplicação é aquele grupo de usuários que não tem conhecimentos muito aprofundados em matemática financeira e que logo necessita de uma interface mais simples para a realização dos cálculos.
+
+Entretanto, não podemos descartar, devido a facilidade de interação com a aplicação que desejamos alcançar na versão final da mesma, aqueles usuários que desejam aprender a respeito de matemática financeira. Esses podem encontrar em nossa calculadora uma boa oportunidade para de fato realizar seu aprendizado, e esse grupo de usuários vem se mostrando crescer conforme relatado anteriormente. Além destes, podemos conseguir atrair também algumas das pessoas mais habituadas com os cálculos, mas que acham complicado a execução de certas operações nas calculadoras existentes no mercado.
+
+Para tanto buscamos opiniões com profissionais e alunos da área financeira de modo a buscar idéias de bons formatos de interação com a aplicação.
 
 
+\subsection{Ambiente de Execução}
 
-\section{Teste 1}
+* Ambiente de Execução (Características Fundamentais e Restrições),
+
+Para a implantação da aplicação faz-se necessário que o usuário possua:
+
+\begin{itemize}
+ \item Dispositivo Internet Tablet N800 da Nokia \cite{n800}. Atualizações do código para o dispositivo N810 estão no planejamento de evolução da calculadora.
+ \item Sistema operacional Maemo Diablo (4.1.x) \cite{diablo}.
+ \item Ambiente gráfico QT4 \cite{qt4} e PYQT4 \cite{pyqt4}
+ \item Python 2.5 \cite{python}.
+\end{itemize}
+
+É importante destacar que não foram realizados testes com nenhuma versão posterior as que foram acima relatadas por motivos, dentre os quais, a não estabilidade de algumas das versões posteriores.
 
 
-\subsection{Teste 2}
-\subsubsection{Teste 3}
+\subsection{Aplicações Correlatas}
+
+* Sistemas Legados, Outras Aplicações Semelhantes, Sistemas e Processos em Vigor
+
+Nesta sub-seção iremos relatar um pouco a respeito de algumas aplicações similares a calculadora PyFinancial:
+
+\begin{itemize}
+ \item \textit{Mobile Financial Calculator V1.0} \cite{mobcalc}: Essa calculadora se assemelha a nossa na proposta da facilidade de uso, fazendo uso de vários menus, e oferece um conjunto variado de funções. Porém, destina-se a dispositivos um pouco mais antigos, por exemplo dispositivos Série 60 \cite{s60} o que não lhe permite um alto grau de interação como o proposto por nossa aplicação através da interface \textit{touch-screen} do N800.. 
+\end{itemize}
+
