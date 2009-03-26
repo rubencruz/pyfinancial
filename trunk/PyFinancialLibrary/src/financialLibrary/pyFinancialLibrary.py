@@ -488,7 +488,7 @@ def convertAnualRateToMonthRates(anualRate, isCompoundInterest):
         raise PyFinancialLibraryException, "Invalid scenario: Impossible operations." 
     
     if isCompoundInterest:#Converting rates in a compound rate system
-        monthRate = (Decimal("1.0")+convertToDecimal(anualRate))**(Decimal("0.083333333")) - Decimal("1.0")
+        monthRate = 100 * ((Decimal("1.0")+convertToDecimal(anualRate))**(Decimal("0.083333333")) - Decimal("1.0"))
     else:#Converting rates in a simple rate system
         monthRate = anualRate / Decimal("12.0")
      
