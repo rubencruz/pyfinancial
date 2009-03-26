@@ -93,9 +93,10 @@ def div(number1, number2):
         return n1 / n2
     except InvalidOperation, TypeError:
         raise PyFinancialLibraryException("Invalid scenario: Impossible operations." )
-    except ValueError, ZeroDivisionError:
+    except ValueError, DivisionByZero:
         raise PyFinancialLibraryException("Invalid scenario: Impossible operations." )
-
+    except ZeroDivisionError:
+        raise PyFinancialLibraryException("Invalid scenario: Impossible operations." )
 
 def numberOfPayments(paymentMode, i, fv, pv, pmt):
     """ This function is responsible for calculating the number of payments 
@@ -137,7 +138,7 @@ def numberOfPayments(paymentMode, i, fv, pv, pmt):
             if presentValue(paymentMode, i, fv, n, pmt) != pv:
                 n = -n
         except (InvalidOperation, DivisionByZero):
-            raise PyFinancialLibraryException("Invalid scenario: Impossible operations.")
+            raise PyFinancialLibraryException("Invalid scenario: Error(s) in the values os operators of capitalization (n, i, PV, FV or PMT).")
 
     finalValue = n.quantize(Decimal("1"), ROUND_UP)
     
@@ -436,7 +437,7 @@ def equalsAmortization(pv, i, n):
     """ This method will implement the amortization based on the constant amortization system for PRICE payment """
     
     if i == None or pv == None or n == None or i == 0 or pv == 0 or n == 0:
-            raise ValueError, "Cannot calculate amortization without pv, n and i"
+            raise PyFinancialLibraryException, "Some values for calculating amortization have not been provided."
     realRate = i / Decimal('100.0')
     
     #Getting constant amortization
@@ -469,14 +470,14 @@ def convertAnualPeriodsToMonthPeriods(numberOfAnualPeriods):
     """ This function will convert annual periods to month periods for financial calculations """
     
     if numberOfAnualPeriods == None:
-        raise PyFinancialLibraryException, "Some values for calculating amortization have not been provided."
+        raise PyFinancialLibraryException, "Invalid scenario: Impossible operations." 
     
     decimalNumberOfAnualPeriods = convertToDecimal(numberOfAnualPeriods)
     if not decimalNumberOfAnualPeriods._isinteger():
         raise PyFinancialLibraryException, "Invalid scenario: Impossible operations." 
     
     #Converting the anual number of periods to month periods
-    monthPeriods = numberOfAnualPeriods * Decimal("12.0")
+    monthPeriods = decimalNumberOfAnualPeriods * Decimal("12.0")
     return monthPeriods
      
 def convertAnualRateToMonthRates(anualRate, isCompoundInterest):
@@ -484,7 +485,7 @@ def convertAnualRateToMonthRates(anualRate, isCompoundInterest):
     a compound rate system or a simple one """
     
     if anualRate == None:
-        raise PyFinancialLibraryException, "Some values for calculating amortization have not been provided."
+        raise PyFinancialLibraryException, "Invalid scenario: Impossible operations." 
     
     if isCompoundInterest:#Converting rates in a compound rate system
         monthRate = (Decimal("1.0")+convertToDecimal(anualRate))**(Decimal("0.083333333")) - Decimal("1.0")
@@ -501,5 +502,9 @@ def convertToDecimal(arg1):
     
     if arg1 == None:
         return None
-    argDec1 = Decimal(str(arg1))
-    return argDec1       
+    try:
+        argDec1 = Decimal(str(arg1))
+        return argDec1
+    except InvalidOperation:
+        raise PyFinancialLibraryException, "Invalid scenario: Impossible operations."
+           
