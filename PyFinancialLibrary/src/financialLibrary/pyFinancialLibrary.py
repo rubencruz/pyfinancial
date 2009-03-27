@@ -133,12 +133,12 @@ def numberOfPayments(paymentMode, i, fv, pv, pmt):
         try:
             n = - (fv + pv)/pmt
         except (InvalidOperation, DivisionByZero):
-            raise PyFinancialLibraryException("Invalid scenario: Error(s) in the values os operators of capitalization (n, i, PV, FV or PMT).")
+            raise PyFinancialLibraryException("Invalid scenario: Error(s) in the values of operators of capitalization (n, i, PV, FV or PMT).")
 
     finalValue = n.quantize(Decimal("1"), ROUND_UP)
     
     if finalValue < Decimal("0"):
-        raise PyFinancialLibraryException("Invalid scenario: Error(s) in the values os operators of capitalization (n, i, PV, FV or PMT).")
+        raise PyFinancialLibraryException("Invalid scenario: Error(s) in the values of operators of capitalization (n, i, PV, FV or PMT).")
     return finalValue
 
 def __nBeg(ir, pv, pmt, fv):
@@ -490,8 +490,6 @@ def convertAnualPeriodsToMonthPeriods(numberOfAnualPeriods):
         raise PyFinancialLibraryException, "Invalid scenario: Impossible operations." 
     
     decimalNumberOfAnualPeriods = convertToDecimal(numberOfAnualPeriods)
-    if not decimalNumberOfAnualPeriods._isinteger():
-        raise PyFinancialLibraryException, "Invalid scenario: Impossible operations." 
     
     #Converting the anual number of periods to month periods
     monthPeriods = decimalNumberOfAnualPeriods * Decimal("12.0")
@@ -504,10 +502,12 @@ def convertAnualRateToMonthRates(anualRate, isCompoundInterest):
     if anualRate == None:
         raise PyFinancialLibraryException, "Invalid scenario: Impossible operations." 
     
+    decimalAnualRate = convertToDecimal(anualRate) / Decimal("100.0")
+    
     if isCompoundInterest:#Converting rates in a compound rate system
-        monthRate = 100 * ((Decimal("1.0")+convertToDecimal(anualRate))**(Decimal("0.083333333")) - Decimal("1.0"))
+        monthRate = Decimal("100.0") * ((Decimal("1.0")+decimalAnualRate)**(Decimal("0.083333333")) - Decimal("1.0"))
     else:#Converting rates in a simple rate system
-        monthRate = anualRate / Decimal("12.0")
+        monthRate = Decimal("100.0") * decimalAnualRate / Decimal("12.0")
      
     return monthRate
         
