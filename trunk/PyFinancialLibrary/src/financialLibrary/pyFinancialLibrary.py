@@ -214,7 +214,7 @@ def payment(paymentMode, i, fv, n, pv):
     
     #Error condition
     if n == Decimal("0") or i <= Decimal("-100"):
-        raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators capitalization (n, i, PV, FV or PMT)." 
+        raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators of capitalization (n, i, PV, FV or PMT)." 
     
     if i == Decimal("0"):
         return -(fv + pv)/n
@@ -255,7 +255,7 @@ def futureValue(paymentMode, i, pv, n, pmt):
     
     #Error condition
     if i <= Decimal("-100"):
-        raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators capitalization (n, i, PV, FV or PMT)."
+        raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators of capitalization (n, i, PV, FV or PMT)."
     
     if i == Decimal("0"):
         return - (pv + n * pmt)
@@ -302,7 +302,7 @@ def interestRate(paymentMode, fv, pv, n, pmt):
     #Error conditions
     if (n <= Decimal("0") or n >= (Decimal("10")**Decimal("10")) or 
         (fv.is_signed() and pv.is_signed() and pmt.is_signed()) or (not fv.is_signed() and not pv.is_signed() and not pmt.is_signed())):
-        raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators capitalization (n, i, PV, FV or PMT)."
+        raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators of capitalization (n, i, PV, FV or PMT)."
     
     ir = Decimal("0.01")
     tir = ir
@@ -367,7 +367,7 @@ def netPresentValue(interRate, cashFlowsList):
     try:
         __checkInterestRate(interRate)
     except Exception, e:
-        raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators capitalization (n, i, PV, FV or PMT)." 
+        raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators of capitalization (n, i, PV, FV or PMT)." 
     
     npv = Decimal('0.0')
     i = div(interRate, 100)
