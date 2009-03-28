@@ -174,7 +174,7 @@ class LibraryTestCase (unittest.TestCase):
         self.myAssertRaises(PyFinancialLibraryException,"Invalid scenario: Error(s) in the values of operators of capitalization (n, i, PV, FV or PMT).", numberOfPayments, PAYMENT_TYPE_END, 
                             i=Decimal("10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("0"))
                 
-        self.myAssertRaises(PyFinancialLibraryException, "Invalid scenario: i value less than -100.", numberOfPayments, PAYMENT_TYPE_END, 
+        self.myAssertRaises(PyFinancialLibraryException, "Invalid scenario: i value equal or less than -100%.", numberOfPayments, PAYMENT_TYPE_END, 
                             i=Decimal("-110"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("0"))
         
         self.myAssertRaises(PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators of capitalization (n, i, PV, FV or PMT).", numberOfPayments, PAYMENT_TYPE_END, 
@@ -434,7 +434,7 @@ class LibraryTestCase (unittest.TestCase):
         self.myAssertEquals(Decimal("0"), presentValue, PAYMENT_TYPE_END, 
                  i=Decimal("10"), fv=Decimal("0"), n=Decimal("5"), pmt=Decimal("0"))
         
-        self.myAssertRaises(PyFinancialLibraryException, "Invalid scenario: i value less than -100.", presentValue, PAYMENT_TYPE_END, 
+        self.myAssertRaises(PyFinancialLibraryException, "Invalid scenario: i value equal or less than -100%.", presentValue, PAYMENT_TYPE_END, 
                             i=Decimal("-110"), fv=Decimal("20"), n=Decimal("0"), pmt=Decimal("0"))
                     
         self.myAssertEquals(Decimal("0"), presentValue, PAYMENT_TYPE_END, 
@@ -1316,6 +1316,10 @@ class LibraryTestCase (unittest.TestCase):
         
         self.myAssertRaises(PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators of capitalization (n, i, PV, FV or PMT).", interestRate, PAYMENT_TYPE_BEGINNING, 
                             n=Decimal("6"), fv=Decimal("0.000002080"), pv=Decimal("-30000"), pmt=Decimal("-5910.52"))
+   
+    def testNetPresentValue(self):
+        
+        self.myAssertRaises(PyFinancialLibraryException, "Invalid scenario: i value equal or less than -100%.", netPresentValue, Decimal("-100"), [])
    
     def testFrenchAmortizationCalculation(self):
         """ This function will verify if the calculation of the amortization in the 
