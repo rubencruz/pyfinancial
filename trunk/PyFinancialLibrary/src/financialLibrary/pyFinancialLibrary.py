@@ -115,15 +115,14 @@ def numberOfPayments(paymentMode, i, fv, pv, pmt):
     if (i == Decimal("0") and fv == Decimal("0") and pv == Decimal("0") and pmt == Decimal("0")):
         return Decimal("0")
     
-    if (i <= Decimal("-100")):
-        raise PyFinancialLibraryException("Invalid scenario: i value less than -100." )
+    i = __checkInterestRate(i)
         
     try:
         if (paymentMode == PAYMENT_TYPE_BEGINNING):
-            n = __nBeg(i / Decimal("100"), pv, pmt, fv)
+            n = __nBeg(i, pv, pmt, fv)
             
         else:
-            n = __nEnd(i / Decimal("100"), pv, pmt, fv)
+            n = __nEnd(i, pv, pmt, fv)
             
 
         if n.is_infinite():
@@ -165,16 +164,13 @@ def presentValue(paymentMode, i, fv, n, pmt):
     n = convertToDecimal(n)
     pmt = convertToDecimal(pmt)
 
-    if i <= Decimal("-100"):
-        raise PyFinancialLibraryException, "Invalid scenario: i value less than -100." 
+    i = __checkInterestRate(i)
     
     if i == Decimal("0"):
         
         pv = fv + n * pmt
         return -pv
         
-    i = Decimal(i) / Decimal('100.0')
-    
     if paymentMode == PAYMENT_TYPE_END:
         return __pvEnd(n, i, pmt, fv)
     elif paymentMode == PAYMENT_TYPE_BEGINNING:
@@ -364,13 +360,9 @@ def netPresentValue(interRate, cashFlowsList):
     """ This function will perform the calculation of the npv value for a certain number of cash flows 
     that were previously informed """
     
-    try:
-        __checkInterestRate(interRate)
-    except Exception, e:
-        raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators of capitalization (n, i, PV, FV or PMT)." 
+    i = __checkInterestRate(interRate)
     
     npv = Decimal('0.0')
-    i = div(interRate, 100)
     if i == Decimal('-1.0') or i < Decimal('-1.0'):
         raise ValueError
     const = add(1, i)
@@ -381,8 +373,9 @@ def netPresentValue(interRate, cashFlowsList):
 
 def __checkInterestRate(interestRate):
     i = div(interestRate, 100)
-    if i == Decimal('-1.0') or i < Decimal('-1.0'):
-        raise PyFinancialLibraryException, "Invalid scenario: i value less than -100." 
+    if i <= Decimal('-1.0'):
+        raise PyFinancialLibraryException, "Invalid scenario: i value equal or less than -100%."
+    return i 
     
 def interestRateOfReturn(cashFlowsList):
     """ This function will perform the calculation of the intern return rate (IRR)
