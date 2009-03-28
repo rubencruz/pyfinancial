@@ -62,6 +62,8 @@ def sub(number1, number2):
     try:
         n1 = convertToDecimal(number1)
         n2 = convertToDecimal(number2)
+        
+        #TODO - Insert a tolerance at equal comparison
         if (number1 == number2):
             return Decimal('0.0')
         return n1 - n2
@@ -88,6 +90,8 @@ def div(number1, number2):
     try:
         n1 = convertToDecimal(number1)
         n2 = convertToDecimal(number2)
+        
+        #TODO - Insert a tolerance at equal comparison
         if n1 == n2 and n1 != Decimal('0.0'):
             return Decimal('1.0')
         return n1 / n2
@@ -250,14 +254,11 @@ def futureValue(paymentMode, i, pv, n, pmt):
     pmt = convertToDecimal(pmt)
     
     #Error condition
-    if i <= Decimal("-100"):
-        raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators of capitalization (n, i, PV, FV or PMT)."
+    i = __checkInterestRate(i)
     
     if i == Decimal("0"):
         return - (pv + n * pmt)
 
-    i = i / Decimal("100")
-    
     if paymentMode == PAYMENT_TYPE_END:
         return __fvEnd(n, i, pv, pmt)
     elif paymentMode == PAYMENT_TYPE_BEGINNING:
@@ -296,7 +297,7 @@ def interestRate(paymentMode, fv, pv, n, pmt):
         return Decimal("0")    
 
     #Error conditions
-    if (n <= Decimal("0") or n >= (Decimal("10")**Decimal("10")) or 
+    if (n <= Decimal("0") or n >= (Decimal("10")**Decimal("10")) or pmt == Decimal("0") or 
         (fv.is_signed() and pv.is_signed() and pmt.is_signed()) or (not fv.is_signed() and not pv.is_signed() and not pmt.is_signed())):
         raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators of capitalization (n, i, PV, FV or PMT)."
     
@@ -310,9 +311,9 @@ def interestRate(paymentMode, fv, pv, n, pmt):
     
     if fv == Decimal("0") and pv == Decimal("0"):
         if pmt < Decimal("0"):
-            return Decimal("-1")
+            return Decimal("-100")
         else:
-            return Decimal("1")
+            return Decimal("100")
     else:
         k = 0
         solved = False
@@ -329,7 +330,7 @@ def interestRate(paymentMode, fv, pv, n, pmt):
                 
             while i < maxtries and j <= 3:
                 guess += gd
-                if(guess != Decimal("0.0")):
+                if(guess != Decimal("0.0") and guess > Decimal("-1")):
                     val = futureValue(paymentMode, guess * Decimal("100"), pv, n, pmt)
                     delta = abs(val-fv)
                 if i > 0 :
@@ -351,7 +352,7 @@ def interestRate(paymentMode, fv, pv, n, pmt):
             k += 1
 
         if not solved:
-            raise PyFinancialLibraryException, "Error"
+            raise PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators of capitalization (n, i, PV, FV or PMT)."
     
     return tir * Decimal("100")
 
