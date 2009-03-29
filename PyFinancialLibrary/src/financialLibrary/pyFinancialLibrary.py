@@ -100,7 +100,7 @@ def div(number1, number2):
     except ValueError, DivisionByZero:
         raise PyFinancialLibraryException("Invalid scenario: Impossible operations." )
     except ZeroDivisionError:
-        raise PyFinancialLibraryException("Invalid scenario: Impossible operations." )
+        raise PyFinancialLibraryException("Invalid scenario: Zero division." )
 
 def numberOfPayments(paymentMode, i, fv, pv, pmt):
     """ This function is responsible for calculating the number of payments 
