@@ -95,12 +95,10 @@ def div(number1, number2):
         if n1 == n2 and n1 != Decimal('0.0'):
             return Decimal('1.0')
         return n1 / n2
-    except InvalidOperation, TypeError:
-        raise PyFinancialLibraryException("Invalid scenario: Impossible operations." )
-    except ValueError, DivisionByZero:
-        raise PyFinancialLibraryException("Invalid scenario: Impossible operations." )
     except ZeroDivisionError:
         raise PyFinancialLibraryException("Invalid scenario: Zero division." )
+    except Exception:
+        raise PyFinancialLibraryException("Invalid scenario: Impossible operations." )
 
 def numberOfPayments(paymentMode, i, fv, pv, pmt):
     """ This function is responsible for calculating the number of payments 

@@ -35,8 +35,6 @@ import unittest
 from financialLibrary.pyFinancialLibrary import *
 
 
-TOLERANCE = 3
-
 class LibraryTestCase (unittest.TestCase):
     
     def myAssertRaises(self, error, msg, method, *a, **kw):
@@ -157,12 +155,9 @@ class LibraryTestCase (unittest.TestCase):
             div(3, list())           
             self.fail("Exception expected")
         except  PyFinancialLibraryException:
-            pass        
-        try:
-            div(3, 0)           
-            self.fail("Expected a ZeroDivisionError")
-        except PyFinancialLibraryException:
             pass
+        
+        self.myAssertRaises(PyFinancialLibraryException, "Invalid scenario: Zero division.", div, 3, 0)
     
     def testNumberOfPayments(self):
         
@@ -1135,8 +1130,8 @@ class LibraryTestCase (unittest.TestCase):
                             n=Decimal("10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("100"))
               
         #FIXME - Review this test
-#        self.myAssertRaises(PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators of capitalization (n, i, PV, FV or PMT).", interestRate, PAYMENT_TYPE_END, 
-#                            n=Decimal("10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("-100"))
+        self.myAssertRaises(PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators of capitalization (n, i, PV, FV or PMT).", interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("-100"))
         
         self.myAssertRaises(PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators of capitalization (n, i, PV, FV or PMT).", interestRate, PAYMENT_TYPE_END, 
                             n=Decimal("0"), fv=Decimal("10"), pv=Decimal("50"), pmt=Decimal("0"))
@@ -1161,8 +1156,8 @@ class LibraryTestCase (unittest.TestCase):
                             n=Decimal("10"), fv=Decimal("50"), pv=Decimal("10"), pmt=Decimal("0"))
 
         #FIXME - Review this test        
-#        self.myAssertEquals(Decimal("17.461894"), interestRate, PAYMENT_TYPE_END, 
-#                            n=Decimal("10"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("0"))
+        self.myAssertEquals(Decimal("17.461894"), interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("10"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("0"))
         
         self.myAssertRaises(PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators of capitalization (n, i, PV, FV or PMT).", interestRate, PAYMENT_TYPE_END, 
                             n=Decimal("10"), fv=Decimal("50"), pv=Decimal("0"), pmt=Decimal("10"))
@@ -1235,8 +1230,8 @@ class LibraryTestCase (unittest.TestCase):
                             n=Decimal("10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("100"))
 
         #FIXME - Review this test        
-#        self.myAssertRaises(PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators of capitalization (n, i, PV, FV or PMT).", interestRate, PAYMENT_TYPE_BEGINNING, 
-#                            n=Decimal("10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("-100"))
+        self.myAssertRaises(PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators of capitalization (n, i, PV, FV or PMT).", interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("10"), fv=Decimal("0"), pv=Decimal("0"), pmt=Decimal("-100"))
         
         self.myAssertRaises(PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators of capitalization (n, i, PV, FV or PMT).", interestRate, PAYMENT_TYPE_BEGINNING, 
                             n=Decimal("0"), fv=Decimal("10"), pv=Decimal("50"), pmt=Decimal("0"))
@@ -1261,8 +1256,8 @@ class LibraryTestCase (unittest.TestCase):
                             n=Decimal("10"), fv=Decimal("50"), pv=Decimal("10"), pmt=Decimal("0"))
 
         #FIXME - Review this test        
-#        self.myAssertEquals(Decimal("17.461894"), interestRate, PAYMENT_TYPE_BEGINNING, 
-#                            n=Decimal("10"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("0"))
+        self.myAssertEquals(Decimal("17.461894"), interestRate, PAYMENT_TYPE_BEGINNING, 
+                            n=Decimal("10"), fv=Decimal("50"), pv=Decimal("-10"), pmt=Decimal("0"))
         
         self.myAssertRaises(PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators of capitalization (n, i, PV, FV or PMT).", interestRate, PAYMENT_TYPE_BEGINNING, 
                             n=Decimal("10"), fv=Decimal("50"), pv=Decimal("0"), pmt=Decimal("10"))
@@ -1293,8 +1288,8 @@ class LibraryTestCase (unittest.TestCase):
         #Scenario with only some variables
 
         #FIXME - Review this test        
-#        self.myAssertEquals(Decimal("3.95"), interestRate, PAYMENT_TYPE_END, 
-#                            n=Decimal("18"), fv=Decimal("50000"), pv=Decimal("-24895.9738"), pmt=Decimal("0"))
+        self.myAssertEquals(Decimal("3.95"), interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("18"), fv=Decimal("50000"), pv=Decimal("-24895.9738"), pmt=Decimal("0"))
 
         self.myAssertEquals(Decimal("7.550141"), interestRate, PAYMENT_TYPE_END, 
                             n=Decimal("18"), fv=Decimal("50000"), pv=Decimal("0"), pmt=Decimal("-1394.668122"))
@@ -1303,12 +1298,12 @@ class LibraryTestCase (unittest.TestCase):
                             n=Decimal("18"), fv=Decimal("0"), pv=Decimal("-24895.9738"), pmt=Decimal("-1394.668122"))
 
         #FIXME - Review this test
-#        self.myAssertEquals(Decimal("28.361354"), interestRate, PAYMENT_TYPE_END, 
-#                            n=Decimal("12"), fv=Decimal("20008.36"), pv=Decimal("-1000"), pmt=Decimal("0"))    
+        self.myAssertEquals(Decimal("28.361354"), interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("12"), fv=Decimal("20008.36"), pv=Decimal("-1000"), pmt=Decimal("0"))    
 
         #FIXME - Review this test               
-#        self.myAssertEquals(Decimal("2.841596e11"), interestRate, PAYMENT_TYPE_END, 
-#                            n=Decimal("6"), fv=Decimal("-30000"), pv=Decimal("0.000002080"), pmt=Decimal("-5910.52"))
+        self.myAssertEquals(Decimal("2.841596e11"), interestRate, PAYMENT_TYPE_END, 
+                            n=Decimal("6"), fv=Decimal("-30000"), pv=Decimal("0.000002080"), pmt=Decimal("-5910.52"))
         
         self.myAssertRaises(PyFinancialLibraryException, "Invalid scenario: Error(s) in the values of operators of capitalization (n, i, PV, FV or PMT).", interestRate, PAYMENT_TYPE_BEGINNING, 
                             n=Decimal("6"), fv=Decimal("0.000002080"), pv=Decimal("-30000"), pmt=Decimal("-5910.52"))
