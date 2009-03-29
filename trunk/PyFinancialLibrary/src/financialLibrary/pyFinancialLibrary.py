@@ -506,7 +506,7 @@ def convertAnualRateToMonthRates(anualRate, isCompoundInterest):
     return monthRate
         
 def simpleInterest(pv, n, i):
-    pass
+    return Decimal("0")
 
 def convertToDecimal(arg1):
     """ This function will convert the number received as an argument to a Decimal representation """
