@@ -32,8 +32,8 @@
 #*****************************************************************************
 
 import unittest
-from financialLibrary.pyFinancialLibrary import *
-
+from model.pyFinancialLibrary import *
+from decimal import *
 
 class LibraryTestCase (unittest.TestCase):
     
@@ -1525,9 +1525,15 @@ class LibraryTestCase (unittest.TestCase):
         self.myAssertEquals(Decimal("42"), convertAnualRateToMonthRates, "504", False)
         self.myAssertEquals(Decimal('7.934843773411037759276511400'), convertAnualRateToMonthRates, "150", True)
         self.myAssertEquals(Decimal('7.980034896'), convertAnualRateToMonthRates, "151.25896325", True)
+        self.myAssertEquals(Decimal('-194.5832323059463722973539670'), convertAnualRateToMonthRates, "-151.25896325", True)
         self.myAssertEquals(Decimal('12.604913604'), convertAnualRateToMonthRates, "151.25896325", False)
         self.myAssertEquals(Decimal('0.0002158'), convertAnualRateToMonthRates, "0.0025896314", True)
+        self.myAssertEquals(Decimal('-0.0002158'), convertAnualRateToMonthRates, "-0.0025896314", True)
         self.myAssertEquals(Decimal('0.000215803'), convertAnualRateToMonthRates, "0.0025896314", False)
+        self.myAssertEquals(Decimal('-0.000215803'), convertAnualRateToMonthRates, "-0.0025896314", False)
         self.myAssertEquals(Decimal('0.0'), convertAnualRateToMonthRates, "0.0000000001", True)
+        self.myAssertEquals(Decimal('0.0'), convertAnualRateToMonthRates, "-0.0000000001", True)
         self.myAssertEquals(Decimal('8.3333330000000001e-12'), convertAnualRateToMonthRates, "0.0000000001", False)
+        self.myAssertEquals(Decimal('-8.3333330000000001e-12'), convertAnualRateToMonthRates, "-0.0000000001", False)
+        self.myAssertEquals(Decimal('364.158880898'), convertAnualRateToMonthRates, "10000000000", True)
         
