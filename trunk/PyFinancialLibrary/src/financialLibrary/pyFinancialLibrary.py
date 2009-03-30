@@ -35,7 +35,7 @@
 # LINK consulta: http://www.crd2000.com.br/crd012d.htm
 # http://www.ufcg-uaac.com/Curso_extensao_gestao_investimentos.htm
 from decimal import Decimal, InvalidOperation, DivisionByZero, ROUND_UP, ROUND_HALF_UP
-from financialLibrary.pyFinancialLibraryException import PyFinancialLibraryException
+from pyFinancialLibraryException import PyFinancialLibraryException
 
 
 TOLERANCE = Decimal("0.0000000001")
@@ -497,7 +497,14 @@ def convertAnualRateToMonthRates(anualRate, isCompoundInterest):
     decimalAnualRate = convertToDecimal(anualRate) / Decimal("100.0")
     
     if isCompoundInterest:#Converting rates in a compound rate system
-        monthRate = Decimal("100.0") * ((Decimal("1.0")+decimalAnualRate)**(Decimal("0.083333333")) - Decimal("1.0"))
+        rateSigned = (Decimal("1.0")+decimalAnualRate).__abs__()
+        expTerm = (rateSigned)**(Decimal("0.083333333"))
+        if Decimal("1.0")+decimalAnualRate < Decimal("0.0"):
+            expTerm = -expTerm
+        
+        monthRate = Decimal("100.0") * ((expTerm) - Decimal("1.0"))
+        
+        
     else:#Converting rates in a simple rate system
         monthRate = Decimal("100.0") * decimalAnualRate / Decimal("12.0")
      
