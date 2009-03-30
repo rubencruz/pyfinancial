@@ -8,6 +8,6 @@
 \contentsline {chapter}{\numberline {2}Processo de Desenvolvimento}{5}
 \contentsline {chapter}{\numberline {3}Analise e Requisitos}{6}
 \contentsline {chapter}{\numberline {4}Arquitetura}{7}
-\contentsline {chapter}{\numberline {5}Verificacao e Validacao}{8}
+\contentsline {chapter}{\numberline {5}Verifica\IeC {\c c}\IeC {\~a}o e Valida\IeC {\c c}\IeC {\~a}o}{8}
 \contentsline {chapter}{\numberline {6}Metricas}{9}
 \contentsline {chapter}{\numberline {7}Conclusoes}{10}

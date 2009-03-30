@@ -1,29 +1,29 @@
-\chapter{Introducao}
+\chapter{Introdução}
 
-* Descrição do problema (Business case: Por quê? Para quem? Problemas que originaram a necessidade pela nova aplicação): http://www.valoreducacao.com.br/home/a-empresa/38-gerais/48-planejamento-financeiro-pessoal, 
-http://www.matematica.ucb.br/sites/000/68/00000039.pdf, Livro matematica financeira (ato uso das calculadoras hj em dia)
+% * Descrição do problema (Business case: Por quê? Para quem? Problemas que originaram a necessidade pela nova aplicação): http://www.valoreducacao.com.br/home/a-empresa/38-gerais/48-planejamento-financeiro-pessoal, 
+% http://www.matematica.ucb.br/sites/000/68/00000039.pdf, Livro matematica financeira (ato uso das calculadoras hj em dia)
 
-* Visão da solução (visão caixa-preta da aplicação e seus principais objetivos).  
+% * Visão da solução (visão caixa-preta da aplicação e seus principais objetivos).  
 
-* Contexto do Projeto. Pessoas e Processos (Perfil dos Usuários/Skateholders e Processos que vão empregar o sistema), Ambiente de Execução (Características Fundamentais e Restrições), Aplicações Correlatas (Sistemas Legados, Outras Aplicações Semelhantes, Sistemas e Processos em Vigor)
+% * Contexto do Projeto. Pessoas e Processos (Perfil dos Usuários/Skateholders e Processos que vão empregar o sistema), Ambiente de Execução (Características Fundamentais e Restrições), Aplicações Correlatas (Sistemas Legados, Outras Aplicações Semelhantes, Sistemas e Processos em Vigor)
 
 Muito tem se discutido hoje em dia a respeito da necessidade de um melhor gerenciamento de Finanças pessoais por parte dos membros da sociedade. Cada vez mais os cidadãos percebem como é importante administrar bem seus recursos financeiros de modo a possibilitar o alcance de várias metas como, por exemplo, aquisição de imóveis, veículos, móveis de melhor qualidade ou até mesmo a aposentadoria. Outro ponto bastante importante é que manido dos conhecimentos básicos o cidadão torna-se um consumidor muito mais responsável e apto a lidar com o mercado. Porém, em especial na sociedade brasileira, fala-se muito a respeito de possibilidades de investimento sem que antes a população receba uma educação financeira adequada \cite{valoreducacao}. 
 
 O tópico de matemática financeira é comumente lecionado nas escolas, e análises a respeito de como esses cursos estão sendo conduzidos podem ser encontradas em \cite{educacaoMedio}. Porém, ao analisarmos o comportamento das pessoas no dia a dia do comércio são poucos os que têm uma noção clara dos princípios financeiros e que consequentemente os usam rotineiramente. Logo, o uso de calculadoras financeiras facilitam o aprendizado e o exercício dos conceitos e pode auxiliar nos cálculos do cotidiano. Além desse ponto, os especialistas confirmam que a matemática financeira não é mais praticada atualmente sem o uso de tais dispositivos \cite{matFinanceira}, muito disso se deve a complexidade de certos cálculos que tomariam muito tempo para serem desenvolvidos de maneira braçal.
 
-Nesse contexto, a HP12-C se coloca como uma calculadora líder de mercado a vários anos, inclusive com vários modelos que foram desenvolvidos ao longo desse tempo, e muitos são os cursos e livros que ensinam Matemática Financeira com o apoio da mesma. Entretanto, é notado que para profissionais da área como Administradores, Economistas, dentre outros, a mesma se apresenta como uma boa calculadora e bastante confiável. Entretanto, quando partimos para analisar usuários que usam alguns dos conceitos financeiros mas não são tão especialistas é comum observar-se uma certa rejeição a mesma devido a complexidade para realizar algumas análises como, por exemplo, a análise de um plano de amortização. Um produto que seja mais prático facilitaria o aprendizado e uso desses conceitos conforme dito acima.
+Nesse contexto, a HP-12C \cite{hp12c} se coloca como uma calculadora líder de mercado a vários anos, inclusive com vários modelos que foram desenvolvidos ao longo desse tempo, e muitos são os cursos e livros que ensinam Matemática Financeira com o apoio da mesma. Entretanto, é notado que para profissionais da área como Administradores, Economistas, dentre outros, a mesma se apresenta como uma boa calculadora e bastante confiável. Entretanto, quando partimos para analisar usuários que usam alguns dos conceitos financeiros mas não são tão especialistas é comum observar-se uma certa rejeição a mesma devido a complexidade para realizar algumas análises como, por exemplo, a análise de um plano de amortização. Um produto que seja mais prático facilitaria o aprendizado e uso desses conceitos conforme dito acima.
 
 Observando um pouco a história recente dos dispositivos móveis percebemos o grande crescimento no uso dos mesmos no cotidiano das pessoas \cite{celular}. Conjuntamente com esse aumento de uso/venda, surgiu também um forte mercado de desenvolvimento de aplicativos para dispositivos móveis e hoje são inúmeros os aplicativos que podem ser adquiridos para as mais variadas plataformas, tanto através de compra nos sites oficiais de fornecedores como através de desenvolvedores disjuntos ou ainda através de pirataria. Esses aplicativos tipicamente perpassam o mundo da multimídia, como jogos, players, etc, da organização de tarefas, com calendários e agendas dentre outros, etc. 
 
-Entretanto, não é comum vermos aplicativos relacionados ao mundo financeiro. Recentemente um grande avanço nessa área foi o lançamento de um emulador da HP12-C para o Iphone da Apple \cite{iphone}. Logo, enxergamos aqui uma boa oportunidade de alavancar um pouco mais esse nicho de aplicativos ao criarmos uma calculadora financeira para os dispositivos da Nokia, mais especificadamente para o N800, e propomos o desenvolvimento da calculadora PyFinancial. 
+Entretanto, não é comum vermos aplicativos relacionados ao mundo financeiro. Recentemente um grande avanço nessa área foi o lançamento de um emulador da HP-12C para o Iphone da Apple \cite{iphone}. Logo, enxergamos aqui uma boa oportunidade de alavancar um pouco mais esse nicho de aplicativos ao criarmos uma calculadora financeira para os dispositivos da Nokia, mais especificadamente para o N800, e propomos o desenvolvimento da calculadora PyFinancial. 
 
-Do ponto de vista funcional, nossa calculadora é uma calculadora financeira que irá oferecer ao usuário o cálculo das várias funções financeiras básicas existentes na HP12-C, com análises através de juros simples e compostos, bem como cálculo de planos de amortizações.  A solução proposta visa oferecer um nível de confiança similar ao da HP12-C, com resultados bem próximos do que é encontrado na mesma, e, tirando proveito das facilidades de interação que o dispositivo nos provê, oferecer uma maior praticidade no cálculo das várias funções financeiras ali presentes.
+Do ponto de vista funcional, nossa calculadora é uma calculadora financeira que irá oferecer ao usuário o cálculo das várias funções financeiras básicas existentes na HP-12C, com análises através de juros simples e compostos, bem como cálculo de planos de amortizações.  A solução proposta visa oferecer um nível de confiança similar ao da HP-12C, com resultados bem próximos do que é encontrado na mesma, e, tirando proveito das facilidades de interação que o dispositivo nos provê, oferecer uma maior praticidade no cálculo das várias funções financeiras ali presentes.
 
 
 \section{Contexto do Projeto}
 
 \subsection{Pessoas e Processos}
-* Pessoas e Processos (Perfil dos Usuários/Skateholders e Processos que vão empregar o sistema)
+% * Pessoas e Processos (Perfil dos Usuários/Skateholders e Processos que vão empregar o sistema)
 
 Conforme relatado acima, o perfil principal de usuários que visamos abranger com nossa aplicação é aquele grupo de usuários que não tem conhecimentos muito aprofundados em matemática financeira e que logo necessita de uma interface mais simples para a realização dos cálculos.
 
@@ -34,7 +34,7 @@ Para tanto buscamos opiniões com profissionais e alunos da área financeira de 
 
 \subsection{Ambiente de Execução}
 
-* Ambiente de Execução (Características Fundamentais e Restrições),
+% * Ambiente de Execução (Características Fundamentais e Restrições),
 
 Para a implantação da aplicação faz-se necessário que o usuário possua:
 
@@ -50,11 +50,19 @@ Para a implantação da aplicação faz-se necessário que o usuário possua:
 
 \subsection{Aplicações Correlatas}
 
-* Sistemas Legados, Outras Aplicações Semelhantes, Sistemas e Processos em Vigor
+% * Sistemas Legados, Outras Aplicações Semelhantes, Sistemas e Processos em Vigor
 
 Nesta sub-seção iremos relatar um pouco a respeito de algumas aplicações similares a calculadora PyFinancial:
 
 \begin{itemize}
- \item \textit{Mobile Financial Calculator V1.0} \cite{mobcalc}: Essa calculadora se assemelha a nossa na proposta da facilidade de uso, fazendo uso de vários menus, e oferece um conjunto variado de funções. Porém, destina-se a dispositivos um pouco mais antigos, por exemplo dispositivos Série 60 \cite{s60} o que não lhe permite um alto grau de interação como o proposto por nossa aplicação através da interface \textit{touch-screen} do N800.. 
+
+ \item \textit{Mobile Financial Calculator V1.0} \cite{mobcalc}: Essa calculadora se assemelha a nossa na proposta da facilidade de uso, fazendo uso de vários menus, e oferece um conjunto variado de funções. Porém, destina-se a dispositivos um pouco mais antigos, por exemplo dispositivos Série 60 \cite{s60} o que não lhe permite um alto grau de interação como o proposto por nossa aplicação através da interface \textit{touch-screen} do N800.
+
+ \item \textit{HpCalc-Iphone} \cite{hpiphone}: É um emulador da calculadora HP-12C disponibilizado para o dispositivo Iphone da Apple. Embora forneça um alto grau de interação através da interface \textit{touch-screen}, a mesma, por ser um emulador, é uma cópia fiel da HP-12C, o que implica nas dificuldades de uso para usuários menos habituados com os conceitos financeiros.
+
+ \item \textit{Web HP-12C emulator} \cite{epxcalc}: É um emulador da HP-12C oferecido na Internet que, de maneira similar ao emulador anterior, possui as mesmas dificuldades de uso já relatadas, mas possui um problema mais grave que diz respeito a acurácia de seus resultados. Comparamos resultados oferecidos pela mesma com resultados da HP-12C original, e percebemos distorções consideráveis em certo conjunto de cálculos, por exemplo nos cálculos do pagamento e número de períodos.
+
+ \item \textit{Finance Calculator Version 4.2} \cite{arachnoid}: É uma calculadora financeira oferecida na Internet desenvolvida em JavaScript e que possui um alto grau de facilidade em seu uso, bem como uma alta acurácia nos resultados apresentados em comparação com a HP-12C original, inclusive com documentação das fórmulas usadas. A grande fraqueza da mesma é o fato de disponibilizar apenas os cálculos dos valores financeiros básicos como valor presente, valor futuro, pagamento, número de períodos e taxa de juros.
+
 \end{itemize}
 
