@@ -4,7 +4,8 @@
 
 == Reuniao de planejamento (30/03/2009) ==
 
-Implementamos as fórmulas baseados em http://vps.arachnoid.com/finance/finance_calc.js. A maioria dos testes estão passando agora, porém ainda há algumas diferenças mínimas nas fórmulas do _n_ e do _i_.
+Implementamos as fórmulas baseados em http://vps.arachnoid.com/finance/finance_calc.js. A maioria dos testes estão passando agora, porém ainda há algumas diferenças mínimas nas fórmulas do _n_ e do _i_. Por isso não fechamos a US10.
+
 Planejamento da nova iteração, discussão do status geral das demais tarefas e definição de prazos para finalização das atividades em aberto.
 
 
