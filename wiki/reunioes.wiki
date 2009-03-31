@@ -2,6 +2,12 @@
 
 = Log de reunioes =
 
+== Reuniao de planejamento (30/03/2009) ==
+
+Implementamos as fórmulas baseados em http://vps.arachnoid.com/finance/finance_calc.js. A maioria dos testes estão passando agora, porém ainda há algumas diferenças mínimas nas fórmulas do _n_ e do _i_.
+Planejamento da nova iteração, discussão do status geral das demais tarefas e definição de prazos para finalização das atividades em aberto.
+
+
 == Reuniao de acompanhamento (23/03/2009) ==
 
 Avaliação dos resultados obtidos com a implementação das fórmulas presentes em http://www.arachnoid.com/lutusp/finance.html, onde permanece o problema da implementação do i. As alternativas consideradas foram buscar o código de implementação da calculadora da página e a procura de auxílio junto ao professor Eustáquio para uma resolução via métodos numéricos.
