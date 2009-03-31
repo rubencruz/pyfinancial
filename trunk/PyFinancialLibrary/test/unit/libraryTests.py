@@ -32,7 +32,7 @@
 #*****************************************************************************
 
 import unittest
-from model.pyFinancialLibrary import *
+from financialLibrary.pyFinancialLibrary import *
 from decimal import *
 
 class LibraryTestCase (unittest.TestCase):
@@ -1537,3 +1537,6 @@ class LibraryTestCase (unittest.TestCase):
         self.myAssertEquals(Decimal('-8.3333330000000001e-12'), convertAnualRateToMonthRates, "-0.0000000001", False)
         self.myAssertEquals(Decimal('364.158880898'), convertAnualRateToMonthRates, "10000000000", True)
         
+    def testPercentageAmount(self):
+        
+        self.myAssertEquals(Decimal("42"), percentageAmount, Decimal("300"), Decimal("14"))
