@@ -513,6 +513,14 @@ def convertAnualRateToMonthRates(anualRate, isCompoundInterest):
 def simpleInterest(pv, n, i):
     return Decimal("0")
 
+def percentageAmount(base, percentage):
+    """This function finds the amount corresponding to a percentage of a 
+    number."""
+    base = convertToDecimal(base)
+    percentage = convertToDecimal(percentage)
+    
+    return (base * percentage) / Decimal("100")
+
 def convertToDecimal(arg1):
     """ This function will convert the number received as an argument to a Decimal representation """
     
