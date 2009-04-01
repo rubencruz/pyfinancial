@@ -1543,6 +1543,10 @@ class LibraryTestCase (unittest.TestCase):
         
         self.myAssertEquals(Decimal("42"), percentageAmount, Decimal("300"), Decimal("14"))
         
+    def testPercentDifference(self):
+        
+        self.myAssertEquals(Decimal("-8.9743"), percentDifference, Decimal("58.5"), Decimal("53.25"))
+        
     def testPercentOfTotal(self):
         
         self.myAssertEquals(Decimal("29.6855"), percentOfTotal, Decimal("7.95"), Decimal("2.36"))

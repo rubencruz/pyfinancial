@@ -521,7 +521,19 @@ def percentageAmount(base, percentage):
     
     return (base * percentage) / Decimal("100")
 
+def percentDifference(base, newValue):
+    """This function finds the percent difference between two numbers."""
+    
+    base = convertToDecimal(base)
+    newValue = convertToDecimal(newValue)
+
+    if base == Decimal("0"):
+        raise PyFinancialLibraryException, "Put an error msg here."
+    
+    return Decimal("100") * ((newValue - base) / base)
+
 def percentOfTotal(total, value):
+    """This function calculates what percentage one number is of another"""
     
     total = convertToDecimal(total)
     value = convertToDecimal(value)
