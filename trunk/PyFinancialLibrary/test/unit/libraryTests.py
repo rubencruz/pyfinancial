@@ -35,6 +35,8 @@ import unittest
 from financialLibrary.pyFinancialLibrary import *
 from decimal import *
 
+EQUALS_TOLERANCE = 3
+
 class LibraryTestCase (unittest.TestCase):
     
     def myAssertRaises(self, error, msg, method, *a, **kw):
@@ -49,7 +51,7 @@ class LibraryTestCase (unittest.TestCase):
     def myAssertEquals(self, expected_result, method, *a, **kw):
         res = method(*a, **kw)
         assert res != None
-        self.assertAlmostEquals(expected_result, res, TOLERANCE)
+        self.assertAlmostEquals(expected_result, res, EQUALS_TOLERANCE)
             
      
     def testAdd(self):
@@ -1540,3 +1542,7 @@ class LibraryTestCase (unittest.TestCase):
     def testPercentageAmount(self):
         
         self.myAssertEquals(Decimal("42"), percentageAmount, Decimal("300"), Decimal("14"))
+        
+    def testPercentOfTotal(self):
+        
+        self.myAssertEquals(Decimal("29.6855"), percentOfTotal, Decimal("7.95"), Decimal("2.36"))
