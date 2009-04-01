@@ -521,6 +521,16 @@ def percentageAmount(base, percentage):
     
     return (base * percentage) / Decimal("100")
 
+def percentOfTotal(total, value):
+    
+    total = convertToDecimal(total)
+    value = convertToDecimal(value)
+    
+    if total == Decimal("0"):
+        raise PyFinancialLibraryException, "Put an error msg here."
+    
+    return Decimal("100") * (value / total)
+
 def convertToDecimal(arg1):
     """ This function will convert the number received as an argument to a Decimal representation """
     
