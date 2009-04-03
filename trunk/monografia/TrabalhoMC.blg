@@ -4,9 +4,12 @@ The style file: sbc.bst
 Database file #1: referencias.bib.bib
 Warning--empty year in educacaoMedio
 Warning--empty journal in educacaoMedio
+Warning--empty year in eclipse
 Warning--empty year in mobcalc
 Warning--empty year in hpiphone
+Warning--empty year in garage
 Warning--empty year in hp12c
+Warning--empty year in iso
 Warning--empty year in arachnoid
 Warning--empty year in qt4
 Warning--empty year in pyqt4
@@ -14,46 +17,51 @@ Warning--empty year in n800
 Warning--empty year in s60
 Warning--empty year in diablo
 Warning--empty year in epxcalc
+Warning--empty year in pydev
+Warning--empty year in pyeasyaccept
 Warning--empty year in python
-You've used 16 entries,
+Warning--empty year in pyunit
+Warning--empty year in SVN
+Warning--empty year in xp1
+You've used 24 entries,
             1935 wiz_defined-function locations,
-            513 strings with 4271 characters,
-and the built_in function-call counts, 3842 in all, are:
-= -- 389
-> -- 112
-< -- 16
-+ -- 34
-- -- 32
-* -- 221
-:= -- 758
-add.period$ -- 35
-call.type$ -- 16
-change.case$ -- 83
-chr.to.int$ -- 14
-cite$ -- 29
-duplicate$ -- 167
-empty$ -- 254
-format.name$ -- 48
-if$ -- 710
+            525 strings with 4357 characters,
+and the built_in function-call counts, 5706 in all, are:
+= -- 581
+> -- 168
+< -- 24
++ -- 50
+- -- 48
+* -- 325
+:= -- 1126
+add.period$ -- 51
+call.type$ -- 24
+change.case$ -- 123
+chr.to.int$ -- 22
+cite$ -- 45
+duplicate$ -- 247
+empty$ -- 374
+format.name$ -- 72
+if$ -- 1054
 int.to.chr$ -- 3
 int.to.str$ -- 0
 missing$ -- 3
-newline$ -- 70
-num.names$ -- 48
-pop$ -- 117
+newline$ -- 102
+num.names$ -- 72
+pop$ -- 181
 preamble$ -- 1
-purify$ -- 96
+purify$ -- 144
 quote$ -- 0
-skip$ -- 98
+skip$ -- 138
 stack$ -- 0
-substring$ -- 192
+substring$ -- 288
 swap$ -- 1
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 94
-warning$ -- 13
-while$ -- 32
+type$ -- 142
+warning$ -- 21
+while$ -- 48
 width$ -- 0
-write$ -- 156
-(There were 13 warnings)
+write$ -- 228
+(There were 21 warnings)

@@ -1,2 +1,54 @@
 \chapter{Processo de Desenvolvimento}
-asasa
+
+Conforme as boas práticas que a Engenharia de Software apregoa, para que um projeto de software obtenha êxito quanto ao cumprimento de seus requisitos, é necessario que este seja desenvolvido de maneira sistematica e organizada. Por isso, processos de desenvovimento de software são criados para auxiliar esta sistematização, consequentemente agregando valor ao trabalho dos desenvolvedores e ao produto final. Atualmente, organizações regulamentadoras como a ISO \cite{iso}, utilizam (também) como parâmetro de classificação de qualidade, a verificação de quais processo de software são empregados nas instituições.
+
+Sabido da grande importância que um processo de desenvolvimento exerce sobre a qualidade do produto final, buscamos um processo, dentre os existentes na literatura especializada, que mais se adequasse ao contexto do nosso projeto. Dentre os processos existentes decidimos escolher o XP1 \cite{xp1}, os motivos que nos levaram a escolha deste ante os demais processos exitentes foram os seguintes: i) trata-se de um processo bastante simplificado e indica a produção de um conjunto limitado de artefatos, logo, não traria maior \textit{overhead} para a equipe de desenvolvedores; ii) por tratar-se de um processo desenvolvido por um conjunto de alunos e professores da nossa universidade, tal fato nos trouxe a segurança que as possíveis dificuldades que aparecessem poderiam ser facilmente dissipadas pois estariamos em contato direto com os autores do processo; iii) este processo tem obtido grandes sucessos no contexto acadêmico; e iv) o processo em sí agrupa um conjunto de práticas já bastante utilizadas por empresas e segue as diretrizes principais de um bom processo de desenvolvimento conforme indica a Engenharia de Software.
+
+XP1 define um conjunto de papeis que os mebros da equipe deverão assumir no decorrer do desenvolvimento, bem como quais as responsabilidades  cada pessoa que assumir tal papel terá. Os papeis bem como as suas respectivas responsablilidades estão listados a seguir:
+
+\textbf{Papel: Cliente}
+\begin{itemize}
+ \item Descrever a funcionalidade desejada.
+ \item Descrever os requisitos não funcionais do software.
+ \item Definir o plano de release de software.
+ \item Descrever os testes de aceitação para cada \textit{User Story}.
+ \item Escolher User Stories para cada iteração.
+\end{itemize}
+
+\textbf{Papel: Desenvolvedor}
+\begin{itemize}
+ \item Ajudar a levantar User Stories e requisitos não funcionais junto ao cliente.
+ \item Elaborar um projeto arquitetural.
+ \item Estimar o tempo de desenvolvimento de \textit{User Stories} e tarefas.
+ \item Elaborar o esquema lógico dos dados.
+ \item Escrever o código das tarefas e Testes de Unidade.
+ \item Executar atividades de integração e \textit{Test Review}.
+ \item Implementar a automação de Testes de Aceitação.
+\end{itemize}
+
+\textbf{Papel: Gerente de Projeto}
+\begin{itemize}
+ \item Conduzir as atividades de planejamento.
+ \item Alocar \textit{reviewers} de testes.
+ \item Avaliar riscos e lidar com os riscos descobertos.
+ \item Manter o progresso do projeto.
+\end{itemize}
+
+
+Instanciando os papeis identificados anteriomente (cliente, desenvolvedor e gerente) no contexto do nosso projeto tivemos a seguinte classificação: i) como cliente tivemos o porfessor Dr. Hyggo O. de Almeida; ii) quanto ao papel de gerente, cada um dos integrantes da equipe assumiu a chefia do grupo por um determinado tempo durante o desenvolvimento (aproximadamente um mês cada); e iii) por tratar-se de um número reduzido de pessoal para execução do trabalho, durante o decorrer do projeto todos integrantes foram desenvolvedores/testadores.
+
+Quanto a alocação de atividades, houve sempre a preocupação em dividi-las igualitariamente entre os membros da equipe. Para tal, reuniões de acompanhamento foram realizadas semanalmente, nessas reuniões os membros da equipe procuravam alocar, segundo as habilidades de cada indivíduo, as atividades do modo mais adequado possível. Não havendo acordo, ficava a cargo do gerente da vez impor sua decisão final.
+
+Para garantir que as atividades fossem realizadas da forma mais adequada possível uma infra-estrutura foi montada afim de melhorar a organização e consequentemente a qualidade do código produzido. Dentre os elementos presentes nessa infra-estrutura podemos destacar:
+
+\begin{itemize}
+ \item \textbf{Eclipse} \cite{eclipse}. IDE de desenvolvimento.
+ \item \textbf{PyDev} \cite{pydev}. \textit{Plug-in} para desenvolvimento em Python.
+ \item \textbf{PyUnit} \cite{pyunit}. \textit{Framework} para desenvolvimento de testes de unidade.
+ \item \textbf{PyEasyAccept} \cite{pyeasyaccept}. \textit{Framework} para desenvolvimento de testes de aceitação.
+ \item \textbf{SVN e Garage SVN} \cite{SVN}\cite{garage}. Ferramentas para controle de versões
+\end{itemize}
+
+
+
+
