@@ -9,6 +9,10 @@ dos Santos, J.~C. (2001).
 \newblock {\em {Matemática Financeira}}.
 \newblock Villipress.
 
+\bibitem[eclipse ]{eclipse}
+eclipse.
+\newblock [Online; accessed 01-Abril-2009].
+
 \bibitem[Educação 2009]{valoreducacao}
 Educação, V. (2009).
 \newblock Curso planejamento financeiro pessoal.
@@ -27,9 +31,17 @@ G1 (2009).
 \newblock Saiba o que mudou no celular, o aparelho mais usado no brasil.
 \newblock [Online; accessed 24-Março-2009].
 
+\bibitem[garage ]{garage}
+garage.
+\newblock [Online; accessed 01-Abril-2009].
+
 \bibitem[HP ]{hp12c}
 HP.
 \newblock [Online; accessed 30-Março-2009].
+
+\bibitem[ISO ]{iso}
+ISO.
+\newblock [Online; accessed 01-Abril-2009].
 
 \bibitem[Lutus ]{arachnoid}
 Lutus, P.
@@ -63,8 +75,28 @@ Org, M.
 Pfützenreuter, E.
 \newblock [Online; accessed 25-Março-2009].
 
+\bibitem[pydev ]{pydev}
+pydev.
+\newblock [Online; accessed 01-Abril-2009].
+
+\bibitem[pyeasyaccept ]{pyeasyaccept}
+pyeasyaccept.
+\newblock [Online; accessed 01-Abril-2009].
+
 \bibitem[python.org ]{python}
 python.org.
 \newblock [Online; accessed 25-Março-2009].
+
+\bibitem[pyunit ]{pyunit}
+pyunit.
+\newblock [Online; accessed 01-Abril-2009].
+
+\bibitem[SVN ]{SVN}
+SVN.
+\newblock [Online; accessed 01-Abril-2009].
+
+\bibitem[XP1 ]{xp1}
+XP1.
+\newblock [Online; accessed 01-Abril-2009].
 
 \end{thebibliography}
