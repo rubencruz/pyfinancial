@@ -1558,9 +1558,20 @@ class LibraryTestCase (unittest.TestCase):
         assert percentDifference("0.0000000000001", "0.000000000000099") < Decimal("0")
         assert percentDifference("0.000000000000099", "0.0000000000001") > Decimal("0")
         self.myAssertEquals(Decimal("-8.9743"), percentDifference, Decimal("58.5"), Decimal("53.25"))
-        self.myAssertEquals(Decimal("-8.97"), percentDifference, Decimal("58.5"), Decimal("53.25"))
-        self.myAssertEquals(Decimal("900"), percentDifference, Decimal("0.0001"), Decimal("0.01"))        
+        self.myAssertEquals(Decimal("-8.97"), percentDifference, Decimal("58.5"), Decimal("53.25"))#this and the results below were given by the emulator
+        self.myAssertEquals(Decimal("-200"), percentDifference, Decimal("1"), Decimal("-1"))
+        self.myAssertEquals(Decimal("-200"), percentDifference, Decimal("-1"), Decimal("1"))
+        self.myAssertEquals(Decimal("662.95"), percentDifference, Decimal("12.874"), Decimal("98.222"))        
         
     def testPercentOfTotal(self):
+
+        self.myAssertRaises(PyFinancialLibraryException, "Put an error msg here.", percentOfTotal, Decimal("0"), Decimal("1"))
         
         self.myAssertEquals(Decimal("29.6855"), percentOfTotal, Decimal("7.95"), Decimal("2.36"))
+        self.myAssertEquals(Decimal("29.69"), percentOfTotal, Decimal("7.95"), Decimal("2.36"))#this and the results below were given by the emulator
+        self.myAssertEquals(Decimal("0.0001"), percentOfTotal, Decimal("1000000"), Decimal("1"))
+        self.myAssertEquals(Decimal("100000000"), percentOfTotal, Decimal("1"), Decimal("1000000"))
+        self.myAssertEquals(Decimal("0.0000001"), percentOfTotal, Decimal("1000000000"), Decimal("1"))
+        self.myAssertEquals(Decimal("100000000000"), percentOfTotal, Decimal("1"), Decimal("1000000000"))
+        self.myAssertEquals(Decimal("-100"), percentOfTotal, Decimal("-5"), Decimal("5"))
+        self.myAssertEquals(Decimal("-100"), percentOfTotal, Decimal("5"), Decimal("-5"))
