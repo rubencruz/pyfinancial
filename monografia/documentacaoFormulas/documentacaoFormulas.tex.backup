@@ -43,7 +43,7 @@ pmt - END & $ pmt = - i*( pv*(i+1)^{n} + fv ) / ((i+1)^{n} - 1) $ & http://www.a
 \hline
 pmt - i = 0 & Se pólos com sinal igual: $ pmt = |(pv - fv)| / |n| $, c.c $ pmt = (|pv| - |fv|) / |n|  ^{1} $ & Material de Camilo e Livro \\  
 \hline
-i & $ i = (|fv / pv|^{1/n} - 1) * 100 $ & http://www.crd2000.com.br/crd012d.htm \\ 
+i & Usa-se a função do fv com estimativas de i $ ^{2} $ &  Matemática Financeira deSamuel Hazzan e José Nicolau Pompeo \\ 
 \hline
 npv & $ NPV = CF_{0} + CF_{1} / (1+i)^{1} + CF_{2} / (1+i)^{2} + ... + CF_{n} / (1+i)^{n}  $ & Manual da HP c00363319 \\ 
 \hline
@@ -53,16 +53,24 @@ SAF: pmt & $ pmt = pv * (1+i)^{n} * i / ((1+i)^{n}-1) $ & Material Adail \\
 \hline
 SAF: amort & $ A_{t} = (pmt - (pv*i)) * (i+1)^{t-1} $ & Material Adail \\
 \hline
-SAC: juros & $ J_{t} = pv*i - (A_{t}*i*t-1) $
+SAC: juros & $ J_{t} = pv*i - (A_{t}*i*t-1) $ & Material Adail \\
+\hline
+SAC: pmt & $ pmt_{t} = A_{t} + J_{t} $ & Material Adail \\
 \hline
 SAC: amort & $ A_{t} = pv / n $ & Material Adail \\
 \hline
- 
+Conversão do n & $ n_{mensal} = n_{anual} * 12 $ & Manual da HP \\
+\hline
+Conversão do i (juros simples) & $ i_{mensal} = i_{anual} / 12 $ & Material de Camilo de taxas equivalentes \\
+\hline
+Conversão do i (juros compostos) & $ i_{mensal} = (1+i_{anual})^{1/12} - 1 $ & Material de Camilo de taxas equivalentes \\
 
 \end{tabular}
 
 Observacoes: 
 
 $ ^{1} $ : Faz-se ainda um novo cálculo do pv com o valor resultante do n. Se o valor retornado for diferente, inverte-se o sinal do n.
+
+$ ^{2} $ : O algoritmo base inicia com uma taxa de juros de 100\% e iterativamente, no máximo duas iterações mais externas trocando o sinal da taxa ou até achar a solução busca-se um novo valor de i. Internamente tenta-se acrescer uma estimativa atual de um valor gd, alterado de 0.5 ou -0.5 de acordo com certas condições, e verifica-se a proximidade do resultado dessa estimativa na função do fv em relação ao valor real do fv. Realizando-se três tentativas consecutivas de cálculo de fv que fiquem com um erro inferior a $ 1e-8 $ para-se o algoritmo, ou então tenta-se um número máximo de 400 iterações internas em estimativas do i.
 
 \end{document}
