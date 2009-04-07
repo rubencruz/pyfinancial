@@ -1550,7 +1550,16 @@ class LibraryTestCase (unittest.TestCase):
         
     def testPercentDifference(self):
         
+        self.myAssertRaises(PyFinancialLibraryException, "Put an error msg here.", percentDifference, Decimal("0"), Decimal("10"))
+        
+        assert percentDifference("1","0.5") < Decimal("0")
+        assert percentDifference("0.5","1") > Decimal("0")
+        assert percentDifference("0.00000001", "0.0000001") > Decimal("0")
+        assert percentDifference("0.0000000000001", "0.000000000000099") < Decimal("0")
+        assert percentDifference("0.000000000000099", "0.0000000000001") > Decimal("0")
         self.myAssertEquals(Decimal("-8.9743"), percentDifference, Decimal("58.5"), Decimal("53.25"))
+        self.myAssertEquals(Decimal("-8.97"), percentDifference, Decimal("58.5"), Decimal("53.25"))
+        self.myAssertEquals(Decimal("900"), percentDifference, Decimal("0.0001"), Decimal("0.01"))        
         
     def testPercentOfTotal(self):
         
