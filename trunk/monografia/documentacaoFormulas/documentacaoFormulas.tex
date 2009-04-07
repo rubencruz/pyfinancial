@@ -15,60 +15,190 @@
 
 \section{Formulas}
 
+Aqui serão apresentadas as fórmulas usadas, bem como suas origens: \\
 
-\begin{tabular}{|l|l|l|l|}
+\begin{enumerate}
+ \item pv - BEG:
 
-\hline
-pv - BEG & $ pv = (i+1)^{-n} * ( -fv*i - (i+1) * ( (i+1)^{n} -1)*pmt  ) / i $ & http://www.arachnoid.com/lutusp/finance.html \\ 
-\hline
-pv - END & $ pv = (i+1)^{-n} * ( -pmt*(i+1)^{n} - fv*i + pmt) / i  $ & http://www.arachnoid.com/lutusp/finance.html \\
-\hline
-pv - i = 0 & $ pv = fv + n * pmt $ & Material de Camilo e Livro \\
-\hline
-fv - BEG & $ fv = ( (i+1)*pmt - (i+1)^{n}*(i*pmt + pmt + i*pv) ) / i $ & http://www.arachnoid.com/lutusp/finance.html \\ 
-\hline
-fv - END & $ fv = ( pmt - (i+1)^{n} * (pmt + i*pv) ) / i $ & http://www.arachnoid.com/lutusp/finance.html \\
-\hline
-fv - i = 0 & $ fv = - (pv + n*pmt)$ & Material de Camilo e Livro \\  
-\hline
-n - BEG & $ n = log( (-fv*i + pmt*i + pmt) / (i*pmt + pmt + i*pv) ) / log(i+1) $  & http://www.arachnoid.com/lutusp/finance.html \\ 
-\hline
-n - END & $ n = log( (pmt - fv*i) / (pmt + i*pv) ) / log(i+1) $ & http://www.arachnoid.com/lutusp/finance.html \\ 
-\hline
-n - i = 0 & Se pólos com sinal igual: $ n = |(pv - fv)| / |pmt| $, c.c  $ n = (|pv| - |fv|) / |pmt|   ^{1} $. & Material de Camilo e Livro \\
-\hline
-pmt - BEG & $ pmt = - i*( pv* ( i+1 )^{n} + fv ) / ( (i+1)*( (i+1)^{n} - 1 ) )$ & http://www.arachnoid.com/lutusp/finance.html \\ 
-\hline
-pmt - END & $ pmt = - i*( pv*(i+1)^{n} + fv ) / ((i+1)^{n} - 1) $ & http://www.arachnoid.com/lutusp/finance.html \\
-\hline
-pmt - i = 0 & Se pólos com sinal igual: $ pmt = |(pv - fv)| / |n| $, c.c $ pmt = (|pv| - |fv|) / |n|  ^{1} $ & Material de Camilo e Livro \\  
-\hline
-i & $ i = (|fv / pv|^{1/n} - 1) * 100 $ & http://www.crd2000.com.br/crd012d.htm \\ 
-\hline
-npv & $ NPV = CF_{0} + CF_{1} / (1+i)^{1} + CF_{2} / (1+i)^{2} + ... + CF_{n} / (1+i)^{n}  $ & Manual da HP c00363319 \\ 
-\hline
-irr & Resolvido por iteração da fórmula acima até que $ NPV = 0. $ & Livro que está com everton \\
-\hline
-SAF: pmt & $ pmt = pv * (1+i)^{n} * i / ((1+i)^{n}-1) $ & Material Adail \\
-\hline
-SAF: amort & $ A_{t} = (pmt - (pv*i)) * (i+1)^{t-1} $ & Material Adail \\
-\hline
-SAC: juros & $ J_{t} = pv*i - (A_{t}*i*t-1) $ & Material Adail \\
-\hline
-SAC: pmt & $ pmt_{t} = A_{t} + J_{t} $ & Material Adail \\
-\hline
-SAC: amort & $ A_{t} = pv / n $ & Material Adail \\
-\hline
-Conversão do n & $ n_{mensal} = n_{anual} * 12 $ & Manual da HP \\
-\hline
-Conversão do i (juros simples) & $ i_{mensal} = i_{anual} / 12 $ & Material de Camilo de taxas equivalentes \\
-\hline
-Conversão do i (juros compostos) & $ i_{mensal} = (1+i_{anual})^{1/12} - 1 $ & Material de Camilo de taxas equivalentes \\
+\begin{eqnarray*}
+pv &=& (i+1)^{-n} * ( -fv*i - (i+1) * ( (i+1)^{n} -1)*pmt  ) / i\\
+\end{eqnarray*}
 
-\end{tabular}
+Fonte: http://www.arachnoid.com/lutusp/finance.html
+
+\item pv - END:
+
+\begin{eqnarray*}
+	pv &=& (i+1)^{-n} * ( -pmt*(i+1)^{n} - fv*i + pmt) / i \\
+\end{eqnarray*}
+
+ Fonte: http://www.arachnoid.com/lutusp/finance.html
+
+\item pv com i = 0: 
+
+\begin{eqnarray*}
+  pv &=& fv + n * pmt  \\
+\end{eqnarray*}
+
+Fonte: Material de Camilo e Livro Matemática Financeira de João Carlos dos Santos
+
+\item fv - BEG :
+\begin{eqnarray*}
+ fv &=& ( (i+1)*pmt - (i+1)^{n}*(i*pmt + pmt + i*pv) ) / i \\
+\end{eqnarray*}
+
+ Fonte: http://www.arachnoid.com/lutusp/finance.html
+
+\item fv - END: 
+\begin{eqnarray*}
+fv &=& ( pmt - (i+1)^{n} * (pmt + i*pv) ) / i \\
+\end{eqnarray*}
+
+ Fonte: http://www.arachnoid.com/lutusp/finance.html 
+
+\item fv com i = 0:
+\begin{eqnarray*}
+ fv &=& - (pv + n*pmt) \\
+\end{eqnarray*}
+ 
+ Fonte: Material de Camilo e Livro Matemática Financeira de João Carlos dos Santos 
+
+\item  n - BEG:
+\begin{eqnarray*}
+ n &=& log( (-fv*i + pmt*i + pmt) / (i*pmt + pmt + i*pv) ) / log(i+1) \\
+\end{eqnarray*}
+
+  Fonte: http://www.arachnoid.com/lutusp/finance.html 
+
+\item  n - END: 
+\begin{eqnarray*}
+ n &=& log( (pmt - fv*i) / (pmt + i*pv) ) / log(i+1) \\
+\end{eqnarray*}
+  
+ Fonte: http://www.arachnoid.com/lutusp/finance.html
+
+\item  n com i = 0: 
+
+\begin{itemize}
+ \item Se pólos com sinal igual:
+	\begin{eqnarray*}
+ 		 n &=& |(pv - fv)| / |pmt| \\ 		
+	\end{eqnarray*}
+  \item c.c:
+	\begin{eqnarray*}
+ 		n &=& (|pv| - |fv|) / |pmt|   ^{1} \\	 
+	\end{eqnarray*}
+\end{itemize}
+ 
+ Fonte: Material de Camilo e Livro Matemática Financeira de João Carlos dos Santos 
+
+\item  pmt - BEG 
+\begin{eqnarray*}
+	pmt &=& - i*( pv* ( i+1 )^{n} + fv ) / ( (i+1)*( (i+1)^{n} - 1 ) ) \\
+\end{eqnarray*}
+ 
+ Fonte: http://www.arachnoid.com/lutusp/finance.html \\ 
+
+\item  pmt - END:
+\begin{eqnarray*}
+	pmt &=& - i*( pv*(i+1)^{n} + fv ) / ((i+1)^{n} - 1) \\	
+\end{eqnarray*}
+ 
+ Fonte: http://www.arachnoid.com/lutusp/finance.html \\
+
+\item  pmt com i = 0:  
+
+\begin{itemize}
+ \item Se pólos com sinal igual:
+	\begin{eqnarray*}
+ 		 pmt &=& |(pv - fv)| / |n| \\	
+	\end{eqnarray*}
+  \item c.c:
+	\begin{eqnarray*}
+ 		pmt &=& (|pv| - |fv|) / |n|  ^{1} \\	 
+	\end{eqnarray*}
+\end{itemize}
+
+ Fonte: Material de Camilo e Livro Matemática Financeira de João Carlos dos Santos   
+
+\item  i: Usa-se a função do fv com estimativas de i $ ^{2} $ 
+
+ Fonte: http://vps.arachnoid.com/finance/
+
+\item  npv:
+\begin{eqnarray*}
+ 	NPV &=& CF_{0} + CF_{1} / (1+i)^{1} + CF_{2} / (1+i)^{2} + ... + CF_{n} / (1+i)^{n} \\
+\end{eqnarray*}
+ 
+ Fonte: Manual da HP c00363319
+
+\item  irr: Resolvido por iteração da fórmula acima até que $ NPV = 0. $ 
+
+ Fonte: Matemática Financeira de Samuel Hazzan e José Nicolau Pompeo
+
+\item SAF: pmt 
+\begin{eqnarray*}
+ 	pmt &=& pv * (1+i)^{n} * i / ((1+i)^{n}-1) \\
+\end{eqnarray*}
+ 
+ Fonte: Material Adail
+
+\item  SAF: amort 
+\begin{eqnarray*}
+ 	A_{t} &=& (pmt - (pv*i)) * (i+1)^{t-1} \\	
+\end{eqnarray*}
+ 
+ Fonte: Material Adail
+
+\item  SAC: juros 
+\begin{eqnarray*}
+ 	J_{t} &=& pv*i - (A_{t}*i*t-1)	
+\end{eqnarray*}
+ 
+ Fonte: Material Adail 
+
+\item  SAC: pmt
+\begin{eqnarray*}
+ 	pmt_{t} &=& A_{t} + J_{t}	\\
+\end{eqnarray*}
+ 
+ Fonte: Material Adail
+
+\item  SAC: amort 
+
+\begin{eqnarray*}
+ 	A_{t} &=& pv / n \\	
+\end{eqnarray*}
+ 
+ Fonte: Material Adail
+
+\item  Conversão do n:
+\begin{eqnarray*}
+ 	n_{mensal} &=& n_{anual} * 12 \\	
+\end{eqnarray*}
+ 
+ Fonte: Manual da HP Platinum em Português
+
+\item  Conversão do i (juros simples):
+\begin{eqnarray*}
+ 	i_{mensal} &=& i_{anual} / 12 \\	
+\end{eqnarray*}
+  
+ Fonte: Material de Camilo de taxas equivalentes
+
+\item  Conversão do i (juros compostos):
+\begin{eqnarray*}
+ 	i_{mensal} &=& (1+i_{anual})^{1/12} - 1 \\	
+\end{eqnarray*}
+ 
+ Fonte: Material de Camilo de taxas equivalentes
+
+\end{enumerate}
 
 Observacoes: 
 
 $ ^{1} $ : Faz-se ainda um novo cálculo do pv com o valor resultante do n. Se o valor retornado for diferente, inverte-se o sinal do n.
+
+$ ^{2} $ : O algoritmo base inicia com uma taxa de juros de 100\% e iterativamente, no máximo duas iterações mais externas trocando o sinal da taxa ou até achar a solução busca-se um novo valor de i. Internamente tenta-se acrescer uma estimativa atual de um valor gd, alterado de 0.5 ou -0.5 de acordo com certas condições, e verifica-se a proximidade do resultado dessa estimativa na função do fv em relação ao valor real do fv. Realizando-se três tentativas consecutivas de cálculo de fv que fiquem com um erro inferior a $ 1e-8 $ para-se o algoritmo, ou então tenta-se um número máximo de 400 iterações internas em estimativas do i.
 
 \end{document}
