@@ -34,10 +34,43 @@ XP1 define um conjunto de papeis que os mebros da equipe deverão assumir no dec
  \item Manter o progresso do projeto.
 \end{itemize}
 
+\begin{figure}[!h]
+ \includegraphics[height = 14cm]{tab1.png}
+ \caption{\it Tabela que descreve quando as atividades de XP1 devem ser realizadas.} \label{tab:tab1}
+\end{figure}
+
+%\begin{table}[h]
+% \caption{Tabela que descreve quando as atividades de XP1 devem ser realizadas}
+% \centering
+% \begin{tabular}{c|l|l}
+%  \hline \hline
+%  Tipo de Atividade & Atividade & Quando Realizar\\
+%  \\[0.5ex]
+%  \hline
+%  Planejamento & Escrita de User Stories; \cline{1-1}
+%  Levantamento de requisitos não funcionais; 
+  %Planejamento de releases; Planejamento de iteração 
+%  & No início do projeto, e sempre que o cliente pensar em novas stories; \\
+  %No início do projeto, em paralelo com o levantamento de User Stories;
+  %Logo depois que o projeto arquitetural estiver pronto; 
+  %Iterações individuais são planejadas em detalhe imediatamente antes do início da iteração e não antecipadamente;
+  %Há uma iteração a cada 2 semanas.\\
+%  z & 2
+% \end{tabular}
+%\end{table}
 
 Instanciando os papeis identificados anteriomente (cliente, desenvolvedor e gerente) no contexto do nosso projeto tivemos a seguinte classificação: i) como cliente tivemos o porfessor Dr. Hyggo O. de Almeida; ii) quanto ao papel de gerente, cada um dos integrantes da equipe assumiu a chefia do grupo por um determinado tempo durante o desenvolvimento (aproximadamente um mês cada); e iii) por tratar-se de um número reduzido de pessoal para execução do trabalho, durante o decorrer do projeto todos integrantes foram desenvolvedores/testadores.
 
-Quanto a alocação de atividades, houve sempre a preocupação em dividi-las igualitariamente entre os membros da equipe. Para tal, reuniões de acompanhamento foram realizadas semanalmente, nessas reuniões os membros da equipe procuravam alocar, segundo as habilidades de cada indivíduo, as atividades do modo mais adequado possível. Não havendo acordo, ficava a cargo do gerente da vez impor sua decisão final.
+Quanto a alocação de atividades (descritas na tabela \ref{tab:tab1}), houve sempre a preocupação em dividi-las igualitariamente entre os membros da equipe. Para tal, reuniões de acompanhamento foram realizadas semanalmente. Nessas reuniões os membros da equipe procuravam alocar, segundo as habilidades de cada indivíduo, as atividades do modo mais adequado possível. Não havendo acordo, ficava a cargo do gerente da vez impor sua decisão final.
+
+Adaptando as atividades elencadas pelo XP1 ao contexto do nosso projeto tivemos a seguinte configuração: 
+\begin{itemize}
+ \item  A atividade de planejamento consumiu bastante tempo ainda na primeira parte da disciplina de Projeto I, pois esta etapa envolveu uma ampla pesquisa na literatura escializada para verificação de quais requisitos, funcionais e não funcionais, deveriam estar presentes no nosso produto final. Com os requisitos já identificados e com as \textit{User Stories} escritas, o próximo passo foi realizar o planejamento das iterações e \textit{releases}. É válido salientar que apesar de todo esse planejamento ter sido realizado durante as primeiras etapa do processo, a cada semana, durante as reuniões de acompanhamento, uma revisão sobre esses artefatos era realizada para garantir que o que se havia planejado realmente estava de acordo com a realidade do problema e da equipe. Portanto, alterações pontuais nos artefatos de planejamento foram realizadas durante todo o processo de desenvolvimento.
+ \item A atividade de projeto foi iniciada imediatamente após a conclusão da etapa de planejamento. De posse das \textit{User Stories} e dos requisitos do sistema a equipe em conjunto montou o porjeto arquitetural do sistema. O projeto arquitetural decidido foi simplificado, baseado pricipalmente nas ideias de MVC, porém atendeu as nossas necessidades. Quanto ao esquema lógico, por tratar-se de um projeto que não envolve grandes manipulações de dados, a equipe decidiu por não adotar um banco de dados, e apenas trabalhar com arquivos XML, quando necessário.
+ \item Dada a importância que a atividade de testes tem para um  bom produto final, a equipe buscou construir suites de teste de qualidade que pudessem localizar rapidamente possíveis deficiencias do código. Para tal, logo que as \textit{User Stories} foram escritas os testes de aceitação das mesmas já começaram a ser desenvolvidos em sequencia. E, seguindo o que indica a metodologia de testes TDD \cite{TDD}, os testes de unidade foram sempre desenvolvidos antes que a codificação fosse realizada. Vale salientar que existiu sempre a preocupação de que pessoas diferentes escrevessem e revisassem os testes, com isso procuramos garantir uma maior credibilidade aos nossos testes.
+ \item A atividade de integração foi uma preocupação constante da nossa equipe desde a fase de planejamento. Para que não ocorressem divergências ou incosistências de conteúdo, tivemos a preocupação de criar um controle de versões tanto para a biblioteca financeira quanto para a calculadora \textit{Pyfinancial}, para tal usamos as já muito conhecidas ferramentas de controle de versões SVN \cite{SVN} e Garage \cite{garage}, respectivamente. Com isso, conseguimos manter um controle sistematizados do nosso código, bem como dos nossos artefatos de planejamento.
+ \item Por fim, como já dito anteriormente, a atividade de gerência foi revesada entre os membros da equipe. Cada um atuou como gerente por um determinado período de tempo durante a realização do projeto. Ao gerente coube entender as mudanças discutidas durante as reuniões de acompanhamento e refleti-las tanto nos artefatos de planejamento (\textit{User Stories}, requisitos, projeto arquitetural etc), quanto nos artefatos de gerência (\textit{Big-Chart}, a tabela de riscos  e o plano de \textit{realises} etc). Essa atividade foi ralizada sempre em paralelo com o desenvolvimento da aplicação, aproximadamente uma vez a cada semana.
+\end{itemize}
 
 Para garantir que as atividades fossem realizadas da forma mais adequada possível uma infra-estrutura foi montada afim de melhorar a organização e consequentemente a qualidade do código produzido. Dentre os elementos presentes nessa infra-estrutura podemos destacar:
 

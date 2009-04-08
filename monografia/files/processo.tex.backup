@@ -1,10 +1,10 @@
 \chapter{Processo de Desenvolvimento}
 
-Conforme as boas práticas que a Engenharia de Software apregoam, para que um projeto de software obtenha êxito quanto ao cumprimento de seus requisitos, é necessario que este seja desenvolvido de maneira sistematica e organizada. Por isso, processos de desenvovimento de software são criados para auxiliar esta sistematização, consequentemente agregando valor ao trabalho dos desenvolvedores e ao produto final. Atualmente, organizações regulamentadoras como a ISO \cite{iso}, utilizam (também) como parâmetro de classificação de qualidade, quais processo de software são empregados nas instituições.
+Conforme as boas práticas que a Engenharia de Software apregoa, para que um projeto de software obtenha êxito quanto ao cumprimento de seus requisitos, é necessario que este seja desenvolvido de maneira sistematica e organizada. Por isso, processos de desenvovimento de software são criados para auxiliar esta sistematização, consequentemente agregando valor ao trabalho dos desenvolvedores e ao produto final. Atualmente, organizações regulamentadoras como a ISO \cite{iso}, utilizam (também) como parâmetro de classificação de qualidade, a verificação de quais processo de software são empregados nas instituições.
 
-Sabido da grande importância que um processo de desenvolvimento exerce sobre a qualidade do produto final, buscamos um processo, dentre os existentes na literatura especializada, que mais se adequasse ao contexto do nosso projeto. Dentre os processos existentes decidimos escolher o XP1 \cite{xp1}, os motivos que nos levaram a escolha deste ante os demais processos exitentes foram os seguintes: i) trata-se de um processo bastante simplificado e indica a produção de um conjunto limitado de artefatos, logo, não traria maior \textit{overhead} para a equipe de desenvolvedores; ii) por tratar-se de um processo desenvolvido por um conjunto de alunos e professores da nossa universidade, tal fato nos trouxe a segurança que as possíveis dificuldades que aparecessem poderiam ser facilmetne dissipada pois estariamos em contato direto com os autores do processo; iii) XP1 tem obtido grandes sucessos no contexto acadêmico; e iv) o processo em sí agrupa um conjunto de práticas já bastante utilizadas por empresas e segue as diretrizes principais de um bom processo de desenvolvimento conforme indica a Engenharia de Software.
+Sabido da grande importância que um processo de desenvolvimento exerce sobre a qualidade do produto final, buscamos um processo, dentre os existentes na literatura especializada, que mais se adequasse ao contexto do nosso projeto. Dentre os processos existentes decidimos escolher o XP1 \cite{xp1}, os motivos que nos levaram a escolha deste ante os demais processos exitentes foram os seguintes: i) trata-se de um processo bastante simplificado e indica a produção de um conjunto limitado de artefatos, logo, não traria maior \textit{overhead} para a equipe de desenvolvedores; ii) por tratar-se de um processo desenvolvido por um conjunto de alunos e professores da nossa universidade, tal fato nos trouxe a segurança que as possíveis dificuldades que aparecessem poderiam ser facilmente dissipadas pois estariamos em contato direto com os autores do processo; iii) este processo tem obtido grandes sucessos no contexto acadêmico; e iv) o processo em sí agrupa um conjunto de práticas já bastante utilizadas por empresas e segue as diretrizes principais de um bom processo de desenvolvimento conforme indica a Engenharia de Software.
 
-XP1 define um conjunto de papeis que os mebros da equipe deverão assumir no decorrer do desenvolvimento, bem como quais as responsabilidades  cada pessoa que assumir tal papel terá, os papeis bem como as suas respectivas responsablilidades estão listados a seguir:
+XP1 define um conjunto de papeis que os mebros da equipe deverão assumir no decorrer do desenvolvimento, bem como quais as responsabilidades  cada pessoa que assumir tal papel terá. Os papeis bem como as suas respectivas responsablilidades estão listados a seguir:
 
 \textbf{Papel: Cliente}
 \begin{itemize}
@@ -34,18 +34,54 @@ XP1 define um conjunto de papeis que os mebros da equipe deverão assumir no dec
  \item Manter o progresso do projeto.
 \end{itemize}
 
+\begin{figure}[!h]
+ \includegraphics[height = 14cm]{tab1.png}
+ \caption{\it Tabela que descreve quando as atividades de XP1 devem ser realizadas.} \label{tab:tab1}
+\end{figure}
 
-Instanciando os papeis identificados anteriomente (cliente, desenvolvedor e gerente) no contexto do nosso projeto tivemos a seguinte classificação: i) como cliente tivemos o porfessor Dr. Hyggo O. de Almeida; ii) quanto ao papel de gerente, cada um dos integrantes da equipe assumiu a chefia do grupo por um determinado tempo durante o desenvolvimento (aproximadamente um mês cada); e iii) por tratar-se de um número reduzido de pessoal para execução do trabalho, durante o decorrer do projeto todos integrantes do grupo assumiram o papel de desenvolvedores/testadores.
+%\begin{table}[h]
+% \caption{Tabela que descreve quando as atividades de XP1 devem ser realizadas}
+% \centering
+% \begin{tabular}{c|l|l}
+%  \hline \hline
+%  Tipo de Atividade & Atividade & Quando Realizar\\
+%  \\[0.5ex]
+%  \hline
+%  Planejamento & Escrita de User Stories; \cline{1-1}
+%  Levantamento de requisitos não funcionais; 
+  %Planejamento de releases; Planejamento de iteração 
+%  & No início do projeto, e sempre que o cliente pensar em novas stories; \\
+  %No início do projeto, em paralelo com o levantamento de User Stories;
+  %Logo depois que o projeto arquitetural estiver pronto; 
+  %Iterações individuais são planejadas em detalhe imediatamente antes do início da iteração e não antecipadamente;
+  %Há uma iteração a cada 2 semanas.\\
+%  z & 2
+% \end{tabular}
+%\end{table}
 
-Quanto a alocação de atividades, houve sempre a preocupação em dividi-las igualitariamente entre os membros da equipe. Para tal, reuniões de acompanhamento foram realizadas semanalmente, nessas reuniões os membros da equipe procuravam alocar, segundo as habilidades de cada indivíduo, as atividades do modo mais adequado possível. Não havendo acordo, ficava a cargo do gerente impor sua decisão final.
 
-Para garantir a realização das atividades da forma mais adequada possível um infra-estrutura foi montada para garantir a organização equalidade do código produzido, dentre os elementos presentes nessa infra-estrutura podesmos destacar:
+
+Instanciando os papeis identificados anteriomente (cliente, desenvolvedor e gerente) no contexto do nosso projeto tivemos a seguinte classificação: i) como cliente tivemos o porfessor Dr. Hyggo O. de Almeida; ii) quanto ao papel de gerente, cada um dos integrantes da equipe assumiu a chefia do grupo por um determinado tempo durante o desenvolvimento (aproximadamente um mês cada); e iii) por tratar-se de um número reduzido de pessoal para execução do trabalho, durante o decorrer do projeto todos integrantes foram desenvolvedores/testadores.
+
+Quanto a alocação de atividades (descritas na tabela \ref{tab:tab1}), houve sempre a preocupação em dividi-las igualitariamente entre os membros da equipe. Para tal, reuniões de acompanhamento foram realizadas semanalmente. Nessas reuniões os membros da equipe procuravam alocar, segundo as habilidades de cada indivíduo, as atividades do modo mais adequado possível. Não havendo acordo, ficava a cargo do gerente da vez impor sua decisão final.
+
+Adaptando as atividades elencadas pelo XP1 ao contexto do nosso projeto tivemos a seguinte configuração: 
+\begin{itemize}
+ \item  A atividade de planejamento consumiu bastante tempo ainda na primeira parte da disciplina de Projeto I, pois esta etapa envolveu uma ampla pesquisa na literatura escializada para verificação de quais requisitos, funcionais e não funcionais, deveriam estar presentes no nosso produto final. Com os requisitos já identificados e com as \textit{User Stories} escritas, o próximo passo foi realizar o planejamento das iterações e \textit{releases}. É válido salientar que apesar de todo esse planejamento ter sido realizado durante as primeiras etapa do processo, a cada semana, durante as reuniões de acompanhamento, uma revisão sobre esses artefatos era realizada para garantir que o que se havia planejado realmente estava de acordo com a realidade do problema e da equipe. Portanto, alterações pontuais nos artefatos de planejamento foram realizadas durante todo o processo de desenvolvimento.
+ \item A atividade de projeto foi realizada imediatamente após a conclusão da etapa de planejamento. De posse das \textit{User Stories} e dos requisitos do sistema a equipe em conjunto montou o porjeto arquitetural do sistema. O projeto arquitetural decidido foi um simples porém adequado ao contexto, seguindo as ideias de MVC. Quanto ao esquema lógico, por tratar-se de um projeto que não envolve grandes manipulações de dados a equipe decidiu por não adotar um banco de dados, e apenas trabalhar com arquivos XML quando necessário.
+ \item Dada a importância que a atividade de testes tem para um produto final de qualidade, a equipe buscou construir suites de teste de qualidade que pudessem localizar possíveis deficiencias do código. Para tal, logo que as \textit{User Stories} foram escritas os testes de aceitação das mesmas já foram desenvolvidos em sequencia. E, seguindo o que indica TDD\cite{TDD}, testes de unidade forma sempre desenvolvidos antes que a codificação fosse realizada. Vale salientar que existiu sempre a preocupação de que pessoas diferentes escrevessem e revisassem os testes, com isso procuramos oferecer maior credibilidade aos nossos testes.
+ \item A atividade de integração foi uma preocupação constante da nossa equipe desde a fase de planejamento. Para que não ocorressem divergências ou incosistências de conteúdo divemos a preocupação de criar um controle de versões tanto para a biblioteca financeira quanto para a calculadora \textit{Pyfinancial}, para tal usamos a já bastante conhecida ferramenta de controle de versões SVN \cite{SVN} e Garage \cite{garage}, respectivamente. Com isso, conseguimos manter um controle sistematizados do nosso código, bem como dos nossos artefatos de planejamento.
+ \item Por fim, a atividade de gerência foi revesada antre os membros da equipe, cada um atuou como gerente por um determinado período de tempo durante a realização do projeto. Ao gerente coube entender as mudanças discutidas durante as reuniões de acompanhamento e refleti-las nos artefatos gerados anteriormente, bem como sempre que necessário alterar o \textit{Big-Chart}, a tabela de riscos  e o plano de \textit{realises}.
+\end{itemize}
+
+Para garantir que as atividades fossem realizadas da forma mais adequada possível uma infra-estrutura foi montada afim de melhorar a organização e consequentemente a qualidade do código produzido. Dentre os elementos presentes nessa infra-estrutura podemos destacar:
+
 \begin{itemize}
  \item \textbf{Eclipse} \cite{eclipse}. IDE de desenvolvimento.
  \item \textbf{PyDev} \cite{pydev}. \textit{Plug-in} para desenvolvimento em Python.
  \item \textbf{PyUnit} \cite{pyunit}. \textit{Framework} para desenvolvimento de testes de unidade.
  \item \textbf{PyEasyAccept} \cite{pyeasyaccept}. \textit{Framework} para desenvolvimento de testes de aceitação.
- \item \textbf{SVN e Garage SVN} \cite{SVN}\cite{garage}. Ferramenta para controle de versões
+ \item \textbf{SVN e Garage SVN} \cite{SVN}\cite{garage}. Ferramentas para controle de versões
 \end{itemize}
 
 
