@@ -1545,7 +1545,7 @@ class LibraryTestCase (unittest.TestCase):
         self.myAssertEquals(Decimal("0"), percentageAmount, Decimal("0"), Decimal("50"))
         self.myAssertEquals(Decimal("0"), percentageAmount, Decimal("50"), Decimal("0"))
         self.myAssertEquals(Decimal("0"), percentageAmount, Decimal("0"), Decimal("0"))
-        self.myAssertEquals(Decimal("180270.27"), percentageAmount, Decimal("1567567.55"), Decimal("11.5"))
+        self.myAssertEquals(Decimal("180270.26825"), percentageAmount, Decimal("1567567.55"), Decimal("11.5"))
         self.myAssertEquals(Decimal("15000"), percentageAmount, Decimal("999999999.9"), Decimal("0.0015"))
         
     def testPercentDifference(self):
@@ -1558,17 +1558,17 @@ class LibraryTestCase (unittest.TestCase):
         assert percentDifference("0.0000000000001", "0.000000000000099") < Decimal("0")
         assert percentDifference("0.000000000000099", "0.0000000000001") > Decimal("0")
         self.myAssertEquals(Decimal("-8.9743"), percentDifference, Decimal("58.5"), Decimal("53.25"))
-        self.myAssertEquals(Decimal("-8.97"), percentDifference, Decimal("58.5"), Decimal("53.25"))#this and the results below were given by the emulator
+        self.myAssertEquals(Decimal("-8.974358974358974358974358974"), percentDifference, Decimal("58.5"), Decimal("53.25"))#this and the results below were given by the emulator
         self.myAssertEquals(Decimal("-200"), percentDifference, Decimal("1"), Decimal("-1"))
         self.myAssertEquals(Decimal("-200"), percentDifference, Decimal("-1"), Decimal("1"))
-        self.myAssertEquals(Decimal("662.95"), percentDifference, Decimal("12.874"), Decimal("98.222"))        
+        self.myAssertEquals(Decimal("662.9485785303712909740562374"), percentDifference, Decimal("12.874"), Decimal("98.222"))        
         
     def testPercentOfTotal(self):
 
         self.myAssertRaises(PyFinancialLibraryException, "Put an error msg here.", percentOfTotal, Decimal("0"), Decimal("1"))
         
         self.myAssertEquals(Decimal("29.6855"), percentOfTotal, Decimal("7.95"), Decimal("2.36"))
-        self.myAssertEquals(Decimal("29.69"), percentOfTotal, Decimal("7.95"), Decimal("2.36"))#this and the results below were given by the emulator
+        self.myAssertEquals(Decimal("29.68553459119496855345911950"), percentOfTotal, Decimal("7.95"), Decimal("2.36"))#this and the results below were given by the emulator
         self.myAssertEquals(Decimal("0.0001"), percentOfTotal, Decimal("1000000"), Decimal("1"))
         self.myAssertEquals(Decimal("100000000"), percentOfTotal, Decimal("1"), Decimal("1000000"))
         self.myAssertEquals(Decimal("0.0000001"), percentOfTotal, Decimal("1000000000"), Decimal("1"))
