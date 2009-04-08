@@ -4,6 +4,11 @@
 Azevedo, R.~K.
 \newblock {A RELEVÂNCIA DA MATEMÁTICA FINANCEIRA NO ENSINO MÉDIO}.
 
+\bibitem[Beck 2003]{TDD}
+Beck, K. (2003).
+\newblock {\em {Test-Driven Development by Example}}.
+\newblock Addison Wesley.
+
 \bibitem[dos Santos 2001]{matFinanceira}
 dos Santos, J.~C. (2001).
 \newblock {\em {Matemática Financeira}}.
