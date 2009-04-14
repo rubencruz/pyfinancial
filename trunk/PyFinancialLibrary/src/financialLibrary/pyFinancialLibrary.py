@@ -528,7 +528,7 @@ def percentDifference(base, newValue):
     newValue = convertToDecimal(newValue)
 
     if base == Decimal("0"):
-        raise PyFinancialLibraryException, "Error in some operands to calculate the percentage."
+        raise PyFinancialLibraryException, "Error in some operands to calculate the percent difference."
     
     return Decimal("100") * ((newValue - base) / base)
 
@@ -539,7 +539,7 @@ def percentOfTotal(total, value):
     value = convertToDecimal(value)
     
     if total == Decimal("0"):
-        raise PyFinancialLibraryException, "Error in some operands to calculate the percentage."
+        raise PyFinancialLibraryException, "Error in some operands to calculate the percent total."
     
     return Decimal("100") * (value / total)
 
