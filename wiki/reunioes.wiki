@@ -2,6 +2,10 @@
 
 = Log de reunioes =
 
+== Reuniao de acompanhamento (14/04/2009) ==
+
+Discutimos as atividades remanescentes da ultima iteração. Planejamos: i) as atividades finais para a realização da nova release; ii) as tarefas da próxima iteração, definindo quais tarefas cada membro da equipe seria responsável; e iii) quais atitudes tomar a respeito das divergências entre os resultados da nossa aplicação e da HP-12C
+
 == Reuniao de acompanhamento (06/04/2009) ==
 
 Discutimos o andamento das atividades atuais (com as 2 US's planejadas para a iteração estando bem encaminhadas) e traçamos um plano para procurar soluções para o cálculo do i através de métodos numéricos iniciando com o isolamento do i nas fórmulas disponíveis e avaliação do algoritmo utilizado em http://www.arachnoid.com/lutusp/finance.html por parte do professor Eustáquio.
