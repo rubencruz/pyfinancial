@@ -35,6 +35,7 @@
 # LINK consulta: http://www.crd2000.com.br/crd012d.htm
 # http://www.ufcg-uaac.com/Curso_extensao_gestao_investimentos.htm
 from decimal import Decimal, InvalidOperation, DivisionByZero, ROUND_UP, ROUND_HALF_UP
+from amortizationTable import AmortizationTable
 from pyFinancialLibraryException import PyFinancialLibraryException
 
 
@@ -421,13 +422,16 @@ def frenchAmortization(pv, i, n):
     pmt = calculateFrenchPmt(pv, realRate, n)
     
     #Storing information for first period, containing for each period: pmt, interest, acumulated interest, amortization, acumulated amortization and amount to be payed
-    amortizationPlan = [ [Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), pv] ]
+    amortizationPlan = AmortizationTable(n)
+    amortizationPlan.setTableLine(0, Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), pv)
     
     #Calculating information for other periods
     for index in xrange(1, n+1, 1):
-        lastAmountToBePayed = amortizationPlan[index-1][5]
-        acumulatedAmortization = amortizationPlan[index-1][4]
-        acumulatedInterest = amortizationPlan[index-1][2]
+        lastLine = index-1
+        
+        lastAmountToBePayed = amortizationPlan.getNewAmountToBePayed(lastLine)
+        acumulatedAmortization = amortizationPlan.getNewAcumulatedAmortization(lastLine)
+        acumulatedInterest = amortizationPlan.getNewAcumulatedInterest(lastLine)
         
         amortization = (pmt - (pv* realRate) ) * (realRate+1)**(index-1)
         interest = pmt - amortization
@@ -438,7 +442,7 @@ def frenchAmortization(pv, i, n):
         if amountToBePayed <= TOLERANCE:
             amountToBePayed = Decimal('0')
         
-        amortizationPlan.append( [pmt, interest, newAcumulatedInterest, amortization, newAcumulatedAmortization, amountToBePayed]  )
+        amortizationPlan.setTableLine(index, pmt, interest, newAcumulatedInterest, amortization, newAcumulatedAmortization, amountToBePayed)
      
     return amortizationPlan   
 
@@ -453,13 +457,16 @@ def equalsAmortization(pv, i, n):
     amortization = convertToDecimal(pv) / n
     
     #Storing information for first period, containing for each period: pmt, interest, acumulated interest, amortization, acumulated amortization and amount to be payed
-    amortizationPlan = [ [Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), pv] ]
+    amortizationPlan = AmortizationTable(n)
+    amortizationPlan.setTableLine(0, Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), pv)
     
     #Calculating information for other periods
     for index in xrange(1, n+1, 1):
-        lastAmountToBePayed = amortizationPlan[index-1][5]
-        acumulatedAmortization = amortizationPlan[index-1][4]
-        acumulatedInterest = amortizationPlan[index-1][2]
+        lastLine = index-1
+        
+        lastAmountToBePayed = amortizationPlan.getNewAmountToBePayed(lastLine)
+        acumulatedAmortization = amortizationPlan.getNewAcumulatedAmortization(lastLine)
+        acumulatedInterest = amortizationPlan.getNewAcumulatedInterest(lastLine)
         
         interest = (pv * realRate) - (amortization * realRate * (index-1))
         payment = amortization + interest
@@ -471,7 +478,7 @@ def equalsAmortization(pv, i, n):
         if newAmountToBePayed <= TOLERANCE:
             newAmountToBePayed = Decimal('0')
             
-        amortizationPlan.append( [ payment, interest, newAcumulatedInterest, amortization, newAcumulatedAmortization,  newAmountToBePayed  ] )   
+        amortizationPlan.setTableLine(index, payment, interest, newAcumulatedInterest, amortization, newAcumulatedAmortization,  newAmountToBePayed)   
         
     return amortizationPlan
 
