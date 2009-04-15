@@ -26,7 +26,7 @@
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # *********************************************************************************
 #
-# library.py, This module contains the implementation of functions in the 
+# pyFinancialLibrary.py, This module contains the implementation of functions in the 
 # calculator HP12-C  
 #
 #*****************************************************************************
