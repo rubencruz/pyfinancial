@@ -107,8 +107,8 @@ de interfaces gráficas para dispositivos móveis, podemos considerar que no mom
               # Certo: if x == 4: print x, y; x, y = y, x      Errado:  if x == 4 : print x , y ; x , y = y , x
         # Antes da abertura de parênteses em chamada de funções, definições e listas
               # Certo: spam(1)                                 Errado:  spam (1)
-        # Antes da abertura de [colchetes] de indices e {chaves} de dicionários
-              # Certo: dict['key'] = list[index]               Errado:  dict ['key'] = list [index]
+        # Antes da abertura de colchetes de indices e { chaves } de dicionários
+              # Certo: dict['key'] = list[ index ]               Errado:  dict ['key'] = list [index]
         # Mais de um espaço em atribuições de valores
               # Certo: x = 1                                   Errado:  x       = 1
         # Não utilizar espaços com em chamadas de métodos com passagem de chaves nos parâmetros e também nos dicionários
