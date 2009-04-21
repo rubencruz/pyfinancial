@@ -48,6 +48,8 @@
 || *Calculadora financeira na Web*|| http://www.arachnoid.com/lutusp/finance.html, CODIGO: http://vps.arachnoid.com/finance/ ||
 || *HP Calculator Memory Size* || http://www.brouhaha.com/~eric/hpcalc/memory_size.html ||
 || *MVC e Command Pattern para implementar Undo* || http://www.codeproject.com/KB/architecture/commandpatterndemo.aspx?fid=237038&df=90&mpp=25&noise=3&sort=Position&view=Quick&select=1888552 ||
+|| *i18n em Qt* || http://doc.trolltech.com/4.0/i18n.html e http://www.mail-archive.com/pyqt@riverbankcomputing.com/msg15087.html ||
+|| *i18n em python* || http://docs.python.org/library/gettext.html ||
 
 
 [http://code.google.com/p/pyfinancial/wiki/index página inicial]
