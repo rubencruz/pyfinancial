@@ -46,5 +46,6 @@
 || *Guia do usuário da 12c* || http://www.hp.com/ctg/Manual/bpia5184.pdf ||
 || *Biblioteca financeira em Python* || http://hobbiton.thisside.net/pyfi-2.4.py ||
 || *Calculadora financeira na Web*|| http://www.arachnoid.com/lutusp/finance.html, CODIGO: http://vps.arachnoid.com/finance/ ||
+|| *HP Calculator Memory Size* || http://www.brouhaha.com/~eric/hpcalc/memory_size.html ||
 
 [http://code.google.com/p/pyfinancial/wiki/index página inicial]
