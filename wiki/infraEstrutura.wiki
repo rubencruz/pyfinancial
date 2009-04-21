@@ -47,5 +47,7 @@
 || *Biblioteca financeira em Python* || http://hobbiton.thisside.net/pyfi-2.4.py ||
 || *Calculadora financeira na Web*|| http://www.arachnoid.com/lutusp/finance.html, CODIGO: http://vps.arachnoid.com/finance/ ||
 || *HP Calculator Memory Size* || http://www.brouhaha.com/~eric/hpcalc/memory_size.html ||
+|| *MVC e Command Pattern para implementar Undo* || http://www.codeproject.com/KB/architecture/commandpatterndemo.aspx?fid=237038&df=90&mpp=25&noise=3&sort=Position&view=Quick&select=1888552 ||
+
 
 [http://code.google.com/p/pyfinancial/wiki/index página inicial]
