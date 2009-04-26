@@ -44,6 +44,26 @@ garage.
 HP.
 \newblock [Online; accessed 30-Março-2009].
 
+\bibitem[HP 2009a]{man1}
+HP (2009a).
+\newblock Hp 12c financial calculator user's guide.
+\newblock [Online; accessed 24-Março-2009].
+
+\bibitem[HP 2009b]{man3}
+HP (2009b).
+\newblock Hp 12c internal rate of return.
+\newblock [Online; accessed 24-Março-2009].
+
+\bibitem[HP 2009c]{man4}
+HP (2009c).
+\newblock Hp 12c net present value.
+\newblock [Online; accessed 24-Março-2009].
+
+\bibitem[HP 2009d]{man2}
+HP (2009d).
+\newblock Hp 12c platinum calculadora financeira manual do usuário.
+\newblock [Online; accessed 24-Março-2009].
+
 \bibitem[ISO ]{iso}
 ISO.
 \newblock [Online; accessed 01-Abril-2009].
@@ -72,6 +92,10 @@ Nokia.
 Nokia.
 \newblock [Online; accessed 25-Março-2009].
 
+\bibitem[NPR ]{NPR}
+NPR.
+\newblock [Online; accessed 01-Abril-2009].
+
 \bibitem[Org ]{diablo}
 Org, M.
 \newblock [Online; accessed 25-Março-2009].
@@ -95,6 +119,11 @@ python.org.
 \bibitem[pyunit ]{pyunit}
 pyunit.
 \newblock [Online; accessed 01-Abril-2009].
+
+\bibitem[Silva 2009]{adail}
+Silva, M. A. M. L.~D. (2009).
+\newblock Módulo i - mat. financ. na hp-12c.
+\newblock [Online; accessed 24-Março-2009].
 
 \bibitem[SVN ]{SVN}
 SVN.
