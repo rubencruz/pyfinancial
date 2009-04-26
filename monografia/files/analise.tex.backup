@@ -33,7 +33,7 @@ Entidade que representa a biblioteca das funções financeiras. Todo e qualquer 
 
 Durante as reuniões de planejamento entre, os membros da equipe, o cliente e possíveis usuários dos nossos produtos um conjunto de requisitos, funcionais e não funcionais ficaram estabelecidos, são eles:
 \begin{itemize}
- \item \textbf{Requisitos Funcionais}
+ \item Requisitos Funcionais
 	\begin{itemize}
  	\item O usuário deverá ser capaz de realizar as operações matemáticas seguindo a Notação Polonesa Reversa \cite{NPR}.
 	\item O usuário deverá ser capaz de realizar os principais cálculos financeiros (n, i, PV, PMT, FV).
@@ -41,7 +41,7 @@ Durante as reuniões de planejamento entre, os membros da equipe, o cliente e po
 	\item Ao finalizar o uso os dados da tela e dos registradores devem ser armazenados em algum tipo de persistência.
 	\item A tabela de amortização deve ser mostrada visualmente ao usuário.
 	\end{itemize}
- \item \textbf{Requisitos Não-Funcionais}
+ \item Requisitos Não-Funcionais
 	\begin{itemize}
 	 \item \textbf{Interface}. Possuir interface similar a da calculadora HP12-C, com melhoramentos que possam facilitar sua utilização.
 	 \item \textbf{Usabilidade}. O nível de dificuldade encontrado para uso de nossa calculadora deve ser o mesmo encontrado quando faz-se uso das calculadoras tradicionais.
