@@ -3,29 +3,32 @@
 \section{Modelo Conceitual}
 
 \begin{figure}[!h]
- \includegraphics[height = 7cm]{CalcDC.jpg}
+ \includegraphics[height = 8cm]{CalcDC.jpg}
  \caption{\it Modelo Conceitual da PyFinancial.} \label{fig:modConc}
 \end{figure}
 
 A \ref{fig:modConc} apresenta o modelo conceitual da calculadora financeira, objetivo central desse projeto. É possível identificar algumas entidades centrais desse sistema são elas:
 
 \begin{itemize}
-	\item CalcModel
-	\item CalcGUI
-	\item CalcControler
-	\item CalcAbstractModelListener
-	\item PyFinancialLibrary
+	\item Model
+	\item GUI
+	\item Controler
+	\item AbstractModelListener
+	\item Reg
+	\item FinancialLibrary
 \end{itemize}
 
-\subsection{CalcModel}
+\subsection{Model}
 Módulo central da aplicação que será responsável por fazer a troca de mensagens entre as demais entidades do sistema as quais está conectada. Também é de sua responsabilidade receber e preparar os dados da aplicação, sejam de entrada ou de saída, formatando-os da forma cujo componente destino requer. Por fim, esta entidade será capaz de tratar a manipulação dos dados da aplicação nos registradores adequados, bem como persistí-los quando necessário.
-\subsection{CalcGUI}
+\subsection{GUI}
 Esta é a entidade que estará em contato direto com o usuário da aplicação. Logo, este é o módulo que receberá os dados externos e os transmitirá para entidades mais internas, assim como receberá os resultados das operações realizadas pela calculadora e os transmitirá ao cliente de uma maneira mais amigável.
-\subsection{CalcControler}
+\subsection{Controler}
 Esta entidade é o controlador do sistema. Receberá as requisições feitas pelo cliente da aplicação, através da interface (CalcGUI), e identificará as operações correspondentes na CalcModel que se responsabilizarão por realizar as atividades correspondentes.
-\subsection{CalcAbstractModelListener}
+\subsection{AbstractModelListener}
 Entidade abstrata da qual outras a generalizarão. Estas serão responsáveis por capturar qualquer mudança importante que deva ser refletida na interface, ou seja, mudanças que devão ser mostradas ao usuário.
-\subsection{PyFinancialLibrary}
+\subsection{Reg}
+Entidade que representa o papel de um registrador. Um registrador é um importante elemento usando para a realização das atividades objetivo da calculadora. Esta entidade será especializada por outras adicionando as particularidades pertinentes aos diverentes tipos de registradores.
+\subsection{FinancialLibrary}
 Entidade que representa a biblioteca das funções financeiras. Todo e qualquer cálculo financeiro deve chamar a operação correspondente na biblioteca garantindo uma melhor organização e consequentemente, a separação de interesses.
 
 
