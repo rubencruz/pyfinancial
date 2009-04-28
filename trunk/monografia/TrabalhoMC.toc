@@ -8,11 +8,12 @@
 \contentsline {chapter}{\numberline {2}Processo de Desenvolvimento}{6}
 \contentsline {chapter}{\numberline {3}An\IeC {\'a}lise de Requisitos}{12}
 \contentsline {section}{\numberline {3.1}Modelo Conceitual}{12}
-\contentsline {subsection}{\numberline {3.1.1}CalcModel}{13}
-\contentsline {subsection}{\numberline {3.1.2}CalcGUI}{13}
-\contentsline {subsection}{\numberline {3.1.3}CalcControler}{13}
-\contentsline {subsection}{\numberline {3.1.4}CalcAbstractModelListener}{13}
-\contentsline {subsection}{\numberline {3.1.5}PyFinancialLibrary}{14}
+\contentsline {subsection}{\numberline {3.1.1}Model}{13}
+\contentsline {subsection}{\numberline {3.1.2}GUI}{13}
+\contentsline {subsection}{\numberline {3.1.3}Controler}{13}
+\contentsline {subsection}{\numberline {3.1.4}AbstractModelListener}{13}
+\contentsline {subsection}{\numberline {3.1.5}Reg}{14}
+\contentsline {subsection}{\numberline {3.1.6}FinancialLibrary}{14}
 \contentsline {section}{\numberline {3.2}Requisitos}{14}
 \contentsline {chapter}{\numberline {4}Arquitetura}{16}
 \contentsline {chapter}{\numberline {5}Verifica\IeC {\c c}\IeC {\~a}o e Valida\IeC {\c c}\IeC {\~a}o}{17}
