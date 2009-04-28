@@ -10,12 +10,12 @@
 \contentsline {section}{\numberline {3.1}Modelo Conceitual}{12}
 \contentsline {subsection}{\numberline {3.1.1}Model}{13}
 \contentsline {subsection}{\numberline {3.1.2}GUI}{13}
-\contentsline {subsection}{\numberline {3.1.3}Controler}{13}
-\contentsline {subsection}{\numberline {3.1.4}AbstractModelListener}{13}
+\contentsline {subsection}{\numberline {3.1.3}Controller}{13}
+\contentsline {subsection}{\numberline {3.1.4}AbstractModelListener}{14}
 \contentsline {subsection}{\numberline {3.1.5}Reg}{14}
 \contentsline {subsection}{\numberline {3.1.6}FinancialLibrary}{14}
 \contentsline {section}{\numberline {3.2}Requisitos}{14}
-\contentsline {chapter}{\numberline {4}Arquitetura}{16}
-\contentsline {chapter}{\numberline {5}Verifica\IeC {\c c}\IeC {\~a}o e Valida\IeC {\c c}\IeC {\~a}o}{17}
-\contentsline {chapter}{\numberline {6}M\IeC {\'e}tricas}{18}
-\contentsline {chapter}{\numberline {7}Conclus\IeC {\~o}es}{19}
+\contentsline {chapter}{\numberline {4}Arquitetura}{17}
+\contentsline {chapter}{\numberline {5}Verifica\IeC {\c c}\IeC {\~a}o e Valida\IeC {\c c}\IeC {\~a}o}{18}
+\contentsline {chapter}{\numberline {6}M\IeC {\'e}tricas}{19}
+\contentsline {chapter}{\numberline {7}Conclus\IeC {\~o}es}{20}
