@@ -2,19 +2,27 @@
 
 = Sugestões de Melhorias Interface =
 
-* Acho que a interface poderia ter umas cores parecidas com a da platinum: http://upload.wikimedia.org/wikipedia/commons/8/88/HP12C-platinum.jpg
-* Ver se dar para colocar os símbolos como na calc. Por exemplo, os de fração.
-* Colocar algo na interface para o usuário saber quando está em beg ou end. (Talvez usar uma status bar)
-* Colocar a tela para mostrar os pontos da casa dos mil tipo: 12,201.00
-* Inserir menu que permita informar formatacao da tela (numero de digitos após a vírgula;  formatacao de milhares com . ou , ; sempre mostrar notação científica ; selecionar se deseja ou não persistir dados)
-* Fazer com que nas tabelas de store/recall capture-se os eventos ao clicar no registrador, sem precisar dar OK ao final
-* Permitir recuperar o ultimo plano de amortizacao calculado. Na tabela deve-se permitir recuperar algum dos valores lá contidos e jogá-lo no X.
-* Talvez trocar os botões F e G, CAS e FAS por radio buttons
-* Talvez colocar tooltips nos botões de funções matemáticas/financeiras
+ * Acho que a interface poderia ter umas cores parecidas com a da platinum: http://upload.wikimedia.org/wikipedia/commons/8/88/HP12C-platinum.jpg
+
+ * Ver se pode-se colocar os símbolos como na calc. Por exemplo, os de fração.
+
+ * Colocar algo na interface para o usuário saber quando está em beg ou end. (Talvez usar uma status bar)
+
+ * Colocar a tela para mostrar os pontos da casa dos mil tipo: 12,201.00
+
+ * Inserir menu que permita informar formatacao da tela (numero de digitos após a vírgula;  formatacao de milhares com . ou , ; sempre mostrar notação científica ; selecionar se deseja ou não persistir dados)
+
+ * Fazer com que nas tabelas de store/recall capture-se os eventos ao clicar no registrador, sem precisar dar OK ao final
+
+ * Permitir recuperar o ultimo plano de amortizacao calculado. Na tabela deve-se permitir recuperar algum dos valores lá contidos e jogá-lo no X.
+
+ * Talvez trocar os botões F e G, CAS e FAS por radio buttons
+
+ * Talvez colocar tooltips nos botões de funções matemáticas/financeiras
 
 = Correções na Interface =
 
-* Centralizar o nome nos botões
+ * Centralizar o nome nos botões
 
 
 
