@@ -14,6 +14,7 @@ Seguem abaixo os links para os vários artefatos gerados no decorrer do projeto:
  * [tabRiscos Tabela de Riscos]
  * [docFormulas Análise das fórmulas]
  * [tabErros Tabela de erros da calculadora]
+ * [melhoriasInterface Sugestões de Melhorias na Interface]
 
 
 
