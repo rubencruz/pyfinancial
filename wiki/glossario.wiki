@@ -67,6 +67,11 @@
 
 == P ==
 
+=== Pagamento Antecipado ===
+Pagamento de uma prestação que é realizado no início de um dado período.
+
+=== Pagamento Postecipado ===
+Pagamento de uma prestação que é realizado no término de um dado período.
 
 === Prestação ===
    Instrumento de recuperação ou de devolução de um capital acrescido dos juros contratados no período de negociação da transação.
