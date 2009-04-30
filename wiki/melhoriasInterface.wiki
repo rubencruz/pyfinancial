@@ -1,6 +1,6 @@
 #Página contendo as sugestões de melhorias a serem implementadas na interface
 
-= Sugestões de Melhorias Interface =
+= Sugestões de Melhorias na Interface =
 
  * Acho que a interface poderia ter umas cores parecidas com a da platinum: http://upload.wikimedia.org/wikipedia/commons/8/88/HP12C-platinum.jpg
 
@@ -19,6 +19,8 @@
  * Talvez trocar os botões F e G, CAS e FAS por radio buttons
 
  * Talvez colocar tooltips nos botões de funções matemáticas/financeiras
+
+ * Permitir ao usuário escolher entre conversão de juros simples e juros compostos de períodos anuais para mensais.
 
 = Correções na Interface =
 
