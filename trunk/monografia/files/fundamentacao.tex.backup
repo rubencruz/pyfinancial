@@ -1,0 +1,53 @@
+\chapter{Fundamentação Teórica}
+
+Matemática financeira é um ramo da Matemática que se utiliza de uma série de conceitos matemáticos para realizar a análise de dados financeiros em geral. Dentre deste ramo,  considerou-se na implementação da \textit{PyFinancial} os principais conceitos financeiros existentes na HP-12C \ref{glossario}.
+
+É importante ressaltar que durante a pesquisa realizada no intuito de coletar as fórmulas financeiras relacionadas aos conceitos implementados, percebeu-se que várias são as fórmulas existentes e divulgadas na Internet, porém muitas delas não apresentam resultados similares aos da HP-12C. Com isso, à medida que são apresentados os conceitos será feita referência às fórmulas que estão implementadas e que se encontram no apêndice \ref{formulas}.
+
+Abaixo tem-se uma breve explicação dos principais conceitos financeiros utilizados na \textit{PyFinancial}.
+
+\section{Conceitos}
+
+\subsection{Considerações iniciais}
+
+Aplicações financeiras partem de um capital inicial e este é aplicado a uma certa taxa de juros, podendo ou não existir prestações, de modo a gerar, com o passar do tempo, um capital final que implique em alguma remuneração ou perda. Esses juros são aplicados ao capital de acordo com a capitalização fixada para o investimento. Como exemplo temos investimentos de poupança, empréstimos, etc.
+
+Uma forma simples de ter-se uma idéia de como funciona uma dessas movimentações é observando o fluxo de caixa da mesma através de um diagrama de tempo. Um exemplo desse diagrama pode ser visto na figura \ref{tab:fig1}.
+
+\subsection{Valor Presente - PV}
+
+Aplicações têm início com uma quantia a partir de um marco inicial. Essa quantia corresponde a quanto vale o investimento inicialmente, sem análises do futuro. A esse valor, que pode ser um valor gasto ou recebido, damos o nome de valor presente ou valor atual. Um exemplo seria uma pessoa que aplica R\$ $500,00$ na poupança. Esse valor seria o valor presente de sua aplicação. Assim, valor presente, capital inicial e valor atual têm o mesmo significado.
+
+O valor presente de uma dada prestação pode ser entendido como sendo o valor no instante zero de uma certa prestação futura descontada dos juros.
+
+\subsection{Valor Presente Líquido - NPV}
+
+Uma vez que o valor presente está definido, bem como as prestações, juros da movimentação e número de perídos durante o qual a aplicação estaŕa vigente, uma análise bastante comum é verificar qual o valor da aplicação atualmente. Ou seja, para cada prestação desconta-se o juros existente, seja este simples ou composto, considerando a quantidade de períodos até que a prestação fosse paga e obtém-se o valor da prestação na data-pólo inicial. Em seguida soma-se os valores presentes de cada prestação ao valor presente e obtem-se o NPV.
+
+Um NPV positivo é um indicativo de que a aplicação possui um retorno positivo para o aplicante e que pode ser considerada. Já um NPV negativo indica que a aplicação não deve ser considerada.
+
+Uma consideração importante a ser realizada é que esse valor presente líquido pode ser calculado de duas formas diferentes: uma com pagamentos postecipados e outra com pagamentos antecipados.
+
+\subsection{Valor Futuro - FV}
+
+Considerando o valor presente, os juros, as prestações e um dado período de vigência, o valor futuro de uma dada aplicação é o valor obtido ao final dessa aplicação. Ou seja, o valor futuro é o resultado da incidência dos juros e das prestações em cima do valor presente. Esse valor também é conhecido como capital final.
+
+É importante destacar que, da mesma forma que o NPV, o valor futuro é influenciado pelo fato de estar-se trabalhando com pagamentos antecipados ou postecipados. Logo, dependendo do tipo de pagamento em vigência tem-se diferentes valores futuros.
+
+\subsection{Taxa de juros - i e Taxa interna de retorno - irr}
+
+Os juros, ou taxa de juros, de uma dada aplicação é o percentual que será aplicado sobre um montante de modo a gerar a remuneração da aplicação. Essa remuneração pode ser feita através de um sistema de juros compostos ou ainda de um sistema de juros simples.
+
+A taxa interna de retorno, por sua vez, é a taxa de juros que iguala o valor presente das entradas ao longo da aplicação ao valor presente das saídas da aplicação. Ou seja, podemos entendê-la como o valor da taxa de juros que torno o valor presente líquido do investimento igual a zero, a aplicação não fez diferença.
+
+Se a taxa de juros considerada para a aplicação for menor que o IRR então é um indicativo de que a aplicação é atrativa, se for maior a aplicação não deve ser considerada e sendo igual implica que a aplicação não fará diferença.
+
+\subsection{Número de Períodos - n}
+
+O número de períodos indica quantas vezes a taxa de juros será aplicada em uma certa aplicação de modo a gerar remuneração. Além disso, o número de períodos também informa os locais no tempo onde pode haver entradas ou saídas no fluxo, prestações.
+
+\subsection{Prestações - pmt}
+
+As prestações indicam entradas ou saídades de capital em um certo fluxo de caixa. Tipicamente nos cálculos considera-se uma prestação negativa para representar uma saída de capital e uma prestação positiva para representar uma entrada.
+
+
