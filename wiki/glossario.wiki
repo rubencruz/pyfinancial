@@ -7,7 +7,8 @@
 
 
 === Amortização ===
-   Refere-se à devolução nominal de um capital parcelada ou integralmente.
+    A palavra amortização pode ser entendida como a diminuição da dívida, de uma única vez ou aos poucos, em mais vezes.
+
 
 
 == C ==
@@ -118,13 +119,13 @@ Pagamento de uma prestação que é realizado no término de um dado período.
 
 
 === Taxa de Juros ===
-   É o percetual que remunera o capital. Uma taxa de juros incide sobre um capital disposto em um fluxo de caixa sempre quando da ocorrência de uma variação temporal, conhecida como freqüência intervalar necessária à formação dos juros
+   É o percentual que remunera o capital. Uma taxa de juros incide sobre um capital disposto em um fluxo de caixa sempre quando da ocorrência de uma variação temporal, conhecida como freqüência intervalar necessária à formação dos juros
 
 
 == V ==
 
 
-=== Valor Atual ===
+=== Valor Atual ou Valor Presente ===
    Representa um fluxo qualquer situado na data-pólo inicial.
 
 === Valor Nominal ===
