@@ -40,6 +40,11 @@ G1 (2009).
 garage.
 \newblock [Online; acessado em 01-Abril-2009].
 
+\bibitem[Gondim 2009]{camilo}
+Gondim, M. C.~L. (2009).
+\newblock Juros compostos e taxas equivalentes.
+\newblock [Online; acessado em 02-Maio-2009].
+
 \bibitem[HP ]{hp12c}
 HP.
 \newblock [Online; acessado em 30-Março-2009].
@@ -68,7 +73,11 @@ HP (2009d).
 ISO.
 \newblock [Online; acessado em 01-Abril-2009].
 
-\bibitem[Lutus ]{arachnoid}
+\bibitem[Lutus a]{arachnoid}
+Lutus, P.
+\newblock [Online; acessado em 25-Março-2009].
+
+\bibitem[Lutus b]{arachnoid2}
 Lutus, P.
 \newblock [Online; acessado em 25-Março-2009].
 
@@ -104,6 +113,11 @@ Org, M.
 Pfützenreuter, E.
 \newblock [Online; acessado em 25-Março-2009].
 
+\bibitem[Pompeu and Hazzan 2007]{matFinanceira2}
+Pompeu, J.~N. and Hazzan, S. (2007).
+\newblock {\em {Matemática Financeira}}.
+\newblock Saraiva.
+
 \bibitem[pydev ]{pydev}
 pydev.
 \newblock [Online; acessado em 01-Abril-2009].
@@ -129,7 +143,15 @@ Silva, M. A. M. L.~D. (2009).
 SVN.
 \newblock [Online; acessado em 01-Abril-2009].
 
-\bibitem[Wikipedia ]{usoSACSAF}
+\bibitem[Wikipedia a]{vpl}
+Wikipedia.
+\newblock [Online; acessado em 02-Maio-2009].
+
+\bibitem[Wikipedia b]{irr}
+Wikipedia.
+\newblock [Online; acessado em 02-Maio-2009].
+
+\bibitem[Wikipedia c]{usoSACSAF}
 Wikipedia.
 \newblock [Online; acessado em 01-Maio-2009].
 

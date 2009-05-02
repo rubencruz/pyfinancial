@@ -1,0 +1,202 @@
+\chapter{Fórmulas}
+
+Aqui serão apresentadas as fórmulas usadas, bem as fontes a partir das quais as mesmas foram obtidas: \\
+
+\begin{enumerate}
+ \item pv - BEG \cite{arachnoid}:
+
+\begin{eqnarray*}
+pv &=& (i+1)^{-n} * ( -fv*i - (i+1) * ( (i+1)^{n} -1)*pmt  ) / i\\
+\end{eqnarray*}
+
+% Fonte: http://www.arachnoid.com/lutusp/finance.html
+
+\item pv - END \cite{arachnoid}:
+
+\begin{eqnarray*}
+	pv &=& (i+1)^{-n} * ( -pmt*(i+1)^{n} - fv*i + pmt) / i \\
+\end{eqnarray*}
+
+%  Fonte: http://www.arachnoid.com/lutusp/finance.html
+
+\item pv com i = 0 \cite{matFinanceira}: 
+
+\begin{eqnarray*}
+  pv &=& fv + n * pmt  \\
+\end{eqnarray*} 
+
+% Fonte: Material de Camilo e \cite{matFinanceira}
+
+\item fv - BEG \cite{arachnoid}:
+\begin{eqnarray*}
+ fv &=& ( (i+1)*pmt - (i+1)^{n}*(i*pmt + pmt + i*pv) ) / i \\
+\end{eqnarray*}
+
+%  Fonte: http://www.arachnoid.com/lutusp/finance.html
+
+\item fv - END \cite{arachnoid}: 
+\begin{eqnarray*}
+fv &=& ( pmt - (i+1)^{n} * (pmt + i*pv) ) / i \\
+\end{eqnarray*}
+
+%  Fonte: http://www.arachnoid.com/lutusp/finance.html 
+
+\item fv com i = 0 \cite{arachnoid2}:
+\begin{eqnarray*}
+ fv &=& - (pv + n*pmt) \\
+\end{eqnarray*}
+ 
+%  Fonte: Material de Camilo e \cite{matFinanceira}
+
+\item  n - BEG \cite{arachnoid}:
+\begin{eqnarray*}
+ n &=& log( (-fv*i + pmt*i + pmt) / (i*pmt + pmt + i*pv) ) / log(i+1) \\
+\end{eqnarray*} 
+
+%   Fonte: http://www.arachnoid.com/lutusp/finance.html 
+
+\item  n - END \cite{arachnoid}: 
+\begin{eqnarray*}
+ n &=& log( (pmt - fv*i) / (pmt + i*pv) ) / log(i+1) \\
+\end{eqnarray*} 
+  
+%  Fonte: http://www.arachnoid.com/lutusp/finance.html
+
+\item  n com i = 0 \cite{arachnoid2}: 
+
+\begin{itemize}
+ \item Se pólos com sinal igual:
+	\begin{eqnarray*}
+ 		 n &=& |(pv - fv)| / |pmt| \\ 		
+	\end{eqnarray*}
+  \item c.c:
+	\begin{eqnarray*}
+ 		n &=& (|pv| - |fv|) / |pmt|   ^{1} \\	 
+	\end{eqnarray*}
+\end{itemize}
+ 
+%  Fonte: Material de Camilo e \cite{matFinanceira} \\
+
+\item  pmt - BEG \cite{arachnoid}: 
+\begin{eqnarray*}
+	pmt &=& - i*( pv* ( i+1 )^{n} + fv ) / ( (i+1)*( (i+1)^{n} - 1 ) ) \\
+\end{eqnarray*} 
+ 
+%  Fonte: http://www.arachnoid.com/lutusp/finance.html \\ 
+
+\item  pmt - END \cite{arachnoid}:
+\begin{eqnarray*}
+	pmt &=& - i*( pv*(i+1)^{n} + fv ) / ((i+1)^{n} - 1) \\	
+\end{eqnarray*}  
+ 
+%  Fonte: http://www.arachnoid.com/lutusp/finance.html \\
+
+\item  pmt com i = 0 \cite{arachnoid2}:  
+
+\begin{itemize}
+ \item Se pólos com sinal igual:
+	\begin{eqnarray*}
+ 		 pmt &=& |(pv - fv)| / |n| \\	
+	\end{eqnarray*}
+  \item c.c:
+	\begin{eqnarray*}
+ 		pmt &=& (|pv| - |fv|) / |n|  ^{1} \\	 
+	\end{eqnarray*}
+\end{itemize}
+
+%  Fonte: Material de Camilo e \cite{matFinanceira}  
+
+\item  i: Usa-se a função do fv com estimativas de i $ ^{2} $  \cite{arachnoid2}
+
+%  Fonte: http://vps.arachnoid.com/finance/
+
+\item  npv \cite{man1}:
+\begin{eqnarray*}
+ 	NPV &=& CF_{0} + CF_{1} / (1+i)^{1} + CF_{2} / (1+i)^{2} + ... + CF_{n} / (1+i)^{n} \\
+\end{eqnarray*}
+ 
+%  Fonte: Manual da HP c00363319
+
+\item  irr \cite {matFinanceira2}: Resolvido por iteração da fórmula acima até que $ NPV = 0. $ 
+
+%  Fonte: Matemática Financeira de Samuel Hazzan e José Nicolau Pompeo
+
+\item SAF: pmt \cite{adail}
+\begin{eqnarray*}
+ 	pmt &=& pv * (1+i)^{n} * i / ((1+i)^{n}-1) \\
+\end{eqnarray*}
+ 
+%  Fonte: Material Adail
+
+\item  SAF: amort \cite{adail}
+\begin{eqnarray*}
+ 	A_{t} &=& (pmt - (pv*i)) * (i+1)^{t-1} \\	
+\end{eqnarray*}
+ 
+%  Fonte: Material Adail
+
+\item  SAC: juros \cite{adail}
+\begin{eqnarray*}
+ 	J_{t} &=& pv*i - (A_{t}*i*t-1)	
+\end{eqnarray*}
+ 
+%  Fonte: Material Adail 
+
+\item  SAC: pmt \cite{adail}
+\begin{eqnarray*}
+ 	pmt_{t} &=& A_{t} + J_{t}	\\
+\end{eqnarray*}
+ 
+%  Fonte: Material Adail
+
+\item  SAC: amort \cite{adail}
+
+\begin{eqnarray*}
+ 	A_{t} &=& pv / n \\	
+\end{eqnarray*}
+ 
+%  Fonte: Material Adail
+
+\item  Conversão do n \cite{man2}:
+\begin{eqnarray*}
+ 	n_{mensal} &=& n_{anual} * 12 \\	
+\end{eqnarray*}
+ 
+%  Fonte: Manual da HP Platinum em Português
+
+\item  Conversão do i (juros simples) \cite{camilo}:
+\begin{eqnarray*}
+ 	i_{mensal} &=& i_{anual} / 12 \\	
+\end{eqnarray*}
+  
+%  Fonte: Material de Camilo de taxas equivalentes
+
+\item  Conversão do i (juros compostos) \cite{camilo}:
+\begin{eqnarray*}
+ 	i_{mensal} &=& (1+i_{anual})^{1/12} - 1 \\	
+\end{eqnarray*}
+ 
+%  Fonte: Material de Camilo de taxas equivalentes
+
+\item Percentagem de um dado valor \cite{man1}:
+\begin{eqnarray*}
+ 	\% &=& Base(y) * Rate(x) / 100 \\	
+\end{eqnarray*}
+
+\item Variação Percentual \cite{man1}:
+\begin{eqnarray*}
+ 	\Delta\% &=& 100*(NewAmount(x)-Base(y))/Base(y) \\	
+\end{eqnarray*}
+
+\item Percentagem do Total \cite{man1}:
+\begin{eqnarray*}
+ 	\%T &=& 100*(Amount(x)/Total(y)) \\	
+\end{eqnarray*}
+
+\end{enumerate}
+
+Observações: 
+
+$ ^{1} $ : Faz-se ainda um novo cálculo do pv com o valor resultante do n. Se o valor retornado for diferente, inverte-se o sinal do n.
+
+$ ^{2} $ : O algoritmo base inicia com uma taxa de juros de 100\% e iterativamente, no máximo duas iterações mais externas trocando o sinal da taxa ou até achar a solução busca-se um novo valor de i. Internamente tenta-se acrescer uma estimativa atual de um valor gd, alterado de 0.5 ou -0.5 de acordo com certas condições, e verifica-se a proximidade do resultado dessa estimativa na função do fv em relação ao valor real do fv. Realizando-se três tentativas consecutivas de cálculo de fv que fiquem com um erro inferior a $ 1e-8 $ para-se o algoritmo, ou então tenta-se um número máximo de 400 iterações internas em estimativas do i.
