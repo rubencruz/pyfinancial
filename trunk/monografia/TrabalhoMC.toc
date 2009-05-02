@@ -8,9 +8,9 @@
 \contentsline {chapter}{\numberline {2}Fundamenta\IeC {\c c}\IeC {\~a}o Te\IeC {\'o}rica}{6}
 \contentsline {section}{\numberline {2.1}Conceitos}{6}
 \contentsline {subsection}{\numberline {2.1.1}Considera\IeC {\c c}\IeC {\~o}es iniciais}{6}
-\contentsline {subsection}{\numberline {2.1.2}Valor Presente - PV}{7}
-\contentsline {subsection}{\numberline {2.1.3}Valor Presente L\IeC {\'\i }quido - NPV}{7}
-\contentsline {subsection}{\numberline {2.1.4}Valor Futuro - FV}{8}
+\contentsline {subsection}{\numberline {2.1.2}Valor Presente - VP ou PV do ingl\IeC {\^e}s}{7}
+\contentsline {subsection}{\numberline {2.1.3}Valor Presente L\IeC {\'\i }quido - VPL ou do ingl\IeC {\^e}s NPV}{7}
+\contentsline {subsection}{\numberline {2.1.4}Valor Futuro - VF ou FV do ingl\IeC {\^e}s}{8}
 \contentsline {subsection}{\numberline {2.1.5}Taxa de juros - i e Taxa interna de retorno - irr}{8}
 \contentsline {subsection}{\numberline {2.1.6}N\IeC {\'u}mero de Per\IeC {\'\i }odos - n}{8}
 \contentsline {subsection}{\numberline {2.1.7}Presta\IeC {\c c}\IeC {\~o}es - pmt}{8}
@@ -29,3 +29,6 @@
 \contentsline {chapter}{\numberline {6}Verifica\IeC {\c c}\IeC {\~a}o e Valida\IeC {\c c}\IeC {\~a}o}{22}
 \contentsline {chapter}{\numberline {7}M\IeC {\'e}tricas}{23}
 \contentsline {chapter}{\numberline {8}Conclus\IeC {\~o}es}{24}
+\contentsline {section}{\numberline {8.1}teste}{24}
+\contentsline {chapter}{\numberline {A}Gloss\IeC {\'a}rio}{25}
+\contentsline {chapter}{\numberline {B}F\IeC {\'o}rmulas}{30}

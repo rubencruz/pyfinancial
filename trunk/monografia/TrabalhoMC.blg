@@ -11,6 +11,7 @@ Warning--empty year in garage
 Warning--empty year in hp12c
 Warning--empty year in iso
 Warning--empty year in arachnoid
+Warning--empty year in arachnoid2
 Warning--empty year in qt4
 Warning--empty year in pyqt4
 Warning--empty year in n800
@@ -23,47 +24,49 @@ Warning--empty year in pyeasyaccept
 Warning--empty year in python
 Warning--empty year in pyunit
 Warning--empty year in SVN
+Warning--empty year in vpl
+Warning--empty year in irr
 Warning--empty year in usoSACSAF
 Warning--empty year in xp1
-You've used 32 entries,
+You've used 37 entries,
             1935 wiz_defined-function locations,
-            549 strings with 4772 characters,
-and the built_in function-call counts, 7672 in all, are:
-= -- 784
-> -- 224
-< -- 32
-+ -- 69
-- -- 64
-* -- 443
-:= -- 1512
-add.period$ -- 73
-call.type$ -- 32
-change.case$ -- 168
-chr.to.int$ -- 27
-cite$ -- 55
-duplicate$ -- 331
-empty$ -- 502
-format.name$ -- 96
-if$ -- 1419
-int.to.chr$ -- 6
+            561 strings with 4964 characters,
+and the built_in function-call counts, 8932 in all, are:
+= -- 911
+> -- 265
+< -- 37
++ -- 84
+- -- 76
+* -- 520
+:= -- 1755
+add.period$ -- 85
+call.type$ -- 37
+change.case$ -- 195
+chr.to.int$ -- 29
+cite$ -- 63
+duplicate$ -- 385
+empty$ -- 585
+format.name$ -- 115
+if$ -- 1655
+int.to.chr$ -- 9
 int.to.str$ -- 0
-missing$ -- 5
-newline$ -- 140
-num.names$ -- 96
-pop$ -- 220
+missing$ -- 7
+newline$ -- 162
+num.names$ -- 111
+pop$ -- 256
 preamble$ -- 1
-purify$ -- 192
+purify$ -- 223
 quote$ -- 0
-skip$ -- 202
+skip$ -- 234
 stack$ -- 0
-substring$ -- 384
-swap$ -- 2
+substring$ -- 444
+swap$ -- 3
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 188
-warning$ -- 23
-while$ -- 64
+type$ -- 216
+warning$ -- 26
+while$ -- 74
 width$ -- 0
-write$ -- 318
-(There were 23 warnings)
+write$ -- 369
+(There were 26 warnings)
