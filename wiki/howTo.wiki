@@ -12,6 +12,7 @@
  
  Passo a passo:
  * Criar uma instancia de calcButton em calcGui com os labels relativos a funcao desejada
- * Adicionar esse botao em uma certa posicao no layout, no caso estamos usando um gridLayout
+ * Adicionar esse botao em uma certa posicao no layout, no caso estamos usando um gridLayout onde as posicoes sao dadas por coordenadas (x,y).
  * Adicionar no metodo keyboardButtonClicked do Controller a captura do evento de pressionamento do botao considerando seu label de funcao principal (seu label central). E redirecionar para a chamada de uma funcao no model
- * 
+ * No model criar a funcao chamada no controller. Nela verificar qual acao tomar, se for o caso olhar se o botao F e G estao pressionados, se esta selecionado o SAF ou SAC, e chamar um novo metodo na biblioteca fornecendo-lhe valores dos registradores. Os registradores podem ser da pilha (calcStack), ou dos demais registradores (calcRegs), onde temos os financeiros (i, pv, fv, ...) ou os outros 18 registradores (cashFlowRegs).
+ * Com o resultado da funcao em maos, setar algum dos registradores conforme seja necessario. Desativar as teclas F e G, e conforme o que for modificado (tela, pilha, registradores financeiros, etc) avisar os devidos listeners sobre as alteracoes. Um ponto importante é também alterar o modo de entrada de dados da calculadora de acordo com a funcionalidade desejada, existem basicamente tres: Mode.SaveMode (que devolve o valor 0.0 a tela), Mode.OperationMode (devolve zero a tela mas antes da um enter na pilha) e Mode.EntryMode (que indica que numeros estao sendo entrados na tela).
