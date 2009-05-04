@@ -25,6 +25,7 @@
 = Correções na Interface =
 
  * Centralizar o nome nos botões
+ * Dar maior destaque ao botão ENTER (tamanho)
 
 
 
