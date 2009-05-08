@@ -383,7 +383,7 @@ def interestRateOfReturn(cashFlowsList):
     
     count = 0
     limit = 5000
-    error = Decimal('0.001')
+    error = Decimal('0.0001')
     errorMsg = "Unable to find irr."
     
     # Secant method
@@ -438,7 +438,7 @@ def frenchAmortization(pv, i, n):
     
     #Storing information for first period, containing for each period: pmt, interest, acumulated interest, amortization, acumulated amortization and amount to be payed
     amortizationPlan = AmortizationTable(n)
-    amortizationPlan.setTableLine(0, Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), pv)
+    amortizationPlan.setTableLine(0, Decimal('0.0'), Decimal('0.0'), Decimal('0.0'), Decimal('0.0'), Decimal('0.0'), pv)
     
     #Calculating information for other periods
     for index in xrange(1, n+1, 1):
@@ -455,7 +455,7 @@ def frenchAmortization(pv, i, n):
         newAcumulatedInterest = acumulatedInterest + interest
         
         if amountToBePayed <= TOLERANCE:
-            amountToBePayed = Decimal('0')
+            amountToBePayed = Decimal('0.0')
         
         amortizationPlan.setTableLine(index, pmt, interest, newAcumulatedInterest, amortization, newAcumulatedAmortization, amountToBePayed)
      
@@ -473,7 +473,7 @@ def equalsAmortization(pv, i, n):
     
     #Storing information for first period, containing for each period: pmt, interest, acumulated interest, amortization, acumulated amortization and amount to be payed
     amortizationPlan = AmortizationTable(n)
-    amortizationPlan.setTableLine(0, Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), Decimal('0'), pv)
+    amortizationPlan.setTableLine(0, Decimal('0.0'), Decimal('0.0'), Decimal('0.0'), Decimal('0.0'), Decimal('0.0'), pv)
     
     #Calculating information for other periods
     for index in xrange(1, n+1, 1):
@@ -491,7 +491,7 @@ def equalsAmortization(pv, i, n):
         newAcumulatedInterest = acumulatedInterest + interest
         
         if newAmountToBePayed <= TOLERANCE:
-            newAmountToBePayed = Decimal('0')
+            newAmountToBePayed = Decimal('0.0')
             
         amortizationPlan.setTableLine(index, payment, interest, newAcumulatedInterest, amortization, newAcumulatedAmortization,  newAmountToBePayed)   
         
