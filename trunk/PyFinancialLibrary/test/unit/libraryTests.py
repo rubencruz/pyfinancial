@@ -1313,6 +1313,47 @@ class LibraryTestCase (unittest.TestCase):
     def testNetPresentValue(self):
         
         self.myAssertRaises(PyFinancialLibraryException, "Invalid scenario: i value equal or less than -100%.", netPresentValue, Decimal("-100"), [])
+                        
+        self.myAssertEquals(Decimal("125.773305423961"), netPresentValue, Decimal('1'), self._cashFlowA())
+        #FIXME
+        self.myAssertEquals(Decimal("125.773305423961"), netPresentValue, Decimal('2.981478140672474693945214785E+54'), self._cashFlowA())
+        
+        
+    def testInterestRateOfReturn(self):
+        
+        cashFlow = []
+        cashFlow.append(Decimal("-130000.0"))
+        cashFlow.append(Decimal("7000.0"))
+        cashFlow.append(Decimal("-10000.0"))
+        cashFlow.append(Decimal("20000.0"))
+        cashFlow.append(Decimal("20000.0"))
+        cashFlow.append(Decimal("20000.0"))
+        cashFlow.append(Decimal("12000.0"))
+        cashFlow.append(Decimal("-8000.0"))
+        cashFlow.append(Decimal("178500.0"))
+        self.myAssertEquals(Decimal("9.371345280684"), interestRateOfReturn, cashFlow)
+        
+        self.myAssertRaises(PyFinancialLibraryException, "Unable to find irr.", interestRateOfReturn, self._cashFlowA())
+
+    def _cashFlowA(self):
+        cashFlow = [Decimal('1.0'), Decimal('2.0'), Decimal('0.0'), Decimal('-2.0'),
+                    Decimal('-1.5'), Decimal('1.0')]
+        for i in range(99):
+            cashFlow.append(Decimal('2.0'))
+        cashFlow.append(Decimal("1.0"))
+        cashFlow.append(Decimal("2.0"))
+        cashFlow.append(Decimal("1.0"))
+        cashFlow.append(Decimal("2.0"))
+        cashFlow.append(Decimal("1.0"))
+        cashFlow.append(Decimal("2.0"))
+        cashFlow.append(Decimal("1.0"))
+        cashFlow.append(Decimal("2.0"))
+        cashFlow.append(Decimal("1.0"))
+        cashFlow.append(Decimal("2.0"))
+        cashFlow.append(Decimal("1.0"))
+        cashFlow.append(Decimal("2.0"))
+        
+        return cashFlow
    
     def testFrenchAmortizationCalculation(self):
         """ This function will verify if the calculation of the amortization in the 
@@ -1550,7 +1591,7 @@ class LibraryTestCase (unittest.TestCase):
         
     def testPercentDifference(self):
         
-        self.myAssertRaises(PyFinancialLibraryException, "Error in some operands to calculate the percentage.", percentDifference, Decimal("0"), Decimal("10"))
+        self.myAssertRaises(PyFinancialLibraryException, "Error in some operands to calculate the percent difference.", percentDifference, Decimal("0"), Decimal("10"))
         
         self.myAssertEquals(Decimal("-50"), percentDifference, Decimal("1"), Decimal("0.5"))
         self.myAssertEquals(Decimal("100"), percentDifference, Decimal("0.5"), Decimal("1"))
@@ -1564,7 +1605,7 @@ class LibraryTestCase (unittest.TestCase):
         
     def testPercentOfTotal(self):
 
-        self.myAssertRaises(PyFinancialLibraryException, "Error in some operands to calculate the percentage.", percentOfTotal, Decimal("0"), Decimal("1"))
+        self.myAssertRaises(PyFinancialLibraryException, "Error in some operands to calculate the percent of total.", percentOfTotal, Decimal("0"), Decimal("1"))
         
         self.myAssertEquals(Decimal("29.6855"), percentOfTotal, Decimal("7.95"), Decimal("2.36"))
         self.myAssertEquals(Decimal("29.68553459119496855345911950"), percentOfTotal, Decimal("7.95"), Decimal("2.36"))#this and the results below were given by the emulator
