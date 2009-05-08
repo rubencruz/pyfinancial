@@ -364,10 +364,10 @@ def netPresentValue(interRate, cashFlowsList):
     
     npv = Decimal('0.0')
     if i == Decimal('-1.0') or i < Decimal('-1.0'):
-        raise ValueError
+        raise PyFinancialLibraryException, "Invalid scenario: i value equal or less than -100%."
     const = add(1, i)
     for count in range(0,len(cashFlowsList)):
-        npv = add(npv, div(cashFlowsList[count], const**count ))
+        npv = npv + (cashFlowsList[count] / (const**count) )
         
     return npv
 
@@ -381,27 +381,36 @@ def interestRateOfReturn(cashFlowsList):
     """ This function will perform the calculation of the intern return rate (IRR)
     for a certain number of cash flows that were previously informed """
     
-    step = Decimal('0.05') # 0.05%    
-    i = Decimal('0.0')
-    npv = netPresentValue(i, cashFlowsList)
-    if npv == Decimal('0.0'):
-        return i
-    elif npv > Decimal('0.0'):
-        while npv > Decimal('0.0'):
-            iBefore = i
-            npvBefore = npv
-            
-            i = i + step
-            npv = netPresentValue(i, cashFlowsList)
-        return __findIRR(iBefore, npvBefore, i, npv)
-    else:
-        while npv < Decimal('0.0'):
-            iBefore = i
-            npvBefore = npv
-            
-            i = i + step
-            npv = netPresentValue(i, cashFlowsList)
-        return __findIRR(iBefore, npvBefore, i, npv)
+    count = 0
+    limit = 5000
+    error = Decimal('0.001')
+    errorMsg = "Unable to find irr."
+    
+    # Secant method
+    a = Decimal('0')
+    b = Decimal('10')
+    bNpv = netPresentValue(b, cashFlowsList)
+    
+    while bNpv.copy_abs() >= error and ((a - b) / b).copy_abs() >= error:
+        if count == limit:
+            raise PyFinancialLibraryException, errorMsg
+        count += 1
+        aNpv = netPresentValue(a, cashFlowsList)
+        bNpv = netPresentValue(b, cashFlowsList)
+        try:
+            c = (a * bNpv - b * aNpv).copy_abs() / (bNpv - aNpv).copy_abs()
+        except DivisionByZero:
+            # aNpv is equals to bNpv
+            if bNpv == Decimal('0'):
+                return b
+            else:
+                raise PyFinancialLibraryException, errorMsg
+        except PyFinancialLibraryException:
+            raise PyFinancialLibraryException, errorMsg
+        a, b = b, c
+        bNpv = netPresentValue(b, cashFlowsList)
+    
+    return b
 
 def __findIRR(upperX, upperY, downX, downY):
     return div(upperY*downX - downY*upperX, upperY - downY)     
@@ -546,7 +555,7 @@ def percentOfTotal(total, value):
     value = convertToDecimal(value)
     
     if total == Decimal("0"):
-        raise PyFinancialLibraryException, "Error in some operands to calculate the percent total."
+        raise PyFinancialLibraryException, "Error in some operands to calculate the percent of total."
     
     return Decimal("100") * (value / total)
 
