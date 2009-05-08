@@ -412,9 +412,6 @@ def interestRateOfReturn(cashFlowsList):
     
     return b
 
-def __findIRR(upperX, upperY, downX, downY):
-    return div(upperY*downX - downY*upperX, upperY - downY)     
-
 def calculateFrenchPmt(pv, i, n):
     """ This function calculates the pmt of an amortization plan based on the french system """
     
