@@ -389,14 +389,19 @@ def interestRateOfReturn(cashFlowsList):
     # Secant method
     a = Decimal('0')
     b = Decimal('10')
+    aNpv = netPresentValue(a, cashFlowsList)
     bNpv = netPresentValue(b, cashFlowsList)
     
     while bNpv.copy_abs() >= error and ((a - b) / b).copy_abs() >= error:
         if count == limit:
             raise PyFinancialLibraryException, errorMsg
         count += 1
-        aNpv = netPresentValue(a, cashFlowsList)
-        bNpv = netPresentValue(b, cashFlowsList)
+        
+        try:
+            bNpv = netPresentValue(b, cashFlowsList)
+        except PyFinancialLibraryException:
+            raise PyFinancialLibraryException, errorMsg
+
         try:
             c = (a * bNpv - b * aNpv).copy_abs() / (bNpv - aNpv).copy_abs()
         except DivisionByZero:
@@ -405,10 +410,14 @@ def interestRateOfReturn(cashFlowsList):
                 return b
             else:
                 raise PyFinancialLibraryException, errorMsg
-        except PyFinancialLibraryException:
-            raise PyFinancialLibraryException, errorMsg
+
         a, b = b, c
-        bNpv = netPresentValue(b, cashFlowsList)
+        aNpv = bNpv
+        
+        try:
+            bNpv = netPresentValue(b, cashFlowsList)
+        except PyFinancialLibraryException:
+            raise PyFinancialLibraryException, errorMsg            
     
     return b
 
