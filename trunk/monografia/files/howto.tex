@@ -1,0 +1,40 @@
+\chapter{Novas Funcionalidades}
+
+Um das características de um software bem projetado é permitir facilmente a inclusão de novas funcionalidades. 
+Aqui será apresentado os passos necessários para a inclusão de novas funcionalidades.
+
+Antes de apresentar o passo-a-passo, deve-se levantar as seguintes considerações:
+
+\begin{enumerate}
+ \item Em relação a interface gráfica, o módulo principal que organiza os dados de interface gráfica da calculadora, 
+incluindo disposição de botões, é o CalcGui. Além desse, existem módulos que lidam com a tabela de amortização 
+(calcTabelDialog), com a tabela de recall (recallViewDialog), com a tabela de store (storeViewDialog) e a 
+representação genérica de um botão (calcButton).
+
+\item Existe um componente que representa um botão (calcButton), podendo esses ter adicionados até 3 textos de 
+funções: uma na parte superior, um na parte inferior e um na parte central.
+
+\item O controller (calcController) captura todos os eventos de teclas pressionadas, considerando o texto da parte central do botão 
+(que representa a função principal de cada tecla). Em seguida chama uma ação correspondente no model (calcModel)
+
+\item O calcModel é a facade do model do sistema e guarda o estado da calculadora (opções de arredondamento, 
+se as teclas especiais f ou g estão pressionadas, etc) e conhece a pilha (calcStack), os demais registradores (calcRegs) 
+e as funções da biblioteca financeira (pyFinancialLibrary).
+
+\item As várias funções presentes em calcModel representam chamadas as teclas de uma dada função principal 
+(a funcão cujo texto fica no meio do botão). Dado que o model conhece o estado da calculadora, em cada uma dessas 
+chamadas verifica-se que função da biblioteca usar verificando o estado de F e G.
+
+\item Na ligação do modelo, da interfaçe gráfica e do controlador foi utilizado o modelo MVC \cite {mvc}. 
+Os módulos da interface gráfica funcionam como observers. O model tem vários listeners para eventos como: 
+modificação do valor da tela, modificação da pilha, etc. Ao final de cada função do model, faz-se as ações necessárias 
+(desativar F ou G pressionados; avisar listeners sobre alterações na pilha, registradores financeiros, etc, 
+dependendo do que a função faça; alertar a interface sobre modificação na tela, no estado dos botões ou sobre 
+a necessidade de mostrar a tabela de amortização, de recall ou de store.
+
+\item Os dados fornecidos de volta aos listeners estão sempre no formato de Decimal, que é o tipo trabalhado pela 
+calculadora de modo a alcançar alta precisão. Cada módulo da GUI formata esses dados como queira, usando os métodos 
+de formatacão do módulo calcFormatUtil.
+
+
+\end{enumerate}
