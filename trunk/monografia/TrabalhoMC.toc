@@ -32,3 +32,4 @@
 \contentsline {section}{\numberline {8.1}teste}{24}
 \contentsline {chapter}{\numberline {A}Gloss\IeC {\'a}rio}{25}
 \contentsline {chapter}{\numberline {B}F\IeC {\'o}rmulas}{30}
+\contentsline {chapter}{\numberline {C}Novas Funcionalidades}{35}
