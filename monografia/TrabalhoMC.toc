@@ -26,10 +26,16 @@
 \contentsline {subsection}{\numberline {4.1.6}FinancialLibrary}{18}
 \contentsline {section}{\numberline {4.2}Requisitos}{18}
 \contentsline {chapter}{\numberline {5}Arquitetura}{21}
-\contentsline {chapter}{\numberline {6}Verifica\IeC {\c c}\IeC {\~a}o e Valida\IeC {\c c}\IeC {\~a}o}{22}
-\contentsline {chapter}{\numberline {7}M\IeC {\'e}tricas}{23}
-\contentsline {chapter}{\numberline {8}Conclus\IeC {\~o}es}{24}
-\contentsline {section}{\numberline {8.1}teste}{24}
-\contentsline {chapter}{\numberline {A}Gloss\IeC {\'a}rio}{25}
-\contentsline {chapter}{\numberline {B}F\IeC {\'o}rmulas}{30}
-\contentsline {chapter}{\numberline {C}Novas Funcionalidades}{35}
+\contentsline {section}{\numberline {5.1}Descri\IeC {\c c}\IeC {\~a}o da Arquitetura}{21}
+\contentsline {subsection}{\numberline {5.1.1}Camada de Apresenta\IeC {\c c}\IeC {\~a}o}{22}
+\contentsline {subsection}{\numberline {5.1.2}Camada de Aplica\IeC {\c c}\IeC {\~a}o}{23}
+\contentsline {subsection}{\numberline {5.1.3}Camada de Persist\IeC {\^e}ncia}{24}
+\contentsline {subsection}{\numberline {5.1.4}\textit {Packing}}{24}
+\contentsline {subsection}{\numberline {5.1.5}Pontos Adicionais}{24}
+\contentsline {chapter}{\numberline {6}Verifica\IeC {\c c}\IeC {\~a}o e Valida\IeC {\c c}\IeC {\~a}o}{25}
+\contentsline {chapter}{\numberline {7}M\IeC {\'e}tricas}{26}
+\contentsline {chapter}{\numberline {8}Conclus\IeC {\~o}es}{27}
+\contentsline {section}{\numberline {8.1}teste}{27}
+\contentsline {chapter}{\numberline {A}Gloss\IeC {\'a}rio}{28}
+\contentsline {chapter}{\numberline {B}F\IeC {\'o}rmulas}{33}
+\contentsline {chapter}{\numberline {C}Novas Funcionalidades}{38}
