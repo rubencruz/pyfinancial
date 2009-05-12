@@ -43,20 +43,18 @@ registrador Y pelo X, irá se dividir X por Y. Através desse exemplo, pretende-
 implementar uma nova funcionalidade.
 
 Primeiramente é preciso escolher um botão do teclado da GUI que esteja livre para receber a nova função. 
-No método %__createKeyboardLayout
- do módulo calcGui é feita a adição do botões na tela. Escolha uma posição e adicione o 
-botão através de %self.__addGridButton(grid, "INV /", 1, 5)
-.
+No método \begin{verbatim} __createKeyboardLayout \end{verbatim}
+do módulo calcGui é feita a adição do botões na tela. Escolha uma posição e adicione o 
+botão através de \begin{verbatim}self.__addGridButton(grid, "INV /", 1, 5)\end{verbatim}
 
-Agora, criar a ação relativa ao botão no método %keyboardButtonClicked(self, text)
+Agora, criar a ação relativa ao botão no método \textbf{keyboardButtonClicked(self, text)}
 do controller: 
 
-\begin{verbatim}
-	elif text == "INV /":
- 		self.__model.invDiv()
-\end{verbatim}
-%        elif text == "INV /":
-%            self.__model.invDiv()
+\lstinputlisting[language=Python, label=else, caption={Teste no controller}]{else.py}
+% \begin{verbatim}
+% 	elif text == "INV /":
+%  		self.__model.invDiv()
+% \end{verbatim}
 
 No model, criar o método chamado no controller. Nele, implementar a nova funcionalidade baseado nos valores de 
 F e G, nos valores dos registradores e no estado da calculadora. Com o resultado da divisão em mãos, setar algum dos 
@@ -65,27 +63,31 @@ financeiros, etc) avisar os devidos listeners sobre as alterações. Um ponto im
 entrada de dados da calculadora de acordo com a funcionalidade desejada. Existem basicamente três modos: 
 Mode.SaveMode (que devolve o valor 0.0 a tela), Mode.OperationMode (devolve zero a tela, mas antes dá um enter na pilha) 
 e Mode.EntryMode (que indica que números estão sendo entrados na tela).
-\begin{verbatim}
 
-    def invDiv(self):
-        if self.__isGPushed or self.__isFPushed:
-            self.__fireException("Function not yet implemented.")
-            self.__deactiveFandG()
-        else:
-            # "inv /"
-            try:
-                result = self.__calcStack.getXReg() / self.__calcStack.getYReg()
-                self.__calcStack.rollCounterClockWise()
-                self.__calcStack[0] = result
-                self.__calcStack[3] = self.__calcStack[2]
-        
-                self.mode = Mode.OperationMode
-                self.base = None
-                self.dotActived = False
-        
-                self.__fireStackRegisters(self.getAllStackRegisters())
-                self.__fireScreenChangedEvent()
-                 
-            except Exception, e:
-                self.__fireException(e.message)
-\end{verbatim}
+\lstinputlisting[language=Python, label=funcao, caption={Definição de Função no Model}]{funcao.py}
+
+
+% \begin{verbatim}
+% 
+%     def invDiv(self):
+%         if self.__isGPushed or self.__isFPushed:
+%             self.__fireException("Function not yet implemented.")
+%             self.__deactiveFandG()
+%         else:
+%             # "inv /"
+%             try:
+%                 result = self.__calcStack.getXReg() / self.__calcStack.getYReg()
+%                 self.__calcStack.rollCounterClockWise()
+%                 self.__calcStack[0] = result
+%                 self.__calcStack[3] = self.__calcStack[2]
+%         
+%                 self.mode = Mode.OperationMode
+%                 self.base = None
+%                 self.dotActived = False
+%         
+%                 self.__fireStackRegisters(self.getAllStackRegisters())
+%                 self.__fireScreenChangedEvent()
+%                  
+%             except Exception, e:
+%                 self.__fireException(e.message)
+% \end{verbatim}
