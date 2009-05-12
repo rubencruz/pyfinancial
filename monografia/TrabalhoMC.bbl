@@ -9,6 +9,11 @@ Beck, K. (2003).
 \newblock {\em {Test-Driven Development by Example}}.
 \newblock Addison Wesley.
 
+\bibitem[de~Almeida 2006]{mvc}
+de~Almeida, R.~R. (2006).
+\newblock Model-view-controller (mvc).
+\newblock [Online; acessado em 11-Maio-2009].
+
 \bibitem[dos Santos 2001]{matFinanceira}
 dos Santos, J.~C. (2001).
 \newblock {\em {Matemática Financeira}}.
@@ -113,11 +118,6 @@ Org, M.
 Pfützenreuter, E.
 \newblock [Online; acessado em 25-Março-2009].
 
-\bibitem[Pompeu and Hazzan 2007]{matFinanceira2}
-Pompeu, J.~N. and Hazzan, S. (2007).
-\newblock {\em {Matemática Financeira}}.
-\newblock Saraiva.
-
 \bibitem[pydev ]{pydev}
 pydev.
 \newblock [Online; acessado em 01-Abril-2009].
@@ -133,6 +133,11 @@ python.org.
 \bibitem[pyunit ]{pyunit}
 pyunit.
 \newblock [Online; acessado em 01-Abril-2009].
+
+\bibitem[Rangel 2009]{matFinanceira2}
+Rangel, E. (2009).
+\newblock Resolução numérica de equações.
+\newblock [Online; acessado em 11-Maio-2009].
 
 \bibitem[Silva 2009]{adail}
 Silva, M. A. M. L.~D. (2009).
