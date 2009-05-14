@@ -8,6 +8,11 @@ Avaliou-se o andamento das melhorias na interface, onde percebeu-se que não foi
 
 Avaliou-se as próximas atividades a serem desenvolvidas dado que o processo de Everton foi aprovado e necessita-se finalizar as atividades até o final do mês.
 
+== Reuniao de acompanhamento (04/05/2009) ==
+
+Discutiu-se as pendências das iterações anteriores e as mesmas foram divididas entre os membros da equipe para superá-las. Também foi objeto de discussão, durante a reunião, a seção "Análise e Requisitos" da monografia, tal atividade foi realizada para procura possíveis problemas estruturais do sistema desenvolido.
+Verificamos o impacto que a implementação de novas funcionalidades, não planejadas durante a fase de análise, poderia causar no cronograma de entrega do projeto. 
+
 == Reuniao de acompanhamento (27/04/2009) ==
 
 Discutiu-se a respeito do formato da monografia onde percebeu-se a necessidade de uma seção específica para fundamentação teórica do problema em questão. Quanto as melhorias da interface resolveu-se fazer um brainstorming inicial com idéias que já haviam sido sugeridas pelo professor Adail, bem como idéias do próprio grupo.
