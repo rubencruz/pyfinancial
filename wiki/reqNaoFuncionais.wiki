@@ -54,8 +54,6 @@ A calculadora deve ser desenvolvida para tornar possível a internacionalizaçã
 
 === Documentação ===
 
-Será necessário a elaboração de um manual explicando como o sistema pode ser usado. Essa documentação deverá ser fornecida em inglês.
-
 As classes do sistema devem ser todas documentadas em inglês
 
 === Uso de padrões ===
