@@ -9,7 +9,8 @@
 || 05/11/2008 || Problema na configuração da rede via USB para o N800 || Média || Todos || Superado || Busca por tutoriais de instalação da referida funcionalidade, bem como busca junto ao pessoal especializado do Embedded || Busca na web por tutoriais de instalação do recurso. ||
 || 21/11/2008 || Não conseguir que os resultados da nossa calculadora obedeçam a margem de erro definida (por exemplo, problema de divisão de um número por ele mesmo) || Alto || Todos || Superado || Definição de uma margem de tolerância e utilização da classe Decimal para representação dos valores. || Busca na web a respeito de margem de tolerância e outras representações numéricas. ||
 || 29/11/2008 || Dificuldade em convergência de fórmulas para cálculo das funcões financeiras || Alto || Todos || Superado || Utilização das fórmulas da página http://www.arachnoid.com/lutusp/finance.html || Entrar em contato com o professor orientador do Curso de Administração e coletar novos materiais a respeito das fórmulas implementadas. ||
-|| 20/03/2008 || Dificuldade em convergência de fórmulas para i e n. Pouquíssima diferença está existindo nos resultados (menos de 0.01 unidades) || Alto || Todos || Pendente ||  || Busca de novos materiais e estabelecer contato com professor Eustáquio para verificação de condições de aplicação de algum método numérico. ||
+|| 20/03/2009 || Dificuldade em convergência de fórmulas para i e n. Pouquíssima diferença está existindo nos resultados (menos de 0.01 unidades) || Alto || Todos || Pendente ||  || Busca de novos materiais e estabelecer contato com professor Eustáquio para verificação de condições de aplicação de algum método numérico. ||
+|| 11/05/2009 || Necessidade de término adiantado das atividades dado o resultado do processo de Everton. || Médio || Todos || Pendente ||  || Serão realizados apenas algumas alterações na interface ou conserto de erros críticos no código da calculadora e finalização da escrita da monografia. ||
 
 
 
