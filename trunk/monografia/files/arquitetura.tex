@@ -6,7 +6,7 @@ kk
 %  \caption{\it Projeto arquitetural da aplicação.} \label{fig:arquit}
 % \end{figure}
 \begin{figure}[!h]
- \includegraphics[scale=0.5]{arquitetura.eps}
+ \includegraphics[scale=0.5]{arquitetura.jpg}
  \caption{\it Projeto arquitetural da aplicação.} \label{fig:arquit}
 \end{figure}
 
@@ -40,12 +40,11 @@ Dentre os principais componentes desta camada podemos dar destaque à biblioteca
 \end{enumerate}
 
 \subsection{Camada de Persistência}
-A persistência dos dados relativos aos registradores é realizada através do uso de arquivos. Usar o padrão XML para armazenamento nos pareceu ser uma solução viável de modo a evitar problemas com versões do Python que não contenham certos módulos relacionados à persistência de objetos.
-Os dados que forem armazenados nos arquivos deverão ser recarregados sempre que houver a inicialização da aplicação, demandando, assim, pouca interação com o disco nesse sentido.
+A persistência dos dados relativos aos registradores é realizada através do uso de arquivos. Os dados que forem armazenados nos arquivos deverão ser recarregados sempre que houver a inicialização da aplicação, demandando, assim, pouca interação com o disco nesse sentido.
 Outro aspecto relevante a ser considerada aqui é a segurança do sistema.  Devido à natureza do sistema focamos nos aspectos de integridade dos dados manipulados, fazendo com que os arquivos utilizados fossem armazenados de forma oculta ao usuário, evitando, assim, alterações dos mesmos por parte deste.
 
 \subsection{\textit{Packing}}
-Foi tomada a decisão de distribuir a aplicação através de um arquivo de instalação de extensão .deb, simplificanco assim a maneira de intalação do software. Tal arquivo poderá ser obtido por download de certo servidor web que será escolhido pela equipe.
+Foi tomada a decisão de distribuir a aplicação através de um arquivo de instalação de extensão .deb, simplificanco assim a maneira de intalação do software. Tal arquivo poderá ser obtido por download de certo servidor web que será escolhido pela equipe em conjundo com o cliente.
 
 \subsection{Pontos Adicionais}
 Com relação à integração com outras aplicações, é do interesse da equipe que a biblioteca financeira desenvolvida possa vir a ser usada por outros desenvolvedores como um dos vários módulos que auxiliem sua aplicação específica.
