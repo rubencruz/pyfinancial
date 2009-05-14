@@ -2,6 +2,12 @@
 
 = Log de reunioes =
 
+== Reuniao de acompanhamento (11/05/2009) ==
+
+Avaliou-se o andamento das melhorias na interface, onde percebeu-se que não foi encontrada uma solução simples para introdução do status RUNNING na tela, dado que o N800 não suporta o uso de status bar.
+
+Avaliou-se as próximas atividades a serem desenvolvidas dado que o processo de Everton foi aprovado e necessita-se finalizar as atividades até o final do mês.
+
 == Reuniao de acompanhamento (27/04/2009) ==
 
 Discutiu-se a respeito do formato da monografia onde percebeu-se a necessidade de uma seção específica para fundamentação teórica do problema em questão. Quanto as melhorias da interface resolveu-se fazer um brainstorming inicial com idéias que já haviam sido sugeridas pelo professor Adail, bem como idéias do próprio grupo.
