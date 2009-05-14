@@ -39,3 +39,5 @@
 \contentsline {chapter}{\numberline {A}Gloss\IeC {\'a}rio}{28}
 \contentsline {chapter}{\numberline {B}F\IeC {\'o}rmulas}{33}
 \contentsline {chapter}{\numberline {C}Novas Funcionalidades}{38}
+\contentsline {subsection}{\numberline {C.0.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{38}
+\contentsline {subsection}{\numberline {C.0.2}Exemplo de Adi\IeC {\c c}\IeC {\~a}o de Fun\IeC {\c c}\IeC {\~a}o}{39}

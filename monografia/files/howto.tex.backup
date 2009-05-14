@@ -4,7 +4,7 @@ Dentre as várias características de um software bem projetado, pode-se ressalt
 
 \subsection{Considerações Iniciais}
 
-Inicialmente serão destacados alguns esclarecimentos básicos a respeito da organização do código fonte:
+Inicialmente podemos destacar alguns esclarecimentos básicos a respeito da organização do código fonte:
 
 \begin{enumerate}
  \item Em relação a interface gráfica, o módulo principal que organiza os dados de interface gráfica da calculadora, incluindo a disposição de botões, é o CalcGui. Além desse, existem módulos que lidam com a tabela de amortização (calcTableDialog), com a tabela de recall (recallViewDialog) e com a tabela de store (storeViewDialog). 
@@ -27,17 +27,19 @@ Inicialmente serão destacados alguns esclarecimentos básicos a respeito da org
 
 \end{enumerate}
 
-\subsection{Exemplo de Adição de Função}
+\subsection{Exemplo de adição de função}
 
-% Agora, como exemplo, irá se utilizar a implementação de uma nova forma de divisão em que ao invés de se dividir o 
-% registrador Y pelo X, irá se dividir X por Y. Através desse exemplo, pretende-se abordar todo o passo-a-passo para se 
-% implementar uma nova funcionalidade.
-De modo a esclarecer melhor os pontos acima levantados, será simulada a implementação de uma nova funcionalidade na calculadora. Como exemplo, tem-se a adição de uma nova forma de divisão em que ao invés de se dividir o registrador Y pelo X, irá se dividir X por Y. 
-Através desse exemplo, pretende-se abordar o passo-a-passo para se implementar uma nova funcionalidade no sistema em questão, considerando o caso simples de adição de uma função como principal em um dado botão.
+Agora, como exemplo, irá se utilizar a implementação de uma nova forma de divisão em que ao invés de se dividir o 
+registrador Y pelo X, irá se dividir X por Y. Através desse exemplo, pretende-se abordar todo o passo-a-passo para se 
+implementar uma nova funcionalidade.
 
-Primeiramente é preciso escolher um botão do teclado da GUI que esteja livre para receber a nova função, ou ainda substituir uma função já alocada a algum botão. No método \begin{verbatim} __createKeyboardLayout \end{verbatim} do módulo calcGui é feita a adição de botões na tela. Nesse método deve-se escolher uma posição e adicionar o novo botão através do comando \begin{verbatim}self.__addGridButton(grid, "INV /", 1, 5)\end{verbatim}.
+Primeiramente é preciso escolher um botão do teclado da GUI que esteja livre para receber a nova função. 
+No método \begin{verbatim} __createKeyboardLayout \end{verbatim}
+do módulo calcGui é feita a adição do botões na tela. Escolha uma posição e adicione o 
+botão através de \begin{verbatim}self.__addGridButton(grid, "INV /", 1, 5)\end{verbatim}
 
-Em seguida, deve-se criar a ação a ser disparado no clique do botão. Para isso adiciona-se uma nova verificação do label central do botão pressionado no método \textbf{keyboardButtonClicked(self, text)} do controller. Um exemplo pode ser observado no trecho de código \ref{else}: 
+Agora, criar a ação relativa ao botão no método \textbf{keyboardButtonClicked(self, text)}
+do controller: 
 
 \lstinputlisting[language=Python, label=else, caption={Teste no controller}]{else.py}
 % \begin{verbatim}
@@ -45,14 +47,13 @@ Em seguida, deve-se criar a ação a ser disparado no clique do botão. Para iss
 %  		self.__model.invDiv()
 % \end{verbatim}
 
-No model deve-se criar a função chamada no controller conforme visto acima. Na nova função do model implementa-se a funcionalidade considerando o estado dos botões 
-F e G, os valores dos registradores, o estado da calculadora e as funções disponíveis na biblioteca de funções (pyFinancialLibrary). 
-
-Com o resultado da divisão em mãos, altera-se o valor de algum(ns) dos registradores conforme necessário. Conforme dito acima, ao final de cada função deve-se, se necessário, desativar as teclas F e G, alterar a posição de entrada de decimais, e conforme o que for modificado (tela, pilha, registradores financeiros, etc) avisar os devidos listeners os novos valores que lhes são de interesse. 
-
-Um ponto importante é também alterar o modo de entrada de dados da calculadora de acordo com a funcionalidade desejada. Existem basicamente três modos, explicitados na classe Mode: Mode.SaveMode (que na próxima entrada de dados devolve o valor 0.0 a tela e então inicia o processamento do que for entrado), Mode.OperationMode (devolve o valor zero a tela, mas antes dá um enter na pilha) e Mode.EntryMode (indicando que novos dígitos estão sendo entrados ao valor anterior da tela). 
-
-Uma implementação de implementação da nova função de divisão no calcModel pode ser observado no trecho de código \ref{funcao}.
+No model, criar o método chamado no controller. Nele, implementar a nova funcionalidade baseado nos valores de 
+F e G, nos valores dos registradores e no estado da calculadora. Com o resultado da divisão em mãos, setar algum dos 
+registradores conforme necessário. Desativar as teclas F e G, e conforme o que for modificado (tela, pilha, registradores 
+financeiros, etc) avisar os devidos listeners sobre as alterações. Um ponto importante é também alterar o modo de 
+entrada de dados da calculadora de acordo com a funcionalidade desejada. Existem basicamente três modos: 
+Mode.SaveMode (que devolve o valor 0.0 a tela), Mode.OperationMode (devolve zero a tela, mas antes dá um enter na pilha) 
+e Mode.EntryMode (que indica que números estão sendo entrados na tela).
 
 \lstinputlisting[language=Python, label=funcao, caption={Definição de Função no Model}]{funcao.py}
 
