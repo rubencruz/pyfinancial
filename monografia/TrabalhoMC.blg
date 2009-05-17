@@ -28,45 +28,45 @@ Warning--empty year in vpl
 Warning--empty year in irr
 Warning--empty year in usoSACSAF
 Warning--empty year in xp1
-You've used 38 entries,
+You've used 39 entries,
             1935 wiz_defined-function locations,
-            565 strings with 5063 characters,
-and the built_in function-call counts, 9106 in all, are:
-= -- 934
-> -- 266
+            568 strings with 5297 characters,
+and the built_in function-call counts, 9625 in all, are:
+= -- 977
+> -- 319
 < -- 38
-+ -- 84
-- -- 76
-* -- 527
-:= -- 1796
-add.period$ -- 88
-call.type$ -- 38
-change.case$ -- 201
-chr.to.int$ -- 30
-cite$ -- 64
-duplicate$ -- 391
-empty$ -- 592
-format.name$ -- 114
-if$ -- 1683
++ -- 104
+- -- 96
+* -- 580
+:= -- 1897
+add.period$ -- 90
+call.type$ -- 39
+change.case$ -- 216
+chr.to.int$ -- 31
+cite$ -- 65
+duplicate$ -- 401
+empty$ -- 607
+format.name$ -- 135
+if$ -- 1772
 int.to.chr$ -- 9
 int.to.str$ -- 0
 missing$ -- 5
-newline$ -- 167
-num.names$ -- 114
-pop$ -- 253
+newline$ -- 171
+num.names$ -- 117
+pop$ -- 267
 preamble$ -- 1
-purify$ -- 228
+purify$ -- 243
 quote$ -- 0
-skip$ -- 242
+skip$ -- 250
 stack$ -- 0
-substring$ -- 456
+substring$ -- 468
 swap$ -- 2
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 224
+type$ -- 230
 warning$ -- 26
-while$ -- 76
+while$ -- 78
 width$ -- 0
-write$ -- 381
+write$ -- 391
 (There were 26 warnings)
