@@ -34,10 +34,10 @@
 \contentsline {subsection}{\numberline {5.1.5}Pontos Adicionais}{24}
 \contentsline {chapter}{\numberline {6}Verifica\IeC {\c c}\IeC {\~a}o e Valida\IeC {\c c}\IeC {\~a}o}{25}
 \contentsline {chapter}{\numberline {7}M\IeC {\'e}tricas}{26}
-\contentsline {chapter}{\numberline {8}Conclus\IeC {\~o}es}{27}
-\contentsline {section}{\numberline {8.1}teste}{27}
-\contentsline {chapter}{\numberline {A}Gloss\IeC {\'a}rio}{28}
-\contentsline {chapter}{\numberline {B}F\IeC {\'o}rmulas}{33}
-\contentsline {chapter}{\numberline {C}Novas Funcionalidades}{38}
-\contentsline {subsection}{\numberline {C.0.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{38}
-\contentsline {subsection}{\numberline {C.0.2}Exemplo de Adi\IeC {\c c}\IeC {\~a}o de Fun\IeC {\c c}\IeC {\~a}o}{39}
+\contentsline {chapter}{\numberline {8}Conclus\IeC {\~o}es}{29}
+\contentsline {section}{\numberline {8.1}teste}{29}
+\contentsline {chapter}{\numberline {A}Gloss\IeC {\'a}rio}{30}
+\contentsline {chapter}{\numberline {B}F\IeC {\'o}rmulas}{35}
+\contentsline {chapter}{\numberline {C}Novas Funcionalidades}{40}
+\contentsline {subsection}{\numberline {C.0.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{40}
+\contentsline {subsection}{\numberline {C.0.2}Exemplo de Adi\IeC {\c c}\IeC {\~a}o de Fun\IeC {\c c}\IeC {\~a}o}{41}
