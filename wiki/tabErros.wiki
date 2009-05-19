@@ -3,7 +3,7 @@
 = Mensagens de erro presentes na bilbioteca financeira =
 
 ||* Mensagem* || *Descrição* || *Correspondente na HP12c* ||
-||"Invalid scenario: Impossible operations." ||  Valores declaradados tornam impossível a execução da operação, seja por tipos incopatível, divisão por zero, etc. || Error 0 ||
+||"Invalid scenario: Impossible operations." ||  Valores declarados tornam impossível a execução da operação, seja por tipos incopatível, divisão por zero, etc. || Error 0 ||
 ||"Invalid scenario: Should select BEG or END." || Seletores BEG ou END não selecionados || - ||
 ||"Invalid scenario: i value equal or less than -100%." || Valor de i menor que -100|| Error 5 ||
 || "Invalid scenario: Infinite n." || Valor de n grande o suficiente pra ser considerado infinito || - ||
