@@ -41,3 +41,4 @@
 \contentsline {chapter}{\numberline {C}Novas Funcionalidades}{40}
 \contentsline {subsection}{\numberline {C.0.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{40}
 \contentsline {subsection}{\numberline {C.0.2}Exemplo de Adi\IeC {\c c}\IeC {\~a}o de Fun\IeC {\c c}\IeC {\~a}o}{41}
+\contentsline {chapter}{\numberline {D}Tabela de Erros}{44}
