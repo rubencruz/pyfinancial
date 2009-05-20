@@ -37,7 +37,7 @@
 from decimal import Decimal, InvalidOperation, DivisionByZero, ROUND_UP, ROUND_HALF_UP
 from amortizationTable import AmortizationTable
 from pyFinancialLibraryException import PyFinancialLibraryException
-
+from math import exp
 
 TOLERANCE = Decimal("0.0000000001")
 
@@ -101,6 +101,104 @@ def div(number1, number2):
     except Exception:
         raise PyFinancialLibraryException("Invalid scenario: Impossible operations." )
 
+#Math functions
+def reciprocal(number):
+    """ This functions calculates the reciprocal of the number received as a parameter,
+    that is, it divides 1 by the received number """
+    
+    if number == None:
+        raise PyFinancialLibraryException("Invalid scenario: Impossible operations.")
+    
+    num = convertToDecimal(number)
+    if num.is_zero():
+        raise PyFinancialLibraryException("Invalid scenario: Zero division." )
+    
+    return Decimal("1.0") / num
+
+def exponential(number):
+    """ This function calculates the expression e^X considering X as the number
+    received as a parameter """
+    
+    if number == None:
+        raise PyFinancialLibraryException("Invalid scenario: Impossible operations.")
+    
+    num = convertToDecimal(number)
+    
+    return num.exp()
+
+def power(base, exponent):
+    """ This function calculates a power of a number, that is it calculates
+    base^exponent """
+    
+    if base == None or exponent == None:
+        raise PyFinancialLibraryException("Invalid scenario: Impossible operations.")
+    
+    
+    decimalBase = convertToDecimal(base)
+    decimalExponent = convertToDecimal(exponent)
+
+    if decimalBase.is_zero() and decimalExponent <= Decimal("0"):
+        raise PyFinancialLibraryException("Invalid scenario: Impossible operations.")
+
+    
+    result = decimalBase.__abs__().__pow__(decimalExponent)
+    
+    if decimalBase < Decimal("0"):
+        return -result
+    else:
+        return result
+
+def squareRoot(number):
+    """ This function calculates the square root of a certain number received
+    as a parameter """
+    
+    if number == None:
+        raise PyFinancialLibraryException("Invalid scenario: Impossible operations.")
+    
+    decimalNumber = convertToDecimal(number)
+    if decimalNumber.is_zero():
+        return Decimal("0")
+    if decimalNumber < Decimal("0"):
+        raise PyFinancialLibraryException("Invalid scenario: Impossible operations.")
+    
+    return decimalNumber.sqrt()
+
+def factorial(number):
+    """ This function calculates the factorial value of a number received as a 
+    parameter """
+    
+    if number == None:
+        raise PyFinancialLibraryException("Invalid scenario: Impossible operations.")
+    
+    decimalNumber = convertToDecimal(number)
+    if decimalNumber < Decimal("0") or not decimalNumber._isinteger():
+        raise PyFinancialLibraryException("Invalid scenario: Impossible operations.")
+    
+    if decimalNumber == Decimal("1.0") or decimalNumber == Decimal("0.0"):
+        return Decimal("1.0")
+    
+    result = Decimal("1")
+    index = decimalNumber
+    while index > Decimal("0"):
+        result *= index
+        index -= Decimal("1")
+    
+    return result
+
+def naturalLogarithm(number):
+    """ This function calculates the natural logarithm (ln) of a certain number
+    received as a parameter """
+    
+    if number == None:
+        raise PyFinancialLibraryException("Invalid scenario: Impossible operations.")
+    
+    decimalNumber = convertToDecimal(number)
+    if decimalNumber < Decimal("0") or decimalNumber.is_zero():
+        raise PyFinancialLibraryException("Invalid scenario: Impossible operations.")
+    
+    return decimalNumber.ln()
+
+#Financial functions
 def numberOfPayments(paymentMode, i, fv, pv, pmt):
     """ This function is responsible for calculating the number of payments 
     given the payment mode (at the beggining or end of the month), the present value, 

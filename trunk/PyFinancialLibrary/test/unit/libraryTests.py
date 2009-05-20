@@ -161,6 +161,136 @@ class LibraryTestCase (unittest.TestCase):
         
         self.myAssertRaises(PyFinancialLibraryException, "Invalid scenario: Zero division.", div, 3, 0)
     
+    #>>>> Math tests
+    def testReciprocal(self):
+        
+        #Testing valid numbers
+        self.myAssertEquals(Decimal("1"), reciprocal, number=1)
+        self.myAssertEquals(Decimal("1"), reciprocal, number=Decimal("1"))
+        
+        self.myAssertEquals(Decimal("0.01"), reciprocal, number=100)
+        self.myAssertEquals(Decimal("0.000000001"), reciprocal, number=987654321)
+        self.myAssertEquals(Decimal("0.017543860"), reciprocal, number=57)
+        self.myAssertEquals(Decimal("-0.125193199"), reciprocal, number=-7.987654321)
+        self.myAssertEquals(Decimal("3.875968992"), reciprocal, number=0.258)
+        self.myAssertEquals(Decimal("1111111111.111111111"), reciprocal, number=0.0000000009)
+        self.myAssertEquals(Decimal("468.47889200"), reciprocal, number=0.0021345678)
+        self.myAssertEquals(Decimal("1.0"), reciprocal, number=1.0000000001)
+        self.myAssertEquals(Decimal("0.997659810"), reciprocal, number=1.0023456789)
+        
+        #Invalid scenarios
+        self.myAssertRaises(PyFinancialLibraryException,"Invalid scenario: Zero division.", reciprocal, number=0)
+        self.myAssertRaises(PyFinancialLibraryException,"Invalid scenario: Zero division.", reciprocal, number=Decimal("0"))
+        
+        self.myAssertRaises(PyFinancialLibraryException,"Invalid scenario: Impossible operations.", reciprocal, number=None)
+    
+    def testExponential(self):
+        
+        #Testing valid numbers
+        self.myAssertEquals(Decimal("2.718281828"), exponential, number=1)
+        self.myAssertEquals(Decimal("2.718281828"), exponential, number=Decimal("1.0"))
+        
+        self.myAssertEquals(Decimal("1"), exponential, number=0)
+        self.myAssertEquals(Decimal("8.002981770660972533041909374E+434294481"), exponential, number=1000000000)
+        self.myAssertEquals(Decimal("1.645106731017660774654142933E+53616602"), exponential, number=123456789)
+        self.myAssertEquals(Decimal("1.000000001"), exponential, number=0.000000009)
+        self.myAssertEquals(Decimal("2.632848E-44"), exponential, number=-100.345678)
+        self.myAssertEquals(Decimal("0.077304740"), exponential, number=-2.56)
+        self.myAssertEquals(Decimal("0.0"), exponential, number=-111111111)
+        self.myAssertEquals(Decimal("1.011221E-43"), exponential, number=-99)
+        
+        #Invalid scenario
+        self.myAssertRaises(PyFinancialLibraryException,"Invalid scenario: Impossible operations.", exponential, number=None)
+    
+    def testPower(self):
+        
+        #Testing valid numbers
+        self.myAssertEquals(Decimal("1"), power, base=1, exponent=1)
+        self.myAssertEquals(Decimal("1"), power, base=Decimal("1"), exponent=Decimal("1"))
+        
+        self.myAssertEquals(Decimal("1"), power, base=1, exponent=0)
+        self.myAssertEquals(Decimal("1"), power, base=1, exponent=10000)
+        self.myAssertEquals(Decimal("3.770648432739871477952190396E+409"), power, base=2.56789, exponent=1000)
+        self.myAssertEquals(Decimal("6839116472814.293236498192930"), power, base=100000, exponent=2.567)
+        self.myAssertEquals(Decimal("-0"), power, base=-100.9876, exponent=-50.5)
+        self.myAssertEquals(Decimal("-1468.059037289"), power, base=-100.9876, exponent=1.58)
+        self.myAssertEquals(Decimal("1.939560E-13"), power, base=0.000000009, exponent=1.58)
+        self.myAssertEquals(Decimal("0"), power, base=0.000234, exponent=1000)
+        self.myAssertEquals(Decimal("1.000000661"), power, base=1555.21, exponent=0.00000009)
+        
+        #Invalid scenarios
+        self.myAssertRaises(PyFinancialLibraryException,"Invalid scenario: Impossible operations.", power, base=0, exponent=0)
+        self.myAssertRaises(PyFinancialLibraryException,"Invalid scenario: Impossible operations.", power, base=None, exponent=10)
+        self.myAssertRaises(PyFinancialLibraryException,"Invalid scenario: Impossible operations.", power, base=1, exponent=None)
+    
+    def testSquareRoot(self):
+        
+        #Testing valid numbers
+        self.myAssertEquals(Decimal("1"), squareRoot, number=1)
+        self.myAssertEquals(Decimal("1"), squareRoot, number=Decimal("1")) 
+        
+        self.myAssertEquals(Decimal("0"), squareRoot, number=0)
+        self.myAssertEquals(Decimal("1.252154635"), squareRoot, number=1.56789123)
+        self.myAssertEquals(Decimal("10"), squareRoot, number=100)
+        self.myAssertEquals(Decimal("33333.333332"), squareRoot, number=1111111111)
+        self.myAssertEquals(Decimal("0.00003"), squareRoot, number=0.000000009)
+        self.myAssertEquals(Decimal("23.567607006"), squareRoot, number=555.4321)
+        self.myAssertEquals(Decimal("3.314763087"), squareRoot, number=10.987654321)
+        self.myAssertEquals(Decimal("0.351363060"), squareRoot, number=0.123456)
+        
+        #Invalid situations
+        self.myAssertRaises(PyFinancialLibraryException,"Invalid scenario: Impossible operations.", squareRoot, number=None)
+        self.myAssertRaises(PyFinancialLibraryException,"Invalid scenario: Impossible operations.", squareRoot, number=-1)
+        self.myAssertRaises(PyFinancialLibraryException,"Invalid scenario: Impossible operations.", squareRoot, number=-0.0000000009)
+        self.myAssertRaises(PyFinancialLibraryException,"Invalid scenario: Impossible operations.", squareRoot, number=-1000000000)
+    
+    def testFactorial(self):
+        
+        #Testing valid numbers
+        self.myAssertEquals(Decimal("1"), factorial, number=1)
+        self.myAssertEquals(Decimal("1"), factorial, number=Decimal("1")) 
+        
+        self.myAssertEquals(Decimal("1"), factorial, number=0)
+        self.myAssertEquals(Decimal("9.332621544394415268169923894E+157"), factorial, number=100)
+        self.myAssertEquals(Decimal("120"), factorial, number=5)
+        self.myAssertEquals(Decimal("8.683317618811886495518194396E+36"), factorial, number=33)
+        self.myAssertEquals(Decimal("4.023872600770937735437024340E+2567"), factorial, number=1000)
+        self.myAssertEquals(Decimal("2.846259680917054518906413204E+35659"), factorial, number=10000)
+        self.myAssertEquals(Decimal("2.824229407960347874293421474E+456573"), factorial, number=100000)
+        
+        #Invalid situations
+        self.myAssertRaises(PyFinancialLibraryException,"Invalid scenario: Impossible operations.", factorial, number=None)
+        self.myAssertRaises(PyFinancialLibraryException,"Invalid scenario: Impossible operations.", factorial, number=-1)
+        self.myAssertRaises(PyFinancialLibraryException,"Invalid scenario: Impossible operations.", factorial, number=-0.0000000009)
+        self.myAssertRaises(PyFinancialLibraryException,"Invalid scenario: Impossible operations.", factorial, number=-1000000000)   
+        self.myAssertRaises(PyFinancialLibraryException,"Invalid scenario: Impossible operations.", factorial, number=1.5)
+        self.myAssertRaises(PyFinancialLibraryException,"Invalid scenario: Impossible operations.", factorial, number=1.00000000001)
+    
+    def testNaturalLogarithm(self):
+        
+        #Testing valid numbers
+        self.myAssertEquals(Decimal("0"), naturalLogarithm, number=1)
+        self.myAssertEquals(Decimal("0"), naturalLogarithm, number=Decimal("1")) 
+        
+        self.myAssertEquals(Decimal("4.605170186"), naturalLogarithm, number=100)
+        self.myAssertEquals(Decimal("1.609437912"), naturalLogarithm, number=5)
+        self.myAssertEquals(Decimal("3.496507561"), naturalLogarithm, number=33)
+        self.myAssertEquals(Decimal("7.013526811"), naturalLogarithm, number=1111.56789)
+        self.myAssertEquals(Decimal("9.210340372"), naturalLogarithm, number=10000)
+        self.myAssertEquals(Decimal("11.512925465"), naturalLogarithm, number=100000)
+        self.myAssertEquals(Decimal("18.526041263"), naturalLogarithm, number=111111111.5)
+        self.myAssertEquals(Decimal("36.723578452"), naturalLogarithm, number=8888888888888888)
+        self.myAssertEquals(Decimal("-18.52604126"), naturalLogarithm, number=0.000000009)
+        self.myAssertEquals(Decimal("-2.091797564"), naturalLogarithm, number=0.123465)
+        
+        #Invalid situations
+        self.myAssertRaises(PyFinancialLibraryException,"Invalid scenario: Impossible operations.", naturalLogarithm, number=None)
+        self.myAssertRaises(PyFinancialLibraryException,"Invalid scenario: Impossible operations.", naturalLogarithm, number=-1)
+        self.myAssertRaises(PyFinancialLibraryException,"Invalid scenario: Impossible operations.", naturalLogarithm, number=-0.0000000009)
+        self.myAssertRaises(PyFinancialLibraryException,"Invalid scenario: Impossible operations.", naturalLogarithm, number=-1000000000)   
+        self.myAssertRaises(PyFinancialLibraryException,"Invalid scenario: Impossible operations.", naturalLogarithm, number=0)
+        
+    #>>>> Financial tests
     def testNumberOfPayments(self):
         
         #>> END MODE 
