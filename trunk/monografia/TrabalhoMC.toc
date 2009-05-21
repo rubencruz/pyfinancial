@@ -33,12 +33,12 @@
 \contentsline {subsection}{\numberline {5.1.4}\textit {Packing}}{24}
 \contentsline {subsection}{\numberline {5.1.5}Pontos Adicionais}{24}
 \contentsline {chapter}{\numberline {6}Verifica\IeC {\c c}\IeC {\~a}o e Valida\IeC {\c c}\IeC {\~a}o}{25}
-\contentsline {chapter}{\numberline {7}M\IeC {\'e}tricas}{26}
-\contentsline {chapter}{\numberline {8}Conclus\IeC {\~o}es}{29}
-\contentsline {section}{\numberline {8.1}teste}{29}
-\contentsline {chapter}{\numberline {A}Gloss\IeC {\'a}rio}{30}
-\contentsline {chapter}{\numberline {B}F\IeC {\'o}rmulas}{35}
-\contentsline {chapter}{\numberline {C}Novas Funcionalidades}{40}
-\contentsline {subsection}{\numberline {C.0.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{40}
-\contentsline {subsection}{\numberline {C.0.2}Exemplo de Adi\IeC {\c c}\IeC {\~a}o de Fun\IeC {\c c}\IeC {\~a}o}{41}
-\contentsline {chapter}{\numberline {D}Tabela de Erros}{44}
+\contentsline {chapter}{\numberline {7}M\IeC {\'e}tricas}{27}
+\contentsline {chapter}{\numberline {8}Conclus\IeC {\~o}es e Trabalhos Futuros}{30}
+\contentsline {chapter}{\numberline {A}Gloss\IeC {\'a}rio}{32}
+\contentsline {chapter}{\numberline {B}F\IeC {\'o}rmulas}{37}
+\contentsline {chapter}{\numberline {C}Novas Funcionalidades}{42}
+\contentsline {subsection}{\numberline {C.0.6}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{42}
+\contentsline {subsection}{\numberline {C.0.7}Exemplo de Adi\IeC {\c c}\IeC {\~a}o de Fun\IeC {\c c}\IeC {\~a}o}{43}
+\contentsline {chapter}{\numberline {D}Tabela de Erros}{46}
+\contentsline {chapter}{\numberline {E}Diagrama de Classes}{49}
