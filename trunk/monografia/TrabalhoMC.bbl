@@ -1,5 +1,10 @@
 \begin{thebibliography}{}
 
+\bibitem[Aptana ]{pydev}
+Aptana.
+\newblock Disponível em:<\url{http://pydev.sourceforge.net}>. Acesso em: 01
+  abr. 2009.
+
 \bibitem[Azevedo ]{educacaoMedio}
 Azevedo, R.~K.
 \newblock {A RELEVÂNCIA DA MATEMÁTICA FINANCEIRA NO ENSINO MÉDIO}.
@@ -12,162 +17,222 @@ Beck, K. (2003).
 \bibitem[de~Almeida 2006]{mvc}
 de~Almeida, R.~R. (2006).
 \newblock Model-view-controller (mvc).
-\newblock [Online; acessado em 11-Maio-2009].
+\newblock Disponível
+  em:<\url{http://jacques.dsc.ufcg.edu.br/cursos/map/html/arqu/mvc/mvc.htm}>.
+  Acesso em: 11 maio 2009.
 
 \bibitem[dos Santos 2001]{matFinanceira}
 dos Santos, J.~C. (2001).
 \newblock {\em {Matemática Financeira}}.
 \newblock Villipress.
 
-\bibitem[eclipse ]{eclipse}
-eclipse.
-\newblock [Online; acessado em 01-Abril-2009].
-
 \bibitem[Educação 2009]{valoreducacao}
 Educação, V. (2009).
 \newblock Curso planejamento financeiro pessoal.
-\newblock [Online; acessado em 24-Março-2009].
+\newblock Disponível
+  em:<\url{http://www.valoreducacao.com.br/home/a-empresa/38-gerais/48-planeja%
+mento-financeiro-pessoal/}>. Acesso em 24 Março 2009.
 
 \bibitem[FarsightSoft.com ]{mobcalc}
 FarsightSoft.com.
-\newblock [Online; acessado em 25-Março-2009].
+\newblock Disponível em:<\url{http://mobilecalculator.org/}>. Acesso em 25
+  Março 2009.
 
 \bibitem[Fors ]{hpiphone}
 Fors, T.
-\newblock [Online; acessado em 25-Março-2009].
+\newblock Disponível em:<\url{http://code.google.com/p/hpcalc-iphone/}>.
+  Acesso em 25 Março 2009.
+
+\bibitem[Foundation ]{eclipse}
+Foundation, E.
+\newblock Disponível em:<\url{http://www.eclipse.org/}>. Acesso em: 01 abr.
+  2009.
 
 \bibitem[G1 2009]{celular}
 G1 (2009).
 \newblock Saiba o que mudou no celular, o aparelho mais usado no brasil.
-\newblock [Online; acessado em 24-Março-2009].
-
-\bibitem[garage ]{garage}
-garage.
-\newblock [Online; acessado em 01-Abril-2009].
+\newblock Disponível
+  em:<\url{http://g1.globo.com/Noticias/Tecnologia/0,,MUL1053098-6174,00-SAIBA%
++O+QUE+MUDOU+NO+CELULAR+O+APARELHO+MAIS+USADO+NO+BRASIL.html/}>. Acesso em 24
+  Março 2009.
 
 \bibitem[Garcia et~al. 2003]{yp}
 Garcia, F., Ferreira, A., Sousa, D., Júnior, F., Rocha, G., Mendes, G.,
   Pontes, R., Rocha, V., Dantas, V., and Aguiar, Y. (2003).
 \newblock easyprocess: Um processo de desenvolvimento de software para uso no
-  ambiente acadÊmico.
+  ambiente acadêmico.
 
 \bibitem[Gondim 2009]{camilo}
-Gondim, M. C.~L. (2009).
+Gondim, C.~L. (2009).
 \newblock Juros compostos e taxas equivalentes.
-\newblock [Online; acessado em 02-Maio-2009].
+\newblock Disponível
+  em:<\url{http://groups.google.com/group/tecprincipios-de-administracao-finan%
+ceira-20091/files}>. Acesso em: 02 maio 2009.
 
 \bibitem[HP ]{hp12c}
 HP.
-\newblock [Online; acessado em 30-Março-2009].
+\newblock Disponível
+  em:<\url{http://www.hp.com/latam/br/produtos/calculadoras/12c.html}>. Acesso
+  em: 30 mar. 2009.
 
 \bibitem[HP 2009a]{man1}
 HP (2009a).
 \newblock Hp 12c financial calculator user's guide.
-\newblock [Online; acessado em 24-Março-2009].
+\newblock Disponível
+  em:<\url{http://h10025.www1.hp.com/ewfrf/wc/manualCategory?lc=en&dlc=en&cc=u%
+s&lang=en&product=315564&#/}>. Acesso em 24 Março 2009.
 
 \bibitem[HP 2009b]{man3}
 HP (2009b).
 \newblock Hp 12c internal rate of return.
-\newblock [Online; acessado em 24-Março-2009].
+\newblock Disponível
+  em:<\url{http://h20331.www2.hp.com/Hpsub/cache/299940-0-0-225-121.html}>.
+  Acesso em 24 Março 2009.
 
 \bibitem[HP 2009c]{man4}
 HP (2009c).
 \newblock Hp 12c net present value.
-\newblock [Online; acessado em 24-Março-2009].
+\newblock Disponível
+  em:<\url{http://h20331.www2.hp.com/Hpsub/cache/299940-0-0-225-121.html}>.
+  Acesso em 24 Março 2009.
 
 \bibitem[HP 2009d]{man2}
 HP (2009d).
 \newblock Hp 12c platinum calculadora financeira manual do usuário.
-\newblock [Online; acessado em 24-Março-2009].
+\newblock Disponível em:<\url{http://www.hp.com/ctg/Manual/bpia5184.pdf/}>.
+  Acesso em 24 Março 2009.
 
 \bibitem[ISO ]{iso}
 ISO.
-\newblock [Online; acessado em 01-Abril-2009].
+\newblock Disponível em:<\url{http://www.iso.org}>. Acesso em: 01 abr. 2009.
 
-\bibitem[Lutus a]{arachnoid}
+\bibitem[Lutus a]{arachnoid2}
 Lutus, P.
-\newblock [Online; acessado em 25-Março-2009].
+\newblock Disponível em:<\url{http://vps.arachnoid.com/finance/}>. Acesso em:
+  25 mar. 2009.
 
-\bibitem[Lutus b]{arachnoid2}
+\bibitem[Lutus b]{arachnoid}
 Lutus, P.
-\newblock [Online; acessado em 25-Março-2009].
+\newblock Finance calculator version 4.2.
+\newblock Disponível em:<\url{http://www.arachnoid.com/lutusp/finance.html}>.
+  Acesso em: 25 mar. 2009.
 
 \bibitem[Mac 2009]{iphone}
 Mac (2009).
-\newblock [Online; acessado em 24-Março-2009].
+\newblock Disponível
+  em:<\url{http://mac.softpedia.com/get/iPhone-Applications/Tools-Utilities/HP%
+-12C-iPhone.shtml/}>. Acesso em 24 Março 2009.
 
-\bibitem[Maemo a]{qt4}
-Maemo.
-\newblock [Online; acessado em 25-Março-2009].
+\bibitem[Maemo.org a]{diablo}
+Maemo.org.
+\newblock Disponível
+  em:<\url{http://maemo.org/maemo_release_documentation/maemo4.1.x/Maemo_Diabl%
+o_Reference_Manual_for_maemo_4.1.pdf/}>. Acesso em 25 Março 2009.
 
-\bibitem[Maemo b]{pyqt4}
-Maemo.
-\newblock [Online; acessado em 25-Março-2009].
+\bibitem[Maemo.org b]{garage}
+Maemo.org.
+\newblock Garage.
+\newblock Disponível em:<\url{https://garage.maemo.org/}>. Acesso em: 01 abr.
+  2009.
+
+\bibitem[Maemo.org c]{qt4}
+Maemo.org.
+\newblock Maemo qt4.
+\newblock Disponível em:<\url{http://qt4.garage.maemo.org/}>. Acesso em 25
+  Março 2009.
+
+\bibitem[Maemo.org d]{pyqt4}
+Maemo.org.
+\newblock Pyqt4 for maemo.
+\newblock Disponível em:<\url{http://pyqt.garage.maemo.org/}>. Acesso em 25
+  Março 2009.
+
+\bibitem[Meirelles ]{usoSACSAF}
+Meirelles, M.
+\newblock Sistemas de amortização de empréstimos e financiamentos.
+\newblock Disponível
+  em:<\url{http://www.fadepe.com.br/restrito/conteudo/2_adm_matem_finan_sac_sa%
+f_saa.doc}>. Acesso em: 01 maio 2009.
 
 \bibitem[Nokia a]{n800}
 Nokia.
-\newblock [Online; acessado em 25-Março-2009].
+\newblock Disponível em:<\url{http://europe.nokia.com/nseries/}>. Acesso em 25
+  Março 2009.
 
 \bibitem[Nokia b]{s60}
 Nokia.
-\newblock [Online; acessado em 25-Março-2009].
-
-\bibitem[NPR ]{NPR}
-NPR.
-\newblock [Online; acessado em 01-Abril-2009].
-
-\bibitem[Org ]{diablo}
-Org, M.
-\newblock [Online; acessado em 25-Março-2009].
+\newblock Disponível em:<\url{http://www.s60.com/life}>. Acesso em 25 Março
+  2009.
 
 \bibitem[Pfützenreuter ]{epxcalc}
 Pfützenreuter, E.
-\newblock [Online; acessado em 25-Março-2009].
+\newblock Web hp-12c emulator.
+\newblock Disponível em:<\url{http://www.epx.com.br/ctb/hp12c.php}>. Acesso
+  em: 25 mar. 2009.
 
-\bibitem[pydev ]{pydev}
-pydev.
-\newblock [Online; acessado em 01-Abril-2009].
-
-\bibitem[pyeasyaccept ]{pyeasyaccept}
-pyeasyaccept.
-\newblock [Online; accessed 01-Abril-2009].
+\bibitem[Purcell ]{pyunit}
+Purcell, S.
+\newblock Pyunit - the standard unit testing framework for python.
+\newblock Disponível em:<\url{http://pyunit.sourceforge.net/}>. Acesso em: 01
+  abr. 2009.
 
 \bibitem[python.org ]{python}
 python.org.
-\newblock [Online; acessado em 25-Março-2009].
-
-\bibitem[pyunit ]{pyunit}
-pyunit.
-\newblock [Online; acessado em 01-Abril-2009].
+\newblock Disponível em:<\url{http://www.python.org/download/releases/2.5/}>.
+  Acesso em 25 Março 2009.
 
 \bibitem[Rangel 2009]{matFinanceira2}
 Rangel, E. (2009).
 \newblock Resolução numérica de equações.
-\newblock [Online; acessado em 11-Maio-2009].
+\newblock Disponível
+  em:<\url{http://www.dsc.ufcg.edu.br/~rangel/msn/downloads/MSN%20NA04.ppt/}>.
+  Acesso em 11 Maio 2009.
+
+\bibitem[Sauvé et~al. ]{pyeasyaccept}
+Sauvé, J., Queiroz, M., and Farias, G.
+\newblock Python easyaccept.
+\newblock Disponível em:<\url{http://www.pyeasyaccept.org/}>. Acesso em: 01
+  abr. 2009.
 
 \bibitem[Silva 2009]{adail}
-Silva, M. A. M. L.~D. (2009).
+Silva, A. M. L.~D. (2009).
 \newblock Módulo i - mat. financ. na hp-12c.
-\newblock [Online; acessado em 24-Março-2009].
+\newblock Disponível
+  em:<\url{http://www.ufcg-uaac.com/Curso_extensao_gestao_investimentos.htm/}>.
+  Acesso em 24 Março 2009.
 
-\bibitem[SVN ]{SVN}
-SVN.
-\newblock [Online; acessado em 01-Abril-2009].
+\bibitem[Tigris.org ]{SVN}
+Tigris.org.
+\newblock Subversion.
+\newblock Disponível em:<\url{subversion.tigris.org/}>. Acesso em: 01 abr.
+  2009.
 
-\bibitem[Wikipedia a]{vpl}
+\bibitem[Wikipedia a]{NPR}
 Wikipedia.
-\newblock [Online; acessado em 02-Maio-2009].
+\newblock Notação polonesa inversa.
+\newblock Disponível
+  em:<\url{http://pt.wikipedia.org/wiki/Nota%C3%A7%C3%A3o_polonesa_inversa}>.
+  Acesso em: 01 abr. 2009.
 
 \bibitem[Wikipedia b]{irr}
 Wikipedia.
-\newblock [Online; acessado em 02-Maio-2009].
+\newblock Taxa interna de retorno.
+\newblock Disponível
+  em:<\url{http://pt.wikipedia.org/wiki/Taxa_interna_de_retorno}>. Acesso em:
+  02 maio 2009.
 
-\bibitem[Wikipedia c]{usoSACSAF}
+\bibitem[Wikipedia c]{vpl}
 Wikipedia.
-\newblock [Online; acessado em 01-Maio-2009].
+\newblock Valor presente líquido.
+\newblock Disponível
+  em:<\url{http://pt.wikipedia.org/wiki/Valor_presente_l%C3%ADquido}>. Acesso
+  em: 02 maio 2009.
 
 \bibitem[XP1 ]{xp1}
 XP1.
-\newblock [Online; acessado em 01-Abril-2009].
+\newblock Xp1: Um processo de desenvolvimento.
+\newblock Disponível
+  em:<\url{http://www.dsc.ufcg.edu.br/~jacques/cursos/2002.2/projii/xp1/xp1.ht%
+ml}>. Acesso em: 01 abr. 2009.
 
 \end{thebibliography}
