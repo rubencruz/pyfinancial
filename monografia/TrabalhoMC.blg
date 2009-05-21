@@ -2,62 +2,62 @@ This is BibTeX, Version 0.99c (Web2C 7.5.6)
 The top-level auxiliary file: TrabalhoMC.aux
 The style file: sbc.bst
 Database file #1: referencias.bib.bib
+Warning--empty year in pydev
 Warning--empty year in educacaoMedio
 Warning--empty journal in educacaoMedio
-Warning--empty year in eclipse
 Warning--empty year in mobcalc
 Warning--empty year in hpiphone
-Warning--empty year in garage
+Warning--empty year in eclipse
 Warning--empty year in hp12c
 Warning--empty year in iso
-Warning--empty year in arachnoid
 Warning--empty year in arachnoid2
+Warning--empty year in arachnoid
+Warning--empty year in diablo
+Warning--empty year in garage
 Warning--empty year in qt4
 Warning--empty year in pyqt4
+Warning--empty year in usoSACSAF
 Warning--empty year in n800
 Warning--empty year in s60
-Warning--empty year in NPR
-Warning--empty year in diablo
 Warning--empty year in epxcalc
-Warning--empty year in pydev
-Warning--empty year in pyeasyaccept
-Warning--empty year in python
 Warning--empty year in pyunit
+Warning--empty year in python
+Warning--empty year in pyeasyaccept
 Warning--empty year in SVN
-Warning--empty year in vpl
+Warning--empty year in NPR
 Warning--empty year in irr
-Warning--empty year in usoSACSAF
+Warning--empty year in vpl
 Warning--empty year in xp1
 You've used 39 entries,
             1935 wiz_defined-function locations,
-            568 strings with 5297 characters,
-and the built_in function-call counts, 9625 in all, are:
-= -- 977
-> -- 319
-< -- 38
-+ -- 104
-- -- 96
-* -- 580
-:= -- 1897
-add.period$ -- 90
+            612 strings with 8878 characters,
+and the built_in function-call counts, 9821 in all, are:
+= -- 1008
+> -- 330
+< -- 37
++ -- 110
+- -- 100
+* -- 590
+:= -- 1933
+add.period$ -- 103
 call.type$ -- 39
-change.case$ -- 216
-chr.to.int$ -- 31
+change.case$ -- 231
+chr.to.int$ -- 29
 cite$ -- 65
 duplicate$ -- 401
 empty$ -- 607
-format.name$ -- 135
-if$ -- 1772
-int.to.chr$ -- 9
+format.name$ -- 139
+if$ -- 1809
+int.to.chr$ -- 11
 int.to.str$ -- 0
 missing$ -- 5
-newline$ -- 171
+newline$ -- 184
 num.names$ -- 117
-pop$ -- 267
+pop$ -- 231
 preamble$ -- 1
-purify$ -- 243
+purify$ -- 245
 quote$ -- 0
-skip$ -- 250
+skip$ -- 275
 stack$ -- 0
 substring$ -- 468
 swap$ -- 2
@@ -68,5 +68,5 @@ type$ -- 230
 warning$ -- 26
 while$ -- 78
 width$ -- 0
-write$ -- 391
+write$ -- 417
 (There were 26 warnings)
