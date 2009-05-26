@@ -1,8 +1,8 @@
 \chapter{Fundamentação Teórica}
 
-Matemática financeira é um ramo da Matemática que se utiliza de uma série de conceitos matemáticos para realizar a análise de dados financeiros em geral. Dentre deste ramo,  considerou-se na implementação da \textit{PyFinancial} os principais conceitos financeiros existentes na HP-12C \ref{glossario}.
+Matemática financeira é um ramo da Matemática que se utiliza de uma série de conceitos matemáticos para realizar a análise de dados financeiros em geral. Dentre deste ramo,  considerou-se na implementação da \textit{PyFinancial} os principais conceitos financeiros existentes na HP-12C, conforme presente no Apêndice \ref{glossario}.
 
-É importante ressaltar que durante a pesquisa realizada no intuito de coletar as fórmulas financeiras relacionadas aos conceitos implementados, percebeu-se que várias são as fórmulas existentes e divulgadas na Internet, porém muitas delas não apresentam resultados similares aos da HP-12C. Com isso, à medida que são apresentados os conceitos será feita referência às fórmulas que estão implementadas e que se encontram no apêndice \ref{formulas}.
+É importante ressaltar que durante a pesquisa realizada no intuito de coletar as fórmulas financeiras relacionadas aos conceitos implementados, percebeu-se que várias são as fórmulas existentes e divulgadas na Internet, porém muitas delas não apresentam resultados similares aos da HP-12C. Com isso, à medida que são apresentados os conceitos será feita referência às fórmulas que estão implementadas e que se encontram no Apêndice \ref{formulas}.
 
 Abaixo tem-se uma breve explicação dos principais conceitos financeiros utilizados na \textit{PyFinancial}.
 
@@ -12,13 +12,19 @@ Abaixo tem-se uma breve explicação dos principais conceitos financeiros utiliz
 
 Aplicações financeiras partem de um capital inicial e este é aplicado a uma certa taxa de juros, podendo ser esta aplicação configurada por uma série simples ou complexa, de modo a gerar, com o passar do tempo, um capital final que implique em alguma remuneração ou perda. Esses juros são aplicados ao capital de acordo com a capitalização fixada para o investimento. Como exemplos temos investimentos de poupança, empréstimos, etc.
 
-Uma forma simples de ter-se uma idéia de como funciona uma dessas movimentações é observando o fluxo de caixa da mesma através de um diagrama de tempo. Um exemplo desse diagrama pode ser visto na figura \ref{tab:fig1}.
+Uma forma simples de ter-se uma idéia de como funciona uma dessas movimentações é observando o fluxo de caixa da mesma através de um diagrama de tempo. Um exemplo desse diagrama pode ser visto na Figura \ref{fluxo}. Nele temos representado uma entrada no tempo inicial e a realização de dois pagamentos em dois instantes distintos de tempo.
+
+\begin{figure}[!h]
+ \centering
+ \includegraphics[scale=0.8]{fluxo.eps}
+ \caption{\it Diagrama de Fluxos de Caixa.} \label{fluxo}
+\end{figure}
 
 \subsection{Valor Presente - VP}
 
-Aplicações têm início com uma quantia a partir de um marco inicial. Essa quantia corresponde à quanto vale o investimento inicialmente, sem análises do futuro. A esse valor, que pode ser um valor gasto ou recebido, damos o nome de Valor Presente ou valor atual. Um exemplo seria uma pessoa que aplica R\$ $500,00$ na poupança. Esse valor seria o valor presente de sua aplicação. Assim, valor presente, capital inicial e valor atual têm o mesmo significado.
+Aplicações têm início com uma quantia a partir de um marco inicial. Essa quantia corres\-ponde à quanto vale o investimento inicialmente, sem análises do futuro. A esse valor, que pode ser um valor gasto ou recebido, damos o nome de Valor Presente ou valor atual. Um exemplo seria uma pessoa que aplica R\$ $500,00$ na poupança. Esse valor seria o valor presente de sua aplicação. Assim, valor presente, capital inicial e valor atual têm o mesmo significado.
 
-O valor presente de uma dada prestação pode ser entendido como sendo o valor no instante zero de uma certa prestação futura descontada dos juros.
+O valor presente de uma dada prestação pode ser entendido como sendo o valor no ins\-tante zero de uma certa prestação futura descontada dos juros.
 
 \subsection{Valor Presente Líquido - VPL}
 

@@ -16,7 +16,6 @@ Warning--empty year in diablo
 Warning--empty year in garage
 Warning--empty year in qt4
 Warning--empty year in pyqt4
-Warning--empty year in usoSACSAF
 Warning--empty year in n800
 Warning--empty year in s60
 Warning--empty year in epxcalc
@@ -31,19 +30,19 @@ Warning--empty year in xp1
 You've used 39 entries,
             1935 wiz_defined-function locations,
             612 strings with 8878 characters,
-and the built_in function-call counts, 9821 in all, are:
+and the built_in function-call counts, 9823 in all, are:
 = -- 1008
 > -- 330
 < -- 37
 + -- 110
 - -- 100
-* -- 590
-:= -- 1933
+* -- 592
+:= -- 1934
 add.period$ -- 103
 call.type$ -- 39
 change.case$ -- 231
 chr.to.int$ -- 29
-cite$ -- 65
+cite$ -- 64
 duplicate$ -- 401
 empty$ -- 607
 format.name$ -- 139
@@ -53,11 +52,11 @@ int.to.str$ -- 0
 missing$ -- 5
 newline$ -- 184
 num.names$ -- 117
-pop$ -- 231
+pop$ -- 229
 preamble$ -- 1
 purify$ -- 245
 quote$ -- 0
-skip$ -- 275
+skip$ -- 277
 stack$ -- 0
 substring$ -- 468
 swap$ -- 2
@@ -65,8 +64,8 @@ text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 230
-warning$ -- 26
+warning$ -- 25
 while$ -- 78
 width$ -- 0
-write$ -- 417
-(There were 26 warnings)
+write$ -- 418
+(There were 25 warnings)
