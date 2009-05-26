@@ -4,12 +4,9 @@
 %  \includegraphics[scale=0.5]{arquitetura.jpg}
 %  \caption{\it Projeto arquitetural da aplicação.} \label{fig:arquit}
 % \end{figure}
-\begin{figure}[!h]
- \includegraphics[scale=0.5]{arquitetura.eps}
- \caption{\it Projeto arquitetural da aplicação.} \label{fig:arquit}
-\end{figure}
 
 \section{Descrição da Arquitetura}
+
 O sistema proposto foi idealizado para funcionar localmente no dispositivo N800 da Nokia, funcionando no modo monousuário. O sistema pode ser dividido, em três camadas lógicas que serão conectadas através do padrão MVC \cite{mvc}, conforme pode ser visto na Figura \ref{fig:arquit}:
 \begin{itemize}
  \item \textbf{Apresentação}: camada que será responsável por lidar com todo aspecto de interface para interação com o usuário.
@@ -19,6 +16,11 @@ O sistema proposto foi idealizado para funcionar localmente no dispositivo N800 
 
 Vale lembrar que toda a comunicação entre essas camadas, bem como entre os diversos módulos internos as mesmas, é realizada através de um conjunto de interfaces bem definidas, buscando assim, garantir flexibilidade e baixo acoplamento, bem como um eventual reuso e/ou substituição da biblioteca financeira em questão. A separação estre os módulos se deu da forma mais simplificada possível para que não existisse maior sobrecarga que pudesse influenciar drasticamente o tempo de resposta desejados para as iterações com o usuário da aplicação, este foi um dos requisitos não-funcionais especificados na fase de análise.
 Outro ponto importante a se destacar é o uso do paradigma OO, bem como do uso de scripts, dada a escolha da linguagem Python para o desenvolvimento da Camada de Aplicação.
+
+\begin{figure}[!h]
+ \includegraphics[scale=0.5]{arquitetura.eps}
+ \caption{\it Projeto arquitetural da aplicação.} \label{fig:arquit}
+\end{figure}
 
 \subsection{Camada de Apresentação}
 O sistema será acessado localmente por um único usuário via uma interface similar a da calculadora financeira que estamos usando como base, tendo a adição de menus de auxílio para uso do sistema e uma opção de finalização da aplicação. É importante destacar ainda que toda entrada realizada pelo usuário se dará através da interface touch-screen disponibilizada pelo dispositivo selecionado.
