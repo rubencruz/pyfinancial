@@ -20,7 +20,7 @@ Inicialmente serão destacados alguns esclarecimentos básicos a respeito da org
 
 \item O calcModel oferece publicamente funções que casam com as funções tidas como principais de cada botão (a funcão cujo texto fica no meio do botão). Dado que o calcModel conhece o estado da calculadora, em cada uma dessas chamadas verifica-se que função da biblioteca usar analisando, por exemplo, se o usuário selecionou os botões F ou G.
 
-\item Na ligação do modelo, da interfaçe gráfica e do controlador foi utilizado o modelo MVC \cite {mvc}. Os módulos da interface gráfica atuam como \textit{Observers} da lógica de negócio e assim são ativados pela mesma quando necessários. O model tem vários listeners para eventos como: modificação do valor da tela, modificação da pilha, etc. A ativação de cada um desses listeners ocorre ao final de cada função do model, bem como a análise de outras ações necessárias como, por exemplo desativar a seleção de F ou G feita pelo usuário.
+\item Na ligação da lógica de negócio, da interfaçe gráfica e do controlador foi utilizado o modelo MVC \cite {mvc}. Os módulos da interface gráfica atuam como \textit{Observers} da lógica de negócio e assim são ativados pela mesma quando necessários. O model tem vários listeners para eventos como: modificação do valor da tela, modificação da pilha, etc. A ativação de cada um desses listeners ocorre ao final de cada função do model, bem como a análise de outras ações necessárias como, por exemplo desativar a seleção de F ou G feita pelo usuário.
 % ; avisar listeners sobre alterações na pilha, registradores financeiros, etc, 
 % dependendo do que a função faça; alertar a interface sobre modificação na tela, no estado dos botões ou sobre 
 % a necessidade de mostrar a tabela de amortização, de recall ou de store.
@@ -29,7 +29,7 @@ Inicialmente serão destacados alguns esclarecimentos básicos a respeito da org
 
 \end{enumerate}
 
-Um complemento do que foi exposto aqui pode ser analisado avaliando-se os diagramas de classes presentes no apêndice \ref{DiagramaClasses}.
+Um complemento do que foi exposto aqui pode ser analisado avaliando-se os diagramas de classes presentes no Apêndice \ref{DiagramaClasses}.
 
 \subsection{Exemplo de Adição de Função}
 
@@ -49,14 +49,14 @@ Em seguida, deve-se criar a ação a ser disparado no clique do botão. Para iss
 %  		self.__model.invDiv()
 % \end{verbatim}
 
-No model deve-se criar a função chamada no controller conforme visto acima. Na nova função do model implementa-se a funcionalidade considerando o estado dos botões 
+No model deve-se criar a função chamada no controller, conforme visto acima. Na nova função do model implementa-se a funcionalidade considerando o estado dos botões 
 F e G, os valores dos registradores, o estado da calculadora e as funções disponíveis na biblioteca de funções (pyFinancialLibrary). 
 
 Com o resultado da divisão em mãos, altera-se o valor de algum(ns) dos registradores conforme necessário. Conforme dito acima, ao final de cada função deve-se, se necessário, desativar as teclas F e G, alterar a posição de entrada de decimais, e conforme o que for modificado (tela, pilha, registradores financeiros, etc) avisar os devidos listeners os novos valores que lhes são de interesse. 
 
 Um ponto importante é também alterar o modo de entrada de dados da calculadora de acordo com a funcionalidade desejada. Existem basicamente três modos, explicitados na classe Mode: Mode.SaveMode (que na próxima entrada de dados devolve o valor 0.0 a tela e então inicia o processamento do que for entrado), Mode.OperationMode (devolve o valor zero a tela, mas antes dá um enter na pilha) e Mode.EntryMode (indicando que novos dígitos estão sendo entrados ao valor anterior da tela). 
 
-Uma implementação de implementação da nova função de divisão no calcModel pode ser observado no trecho de código \ref{funcao}.
+Um exemplo de implementação da nova função de divisão no calcModel pode ser observado no trecho de código \ref{funcao}.
 
 \lstinputlisting[language=Python, label=funcao, caption={Definição de Função no Model}]{funcao.py}
 

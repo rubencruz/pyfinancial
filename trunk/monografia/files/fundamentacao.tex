@@ -2,7 +2,7 @@
 
 Matemática financeira é um ramo da Matemática que se utiliza de uma série de conceitos matemáticos para realizar a análise de dados financeiros em geral. Dentre deste ramo,  considerou-se na implementação da \textit{PyFinancial} os principais conceitos financeiros existentes na HP-12C, conforme presente no Apêndice \ref{glossario}.
 
-É importante ressaltar que durante a pesquisa realizada no intuito de coletar as fórmulas financeiras relacionadas aos conceitos implementados, percebeu-se que várias são as fórmulas existentes e divulgadas na Internet, porém muitas delas não apresentam resultados similares aos da HP-12C. Com isso, à medida que são apresentados os conceitos será feita referência às fórmulas que estão implementadas e que se encontram no Apêndice \ref{formulas}.
+É importante ressaltar que durante a pesquisa realizada no intuito de coletar as fórmulas financeiras relacionadas aos conceitos implementados, percebeu-se que várias são as fórmulas existentes e divulgadas na Internet, porém muitas delas não apresentam resultados similares aos da HP-12C. Com isso, à medida que são apresentados os conceitos é interessante observar as fórmulas que estão implementadas e que se encontram no Apêndice \ref{formulas}.
 
 Abaixo tem-se uma breve explicação dos principais conceitos financeiros utilizados na \textit{PyFinancial}.
 
@@ -22,7 +22,7 @@ Uma forma simples de ter-se uma idéia de como funciona uma dessas movimentaçõ
 
 \subsection{Valor Presente - VP}
 
-Aplicações têm início com uma quantia a partir de um marco inicial. Essa quantia corres\-ponde à quanto vale o investimento inicialmente, sem análises do futuro. A esse valor, que pode ser um valor gasto ou recebido, damos o nome de Valor Presente ou valor atual. Um exemplo seria uma pessoa que aplica R\$ $500,00$ na poupança. Esse valor seria o valor presente de sua aplicação. Assim, valor presente, capital inicial e valor atual têm o mesmo significado.
+Aplicações têm início com uma quantia a partir de um marco inicial. Essa quantia corres\-ponde à quanto vale o investimento inicialmente, sem análises do futuro. A esse valor, que pode ser um valor gasto ou recebido, dá-se o nome de Valor Presente ou valor atual. Um exemplo seria uma pessoa que aplica R\$ $500,00$ na poupança. Esse valor seria o valor presente de sua aplicação. Assim, valor presente, capital inicial e valor atual têm o mesmo significado.
 
 O valor presente de uma dada prestação pode ser entendido como sendo o valor no ins\-tante zero de uma certa prestação futura descontada dos juros.
 
@@ -54,12 +54,12 @@ O número de períodos indica quantas vezes a taxa de juros será aplicada em um
 
 \subsection{Prestações - pmt}
 
-As prestações indicam entradas ou saídas de capital em um certo fluxo de caixa. Tipicamente nos cálculos considera-se uma prestação negativa para representar uma saída de capital e uma prestação positiva para representar uma entrada. Por exemplo, se pensarmos em uma empresa que recebe um montante de R\$ $60.000,00$ a cada ano e gasta um total de R\$ $20.000,00$, tem-se que o pmt a ser considerado para a aplicação da mesma é R\$ $40.000,00$.
+As prestações indicam entradas ou saídas de capital em um certo fluxo de caixa. Tipicamente nos cálculos considera-se uma prestação negativa para representar uma saída de capital e uma prestação positiva para representar uma entrada. Por exemplo, pode-se pensar em uma empresa que recebe um montante de R\$ $60.000,00$ a cada ano e gasta um total de R\$ $20.000,00$, tem-se que o pmt a ser considerado para a aplicação da mesma é R\$ $40.000,00$.
 
 
 \subsection{Sistema de amortização - SA}
 
-Um sistema de amortização indica como um determinado financiamento é pago ao longo do tempo. Para isso definem-se o valor das prestações que inclui tanto um montante a ser abatido do saldo devedor, bem como os juros a serem pagos. Assim, podemos entender como amortização a diminuição do saldo devedor, ou dívida, que pode ser realizada em etapas ou de uma única vez.
+Um sistema de amortização indica como um determinado financiamento é pago ao longo do tempo. Para isso definem-se o valor das prestações que inclui tanto um montante a ser abatido do saldo devedor, bem como os juros a serem pagos. Assim, pode-se entender como amortização a diminuição do saldo devedor, ou dívida, que pode ser realizada em etapas ou de uma única vez.
 
-Dentre os sistemas de amortização mais famosos podemos citar o Sistema de Amortização Francês (SAF), ou Tabela Price, e o Sistema de Amortização Constante (SAC). Atualmente o SAC é bastante utilizado no Sistema de Financiamento Habitacional, em especial pela Caixa Econômica Federal, e o SAF é amplamente utilizado pelos bancos em seus sistemas de Crédito Direto ao Consumidor (CDC), bem como nas vendas a prazo divulgadas pelas grandes redes de varejo \cite{usoSACSAF}.
+Dentre os sistemas de amortização mais famosos é comum citar o Sistema de Amortização Francês (SAF), ou Tabela Price, e o Sistema de Amortização Constante (SAC). Atualmente o SAC é bastante utilizado no Sistema de Financiamento Habitacional, em especial pela Caixa Econômica Federal, e o SAF é amplamente utilizado pelos bancos em seus sistemas de Crédito Direto ao Consumidor (CDC), bem como nas vendas a prazo divulgadas pelas grandes redes de varejo \cite{usoSACSAF}.
 

@@ -29,8 +29,8 @@
 \contentsline {section}{\numberline {5.1}Descri\IeC {\c c}\IeC {\~a}o da Arquitetura}{20}
 \contentsline {subsection}{\numberline {5.1.1}Camada de Apresenta\IeC {\c c}\IeC {\~a}o}{21}
 \contentsline {subsection}{\numberline {5.1.2}Camada de Aplica\IeC {\c c}\IeC {\~a}o}{22}
-\contentsline {subsection}{\numberline {5.1.3}Camada de Persist\IeC {\^e}ncia}{23}
-\contentsline {subsection}{\numberline {5.1.4}\textit {Packing}}{23}
+\contentsline {subsection}{\numberline {5.1.3}Camada de Persist\IeC {\^e}ncia}{22}
+\contentsline {subsection}{\numberline {5.1.4}\textit {Packaging}}{23}
 \contentsline {subsection}{\numberline {5.1.5}Pontos Adicionais}{23}
 \contentsline {chapter}{\numberline {6}Verifica\IeC {\c c}\IeC {\~a}o e Valida\IeC {\c c}\IeC {\~a}o}{24}
 \contentsline {chapter}{\numberline {7}M\IeC {\'e}tricas}{26}

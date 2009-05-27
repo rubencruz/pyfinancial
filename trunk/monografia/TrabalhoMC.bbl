@@ -14,13 +14,6 @@ Beck, K. (2003).
 \newblock {\em {Test-Driven Development by Example}}.
 \newblock Addison Wesley.
 
-\bibitem[de~Almeida 2006]{mvc}
-de~Almeida, R.~R. (2006).
-\newblock Model-view-controller (mvc).
-\newblock Disponível
-  em:<\url{http://jacques.dsc.ufcg.edu.br/cursos/map/html/arqu/mvc/mvc.htm}>.
-  Acesso em: 11 maio 2009.
-
 \bibitem[dos Santos 2001]{matFinanceira}
 dos Santos, J.~C. (2001).
 \newblock {\em {Matemática Financeira}}.
@@ -187,6 +180,13 @@ Rangel, E. (2009).
 \newblock Disponível
   em:<\url{http://www.dsc.ufcg.edu.br/~rangel/msn/downloads/MSN%20NA04.ppt/}>.
   Acesso em 11 Maio 2009.
+
+\bibitem[Sauvé 2006]{mvc}
+Sauvé, J. (2006).
+\newblock Model-view-controller (mvc).
+\newblock Disponível
+  em:<\url{http://jacques.dsc.ufcg.edu.br/cursos/map/html/arqu/mvc/mvc.htm}>.
+  Acesso em: 11 maio 2009.
 
 \bibitem[Sauvé et~al. ]{pyeasyaccept}
 Sauvé, J., Queiroz, M., and Farias, G.
