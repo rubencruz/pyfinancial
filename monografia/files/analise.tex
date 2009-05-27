@@ -24,19 +24,19 @@ Na Figura \ref{tab:modeConc} apresenta-se o modelo conceitual da calculadora fin
 \end{itemize}
 
 \subsection{Model}
-Módulo central da aplicação que será responsável por fazer a troca de mensagens entre as demais entidades do sistema às quais está conectado, bem como realizar toda a manipulação de registradores (pilha, financeiros e demais registradores comuns) e funções de modo a efetivar as funcionalidades requisitadas pelo usuário. Também é de sua responsabilidade receber e preparar os dados da aplicação para posterior manipulação, dados esses captados pela interface. Por fim, esta entidade também é responsável por persistir os registradores quando necessário, bem como todo o estado interno da calculadora previamente configurada pelo usuário.
+Módulo central da aplicação que é responsável por fazer a troca de mensagens entre as demais entidades do sistema às quais está conectado, bem como realizar toda a manipulação de registradores (pilha, financeiros e demais registradores comuns) e funções de modo a efetivar as funcionalidades requisitadas pelo usuário. Também é de sua responsabilidade receber e preparar os dados da aplicação para posterior manipulação, dados esses captados pela interface. Por fim, esta entidade também é responsável por persistir os registradores quando necessário, bem como todo o estado interno da calculadora previamente configurada pelo usuário.
 
 \subsection{GUI}
-Esta é a entidade que estará em contato direto com o usuário da aplicação. Logo, este é o módulo que receberá os dados externos e os transmitirá para entidades mais internas, assim como receberá os resultados das operações realizadas pela calculadora e os transmitirá ao cliente de uma maneira mais amigável. Essa interface também é responsável por apresentar os dados segundo preferências do usuário previamente selecionadas, por exemplo, com um dado número de casas decimais.
+Esta é a entidade que está em contato direto com o usuário da aplicação. Logo, este é o módulo que recebe os dados externos e os transmite para entidades mais internas, assim como recebe os resultados das operações realizadas pela calculadora e os transmite ao cliente de uma maneira mais amigável. Essa interface também é responsável por apresentar os dados segundo preferências do usuário previamente selecionadas, por exemplo, com um dado número de casas decimais.
 
 \subsection{Controller}
-Esta entidade é o controlador do sistema, responsável por desacoplar a interface da camada de negócios do sistema. Receberá as requisições feitas pelo cliente da aplicação, através da interface (\textit{GUI}), e identificará as operações correspondentes no \textit{Model} que se responsabilizará por realizar as atividades correspondentes.
+Esta entidade é o controlador do sistema, responsável por desacoplar a interface da camada de negócios do sistema. Recebendo as requisições feitas pelo cliente da aplicação, através da interface (\textit{GUI}), e identificando as operações correspondentes no \textit{Model} que se responsabilizará por realizar as atividades correspondentes.
 
 \subsection{AbstractModelListener}
-Entidade abstrata da qual outras estenderão. Estas serão responsáveis por capturar qualquer mudança importante ocorrida no \textit{Model} que seja de interesse do usuário. Assim, essas alterações serão refletidas na interface. Aqui encaixam-se situações como requisições de realização de operações matemáticas/financeiras, manipulações de registradores, etc.
+Entidade abstrata da qual outras estenderão. Estas são responsáveis por capturar qualquer mudança importante ocorrida no \textit{Model} que seja de interesse do usuário. Assim, essas alterações serão refletidas na interface. Aqui encaixam-se situações como requisições de realização de operações matemáticas/financeiras, manipulações de registradores, etc.
 
 \subsection{Reg}
-Entidade que representa o papel de um registrador. Um registrador é um importante elemento usado para a realização das atividades objetivo da calculadora. Neles armazenam-se os valores a serem utilizados nas operações, bem como os resultados das operações requisitadas. Esta entidade será especializada por outras adicionando as particularidades pertinentes aos diferentes tipos de registradores.
+Entidade que representa o papel de um registrador. Um registrador é um importante elemento usado para a realização das atividades objetivo da calculadora. Neles armazenam-se os valores a serem utilizados nas operações, bem como os resultados das operações requisitadas. Esta entidade é especializada por outras adicionando as particularidades pertinentes aos diferentes tipos de registradores.
 
 \subsection{FinancialLibrary}
 Entidade que representa a biblioteca das funções financeiras. Todo e qualquer cálculo financeiro deve chamar a operação correspondente na biblioteca garantindo uma melhor organização e, consequentemente, a separação de interesses.
@@ -45,7 +45,7 @@ Essa é a entidade que poderá vir a ser utilizada por programadores Python, inc
 
 \section{Requisitos}
 
-Durante as reuniões de planejamento entre os membros da equipe, o cliente e possíveis usuários dos nossos produtos, um conjunto de requisitos funcionais e não funcionais ficaram estabelecidos. São eles:
+Durante as reuniões de planejamento entre os membros da equipe, o cliente e possíveis usuários do produto, um conjunto de requisitos funcionais e não funcionais ficaram estabelecidos. São eles:
 
 \begin{itemize}
  \item \textbf{Requisitos Funcionais}
@@ -54,8 +54,8 @@ Durante as reuniões de planejamento entre os membros da equipe, o cliente e pos
 	\item O usuário deve ser capaz de especificar o número de casas decimais apresentadas, bem como requisitar a apresentação dos valores em notação científica.
 	\item O usuário deve ser capaz de adicionar/limpar valores em todos os 30 registradores existentes na calculadora. 
 	\item O usuário deve ser capaz de realizar operações matemáticas básicas: soma ($+$),subtração ($-$), divisão ($/$) e multiplicação ($*$). Deve também ser capaz de realizar operações mais avançadas: exponenciação ($ e^{x} $), quadrado de um número ($x^{2}$), logaritmo natural ($\ln$), potência de números ($y^{x}$), raiz quadrada ($x^{1/2}$), percentual do total ($\%T$), variação percentual ($\Delta\%$) e percentual de um número ($\%$).
-	\item O usuário deverá ser capaz de realizar cálculos que descubram os principais valores financeiros: número de períodos (n), taxa de juros (i), valor present (PV), valor da parcela (PMT) e valor futuro (FV). Esses cálculos podem envolver ou não multiplos fluxos de caixa.
-	\item O usuário deve ser capaz de realizar análises de investimentos mais apuradas através do cálculo do valor presente líquido (NPV), bem como da taxa interna de retorno (IRR).
+	\item O usuário deverá ser capaz de realizar cálculos que descubram os principais valores financeiros: número de períodos (n), taxa de juros (i), valor presente (VP), valor da parcela (PMT) e valor futuro (VF). Esses cálculos podem envolver ou não multiplos fluxos de caixa.
+	\item O usuário deve ser capaz de realizar análises de investimentos mais apuradas através do cálculo do valor presente líquido (VPL), bem como da taxa interna de retorno (TIR).
 	\item O usuário deve ser capaz de calcular a amortização de suas dívidas no sistema de amortização francês (SAF), bem como no sistema de amortização constante (SAC). Apresentando uma tabela de amortização ao final.
 	\item O usuário deve ser capaz de realizar a conversão entre taxas de juros anuais para taxas de juros mensais tanto no sistema de juros simples, como no sistema de juros compostos. Além disso, deve ser capaz de converter um número de períodos anuais em períodos mensais.
 	\item O usuário deve ser capaz de rotacionar os valores dos registradores da pilha de cima para baixo.
@@ -65,10 +65,10 @@ Durante as reuniões de planejamento entre os membros da equipe, o cliente e pos
  \item \textbf{Requisitos Não-Funcionais}
 	\begin{itemize}
 	 \item \textbf{Interface}. Possuir interface similar a da calculadora HP12-C, com melhoramentos que possam facilitar sua utilização.
-	 \item \textbf{Usabilidade}. O nível de dificuldade encontrado para uso de nossa calculadora deve ser o mesmo encontrado quando faz-se uso das calculadoras tradicionais.
+	 \item \textbf{Usabilidade}. O nível de dificuldade encontrado para uso da calculadora deve ser o mesmo encontrado quando faz-se uso das calculadoras tradicionais.
 	 \item \textbf{Volume de Utilização}. A calculadora será mono-usuário, porém devendo ser robusta o suficiente para ser utilizada durante um longo intervalo de tempo ininterruptamente sem apresentar problemas.
 	 \item \textbf{Hardware e software alvo}. A calculadora deverá funcionar no Internet Tablet N800 da Nokia, no sistema operacional Maemo Diablo (4.1.x) 
-	 \item \textbf{Qualidade}. Com relação a precisão, deseja-se que os valores calculados em nossa calculadora não devam diferir em mais de $0.001$ unidades dos valores calculados na HP12-C original.
+	 \item \textbf{Qualidade}. Com relação a precisão, deseja-se que os valores calculados na calculadora não devam diferir em mais de $0.001$ unidades dos valores calculados na HP12-C original.
 	 \item \textbf{Expressividade nas mensagens}. Entradas equivocadas do usuário deverão apresentar mensagens de erros que sejam mais intuitivas do que as apresentadas pela calculadora original (e.g. "Erro 6").
 	 \item \textbf{Desempenho}. O tempo de resposta dos resultados não deve ultrapassar o tempo que a calculadora HP12-C leva para executar as mesmas operações (considerando que só o programa da calculadora esteja em execução).
 	 \item \textbf{Segurança}. Os arquivos que conterão os valores dos registradores recém utilizados pelo usuário deverão ficar protegidos de alteração externa.
