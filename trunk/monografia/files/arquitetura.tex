@@ -23,7 +23,7 @@ Outro ponto importante a se destacar é o uso do paradigma OO, bem como do uso d
 \end{figure}
 
 \subsection{Camada de Apresentação}
-O sistema é acessado localmente por um único usuário via uma interface similar a da calculadora financeira que está sendo usada como base, tendo a opção de finalização da aplicação através de um botão. É importante destacar ainda que toda entrada realizada pelo usuário se dá através da interface touch-screen disponibilizada pelo dispositivo selecionado.
+O sistema é acessado localmente por um único usuário via uma interface similar à da calculadora financeira que está sendo usada como base, tendo a opção de finalização da aplicação através de um botão. É importante destacar ainda que toda entrada realizada pelo usuário se dá através da interface touch-screen disponibilizada pelo dispositivo selecionado.
 Para o desenvolvimento dessa camada fez-se uso do Framework QT, com auxílio da ferramenta de design gráfico QT Designer. É de suma importância aqui o desenvolvimento de packages no que diz respeito aos componentes visuais da calculadora, por exemplo, os botões da mesma.
 
 \subsection{Camada de Aplicação}
@@ -34,16 +34,14 @@ Dentre os principais componentes desta camada pode-se dar destaque à biblioteca
  \item Numa primeira etapa tem-se a comunicação dessa camada com a camada de apresentação do sistema através dos controladores, fazendo estes uso dos bindings em PyQt e sendo subdivididos de acordo com as funcionalidade providas por cada tecla.
  \item Numa segunda etapa observa-se:	
  \begin{itemize}
-  \item \begin{itemize}
-         \item A comunicação dos módulos controladores com o restante da lógica da aplicação, fazendo uso das funcionalidades da biblioteca financeira, do módulo matemático e manipulando os seus registradores.
-	 \item A interação entre os registradores e a biblioteca, onde os primeiros podem fornecer entradas para a última, a interação entre os registradores e o módulo matemático e a interação entre o módulo matemático e a biblioteca.
-        \end{itemize}
+    \item A comunicação dos módulos controladores com o restante da lógica da aplicação, fazendo uso das funcionalidades da biblioteca financeira, do módulo matemático e manipulando os seus registradores.
+    \item A interação entre os registradores e a biblioteca, onde os primeiros podem fornecer entradas para a última, a interação entre os registradores e o módulo matemático e a interação entre o módulo matemático e a biblioteca.
  \end{itemize}
 \end{enumerate}
 
 \subsection{Camada de Persistência}
 A persistência dos dados relativos aos registradores é realizada através do uso de arquivos. Os dados que são armazenados nos arquivos são recarregados sempre que houver a inicialização da aplicação, demandando, assim, pouca interação com o disco.
-Outro aspecto relevante a ser considerada aqui é a segurança do sistema.  Devido à natureza do sistema focou-se nos aspectos de integridade dos dados manipulados, fazendo com que os arquivos utilizados fossem armazenados de forma oculta ao usuário, evitando, assim, alterações dos mesmos por parte deste.
+Outro aspecto relevante a ser considerado aqui é a segurança do sistema.  Devido à natureza do sistema focou-se nos aspectos de integridade dos dados manipulados, fazendo com que os arquivos utilizados fossem armazenados de forma oculta ao usuário, evitando, assim, alterações dos mesmos por parte deste.
 
 \subsection{\textit{Packaging}}
 Foi tomada a decisão de distribuir a aplicação através de um arquivo de instalação de extensão .deb, simplificando, assim, a maneira de instalação do software. Tal arquivo, futuramente, poderá ser obtido por download de certo servidor web que será escolhido pela equipe em conjunto com o cliente.
