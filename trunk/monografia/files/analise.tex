@@ -11,7 +11,7 @@ Na Figura \ref{tab:modeConc} apresenta-se o modelo conceitual da calculadora fin
 
 \begin{figure}[!h]
  \includegraphics[scale=0.5]{CalcDC.eps}
- \caption{\it Tabela que descreve quando as atividades de XP1 devem ser realizadas.} \label{tab:modeConc}
+ \caption{\it Modelo Conceitual.} \label{tab:modeConc}
 \end{figure}
 
 \begin{itemize}
@@ -32,10 +32,10 @@ Módulo central da aplicação que é responsável por fazer a troca de mensagen
 Esta é a entidade que está em contato direto com o usuário da aplicação. Logo, este é o módulo que recebe os dados externos e os transmite para entidades mais internas, assim como recebe os resultados das operações realizadas pela calculadora e os transmite ao cliente de uma maneira mais amigável. Essa interface também é responsável por apresentar os dados segundo preferências do usuário previamente selecionadas, por exemplo, com um dado número de casas decimais.
 
 \subsection{Controller}
-Esta entidade é o controlador do sistema, responsável por desacoplar a interface da camada de negócios do sistema. Recebendo as requisições feitas pelo cliente da aplicação, através da interface (\textit{GUI}), e identificando as operações correspondentes no \textit{Model} que se responsabilizará por realizar as atividades correspondentes.
+Esta entidade é o controlador do sistema, responsável por desacoplar a interface da camada de negócios do sistema. Recebendo as requisições feitas pelo cliente da aplicação, através da interface (\textit{GUI}), e identificando as operações correspondentes no \textit{Model} que se responsabilizarão por realizar as atividades correspondentes.
 
 \subsection{ModelListener}
-Entidade abstrata da qual outras estenderão. Estas são responsáveis por capturar qualquer mudança importante ocorrida no \textit{Model} que seja de interesse do usuário. Assim, essas alte\-rações serão refletidas na interface. Aqui encaixam-se situações como requisições de realização de operações matemáticas/financeiras, manipulações de registradores, etc.
+Entidade abstrata da qual outras estenderão. Estas são responsáveis por capturar qualquer mudança importante ocorrida no \textit{Model} que seja de interesse do usuário. Assim, essas alte\-rações serão refletidas na interface. Aqui encaixam-se situações como requisições de rea\-lização de operações matemáticas/financeiras, manipulações de registradores, etc.
 
 \subsection{Reg}
 Entidade que representa o papel de um registrador. Um registrador é um importante elemento usado para a realização das atividades objetivo da calculadora. Neles armazenam-se os valores a serem utilizados nas operações, bem como os resultados das operações requisitadas. Esta entidade é especializada por outras adicionando as particularidades pertinentes aos diferentes tipos de registradores.
