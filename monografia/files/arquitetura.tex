@@ -10,11 +10,11 @@
 O sistema proposto foi idealizado para funcionar localmente no dispositivo N800 da Nokia, funcionando no modo monousuário. O sistema pode ser dividido, em três camadas lógicas que serão conectadas através do padrão MVC \cite{mvc}, conforme pode ser visto na Figura \ref{fig:arquit}:
 \begin{itemize}
  \item \textbf{Apresentação}: camada que é responsável por lidar com todo aspecto de interface para interação com o usuário.
- \item \textbf{Aplicação}: camada que é responsável por conter toda a lógica do negócio de nossa aplicação, mantendo, assim total desacoplamento com as demais camadas.
- \item \textbf{Persistência}: camada que é responsável por lidar com toda a persistência de dados de mode que eles possam ser usados posteriormente íntegros.
+ \item \textbf{Aplicação}: camada que é responsável por conter toda a lógica do negócio da aplicação, mantendo, assim total desacoplamento com as demais camadas.
+ \item \textbf{Persistência}: camada que é responsável por lidar com toda a persistência de dados de modo que eles possam ser usados posteriormente de forma íntegra.
 \end{itemize}
 
-Vale lembrar que toda a comunicação entre essas camadas, bem como entre os diversos módulos internos as mesmas, é realizada através de um conjunto de interfaces bem definidas, buscando assim, garantir flexibilidade e baixo acoplamento, bem como um eventual reuso e/ou substituição da biblioteca financeira em questão. A separação entre os módulos se deu da forma mais simplificada possível para que não existisse maior sobrecarga que pudesse influenciar drasticamente o tempo de resposta desejados para as interações com o usuário da aplicação, este foi um dos requisitos não-funcionais especificados na fase de análise.
+Vale lembrar que toda a comunicação entre essas camadas, bem como entre os diversos módulos internos as mesmas, é realizada através de um conjunto de interfaces bem definidas, buscando assim, garantir flexibilidade e baixo acoplamento, bem como um eventual reuso e/ou substituição da biblioteca financeira em questão. A separação entre os módulos se deu da forma mais simplificada possível para que não existisse maior sobrecarga que pudesse influenciar drasticamente o tempo de resposta desejado para as interações com o usuário da aplicação, este foi um dos requisitos não funcionais especificados na fase de análise.
 Outro ponto importante a se destacar é o uso do paradigma OO, bem como do uso de scripts, dada a escolha da linguagem Python para o desenvolvimento da Camada de Aplicação.
 
 \begin{figure}[!h]
@@ -23,7 +23,7 @@ Outro ponto importante a se destacar é o uso do paradigma OO, bem como do uso d
 \end{figure}
 
 \subsection{Camada de Apresentação}
-O sistema é acessado localmente por um único usuário via uma interface similar à da calculadora financeira que está sendo usada como base, tendo a opção de finalização da aplicação através de um botão. É importante destacar ainda que toda entrada realizada pelo usuário se dá através da interface touch-screen disponibilizada pelo dispositivo selecionado.
+O sistema é acessado localmente por um único usuário via uma interface similar à da calculadora financeira que está sendo usada como base, tendo a opção de finalização da aplicação através de um botão. É importante destacar ainda que toda entrada realizada pelo usuário se dá através da interface \textit{touch-screen} disponibilizada pelo dispositivo selecionado.
 Para o desenvolvimento dessa camada fez-se uso do Framework QT, com auxílio da ferramenta de design gráfico QT Designer. É de suma importância aqui o desenvolvimento de packages no que diz respeito aos componentes visuais da calculadora, por exemplo, os botões da mesma.
 
 \subsection{Camada de Aplicação}
