@@ -14,7 +14,7 @@ O sistema proposto foi idealizado para funcionar localmente no dispositivo N800 
  \item \textbf{Persistência}: camada que é responsável por lidar com toda a persistência de dados de modo que eles possam ser usados posteriormente de forma íntegra.
 \end{itemize}
 
-Vale lembrar que toda a comunicação entre essas camadas, bem como entre os diversos módulos internos as mesmas, é realizada através de um conjunto de interfaces bem definidas, buscando assim, garantir flexibilidade e baixo acoplamento, bem como um eventual reuso e/ou substituição da biblioteca financeira em questão. A separação entre os módulos se deu da forma mais simplificada possível para que não existisse maior sobrecarga que pudesse influenciar fortemente o tempo de resposta desejado para as interações com o usuário da aplicação, este foi um dos requisitos não funcionais especificados na fase de análise.
+Vale lembrar que toda a comunicação entre essas camadas, bem como entre os diversos módulos internos as mesmas, é realizada através de um conjunto de interfaces bem definidas, buscando assim, garantir flexibilidade e baixo acoplamento, bem como um eventual reuso e/ou substituição da biblioteca financeira em questão. A separação entre os módulos se deu da forma mais simplificada possível para que, independente da sobrecarga existente, esta não influenciasse fortemente o tempo de resposta desejado para as interações com o usuário da aplicação, este foi um dos requisitos não funcionais especificados na fase de análise.
 Outro ponto importante a se destacar é o uso do paradigma OO, bem como do uso de scripts, dada a escolha da linguagem Python para o desenvolvimento da Camada de Aplicação.
 
 \begin{figure}[!h]
@@ -24,15 +24,15 @@ Outro ponto importante a se destacar é o uso do paradigma OO, bem como do uso d
 \end{figure}
 
 \subsection{Camada de Apresentação}
-O sistema é acessado localmente por um único usuário via uma interface similar à da calculadora financeira que está sendo usada como base, tendo a opção de finalização da aplicação através de um botão. É importante destacar ainda que toda entrada realizada pelo usuário se dá através da interface \textit{touch-screen} disponibilizada pelo dispositivo selecionado.
-Para o desenvolvimento dessa camada fez-se uso do Framework QT, com auxílio da ferramenta de design gráfico QT Designer. É de suma importância aqui o desenvolvimento de packages no que diz respeito aos componentes visuais da calculadora, por exemplo, os botões da mesma.
+O sistema é acessado localmente por um único usuário, via uma interface similar à da calculadora financeira que está sendo usada como base, tendo a opção de finalização da aplicação através de um botão. É importante destacar ainda que toda entrada realizada pelo usuário se dá através da interface \textit{touch-screen} disponibilizada pelo dispositivo selecionado.
+Para o desenvolvimento dessa camada fez-se uso do \textit{Framework QT}, com auxílio da ferramenta de design gráfico \textit{QT Designer}. É de suma importância aqui o desenvolvimento de \textit{packages} no que diz respeito aos componentes visuais da calculadora, por exemplo, os botões da mesma.
 
 \subsection{Camada de Aplicação}
 Como dito anteriormente, essa camada é responsável por toda a lógica de negócio do sistema e foi desenvolvida em Python devido a suas vantagens na manipulação de números.
 Dentre os principais componentes desta camada pode-se dar destaque à biblioteca financeira (também desenvolvida pela equipe com o foco de ser um módulo importável que contenha essencialmente funcionalidades financeiras), ao módulo de operações matemáticas, ao módulo de gerenciamento dos registradores existentes (responsável por fornecer os dados a serem persistidos) e ao módulo de comunicação com a interface da calculadora.
  Dentro dessa camada pode-se destacar que as interações ocorrem em duas etapas:
 \begin{enumerate}
- \item Numa primeira etapa tem-se a comunicação dessa camada com a camada de apresentação do sistema através dos controladores, fazendo estes uso dos bindings em PyQt e sendo subdivididos de acordo com as funcionalidade providas por cada tecla.
+ \item Numa primeira etapa tem-se a comunicação dessa camada com a camada de apresentação do sistema através dos controladores, fazendo estes uso dos \textit{bindings} em PyQt e sendo subdivididos de acordo com as funcionalidade providas por cada tecla.
  \item Numa segunda etapa observa-se:	
  \begin{itemize}
     \item A comunicação dos módulos controladores com o restante da lógica da aplicação, fazendo uso das funcionalidades da biblioteca financeira, do módulo matemático e manipulando os seus registradores.
@@ -45,8 +45,8 @@ A persistência dos dados relativos aos registradores é realizada através do u
 Outro aspecto relevante a ser considerado aqui é a segurança do sistema.  Devido à natureza do sistema focou-se nos aspectos de integridade dos dados manipulados, fazendo com que os arquivos utilizados fossem armazenados de forma oculta ao usuário, evitando, assim, alterações dos mesmos por parte deste.
 
 \subsection{\textit{Packaging}}
-Foi tomada a decisão de distribuir a aplicação através de um arquivo de instalação de extensão .deb, simplificando, assim, a maneira de instalação do software. Tal arquivo, futuramente, poderá ser obtido por download de certo servidor web que será escolhido pela equipe em conjunto com o cliente.
+Foi tomada a decisão de distribuir a aplicação através de um arquivo de instalação de extensão \textit{.deb}, simplificando, assim, a maneira de instalação do software. Tal arquivo, futuramente, poderá ser obtido por download de certo servidor web que será escolhido pela equipe em conjunto com o cliente.
 
 \subsection{Pontos Adicionais}
 Com relação à integração com outras aplicações, é do interesse da equipe que a biblioteca financeira desenvolvida possa vir a ser usada por outros desenvolvedores como um dos vários módulos que auxiliem sua aplicação específica.
-Por fim, todo o desenvolvimento foi guiado pelo padrão de operações que é usado pela HP12-C que é a Notação Polonesa Reversa, ou Inversa segundo alguns autores \cite{NPR}.
+Por fim, todo o desenvolvimento foi guiado pelo padrão de operações que é usado pela HP12-C que é a Notação Polonesa Reversa (ou Notação Polonesa Inversa segundo alguns autores \cite{NPR}).

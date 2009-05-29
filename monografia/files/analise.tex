@@ -7,7 +7,7 @@
 %  \caption{\it Modelo Conceitual da PyFinancial.} \label{fig:modConc}
 % \end{figure}
 
-Na Figura \ref{tab:modeConc} apresenta-se o modelo conceitual da calculadora financeira, objetivo central desse projeto. É possível identificar algumas entidades centrais desse sistema são elas:
+Na Figura \ref{tab:modeConc} apresenta-se o modelo conceitual da calculadora financeira, objetivo central desse projeto. É possível identificar algumas entidades centrais desse sistema, são elas:
 
 \begin{figure}[!h]
  \includegraphics[scale=0.5]{CalcDC.eps}
@@ -23,13 +23,13 @@ Na Figura \ref{tab:modeConc} apresenta-se o modelo conceitual da calculadora fin
 	\item FinancialLibrary
 \end{itemize}
 
-Um maior detalhamento de como está organizado o código da aplicação pode ser encontrado avaliando-se o Apêndice \ref{howTo}, onde expõe-se informações a respeito de como alterar funcionalidades na calculadora, e o Apêndice \ref{DiagramaClasses}.
+Um maior detalhamento de como está organizado o código da aplicação pode ser encontrado no Apêndice \ref{howTo}, onde é são expostas informações a respeito de como alterar funcionalidades na calculadora, e no Apêndice \ref{DiagramaClasses}.
 
 \subsection{Model}
-Módulo central da aplicação que é responsável por fazer a troca de mensagens entre as demais entidades do sistema às quais está conectado, bem como realizar toda a manipulação de registradores (pilha, financeiros e demais registradores comuns) e funções de modo a efetivar as funcionalidades requisitadas pelo usuário. Também é de sua responsabilidade receber e preparar os dados da aplicação para posterior manipulação, dados esses captados pela interface. Por fim, esta entidade também é responsável por persistir os registradores quando necessário, bem como todo o estado interno da calculadora previamente configurada pelo usuário.
+Módulo central da aplicação que é responsável por fazer a troca de mensagens entre as demais entidades do sistema às quais está conectado, bem como realizar toda a manipulação de registradores (pilha, registradores financeiros e demais registradores comuns) e funções de modo a efetivar as funcionalidades requisitadas pelo usuário. Também é de sua responsabilidade receber e preparar os dados da aplicação para posterior manipulação, dados esses captados pela interface. Por fim, esta entidade também é responsável por persistir os registradores quando necessário, bem como todo o estado interno da calculadora previamente configurada pelo usuário.
 
 \subsection{GUI}
-Esta é a entidade que está em contato direto com o usuário da aplicação. Logo, este é o módulo que recebe os dados externos e os transmite para entidades mais internas, assim como recebe os resultados das operações realizadas pela calculadora e os transmite ao cliente de uma maneira mais amigável. Essa interface também é responsável por apresentar os dados segundo preferências do usuário previamente selecionadas, por exemplo, com um dado número de casas decimais.
+Esta é a entidade que está em contato direto com o usuário da aplicação. Logo, este é o módulo que recebe os dados externos e os transmite para entidades mais internas, assim como recebe os resultados das operações realizadas pela calculadora e os transmite ao cliente de uma maneira mais amigável. Essa interface também é responsável por apresentar os dados segundo preferências do usuário previamente selecionadas, por exemplo, a formatação de um número segundo um determinado limite de casas decimais.
 
 \subsection{Controller}
 Esta entidade é o controlador do sistema, responsável por desacoplar a interface da camada de negócios do sistema. Recebendo as requisições feitas pelo cliente da aplicação, através da interface (\textit{GUI}), e identificando as operações correspondentes no \textit{Model} que se responsabilizarão por realizar as atividades correspondentes.
@@ -47,7 +47,7 @@ Essa é a entidade que poderá vir a ser utilizada por programadores Python, inc
 
 \section{Requisitos}
 
-Durante a etapa de planejamento, foram realizadas várias reuniões entre os membros da equipe, o cliente e o professor Adail de modo a, a partir do que foi levantado através da pesquisa sobre as aplicações correlatas, definir um conjunto de requisitos funcionais e não funcionais. O conjunto de requisitos definidos podem ser observados abaixo:
+Durante a etapa de planejamento, foram realizadas várias reuniões entre os membros da equipe, o cliente e o professor Adail de modo que, a partir do que foi levantado através da pesquisa sobre as aplicações correlatas, definir um conjunto de requisitos funcionais e não funcionais. O conjunto de requisitos definidos podem ser observados abaixo:
 
 % Durante as reuniões de planejamento entre os membros da equipe, o cliente e possíveis usuários do produto, um conjunto de requisitos funcionais e não funcionais ficaram estabelecidos. São eles:
 
@@ -70,14 +70,14 @@ Durante a etapa de planejamento, foram realizadas várias reuniões entre os mem
 	\begin{itemize}
 	 \item \textbf{Interface}. Possuir interface similar a da calculadora HP12-C, com melhoramentos que possam facilitar sua utilização.
 	 \item \textbf{Usabilidade}. O nível de dificuldade encontrado para uso da calculadora deve ser o mesmo encontrado quando faz-se uso das calculadoras tradicionais.
-	 \item \textbf{Volume de Utilização}. A calculadora será mono-usuário, porém devendo ser robusta o suficiente para ser utilizada durante um longo intervalo de tempo ininterruptamente sem apresentar problemas.
+	 \item \textbf{Volume de Utilização}. A calculadora será monousuário, porém devendo ser robusta o suficiente para ser utilizada durante um longo intervalo de tempo ininterruptamente sem apresentar problemas.
 	 \item \textbf{Hardware e software alvo}. A calculadora deverá funcionar no Internet Tablet N800 da Nokia, no sistema operacional Maemo Diablo (4.1.x) 
-	 \item \textbf{Qualidade}. Com relação a precisão, deseja-se que os valores calculados na calculadora não devam diferir em mais de $0.001$ unidades dos valores calculados na HP12-C original.
-	 \item \textbf{Expressividade nas mensagens}. Entradas equivocadas do usuário deverão apresentar mensagens de erros que sejam mais intuitivas do que as apresentadas pela calculadora original (e.g. "Erro 6"). \ref{tabelaErros}
+	 \item \textbf{Qualidade}. Com relação a precisão, deseja-se que os valores calculados na calculadora não difiram em mais de $0.001$ unidades dos valores calculados na HP12-C original.
+	 \item \textbf{Expressividade nas mensagens}. Entradas equivocadas do usuário deverão apresentar mensagens de erros que sejam mais intuitivas do que as apresentadas pela calculadora original (e.g. "Erro 6") [Apêndice D].
 	 \item \textbf{Desempenho}. O tempo de resposta dos resultados não deve ultrapassar o tempo que a calculadora HP12-C leva para executar as mesmas operações (considerando que só o programa da calculadora esteja em execução).
 	 \item \textbf{Segurança}. Os arquivos que conterão os valores dos registradores recém utilizados pelo usuário deverão ficar protegidos de alteração externa.
 	 \item \textbf{Compatibilidade}. É desejável que a aplicação possa ser portada para versões mais novas do dispositivo alvo, como o N810, bem como para novas versões do Maemo.
 	 \item \textbf{Internacionalização}. A calculadora deve ser desenvolvida para tornar possível a internacionalização. 
-	 \item \textbf{Packaging}. A distribuição do aplicativo deve ser realizada através de um arquivo .deb que servirá como instalador para o mesmo.
+	 \item \textbf{Packaging}. A distribuição do aplicativo deve ser realizada através de um arquivo \textit{.deb} que servirá como instalador para o mesmo.
 	\end{itemize}
 \end{itemize}
