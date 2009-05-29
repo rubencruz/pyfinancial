@@ -21,7 +21,7 @@ Vale ressaltar que o \textit{Big Chart} faz parte da documentação especificada
  na academia como o \textit{YP} \cite{yp} e o \textit{XP1} \cite{xp1}. Como o processo de desenvolvimento 
 escolhido durante as disciplinas de Projeto I e Projeto II foi baseado no \textit{XP1}, o \textit{Big Chart} 
 foi utilizado para acompanhamento em alto nível do projeto por parte do cliente, bem como dos integrantes da 
-equipe de desenvolvimento
+equipe de desenvolvimento.
 
 Uma vez que as iterações foram definidas com duração de 15 dias e uma release contemplou, em média, duas 
 iterações, optou-se em Projeto I por gerar as métricas a cada release. Entretanto, como no final da disciplina 
@@ -51,7 +51,7 @@ iniciou-se o desenvolvimento das demais \textit{user stories} em questão e por 
  das métricas avaliadas. O grande aumento do número de \textit{user stories} se deve ao fato que após a
 resolução dos problemas com as fórmulas, um conjunto de pequenas \textit{user stories} foram contempladas pelo
 desenvolvimento. Essas \textit{user stories} tratavam basicamente de funções fáceis de implementar, cujas
-fórmulas já haviam sido encontradas. Optou-se deixar a implementação dessas funções por último, porque \textit{XP1}
+fórmulas já haviam sido encontradas. Optou-se por deixar a implementação dessas funções por último, porque \textit{XP1}
 aconselha começar o desenvolvimento pelas funcionalidades mais importantes (nesse caso, mais difíceis de serem 
 implementadas). Pode-se observar que o número de testes de aceitação também aumentou para apoiar as 
 novas \textit{user stories}.

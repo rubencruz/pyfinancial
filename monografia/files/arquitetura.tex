@@ -32,7 +32,7 @@ Como dito anteriormente, essa camada é responsável por toda a lógica de negó
 Dentre os principais componentes desta camada pode-se dar destaque à biblioteca financeira (também desenvolvida pela equipe com o foco de ser um módulo importável que contenha essencialmente funcionalidades financeiras), ao módulo de operações matemáticas, ao módulo de gerenciamento dos registradores existentes (responsável por fornecer os dados a serem persistidos) e ao módulo de comunicação com a interface da calculadora.
  Dentro dessa camada pode-se destacar que as interações ocorrem em duas etapas:
 \begin{enumerate}
- \item Numa primeira etapa tem-se a comunicação dessa camada com a camada de apresentação do sistema através dos controladores, fazendo estes uso dos \textit{bindings} em PyQt e sendo subdivididos de acordo com as funcionalidade providas por cada tecla.
+ \item Numa primeira etapa tem-se a comunicação dessa camada com a camada de apresentação do sistema através dos controladores, fazendo estes uso dos \textit{bindings} em PyQt e sendo subdivididos de acordo com as funcionalidades providas por cada tecla.
  \item Numa segunda etapa observa-se:	
  \begin{itemize}
     \item A comunicação dos módulos controladores com o restante da lógica da aplicação, fazendo uso das funcionalidades da biblioteca financeira, do módulo matemático e manipulando os seus registradores.

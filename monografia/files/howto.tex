@@ -9,23 +9,23 @@ Dentre as várias características de um software bem projetado, pode-se ressalt
 Inicialmente serão destacados alguns esclarecimentos básicos a respeito da organização do código fonte:
 
 \begin{enumerate}
- \item Em relação a interface gráfica, o módulo principal que organiza os dados de interface gráfica da calculadora, incluindo a disposição de botões, é o CalcGui. Além desse, existem módulos que lidam com a tabela de amortização (calcTableDialog), com a tabela de recall (recallViewDialog) e com a tabela de store (storeViewDialog). 
+ \item Em relação a interface gráfica, o módulo principal que organiza os dados de interface gráfica da calculadora, incluindo a disposição de botões, é o CalcGui. Além desse, existem módulos que lidam com a tabela de amortização (calcTableDialog), com a tabela de \textit{recall} (recallViewDialog) e com a tabela de \textit{store} (storeViewDialog). 
 
 \item Existe um componente que representa um botão (calcButton). Para cada botão pode-se adicionar até 3 textos de funções: uma na parte superior, um na parte inferior e um na parte central.
 
-\item O controller (calcController) captura todos os eventos de teclas pressionadas. A identificação das teclas se dá considerando o texto da parte central do botão 
-(que representa a função principal de cada tecla). Em seguida o controller chama uma ação correspondente no model (calcModel).
+\item O \textit{controller} (calcController) captura todos os eventos de teclas pressionadas. A identificação das teclas se dá considerando o texto da parte central do botão 
+(que representa a função principal de cada tecla). Em seguida o \textit{controller} chama uma ação correspondente no \textit{model} (calcModel).
 
 \item O calcModel é a lógica de negócio do sistema. Esse módulo guarda o estado da calculadora (opções de arredondamento, se as teclas especiais f ou g estão pressionadas, etc) e conhece a pilha (calcStack), os demais registradores (calcRegs) e as funções da biblioteca financeira (pyFinancialLibrary).
 
 \item O calcModel oferece publicamente funções que casam com as funções tidas como principais de cada botão (a funcão cujo texto fica no meio do botão). Dado que o calcModel conhece o estado da calculadora, em cada uma dessas chamadas verifica-se que função da biblioteca usar analisando, por exemplo, se o usuário selecionou os botões F ou G.
 
-\item Na ligação da lógica de negócio, da interfaçe gráfica e do controlador foi utilizado o modelo MVC \cite {mvc}. Os módulos da interface gráfica atuam como \textit{Observers} da lógica de negócio e assim são ativados pela mesma quando necessários. O model tem vários listeners para eventos como: modificação do valor da tela, modificação da pilha, etc. A ativação de cada um desses listeners ocorre ao final de cada função do model, bem como a análise de outras ações necessárias como, por exemplo desativar a seleção de F ou G feita pelo usuário.
+\item Na ligação da lógica de negócio, da interface gráfica e do controlador foi utilizado o modelo MVC \cite {mvc}. Os módulos da interface gráfica atuam como \textit{Observers} da lógica de negócio e assim são ativados pela mesma quando necessários. O model tem vários \textit{listeners} para eventos como: modificação do valor da tela, modificação da pilha, etc. A ativação de cada um desses \textit{listeners} ocorre ao final de cada função do model, bem como a análise de outras ações necessárias como, por exemplo desativar a seleção de F ou G feita pelo usuário.
 % ; avisar listeners sobre alterações na pilha, registradores financeiros, etc, 
 % dependendo do que a função faça; alertar a interface sobre modificação na tela, no estado dos botões ou sobre 
 % a necessidade de mostrar a tabela de amortização, de recall ou de store.
 
-\item Os dados fornecidos de volta aos listeners estão sempre no tipo Decimal, que é o tipo trabalhado pela calculadora de modo a alcançar alta precisão. Cada módulo da GUI formata esses dados como queira, fazendo uso das funções de formatacão presentes no módulo calcFormatUtil.
+\item Os dados fornecidos de volta aos \textit{listeners} estão sempre no tipo \textit{Decimal}, que é o tipo trabalhado pela calculadora de modo a alcançar alta precisão. Cada módulo da GUI formata esses dados como queira, fazendo uso das funções de formatacão presentes no módulo calcFormatUtil.
 
 \end{enumerate}
 
@@ -41,7 +41,7 @@ Através desse exemplo, pretende-se abordar o passo-a-passo para se implementar 
 
 Primeiramente é preciso escolher um botão do teclado da GUI que esteja livre para receber a nova função, ou ainda substituir uma função já alocada a algum botão. No método \begin{verbatim} __createKeyboardLayout \end{verbatim} do módulo calcGui é feita a adição de botões na tela. Nesse método deve-se escolher uma posição e adicionar o novo botão através do comando \begin{verbatim}self.__addGridButton(grid, "INV /", 1, 5)\end{verbatim}.
 
-Em seguida, deve-se criar a ação a ser disparado no clique do botão. Para isso adiciona-se uma nova verificação do label central do botão pressionado no método \textbf{keyboardButtonClicked(self, text)} do controller. Um exemplo pode ser observado no trecho de código \ref{else}: 
+Em seguida, deve-se criar a ação a ser disparado no clique do botão. Para isso adiciona-se uma nova verificação do label central do botão pressionado no método \textbf{keyboardButtonClicked(self, text)} do \textit{controller}. Um exemplo pode ser observado no trecho de código \ref{else}: 
 
 \lstinputlisting[language=Python, label=else, caption={Teste no controller}]{else.py}
 % \begin{verbatim}
@@ -49,12 +49,12 @@ Em seguida, deve-se criar a ação a ser disparado no clique do botão. Para iss
 %  		self.__model.invDiv()
 % \end{verbatim}
 
-No model deve-se criar a função chamada no controller, conforme visto acima. Na nova função do model implementa-se a funcionalidade considerando o estado dos botões 
+No \textit{model} deve-se criar a função chamada no \textit{controller}, conforme visto acima. Na nova função do \textit{model} implementa-se a funcionalidade considerando o estado dos botões 
 F e G, os valores dos registradores, o estado da calculadora e as funções disponíveis na biblioteca de funções (pyFinancialLibrary). 
 
-Com o resultado da divisão em mãos, altera-se o valor de algum(ns) dos registradores conforme necessário. Conforme dito acima, ao final de cada função deve-se, se necessário, desativar as teclas F e G, alterar a posição de entrada de decimais, e conforme o que for modificado (tela, pilha, registradores financeiros, etc) avisar os devidos listeners os novos valores que lhes são de interesse. 
+Com o resultado da divisão em mãos, altera-se o valor de algum(ns) dos registradores conforme necessário. Conforme dito acima, ao final de cada função deve-se, se necessário, desativar as teclas F e G, alterar a posição de entrada de decimais, e conforme o que for modificado (tela, pilha, registradores financeiros, etc) avisar aos devidos \textit{listeners} os novos valores que lhes são de interesse. 
 
-Um ponto importante é também alterar o modo de entrada de dados da calculadora de acordo com a funcionalidade desejada. Existem basicamente três modos, explicitados na classe Mode: Mode.SaveMode (que na próxima entrada de dados devolve o valor 0.0 a tela e então inicia o processamento do que for entrado), Mode.OperationMode (devolve o valor zero a tela, mas antes dá um enter na pilha) e Mode.EntryMode (indicando que novos dígitos estão sendo entrados ao valor anterior da tela). 
+Um ponto importante é também alterar o modo de entrada de dados da calculadora de acordo com a funcionalidade desejada. Existem basicamente três modos, explicitados na classe \textit{Mode}: \textit{Mode.SaveMode} (que na próxima entrada de dados devolve o valor 0.0 a tela e então inicia o processamento do que for entrado), \textit{Mode.OperationMode} (devolve o valor zero a tela, mas antes dá um enter na pilha) e \textit{Mode.EntryMode} (indicando que novos dígitos estão sendo entrados ao valor anterior da tela). 
 
 Um exemplo de implementação da nova função de divisão no calcModel pode ser observado no trecho de código \ref{funcao}.
 
