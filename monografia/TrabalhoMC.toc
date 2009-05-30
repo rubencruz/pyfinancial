@@ -32,7 +32,7 @@
 \contentsline {subsection}{\numberline {5.1.3}Camada de Persist\IeC {\^e}ncia}{23}
 \contentsline {subsection}{\numberline {5.1.4}\textit {Packaging}}{24}
 \contentsline {subsection}{\numberline {5.1.5}Pontos Adicionais}{24}
-\contentsline {chapter}{\numberline {6}Verifica\IeC {\c c}\IeC {\~a}o e Valida\IeC {\c c}\IeC {\~a}o}{25}
+\contentsline {chapter}{\numberline {6}Valida\IeC {\c c}\IeC {\~a}o}{25}
 \contentsline {chapter}{\numberline {7}M\IeC {\'e}tricas}{27}
 \contentsline {chapter}{\numberline {8}Conclus\IeC {\~o}es e Trabalhos Futuros}{30}
 \contentsline {chapter}{\numberline {A}Gloss\IeC {\'a}rio}{32}
