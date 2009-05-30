@@ -8,7 +8,7 @@ Outra preocupação constante durante a construção dos testes da aplicação f
 
 Para validação da aplicação, durante as reuniões quinzenais com o cliente do projeto e com o professor Adail Marcos, que leciona a disciplina de Matemática Financeira no curso de Administração da UFCG e que orientou a equipe em relação as fórmulas a serem empregadas, foi possível validar se questões como interface e novas funcionalidades estavam de acordo com as expectativas dos possíveis clientes do produto final.
 
-Toda esta preocupação com testes, além de objetivar minimizar a quantidade de falhas do produto, tiveram por propósito atestar a qualidade do software, bem como permitir que a evolução do mesmo possa ser realizada sem maiores problemas.
+Quanto a atividade de Verificação, esta não foi realizada pois, a atividade está diretamente relacionada ao estabelecimento/identificação de corretude em parte de um determinado algoritmo, processo, protocolo, arquitetura, etc. Em geral,para isso utilizando métodos formais de especificação e prova.
 
-Quanto a atividade de Verificação, esta conceitualmente está diretamente relacionada ao estabelecimento/identificação de corretude em parte de um determinado algoritmo, processo, protocolo, arquitetura, etc, para isso utilizando métodos formais de especificação e prova [conceito definido em discussão interna com o prof. Hyggo Almeida]. Visto isto, pela atividade de verificação tratar-se de um processo mais formal, e como o tempo para desenvolvimento do projeto foi reduzido, acabamos por não realizar esta atividade, considerando-a não adequada ao contexto do projeto em questão.
+Toda esta preocupação com testes, além de objetivar minimizar a quantidade de falhas do produto, tiveram por propósito atestar a qualidade do software, bem como permitir que a evolução do mesmo possa ser realizada sem maiores problemas.
 
